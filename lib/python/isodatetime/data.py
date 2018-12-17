@@ -22,6 +22,7 @@
 from . import dumpers
 from . import timezone
 from . import util
+import collections
 
 
 class Calendar(object):
@@ -543,7 +544,7 @@ class Duration(object):
         other_data = other.get_days_and_seconds()
         return cmp(my_data, other_data)
 
-    def __nonzero__(self):
+    def __bool__(self):
         for attr in ["years", "months", "weeks", "days", "hours",
                      "minutes", "seconds"]:
             if getattr(self, attr, None):
@@ -1310,7 +1311,7 @@ class TimePoint(object):
         hash_ = []
         for attr in self.DATA_ATTRIBUTES:
             value = getattr(self, attr, None)
-            if callable(getattr(value, "copy", None)):
+            if isinstance(getattr(value, "copy", None), collections.Callable):
                 value = value.copy()
             hash_.append((attr, value))
         return hash_
@@ -1610,7 +1611,7 @@ class TimePoint(object):
             if self.time_zone.hours == 0 and self.time_zone.minutes == 0:
                 time_string += "Z"
             else:
-                time_string += u"+hh:mm"
+                time_string += "+hh:mm"
         return date_string + time_string
 
     def _get_truncated_dump_format(self):
@@ -1682,7 +1683,7 @@ class TimePoint(object):
             if self.time_zone.hours == 0 and self.time_zone.minutes == 0:
                 time_string += "Z"
             else:
-                time_string += u"+hh:mm"
+                time_string += "+hh:mm"
         if date_string == "YY":
             date_string = "-YY"
             time_string = time_string.replace(":", "")

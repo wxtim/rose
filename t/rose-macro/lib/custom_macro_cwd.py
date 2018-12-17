@@ -13,5 +13,5 @@ class PrintCwd(rose.macro.MacroBase):
 
     def validate(self, config, meta_config=None):
         self.reports = []
-        print "Current directory:", os.getcwd()
+        print("Current directory:", os.getcwd())
         return self.reports

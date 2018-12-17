@@ -23,6 +23,7 @@
 # systems with GTK+ >=v3 this should work: Systems on GTK <v3 will not load
 # this module.
 import warnings
+import collections
 try:
     from gi import require_version, pygtkcompat
     require_version('Gtk', '3.0')  # For GTK+ >=v3 use PyGObject; v2 use PyGTK
@@ -436,7 +437,7 @@ class RosieWSClientAuthManager(object):
         Prompt with zenity or raw_input/getpass.
 
         """
-        if (callable(self.prompt_func) and
+        if (isinstance(self.prompt_func, collections.Callable) and
                 not hasattr(self.password_store, "prompt_password")):
             self.username, self.password = self.prompt_func(
                 self.username, self.password, is_retry)
@@ -455,7 +456,7 @@ class RosieWSClientAuthManager(object):
                     "--window-icon=" + icon_path,
                     "--text=" + prompt)[1].strip()
             else:
-                username = raw_input(prompt)
+                username = input(prompt)
             if not username:
                 raise KeyboardInterrupt(self.STR_CANCELLED)
             if username and username != self.username:

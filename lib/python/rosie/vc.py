@@ -592,7 +592,7 @@ def create(argv):
                 prefix = SuiteId.get_prefix_default()
             question = PROMPT_CREATE % prefix
         try:
-            response = raw_input(question)
+            response = input(question)
         except EOFError:
             sys.exit(1)
         if response != YES:
@@ -621,7 +621,7 @@ def _validate_info_config(opts, client, info_config):
             if opts.non_interactive:
                 sys.exit(1)
             try:
-                response = raw_input(PROMPT_FIX_INFO_CONFIG)
+                response = input(PROMPT_FIX_INFO_CONFIG)
             except EOFError:
                 sys.exit(1)
             if response != YES:
@@ -670,7 +670,7 @@ def delete(argv):
     for arg in args:
         if interactive_mode:
             try:
-                response = raw_input(prompt % arg)
+                response = input(prompt % arg)
             except EOFError:
                 ret_code = 1
                 continue

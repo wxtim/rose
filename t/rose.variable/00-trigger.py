@@ -24,4 +24,4 @@ import sys
 import rose.variable
 
 if __name__ == "__main__":
-    print rose.variable.parse_trigger_expression(sys.argv[1])
+    print(rose.variable.parse_trigger_expression(sys.argv[1]))

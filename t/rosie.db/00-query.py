@@ -32,4 +32,4 @@ if __name__ == "__main__":
     db_url = "sqlite:////" + f.name
     RosieDatabaseInitiator().create(db_url)
     dao = DAO(db_url)
-    print str(dao.parse_filters_to_expr(ast.literal_eval(sys.argv[1])))
+    print(str(dao.parse_filters_to_expr(ast.literal_eval(sys.argv[1]))))

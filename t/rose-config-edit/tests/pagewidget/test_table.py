@@ -1,5 +1,5 @@
 #!/usr/bin/env python2
-from __future__ import print_function
+
 from rose.config_editor.pagewidget.table import PageTable, PageArrayTable, PageLatentTable
 from rose.config_editor.ops.variable import VariableOperations
 from rose.variable import Variable

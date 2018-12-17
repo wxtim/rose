@@ -281,8 +281,8 @@ class StemRunner(object):
             item = os.path.abspath(os.path.join(os.getcwd(), item))
 
         if project is not None:
-            print "[WARN] Forcing project for '{0}' to be '{1}'".format(
-                item, project)
+            print("[WARN] Forcing project for '{0}' to be '{1}'".format(
+                item, project))
             return project, item, item, '', ''
 
         source_dict = self._get_base_dir(item)

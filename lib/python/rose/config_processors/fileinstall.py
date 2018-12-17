@@ -38,6 +38,7 @@ from io import StringIO
 import sys
 from tempfile import mkdtemp
 from urllib.parse import urlparse
+import collections
 
 
 class ConfigProcessorForFile(ConfigProcessorBase):
@@ -735,7 +736,7 @@ class PullableLocHandlersManager(SchemeHandlersManager):
 
     def handle_event(self, *args, **kwargs):
         """Call self.event_handler with given arguments if possible."""
-        if callable(self.event_handler):
+        if isinstance(self.event_handler, collections.Callable):
             return self.event_handler(*args, **kwargs)
 
     def parse(self, loc, conf_tree):

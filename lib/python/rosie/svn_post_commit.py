@@ -409,7 +409,7 @@ class RosieSvnPostCommitHook(object):
             "date": changeset_attribs["date"]})
         for name in ["owner", "project", "title"]:
             cols[name] = branch_attribs[info_key].get_value([name])
-        if branch_attribs["from_path"] and vc_attrs["branch"] == u"trunk":
+        if branch_attribs["from_path"] and vc_attrs["branch"] == "trunk":
             from_names = branch_attribs["from_path"].split("/")[:self.LEN_ID]
             cols["from_idx"] = (
                 changeset_attribs["prefix"] + "-" + "".join(from_names))
@@ -442,11 +442,11 @@ class RosieSvnPostCommitHook(object):
         keys_str = " ".join(shlex.split(keys_str)).decode("utf-8")
         if keys_str:
             try:
-                dao.insert(META_TABLE_NAME, name=u"known_keys", value=keys_str)
+                dao.insert(META_TABLE_NAME, name="known_keys", value=keys_str)
             except al.exc.IntegrityError:
                 dao.update(
-                    META_TABLE_NAME, (u"name",),
-                    name=u"known_keys", value=keys_str)
+                    META_TABLE_NAME, ("name",),
+                    name="known_keys", value=keys_str)
 
 
 def main():

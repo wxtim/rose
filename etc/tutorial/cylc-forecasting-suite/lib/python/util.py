@@ -178,7 +178,7 @@ def plot_vector_grid(filename, x_grid, y_grid):
         matplotlib.use('Agg')
         import matplotlib.pyplot as plt
     except ImportError:
-        print 'Plotting diasbled'
+        print('Plotting diasbled')
         return
 
     fig = plt.figure()

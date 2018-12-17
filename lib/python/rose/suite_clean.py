@@ -175,7 +175,7 @@ def main():
     for arg in args:
         if not opts.non_interactive:
             try:
-                answer = raw_input("Clean %s? y/n (default n) " % arg)
+                answer = input("Clean %s? y/n (default n) " % arg)
             except EOFError:
                 sys.exit(1)
             if answer not in ["Y", "y"]:

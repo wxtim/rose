@@ -27,6 +27,7 @@ environment variables are left unchanged.
 import os
 import re
 from rose.reporter import Event
+import collections
 
 
 # _RE_DEFAULT = re.compile(r"""
@@ -115,7 +116,7 @@ def env_export(key, value, event_handler=None):
         #      normally quite small.
         _EXPORTED_ENVS[key] = value
         os.environ[key] = value
-        if callable(event_handler):
+        if isinstance(event_handler, collections.Callable):
             event_handler(EnvExportEvent(key, value))
 
 

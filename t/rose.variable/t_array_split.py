@@ -27,7 +27,7 @@ from rose.variable import array_split
 
 def main():
     """CLI."""
-    print array_split(*sys.argv[1:])
+    print(array_split(*sys.argv[1:]))
 
 
 if __name__ == "__main__":
