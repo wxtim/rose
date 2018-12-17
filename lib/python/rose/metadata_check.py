@@ -171,7 +171,7 @@ def _check_value_titles(title_value, values_value):
 
 def _check_type(value):
     types = rose.variable.parse_type_expression(value)
-    if isinstance(types, basestring):
+    if isinstance(types, str):
         types = [types]
     if " " in value and "," not in value:
         types = [value]
