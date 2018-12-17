@@ -60,7 +60,7 @@ maintained. We encourage sites and users to migrate to *Cylc Review* soon.
 
 Lots of improvements and fixes to documentation.
 
-Launch programs with `python2` instead of `python`.
+Launch programs with `python` instead of `python`.
 
 --------------------------------------------------------------------------------
 

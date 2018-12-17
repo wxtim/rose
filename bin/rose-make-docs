@@ -175,7 +175,7 @@ venv-activate () {
 
 venv-install () {
     venv-destroy
-    virtualenv --python=python2.7 "${VENV_PATH}"
+    virtualenv --python=python.7 "${VENV_PATH}"
     venv-activate
     # TODO remove Sphinx version dependency
     # https://github.com/nyergler/hieroglyph/issues/148

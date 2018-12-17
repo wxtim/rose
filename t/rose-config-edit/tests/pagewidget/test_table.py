@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 from rose.config_editor.pagewidget.table import PageTable, PageArrayTable, PageLatentTable
 from rose.config_editor.ops.variable import VariableOperations
