@@ -41,7 +41,7 @@ import shlex
 from smtplib import SMTP
 import socket
 import sqlalchemy as al
-from StringIO import StringIO
+from io import StringIO
 import sys
 from tempfile import TemporaryFile
 from time import mktime, strptime

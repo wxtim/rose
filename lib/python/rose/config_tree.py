@@ -485,7 +485,7 @@ type=grilled
 if __name__ == "__main__":
     # These modules are only required for running the self tests.
     from rose.config import ConfigDumper
-    from StringIO import StringIO
+    from io import StringIO
     from shutil import rmtree
     from tempfile import mkdtemp
     _Test().run()

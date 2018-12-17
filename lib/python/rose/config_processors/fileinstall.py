@@ -34,10 +34,10 @@ from rose.scheme_handler import SchemeHandlersManager
 import shlex
 from shutil import rmtree
 import sqlite3
-from StringIO import StringIO
+from io import StringIO
 import sys
 from tempfile import mkdtemp
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 
 class ConfigProcessorForFile(ConfigProcessorBase):

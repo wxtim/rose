@@ -46,7 +46,7 @@ import os
 import re
 import shlex
 import sys
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 import rose.config
 from rose.env import env_var_process

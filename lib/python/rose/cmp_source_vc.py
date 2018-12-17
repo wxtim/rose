@@ -21,7 +21,7 @@
 
 from difflib import unified_diff
 import os
-from StringIO import StringIO
+from io import StringIO
 import sys
 import traceback
 

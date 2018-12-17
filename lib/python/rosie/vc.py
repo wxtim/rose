@@ -36,10 +36,10 @@ from rose.reporter import Event, Reporter
 from rose.resource import ResourceLocator
 from rosie.suite_id import SuiteId, SuiteIdOverflowError, SuiteIdPrefixError
 import shutil
-from StringIO import StringIO
+from io import StringIO
 import sys
 from tempfile import mkdtemp, mkstemp
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 
 CREATE_INFO_CONFIG_COMMENT = """

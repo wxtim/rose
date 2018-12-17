@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------
 """Reporter for diagnostic messages."""
 
-import Queue
+import queue
 
 import multiprocessing
 import sys
@@ -312,7 +312,7 @@ class ReporterContextQueue(ReporterContext):
             message = self._messages_pending[0]
             try:
                 self.queue.put(message, block=False)
-            except Queue.Full:
+            except queue.Full:
                 break
             else:
                 del self._messages_pending[0]
