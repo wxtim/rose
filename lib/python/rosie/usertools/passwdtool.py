@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!//opt/scitools/environments/experimental/current/bin/python3
 # -----------------------------------------------------------------------------
 # Copyright (C) 2012-2018 British Crown (Met Office) & Contributors.
 #

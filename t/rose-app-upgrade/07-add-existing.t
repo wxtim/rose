@@ -36,7 +36,7 @@ __CONFIG__
 setup
 init_meta park no-dinosaurs dinosaurs HEAD
 init_macro park <<'__MACRO__'
-#!/usr/bin/env python
+#!//opt/scitools/environments/experimental/current/bin/python3
 # -*- coding: utf-8 -*-
 
 

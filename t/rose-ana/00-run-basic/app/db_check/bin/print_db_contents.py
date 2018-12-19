@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!//opt/scitools/environments/experimental/current/bin/python3
 import os
 import sqlite3
 

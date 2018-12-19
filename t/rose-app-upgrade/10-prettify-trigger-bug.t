@@ -51,7 +51,7 @@ trigger=namelist:flower_props=completeness_bonus: all(this == '.true.');
 type=logical
 __META__
 init_macro tulip <<'__MACRO__'
-#!/usr/bin/env python
+#!//opt/scitools/environments/experimental/current/bin/python3
 # -*- coding: utf-8 -*-
 
 import rose.upgrade
