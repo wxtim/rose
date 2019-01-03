@@ -254,7 +254,7 @@ class ReporterContext(object):
         """Write the message to the context's handle."""
         try:
             return self.handle.write(message.encode("utf-8"))
-        except UnicodeDecodeError:
+        except TypeError:
             return self.handle.write(message)
 
     def _tty_colour_err(self, str_):
