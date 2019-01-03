@@ -163,7 +163,7 @@ def env_var_process(text, unbound=None, match_mode=None):
                 else:
                     raise UnboundEnvironmentVariableError(groups["name"])
             ret += (groups["head"] +
-                    groups["escape"][0:len(groups["escape"]) / 2] +
+                    groups["escape"][0:len(groups["escape"]) // 2] +
                     substitute)
             tail = groups["tail"]
         else:
