@@ -1062,7 +1062,7 @@ class ConfigDumper(object):
                 target_dir = "."
             if not os.path.isdir(target_dir):
                 os.makedirs(target_dir)
-            handle = NamedTemporaryFile(prefix=os.path.basename(target),
+            handle = NamedTemporaryFile(mode='w', prefix=os.path.basename(target),
                                         dir=target_dir, delete=False)
         blank = ""
         if root.comments:
@@ -1324,6 +1324,7 @@ class ConfigLoader(object):
         # "ignore" flags. Rather than replicating the logic for parsing
         # ignore flags, it is actually easier to write the values in
         # "defines" to a file and pass it to the loader to parse it.
+        #source = TemporaryFile(mode='w', encoding='UTF-8')
         source = TemporaryFile()
         for define in defines:
             sect, key, value = self.RE_OPT_DEFINE.match(define).groups()
@@ -1331,9 +1332,9 @@ class ConfigLoader(object):
                 sect = ""
             if value is None:
                 value = ""
-            source.write("[%s]\n" % sect)
+            source.write(("[%s]\n" % sect).encode())
             if key is not None:
-                source.write("%s=%s\n" % (key, value))
+                source.write(("%s=%s\n" % (key, value)).encode())
         source.seek(0)
         node = self.load(source, node)
         return node
@@ -1377,7 +1378,10 @@ class ConfigLoader(object):
         line_num = 0
         # Note: "for line in handle:" hangs for sys.stdin
         while True:
-            line = handle.readline()
+            try:
+                line = handle.readline().decode()
+            except:
+                line = handle.readline()
             if not line:
                 break
             line_num += 1
@@ -1511,7 +1515,7 @@ class ConfigLoader(object):
                 file_name = self.UNKNOWN_NAME
         else:
             file_name = os.path.abspath(file_)
-            file_ = open(file_name, "r")
+            file_ = open(file_name, "rb")
         return (file_, file_name)
 
 
