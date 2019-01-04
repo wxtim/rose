@@ -138,7 +138,7 @@ def _get_hexdigest(algorithm, source):
         bytes_ = handle.read(f_bsize)
         if not bytes_:
             break
-        hashobj.update(bytes_)
+        hashobj.update(bytes_.encode(encoding='UTF-8'))
     handle.close()
     return hashobj.hexdigest()
 

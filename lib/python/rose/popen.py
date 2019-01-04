@@ -21,6 +21,7 @@
 
 import os
 import re
+import io
 from rose.reporter import Event
 from rose.resource import ResourceLocator
 import shlex
@@ -70,7 +71,7 @@ class RosePopenEvent(Event):
             ret = RosePopener.list_to_shell_str(self.command)
         if isinstance(self.stdin, str):
             ret += " <<'__STDIN__'\n" + self.stdin + "\n'__STDIN__'"
-        elif isinstance(self.stdin, file):
+        elif isinstance(self.stdin, io.IOBase):
             try:
                 # FIXME: Is this safe?
                 pos = self.stdin.tell()
