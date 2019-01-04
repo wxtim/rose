@@ -407,11 +407,11 @@ class StemRunner(object):
                 self._add_define_option('SOURCE_' + project.upper() +
                                         '_MIRROR', '"' + mirror + '"')
             self.reporter(SourceTreeAddedAsBranchEvent(url))
-        for project, branches in repos.iteritems():
+        for project, branches in repos.items():
             var = 'SOURCE_' + project.upper()
             branchstring = RosePopener.list_to_shell_str(branches)
             self._add_define_option(var, '"' + branchstring + '"')
-        for project, branches in repos_with_hosts.iteritems():
+        for project, branches in repos_with_hosts.items():
             var_host = 'HOST_SOURCE_' + project.upper()
             branchstring = RosePopener.list_to_shell_str(branches)
             self._add_define_option(var_host, '"' + branchstring + '"')
