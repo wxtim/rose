@@ -59,7 +59,7 @@ class JobManager(object):
         """Return the next job that requires processing."""
         while self.ready_jobs:
             job = self.ready_jobs.pop()
-            for dep_key, dep_job in job.pending_for.items():
+            for dep_key, dep_job in job.pending_for.copy().items():
                 if dep_job.state == dep_job.ST_DONE:
                     job.pending_for.pop(dep_key)
                     if job.name in dep_job.needed_by:
@@ -183,36 +183,41 @@ class JobRunner(object):
             self.job_processor.post_process_job(job_proxy, *args)
 
         """
-        nproc = self.nproc
-        if nproc > len(job_manager.jobs):
-            nproc = len(job_manager.jobs)
-        pool = Pool(processes=nproc)
-
-        results = {}
-        while job_manager.has_jobs():
-            # Process results, if any is ready
-            for name, result in results.items():
-                if result.ready():
-                    results.pop(name)
-                    job_proxy, args_of_events = result.get()
-                    for args_of_event in args_of_events:
-                        self.job_processor.handle_event(*args_of_event)
-                    job = job_manager.put_job(job_proxy)
-                    if job_proxy.exc is None:
-                        self.job_processor.post_process_job(job, *args)
-                        self.job_processor.handle_event(JobEvent(job))
-                    else:
-                        self.job_processor.handle_event(job_proxy.exc)
-            # Add some more jobs into the worker pool, as they are ready
-            while job_manager.has_ready_jobs():
-                job = job_manager.get_job()
-                if job is None:
-                    break
-                job_run_args = [self.job_processor, job] + list(args)
-                result = pool.apply_async(_job_run, job_run_args)
-                results[job.name] = result
-            if results:
-                sleep(self.POLL_DELAY)
+#         nproc = self.nproc
+#         if nproc > len(job_manager.jobs):
+#             nproc = len(job_manager.jobs)
+#         pool = Pool(processes=nproc)
+#
+#         results = {}
+#         while job_manager.has_jobs():
+#             # Process results, if any is ready
+#             for name, result in results.items():
+#                 if result.ready():
+#                     results.pop(name)
+#                     job_proxy, args_of_events = result.get()
+#                     for args_of_event in args_of_events:
+#                         self.job_processor.handle_event(*args_of_event)
+#                     job = job_manager.put_job(job_proxy)
+#                     if job_proxy.exc is None:
+#                         self.job_processor.post_process_job(job, *args)
+#                         self.job_processor.handle_event(JobEvent(job))
+#                     else:
+#                         self.job_processor.handle_event(job_proxy.exc)
+#             # Add some more jobs into the worker pool, as they are ready
+#             import traceback
+        while job_manager.has_ready_jobs():
+            job = job_manager.get_job()
+            self.job_processor.process_job(job, *args)
+            job_manager.put_job(job)
+            if job.exc is None:
+                self.job_processor.post_process_job(job, *args)
+#                 if job is None:
+#                     break
+#                 job_run_args = [self.job_processor, job] + list(args)
+#                 result = pool.apply_async(_job_run, job_run_args)
+#                 results[job.name] = result
+#             if results:
+#                 sleep(self.POLL_DELAY)
 
         dead_jobs = job_manager.get_dead_jobs()
         if dead_jobs:
