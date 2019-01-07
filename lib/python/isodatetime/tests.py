@@ -19,9 +19,10 @@
 """This tests the ISO 8601 parsing and data model functionality."""
 
 import copy
+from itertools import chain
 import multiprocessing
 import unittest
-import mock
+from unittest.mock import patch, MagicMock, Mock
 
 from . import data
 from . import dumpers
@@ -569,7 +570,8 @@ def get_timepointparser_tests(allow_only_basic=False,
                             time_expr
                         )
                         combo_info = {}
-                        for key, value in info.items() + time_info.items():
+                        for key, value in chain(
+                                info.items(), time_info.items()):
                             combo_info[key] = value
                         yield combo_expr, combo_info
                         if skip_time_zones:
@@ -578,8 +580,9 @@ def get_timepointparser_tests(allow_only_basic=False,
                         for time_zone_expr, time_zone_info in time_zone_items:
                             tz_expr = combo_expr + time_zone_expr
                             tz_info = {}
-                            for key, value in (combo_info.items() +
-                                               time_zone_info.items()):
+                            for key, value in \
+                                chain(combo_info.items(),
+                                      time_zone_info.items()):
                                 tz_info[key] = value
                             yield tz_expr, tz_info
         if not allow_truncated:
@@ -602,8 +605,9 @@ def get_timepointparser_tests(allow_only_basic=False,
                 for time_zone_expr, time_zone_info in time_zone_items:
                     tz_expr = combo_expr + time_zone_expr
                     tz_info = {}
-                    for key, value in (combo_info.items() +
-                                       time_zone_info.items()):
+                    for key, value in \
+                        chain(combo_info.items(),
+                              time_zone_info.items()):
                         tz_info[key] = value
                     yield tz_expr, tz_info
 
@@ -1064,7 +1068,7 @@ class TestSuite(unittest.TestCase):
                 test_days = data.get_days_in_year_range(
                     start_year, end_year)
                 control_days = 0
-                for year in xrange(start_year, end_year + 1):
+                for year in range(start_year, end_year + 1):
                     control_days += data.get_days_in_year(year)
                 self.assertEqual(
                     control_days, test_days, "days in %s to %s" % (
@@ -1416,7 +1420,7 @@ class TestSuite(unittest.TestCase):
         """Test the strftime/strptime for date/time expressions."""
         import datetime
         parser = parsers.TimePointParser()
-        parse_tokens = parser_spec.STRFTIME_TRANSLATE_INFO.keys()
+        parse_tokens = list(parser_spec.STRFTIME_TRANSLATE_INFO.keys())
         parse_tokens.remove("%z")  # Don't test datetime's tz handling.
         format_string = ""
         for i, token in enumerate(parse_tokens):
@@ -1631,7 +1635,7 @@ class TestSuite(unittest.TestCase):
         [-12600, -3, 30]  # america/st_johns, -03:30
     ]
 
-    @mock.patch('isodatetime.timezone.time')
+    @patch('isodatetime.timezone.time')
     def test_get_local_time_zone_no_dst(self, mock_time):
         """Test that the hour/minute returned is correct.
 
@@ -1644,7 +1648,7 @@ class TestSuite(unittest.TestCase):
             # time without dst
             mock_time.daylight = False
             # and localtime also without dst
-            mock_localtime = mock.Mock()
+            mock_localtime = Mock()
             mock_time.localtime.return_value = mock_localtime
             mock_localtime.tm_isdst = 0
             hours, minutes = timezone.get_local_time_zone()
@@ -1663,7 +1667,7 @@ class TestSuite(unittest.TestCase):
         [-12600, -9000, -2, 30]  # america/st_johns, -03:30 and -02:30
     ]
 
-    @mock.patch('isodatetime.timezone.time')
+    @patch('isodatetime.timezone.time')
     def test_get_local_time_zone_with_dst(self, mock_time):
         """Test that the hour/minute returned is correct
 
@@ -1676,7 +1680,7 @@ class TestSuite(unittest.TestCase):
             # time without dst
             mock_time.daylight = True
             # and localtime also without dst
-            mock_localtime = mock.MagicMock()
+            mock_localtime = MagicMock()
             mock_time.localtime.return_value = mock_localtime
             mock_localtime.tm_isdst = 1
             # and with the following alternative time for when dst is set
@@ -1720,7 +1724,7 @@ class TestSuite(unittest.TestCase):
         [-12600, timezone.TimeZoneFormatMode.reduced, "-0330"]
     ]
 
-    @mock.patch('isodatetime.timezone.time')
+    @patch('isodatetime.timezone.time')
     def test_get_local_time_zone_format(self, mock_time):
         """Test that the UTC offset string format is correct
 
@@ -1734,7 +1738,7 @@ class TestSuite(unittest.TestCase):
             # time without dst
             mock_time.daylight = False
             # and localtime also without dst
-            mock_localtime = mock.Mock()
+            mock_localtime = Mock()
             mock_time.localtime.return_value = mock_localtime
             mock_localtime.tm_isdst = 0
             tz_format = timezone.get_local_time_zone_format(tz_format_mode)
