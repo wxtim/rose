@@ -1586,7 +1586,7 @@ def sort_element(elem_1, elem_2):
     """Sort pieces of text, numerically if possible."""
     if elem_1.isdigit():
         if elem_2.isdigit():
-            return cmp(int(elem_1), int(elem_2))
+            return (int(elem_1) > int(elem_2)) - (int(elem_1) < int(elem_2))
         return -1
     elif elem_2.isdigit():
         return 1
