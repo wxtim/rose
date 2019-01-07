@@ -99,7 +99,7 @@ class JobManager(object):
         job.update(job_proxy)
         if job_proxy.exc is None:
             job.state = job.ST_DONE
-            for up_key, up_job in job.needed_by.items():
+            for up_key, up_job in list(job.needed_by.items()):
                 job.needed_by.pop(up_key)
                 up_job.pending_for.pop(job.name)
                 if not up_job.pending_for:

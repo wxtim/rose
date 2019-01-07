@@ -406,7 +406,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                     bytes_ = source_handle.read(f_bsize)
                     if not bytes_:
                         break
-                    handle.write(bytes_)
+                    handle.write(bytes_.encode())
                 source_handle.close()
                 if mod_bits is None:
                     mod_bits = os.stat(source.cache).st_mode
