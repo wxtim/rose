@@ -195,8 +195,8 @@ class JobRunner(object):
 #                 if result.ready():
 #                     results.pop(name)
 #                     job_proxy, args_of_events = result.get()
-#                     for args_of_event in args_of_events:
-#                         self.job_processor.handle_event(*args_of_event)
+#                     for args_of_event in args_of_events:  ##???
+#                         self.job_processor.handle_event(*args_of_event) #???
 #                     job = job_manager.put_job(job_proxy)
 #                     if job_proxy.exc is None:
 #                         self.job_processor.post_process_job(job, *args)
@@ -211,6 +211,7 @@ class JobRunner(object):
             job_manager.put_job(job)
             if job.exc is None:
                 self.job_processor.post_process_job(job, *args)
+                self.job_processor.handle_event(JobEvent(job))
 #                 if job is None:
 #                     break
 #                 job_run_args = [self.job_processor, job] + list(args)
