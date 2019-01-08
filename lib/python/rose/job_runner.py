@@ -207,11 +207,14 @@ class JobRunner(object):
 #             import traceback
         while job_manager.has_ready_jobs():
             job = job_manager.get_job()
-            self.job_processor.process_job(job, *args)
-            job_manager.put_job(job)
             if job.exc is None:
+                self.job_processor.process_job(job, *args)
                 self.job_processor.post_process_job(job, *args)
                 self.job_processor.handle_event(JobEvent(job))
+            else:
+                self.job_processor.handle_event(job.exc)
+
+            job_manager.put_job(job)
 #                 if job is None:
 #                     break
 #                 job_run_args = [self.job_processor, job] + list(args)

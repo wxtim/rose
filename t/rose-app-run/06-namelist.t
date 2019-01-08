@@ -177,23 +177,25 @@ test_teardown
 TEST_KEY=$TEST_KEY_BASE-install-only
 test_setup
 run_pass "$TEST_KEY" rose app-run --config=../config -i --debug
-file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<__CONTENT__
-[INFO] export PATH=$PATH
-[INFO] install: empty-and-hello.nl
+sort "$TEST_KEY.out" > "$TEST_KEY.sorted.out"
+
+file_cmp "$TEST_KEY.sorted.out" "$TEST_KEY.sorted.out" <<__CONTENT__
+[INFO]     source: namelist:empty
 [INFO]     source: namelist:empty
 [INFO]     source: namelist:hello
-[INFO] install: vegetables.nl
-[INFO]     source: namelist:vegetables{green}(:)
-[INFO] install: hello.nl
 [INFO]     source: namelist:hello
-[INFO] install: shopping-list.nl
-[INFO]     source: namelist:shopping_list(:)
-[INFO] install: shopping-list-2.nl
-[INFO]     source: namelist:shopping_list(10)
 [INFO]     source: namelist:shopping_list(1)
-[INFO] install: empty.nl
-[INFO]     source: namelist:empty
+[INFO]     source: namelist:shopping_list(10)
+[INFO]     source: namelist:shopping_list(:)
+[INFO]     source: namelist:vegetables{green}(:)
 [INFO] command: mkdir out && cp *.nl out/
+[INFO] export PATH=/net/home/h02/tpilling/metomi/rose.git/bin:/net/home/h02/tpilling/metomi/rose.git/bin:/opt/scitools/environments/experimental/2018_12_19-2/bin:/opt/pgi/linux86-64/11.7/bin:/opt/NAGWare/5.2/x86_64/bin:/opt/intel/composerxe-2011.4.191/bin/intel64:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/ecaccess-4.0.2/client:/opt/ecaccess/client/tools:/opt/ukmo/idl/ukmo/bin:/project/ukmo/rhel6/maple/2016/bin:/opt/moose-client-wrapper/bin:/opt/ukmo/utils/bin:.:/opt/intel/composerxe-2011.4.191/mpirt/bin/intel64:/usr/local/sci/bin:/home/h02/tpilling/bin
+[INFO] install: empty-and-hello.nl
+[INFO] install: empty.nl
+[INFO] install: hello.nl
+[INFO] install: shopping-list-2.nl
+[INFO] install: shopping-list.nl
+[INFO] install: vegetables.nl
 __CONTENT__
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 test_teardown

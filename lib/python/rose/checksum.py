@@ -129,7 +129,7 @@ def _get_hexdigest(algorithm, source):
     if hasattr(source, "read"):
         handle = source
     else:
-        handle = open(source)
+        handle = open(source, 'rb')
     try:
         f_bsize = os.statvfs(handle.name).f_bsize
     except (AttributeError, OSError):
@@ -138,6 +138,8 @@ def _get_hexdigest(algorithm, source):
         bytes_ = handle.read(f_bsize)
         if not bytes_:
             break
+        if type(bytes_) == bytes:
+            bytes_ = bytes_.decode()
         hashobj.update(bytes_.encode(encoding='UTF-8'))
     handle.close()
     return hashobj.hexdigest()
