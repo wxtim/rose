@@ -559,11 +559,14 @@ class LocSubPath(object):
         self.checksum = checksum
         self.access_mode = access_mode
 
-    def __cmp__(self, other):
+    def __lt__(self, other):
         return (
-            cmp(self.name, other.name) or
-            cmp(self.checksum, other.checksum) or
-            cmp(self.access_mode, other.access_mode))
+            (self.name > other.name) -
+            (self.name < other.name) or
+            (self.checksum > other.checksum) -
+            (self.checksum < other.checksum) or
+            (self.access_mode > other.access_mode) -
+            (self.access_mode < other.access_mode))
 
     def __eq__(self, other):
         return (
