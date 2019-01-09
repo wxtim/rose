@@ -207,7 +207,9 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                     raise ConfigProcessError(
                         ["file:" + source.used_by_names[0], "source"],
                         source.name)
+            # print('=== prev_source vvv')
             prev_source = loc_dao.select(source.name)
+            # print('=== prev_source ^^^')
             source.is_out_of_date = (
                 not prev_source or
                 (not source.key and not source.paths) or
@@ -231,7 +233,6 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                     os.path.islink(target.name) or
                     not os.path.isdir(target.name))
             else:
-                # See if target is modified compared with previous record
                 if (os.path.exists(target.name) and
                         not os.path.islink(target.name)):
                     for path, checksum, access_mode in get_checksum(
@@ -246,8 +247,9 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                     prev_target.mode != target.mode or
                     len(prev_target.paths) != len(target.paths))
                 if not target.is_out_of_date:
-                    for prev_path, path in zip(
-                            prev_target.paths, target.paths):
+                    prev_target.paths.sort()
+                    for prev_path, path in list(zip(
+                            prev_target.paths, target.paths)):
                         if prev_path != path:
                             target.is_out_of_date = True
                             break
@@ -401,12 +403,15 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                         self.manager.fs_util.delete(target.name)
                     handle = open(target.name, "wb")
                 f_bsize = os.statvfs(source.cache).f_bsize
-                source_handle = open(source.cache)
+                source_handle = open(source.cache, 'rb')
                 while True:
                     bytes_ = source_handle.read(f_bsize)
                     if not bytes_:
                         break
-                    handle.write(bytes_.encode())
+                    try:
+                        handle.write(bytes_.encode())
+                    except AttributeError:
+                        handle.write(bytes_)
                 source_handle.close()
                 if mod_bits is None:
                     mod_bits = os.stat(source.cache).st_mode
@@ -710,7 +715,6 @@ class LocDAO(object):
             if loc.dep_locs is None:
                 loc.dep_locs = []
             loc.dep_locs.append(self.select(dep_name))
-
         return loc
 
 
