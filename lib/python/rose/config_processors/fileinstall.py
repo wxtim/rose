@@ -207,9 +207,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                     raise ConfigProcessError(
                         ["file:" + source.used_by_names[0], "source"],
                         source.name)
-            # print('=== prev_source vvv')
             prev_source = loc_dao.select(source.name)
-            # print('=== prev_source ^^^')
             source.is_out_of_date = (
                 not prev_source or
                 (not source.key and not source.paths) or
