@@ -518,8 +518,8 @@ class MemoryScorer(RandomScorer):
             method_arg = self.ARG
         mem = None
         for line in out.splitlines():
-            if line.startswith("mem="):
-                mem = line.split("=", 1)[1]
+            if line.startswith(b"mem="):
+                mem = line.split(b"=", 1)[1]
         return float(mem)
 
 
