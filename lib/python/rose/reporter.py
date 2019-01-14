@@ -253,7 +253,7 @@ class ReporterContext(object):
     def write(self, message):
         """Write the message to the context's handle."""
         try:
-            return self.handle.write(message.encode("utf-8"))
+            return self.handle.buffer.write(message.encode("utf-8"))
         except TypeError:
             return self.handle.write(message)
 
