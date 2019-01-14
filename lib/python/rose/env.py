@@ -28,6 +28,7 @@ import os
 import re
 from rose.reporter import Event
 import collections
+import locale
 
 
 # _RE_DEFAULT = re.compile(r"""
@@ -115,6 +116,8 @@ def env_export(key, value, event_handler=None):
         # N.B. Should be safe, because the list of environment variables is
         #      normally quite small.
         _EXPORTED_ENVS[key] = value
+        value = value.encode('UTF-8')
+        value = value.decode(locale.getpreferredencoding(False), errors="ignore")
         os.environ[key] = value
         if isinstance(event_handler, collections.Callable):
             event_handler(EnvExportEvent(key, value))

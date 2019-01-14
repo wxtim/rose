@@ -1124,7 +1124,7 @@ class ConfigDumper(object):
         value0 = values.pop(0)
         if env_escape_ok:
             value0 = env_var_escape(value0)
-        handle.write(state + key + self.char_assign + value0)
+        handle.buffer.write((state + key + self.char_assign + value0).encode('UTF-8'))
         handle.write("\n")
         if values:
             indent = " " * len(state + key)
