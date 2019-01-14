@@ -364,7 +364,7 @@ class HostSelector(object):
             stdin += "exit\n"
             proc = self.popen.run_bg(*command, stdin=stdin,
                                      preexec_fn=os.setpgrp)
-            proc.stdin.write(stdin)
+            proc.stdin.write(stdin.encode('UTF-8'))
             proc.stdin.flush()
             host_proc_dict[host_name] = proc
 
@@ -373,7 +373,7 @@ class HostSelector(object):
         time0 = time()
         while host_proc_dict:
             sleep(self.SSH_CMD_POLL_DELAY)
-            for host_name, proc in host_proc_dict.items():
+            for host_name, proc in list(host_proc_dict.items()):
                 if proc.poll() is None:
                     score = None
                 elif proc.wait():
@@ -413,7 +413,7 @@ class HostSelector(object):
         if not host_score_list:
             raise NoHostSelectError()
         host_score_list.sort(
-            lambda a, b: cmp(a[1], b[1]),
+            key=lambda a: a[1],
             reverse=rank_conf.scorer.SIGN < 0)
         return host_score_list
 
@@ -495,11 +495,11 @@ class LoadScorer(RandomScorer):
         nprocs = None
         load = None
         for line in out.splitlines():
-            if line.startswith("nproc="):
-                nprocs = line.split("=", 1)[1]
-            elif line.startswith("uptime="):
+            if line.startswith(b"nproc="):
+                nprocs = line.split(b"=", 1)[1]
+            elif line.startswith(b"uptime="):
                 idx = self.INDEX_OF[method_arg]
-                load = line.rsplit(None, 3)[idx].rstrip(",")
+                load = line.rsplit(None, 3)[idx].rstrip(b",")
         if load is None or not nprocs:
             return None
         return float(load) / float(nprocs)
