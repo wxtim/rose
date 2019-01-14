@@ -88,7 +88,7 @@ def main():
     except Exception as exc:
         event_handler(exc)
         if opts.debug_mode:
-            traceback.print_exc(exc)
+            traceback.print_exc()
         if isinstance(exc, RosePopenError):
             sys.exit(exc.ret_code)
         else:

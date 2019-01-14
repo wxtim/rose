@@ -191,7 +191,7 @@ def main():
         ) as exc:
             report(exc)
             if opts.debug_mode:
-                traceback.print_exc(exc)
+                traceback.print_exc()
         else:
             n_done += 1
     sys.exit(len(args) - n_done)  # Return 0 if everything done

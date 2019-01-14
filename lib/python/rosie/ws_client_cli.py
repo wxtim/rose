@@ -153,7 +153,7 @@ def lookup(argv):
                 args, all_revs=int(opts.all_revs))
     except RosieWSClientError as exc:
         if opts.debug_mode:
-            traceback.print_exc(exc)
+            traceback.print_exc()
         sys.exit(str(exc))
     for data, url in data_and_url_list:
         _display_maps(opts, ws_client, data, url)

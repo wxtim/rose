@@ -557,7 +557,7 @@ def main():
     except (NoHostError, NoHostSelectError) as exc:
         report(exc)
         if opts.debug_mode:
-            traceback.print_exc(exc)
+            traceback.print_exc()
         sys.exit(1)
     opts.choice = int(opts.choice)
     report(choice(host_score_list[0:opts.choice])[0] + "\n", level=0)
