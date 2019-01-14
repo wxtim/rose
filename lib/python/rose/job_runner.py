@@ -205,10 +205,18 @@ class JobRunner(object):
 #                         self.job_processor.handle_event(job_proxy.exc)
 #             # Add some more jobs into the worker pool, as they are ready
 #             import traceback
+
         while job_manager.has_ready_jobs():
             job = job_manager.get_job()
+            if not job:
+                continue
+
             if job.exc is None:
-                self.job_processor.process_job(job, *args)
+                try:
+                    self.job_processor.process_job(job, *args)
+                except Exception as exc:
+                    self.job_processor.handle_event(exc)
+                    job.exc = exc
                 self.job_processor.post_process_job(job, *args)
                 self.job_processor.handle_event(JobEvent(job))
             else:
