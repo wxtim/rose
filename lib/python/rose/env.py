@@ -28,7 +28,6 @@ import os
 import re
 from rose.reporter import Event
 import collections
-import locale
 
 
 # _RE_DEFAULT = re.compile(r"""
