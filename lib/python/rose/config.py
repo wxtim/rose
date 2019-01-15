@@ -1382,8 +1382,10 @@ class ConfigLoader(object):
         # Note: "for line in handle:" hangs for sys.stdin
         while True:
             try:
+                pos = handle.tell()
                 line = handle.readline().decode()
             except:
+                handle.seek(pos)
                 line = handle.readline()
             if not line:
                 break
