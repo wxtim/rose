@@ -1062,12 +1062,13 @@ class ConfigDumper(object):
                 target_dir = "."
             if not os.path.isdir(target_dir):
                 os.makedirs(target_dir)
-            handle = NamedTemporaryFile(mode='w', prefix=os.path.basename(target),
+            handle = NamedTemporaryFile(mode='w',
+                                        prefix=os.path.basename(target),
                                         dir=target_dir, delete=False)
         blank = ""
         if root.comments:
             for comment in root.comments:
-                handle.write(self._comment_format(comment))
+                self.safety_encoder(self._comment_format(comment), handle)
             blank = "\n"
         root_keys = list(root.value.keys())
         root_keys.sort(key=cmp_to_key(sort_sections))
@@ -1079,7 +1080,7 @@ class ConfigDumper(object):
             else:
                 section_keys.append(key)
         if root_option_keys:
-            handle.write(blank)
+            self.safety_encoder(blank, handle)
             blank = "\n"
             if concat_mode:
                 handle.write(CHAR_SECTION_OPEN + CHAR_SECTION_CLOSE + "\n")
@@ -1088,15 +1089,15 @@ class ConfigDumper(object):
                     key, root.value[key], handle, env_escape_ok)
         for section_key in section_keys:
             section_node = root.value[section_key]
-            handle.write(blank)
+            self.safety_encoder(blank, handle)
             blank = "\n"
             for comment in section_node.comments:
-                handle.write(self._comment_format(comment))
-            handle.write("%(open)s%(state)s%(key)s%(close)s\n" % {
-                "open": CHAR_SECTION_OPEN,
-                "state": section_node.state,
-                "key": section_key,
-                "close": CHAR_SECTION_CLOSE})
+                self.safety_encoder(self._comment_format(comment), handle)
+            self.safety_encoder("%(open)s%(state)s%(key)s%(close)s\n" % {
+                    "open": CHAR_SECTION_OPEN,
+                    "state": section_node.state,
+                    "key": section_key,
+                    "close": CHAR_SECTION_CLOSE}, handle)
             keys = list(section_node.value.keys())
             keys.sort(key=cmp_to_key(sort_option_items))
             for key in keys:
@@ -1120,15 +1121,12 @@ class ConfigDumper(object):
         state = node.state
         values = node.value.split("\n")
         for comment in node.comments:
-            handle.write(self._comment_format(comment))
+            self.safety_encoder(self._comment_format(comment), handle)
         value0 = values.pop(0)
         if env_escape_ok:
             value0 = env_var_escape(value0)
-        try:
-            handle.write(state + key + self.char_assign + value0)
-        except UnicodeEncodeError:
-            handle.buffer.write((state + key + self.char_assign + value0).encode('UTF-8'))
-        handle.write("\n")
+        self.safety_encoder(state + key + self.char_assign + value0, handle)
+        self.safety_encoder("\n", handle)
         if values:
             indent = " " * len(state + key)
             for value in values:
@@ -1140,6 +1138,16 @@ class ConfigDumper(object):
     def _comment_format(cls, comment):
         """Return text representation of a configuration comment."""
         return "#%s\n" % (comment)
+
+    @staticmethod
+    def safety_encoder(msg, handle):
+        """Some messages are encoded, some are not, some handles require
+        bytes type for writing, some do not.
+        """
+        try:
+            handle.write(msg)
+        except TypeError:
+            handle.write(msg.encode('UTF-8'))
 
 
 class ConfigLoader(object):
