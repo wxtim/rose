@@ -219,8 +219,8 @@ def main():
     return_code = 1
     try:
         return_code, stdout, stderr = popener.run(*diff_cmd)
-        sys.stdout.write(stdout)
-        sys.stderr.write(stderr)
+        sys.stdout.buffer.write(stdout)
+        sys.stderr.buffer.write(stderr)
     finally:
         fs_util = rose.fs_util.FileSystemUtil()
         for path in output_filenames:
