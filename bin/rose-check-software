@@ -1,4 +1,4 @@
-#!//opt/scitools/environments/experimental/current/bin/python33
+#!/usr/bin/env python3
 #-----------------------------------------------------------------------------
 # Copyright (C) 2012-2018 British Crown (Met Office) & Contributors.
 #
@@ -108,7 +108,7 @@ def cmd_version(command, command_template='--version',
     output = Popen([command] + command_template, stdout=PIPE,
                    stderr=PIPE).communicate()[outfile - 1].strip()
     try:
-        return re.search(version_template, output).groups()[0]
+        return re.search(version_template.decode(), output).groups()[0]
     except AttributeError:
         return None
 
@@ -116,7 +116,7 @@ def cmd_version(command, command_template='--version',
 def shell_command(_, shell=None, version_template=r'(.*)', outfile=1):
     output = Popen(shell, stdout=PIPE).communicate()[outfile - 1]
     try:
-        return re.search(version_template, output).groups()[0]
+        return re.search(version_template.decode(), output).groups()[0]
     except AttributeError:
         return None
 
@@ -261,29 +261,29 @@ def check_all(name, dep_list):
     Returns:
         bool - True if all checks passed, False otherwise.
     """
-    print name
+    print(name)
     if len(dep_list[0]) == 2:
-        print '-' * len(name)
+        print('-' * len(name))
         # Performing dependency checking.
         for msg, _ in dep_list:
-            print msg
+            print(msg)
         if all(result for _, result in dep_list):
-            print 'Result: PASS\n'
+            print('Result: PASS\n')
             return True
         else:
-            print 'Result: FAIL\n'
+            print('Result: FAIL\n')
             return False
     else:
         # Outputting dependency list for documentation.
         for msg in dep_list:
-            print '   %s' % msg
-        print
+            print('   %s' % msg)
+        print()
 
 
 def main(check=check):
     """Check required and optional dependencies."""
     ret = check_all('Required Software', [
-        check('python', (2, 6, 6), (3,), version_template=r'Python (.*)',
+        check('python3', (3, ), (3, 7), version_template=r'Python (.*)',
               outfile=2),
         check('cylc'),
         check('py:pygtk<gtk>', (2, 12), attr_name='pygtk_version'),
@@ -311,7 +311,7 @@ def main(check=check):
 def docs(check=check):
     """Check software dependencies for the documentation builder."""
     ret = check_all('Documentation Builder', [
-        check('python', (2, 7), (3,), version_template=r'Python (.*)',
+        check('python3', (3, ), (3, 7), version_template=r'Python (.*)',
                outfile=2),
         check('graphviz-dot <dot>', command_template='-V',
                version_template='graphviz version ([^\s]+)', outfile=2),
@@ -349,7 +349,7 @@ def echo(dependency, min_version=None, min_incompat_version=None, **kwargs):
 if __name__ == '__main__':
     if '--help' in sys.argv:
         # Print help and exit.
-        print __doc__
+        print(__doc__)
     elif '--rst' in sys.argv:
         # Print dependencies in RST format and exit.
         sys.exit(0 if main(check=echo) else 1)
