@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-
-
-
 # png.py - PNG encoder/decoder in pure Python
 #
 # Copyright (C) 2006 Johann C. Rocholl <johann@browsershots.org>

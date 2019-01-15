@@ -1094,10 +1094,10 @@ class ConfigDumper(object):
             for comment in section_node.comments:
                 self.safety_encoder(self._comment_format(comment), handle)
             self.safety_encoder("%(open)s%(state)s%(key)s%(close)s\n" % {
-                    "open": CHAR_SECTION_OPEN,
-                    "state": section_node.state,
-                    "key": section_key,
-                    "close": CHAR_SECTION_CLOSE}, handle)
+                "open": CHAR_SECTION_OPEN,
+                "state": section_node.state,
+                "key": section_key,
+                "close": CHAR_SECTION_CLOSE}, handle)
             keys = list(section_node.value.keys())
             keys.sort(key=cmp_to_key(sort_option_items))
             for key in keys:
