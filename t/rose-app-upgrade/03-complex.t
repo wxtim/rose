@@ -154,7 +154,7 @@ __CONFIG__
 setup
 init_meta test-app-upgrade apple fig
 init_macro test-app-upgrade <<'__MACRO__'
-#!//opt/scitools/environments/experimental/current/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 
@@ -666,7 +666,7 @@ __CONFIG__
 setup
 init_meta test-app-upgrade apple fig
 init_macro test-app-upgrade <<'__MACRO__'
-#!//opt/scitools/environments/experimental/current/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 

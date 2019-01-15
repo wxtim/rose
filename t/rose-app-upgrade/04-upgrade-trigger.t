@@ -40,7 +40,7 @@ trigger=env=Z: 3
 [env=Z]
 __META__
 init_macro test-app-upgrade <<'__MACRO__'
-#!//opt/scitools/environments/experimental/current/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 

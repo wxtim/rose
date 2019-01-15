@@ -1,4 +1,4 @@
-#!//opt/scitools/environments/experimental/current/bin/python3
+#!/usr/bin/env python3
 
 import sys, os
 
