@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!//opt/scitools/environments/experimental/current/bin/python3
 # -----------------------------------------------------------------------------
 # Copyright (C) 2012-2019 British Crown (Met Office) & Contributors.
 #
@@ -369,7 +369,7 @@ def main():
     except Exception as exc:
         report(exc)
         if opts.debug_mode:
-            traceback.print_exc(exc)
+            traceback.print_exc()
         sys.exit(1)
 
 

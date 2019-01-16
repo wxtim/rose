@@ -572,7 +572,7 @@ def main():
             suite_id = SuiteId.get_latest(prefix=arg)
             if suite_id is not None:
                 report(str(suite_id) + "\n", level=0)
-        elif opts.next:
+        elif opts.__next__:
             suite_id = SuiteId.get_next(prefix=arg)
             if suite_id is not None:
                 report(str(suite_id) + "\n", level=0)
@@ -583,7 +583,7 @@ def main():
     except (NoSuiteLogError, SuiteIdError) as exc:
         report(exc)
         if opts.debug_mode:
-            traceback.print_exc(exc)
+            traceback.print_exc()
         sys.exit(1)
 
 

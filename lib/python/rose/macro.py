@@ -56,6 +56,7 @@ from rose.opt_parse import RoseOptionParser
 import rose.reporter
 import rose.resource
 import rose.variable
+import collections
 
 
 ALLOWED_MACRO_CLASS_METHODS = ["transform", "validate", "downgrade", "upgrade",
@@ -764,7 +765,7 @@ def get_macro_class_methods(macro_modules):
                 continue
             for att_name in ALLOWED_MACRO_CLASS_METHODS:
                 if (hasattr(obj, att_name) and
-                        callable(getattr(obj, att_name))):
+                        isinstance(getattr(obj, att_name), collections.Callable)):
                     doc_string = obj.__doc__
                     macro_methods.append((macro_name, obj_name, att_name,
                                           doc_string))
@@ -821,12 +822,12 @@ def check_config_integrity(app_config):
             return MacroReturnedCorruptConfigError(ERROR_RETURN_TYPE.format(
                 node, "node", type(node), "rose.config.ConfigNode"))
         if (not isinstance(node.value, dict) and
-                not isinstance(node.value, basestring)):
+                not isinstance(node.value, str)):
             return MacroReturnedCorruptConfigError(ERROR_RETURN_TYPE.format(
                 node.value, "node.value", type(node.value),
                 "dict, basestring"
             ))
-        if not isinstance(node.state, basestring):
+        if not isinstance(node.state, str):
             return MacroReturnedCorruptConfigError(ERROR_RETURN_TYPE.format(
                 node.state, "node.state", type(node.state), "basestring"))
         if node.state not in [rose.config.ConfigNode.STATE_NORMAL,
@@ -840,12 +841,12 @@ def check_config_integrity(app_config):
                 "list"
             ))
         for comment in node.comments:
-            if not isinstance(comment, basestring):
+            if not isinstance(comment, str):
                 return MacroReturnedCorruptConfigError(
                     ERROR_RETURN_TYPE.format(
                         comment, "comment", type(comment), "basestring"))
         for key in keys:
-            if not isinstance(key, basestring):
+            if not isinstance(key, str):
                 return MacroReturnedCorruptConfigError(
                     ERROR_RETURN_TYPE.format(
                         key, "key", type(key), "basestring"))
@@ -1408,7 +1409,7 @@ def apply_macro_to_config_map(config_map, meta_config, macro_function,
 
 def _get_user_accept():
     try:
-        user_input = raw_input(PROMPT_ACCEPT_CHANGES)
+        user_input = input(PROMPT_ACCEPT_CHANGES)
     except EOFError:
         user_allowed_changes = False
     else:
@@ -1425,7 +1426,7 @@ def get_user_values(options, ignore=None):
         entered = False
         while not entered:
             try:
-                user_input = raw_input("Value for " + str(key) + " (default " +
+                user_input = input("Value for " + str(key) + " (default " +
                                        str(val) + "): ")
             except EOFError:
                 user_input = ""

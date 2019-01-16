@@ -60,7 +60,7 @@ slides:
 	@echo "Build finished. The slide-html files are in $(BUILDDIR)/slides."
 
 pdf: latexpdf
-	python2 extract-pdf-documents.py "$(BUILDDIR)"
+	python3 extract-pdf-documents.py "$(BUILDDIR)"
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/pdf."
 
 dirhtml:
