@@ -125,9 +125,9 @@ Configuring Rose
       # Essential Python libraries installed under
       # "/home/daisy/usr/lib/python2.6/site-packages/"
       if [[ -n "${PYTHONPATH:-}" ]]; then
-          PYTHONPATH="/home/daisy/usr/lib/python2.6/site-packages:${PYTHONPATH}"
+          PYTHONPATH="/home/daisy/usr/lib/python3.6/site-packages:${PYTHONPATH}"
       else
-          PYTHONPATH="/home/daisy/usr/lib/python2.6/site-packages"
+          PYTHONPATH="/home/daisy/usr/lib/python3.6/site-packages"
       fi
       export PYTHONPATH
 
