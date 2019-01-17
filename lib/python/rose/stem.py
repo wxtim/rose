@@ -208,6 +208,7 @@ class StemRunner(object):
         """
 
         ret_code, output, stderr = self.popen.run('fcm', 'loc-layout', item)
+        output = output.decode()
         if ret_code != 0:
             raise ProjectNotFoundException(item, stderr)
 
@@ -233,8 +234,8 @@ class StemRunner(object):
 
         project = None
         for line in kpoutput.splitlines():
-            if line.rstrip().endswith(repo):
-                kpresult = re.search(r'^location{primary}\[(.*)\]', line)
+            if line.rstrip().endswith(repo.encode('UTF-8')):
+                kpresult = re.search('^location{primary}\[(.*)\]', line.decode())
                 if kpresult:
                     project = kpresult.group(1)
                     break

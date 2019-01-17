@@ -101,12 +101,12 @@ TEST_KEY=$TEST_KEY_BASE-broken-import
 rm "../rose-meta/test-app-upgrade/versions.pyc"
 init_macro test-app-upgrade <<'__MACRO__'
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 import rose.upgrade
 import some_broken_import
 __MACRO__
+
 run_fail "$TEST_KEY" rose app-upgrade --non-interactive \
  --meta-path=../rose-meta/ -C ../config
-file_grep "$TEST_KEY.out.grep" "ImportError" "$TEST_KEY.err"
+file_grep "$TEST_KEY.out.grep" "ModuleNotFoundError" "$TEST_KEY.err"
 teardown

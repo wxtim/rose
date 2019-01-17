@@ -149,7 +149,10 @@ def env_var_process(text, unbound=None, match_mode=None):
 
     """
     ret = ""
-    tail = text
+    try:
+        tail = text.decode()
+    except:
+        tail = text
     while tail:
         match = _MATCH_MODES[match_mode].match(tail)
         if match:

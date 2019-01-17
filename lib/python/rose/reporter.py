@@ -154,7 +154,7 @@ class Reporter(object):
         if level is None:
             level = self.DEFAULT
         msg = None
-        for key, context in self.contexts.items():
+        for key, context in list(self.contexts.items()):
             if context.is_closed():
                 self.contexts.pop(key)  # remove contexts with closed handles
                 continue
@@ -256,6 +256,8 @@ class ReporterContext(object):
             return self.handle.buffer.write(message.encode("utf-8"))
         except TypeError:
             return self.handle.write(message)
+        except AttributeError:
+            return self.handle.write(message.encode('UTF-8'))
 
     def _tty_colour_err(self, str_):
         """Colour error string for terminal."""

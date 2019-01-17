@@ -453,7 +453,7 @@ class Analyse(object):
             sys.path.insert(0, os.path.abspath(directory))
             try:
                 modules.append(__import__(comparison_name))
-            except ImportError as exc:
+            except (ImportError, ModuleNotFoundError) as exc:
                 self.reporter(exc)
             sys.path.pop(0)
         modules.sort()
