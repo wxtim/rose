@@ -1120,7 +1120,10 @@ class ConfigDumper(object):
 
         """
         state = node.state
-        values = node.value.split("\n")
+        try:
+            values = node.value.decode().split("\n")
+        except AttributeError:
+            values = node.value.split("\n")
         for comment in node.comments:
             self._write_safely(handle, self._comment_format(comment))
         value0 = values.pop(0)
@@ -1147,6 +1150,8 @@ class ConfigDumper(object):
             handle.write(text)
         except TypeError:
             handle.write(text.encode('UTF-8'))
+        except UnicodeEncodeError:
+            handle.buffer.write(text.encode('UTF-8'))
 
 
 class ConfigLoader(object):
@@ -1388,12 +1393,9 @@ class ConfigLoader(object):
         line_num = 0
         # Note: "for line in handle:" hangs for sys.stdin
         while True:
-            try:
-                pos = handle.tell()
-                line = handle.readline().decode()
-            except:
-                handle.seek(pos)
-                line = handle.readline()
+            line = handle.readline()
+            if isinstance(line, bytes):
+                line = line.decode(errors='ignore')
             if not line:
                 break
             line_num += 1

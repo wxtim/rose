@@ -31,6 +31,7 @@ from rose.suite_engine_proc import SuiteEngineProcessor, SuiteStillRunningError
 import sys
 import traceback
 from uuid import uuid4
+from functools import cmp_to_key
 
 
 class SuiteRunCleaner(object):
@@ -78,7 +79,8 @@ class SuiteRunCleaner(object):
             items = only_items
         items.sort()
         uuid_str = str(uuid4())
-        for auth, node in sorted(locs_conf.value.items(), self._auth_node_cmp):
+        for auth, node in sorted(locs_conf.value.items(),
+                                 key=cmp_to_key(self._auth_node_cmp)):
             locs = []
             roots = set([""])
             for item in items:

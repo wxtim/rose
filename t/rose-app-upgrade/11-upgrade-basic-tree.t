@@ -741,19 +741,19 @@ run_pass "$TEST_KEY" rose app-upgrade -y \
  --meta-path=../rose-meta/ -C ../config/ 0.2
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUTPUT__'
 [U] Upgrade_0.1-0.2: changes: 8
-    env=B=5
-        Added with value '5'
     namelist:new=None=None
         Added
     namelist:new=spam=eggs
         Added with value 'eggs'
-    env=A=4
-        Removed
+    env=B=5
+        Added with value '5'
     namelist:something=foo=bar
         Removed
     namelist:qwerty=uiop=asdf
         Removed
     namelist:qwerty=None=
+        Removed
+    env=A=4
         Removed
     =meta=test_tree/test-app-upgrade/0.2
         Upgraded from 0.1 to 0.2

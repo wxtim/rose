@@ -22,6 +22,7 @@
 import inspect
 import os
 import sys
+from functools import cmp_to_key
 
 import rose.config
 import rose.macro
@@ -623,7 +624,7 @@ class MacroUpgradeManager(object):
                 break
         if self.tag == "HEAD":
             # Try to figure out the latest upgrade version.
-            macro_insts.sort(self._upgrade_sort)
+            macro_insts.sort(key=cmp_to_key(self._upgrade_sort))
             next_taglist = [m.AFTER_TAG for m in macro_insts]
             temp_list = list(macro_insts)
             for macro in list(temp_list[1:]):
@@ -739,7 +740,6 @@ def main():
     except OSError as exc:
         reporter(exc)
         sys.exit(1)
-
     need_all_versions = opts.all_versions or args
     ok_versions = upgrade_manager.get_tags(only_named=not need_all_versions)
     if args:

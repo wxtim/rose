@@ -132,7 +132,7 @@ run_fail "$TEST_KEY" rose macro -C ../config tumtum.Jubjub
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" </dev/null
 sed -in '/Error/!d' "$TEST_KEY.err"
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" <<'__ERR__'
-[FAIL] ImportError: No module named looking_glass
+[FAIL] ModuleNotFoundError: No module named 'looking_glass'
 [FAIL] Error: could not find macro tumtum.Jubjub
 __ERR__
 teardown

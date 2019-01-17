@@ -48,6 +48,7 @@ import os
 import re
 import sys
 import traceback
+from functools import cmp_to_key
 
 import rose.config
 import rose.config_tree
@@ -470,7 +471,7 @@ class MacroValidatorCollection(MacroBase):
                 continue
             macro_method = getattr(macro_inst, VALIDATE_METHOD)
             p_list = macro_method(config, meta_config)
-            p_list.sort(self._sorter)
+            p_list.sort(key=cmp_to_key(self._sorter))
             self.reports += p_list
         return self.reports
 
@@ -769,9 +770,10 @@ def get_macro_class_methods(macro_modules):
                     doc_string = obj.__doc__
                     macro_methods.append((macro_name, obj_name, att_name,
                                           doc_string))
-    macro_methods.sort(lambda x, y: cmp(x[1], y[1]))
-    macro_methods.sort(lambda x, y: cmp(x[0], y[0]))
-    macro_methods.sort(lambda x, y: cmp(y[2], x[2]))
+    macro_methods.sort(key=lambda x: x[1])
+    macro_methods.sort(key=lambda x: x[1])
+    macro_methods.sort(
+        key=cmp_to_key(lambda x, y: (y[2] > x[2]) - (y[2] < x[2])))
     return macro_methods
 
 
@@ -1183,9 +1185,9 @@ def run_macros(config_map, meta_config, config_name, macro_names,
                 ret_code = 1
             for macro, problem_list in config_problems_map.items():
                 macro_config_problems_map.setdefault(macro, {})
-                problem_list.sort(report_sort)
+                problem_list.sort(key=cmp_to_key(report_sort))
                 macro_config_problems_map[macro][conf_key] = problem_list
-        problem_macros = macro_config_problems_map.keys()
+        problem_macros = list(macro_config_problems_map.keys())
         problem_macros.sort()
         for macro_name in problem_macros:
             config_problems_map = macro_config_problems_map[macro_name]
@@ -1248,7 +1250,7 @@ def get_reports_as_text(config_reports_map, macro_id,
     config_issues_list = []
 
     main_reports = set(config_reports_map.get(None, []))
-    conf_keys = sorted(config_reports_map)
+    conf_keys = list(config_reports_map.keys())
     conf_keys = sorted(conf_keys, key=lambda x: x is not None)
     for conf_key in conf_keys:
         reports = config_reports_map[conf_key]
@@ -1310,7 +1312,7 @@ def handle_transform(config_map, new_config_map, change_map, macro_id,
                                  is_from_transform=True),
              level=reporter.V, prefix="")
     if has_changes and (opt_non_interactive or _get_user_accept()):
-        for conf_key, config in sorted(new_config_map.items()):
+        for conf_key, config in new_config_map.items():
             dump_config(config, opt_conf_dir, opt_output_dir,
                         conf_key=conf_key)
         if reporter is not None:
@@ -1379,7 +1381,7 @@ def apply_macro_to_config_map(config_map, meta_config, macro_function,
     """Apply a transform macro function to a config_map."""
     new_config_map = {}
     changes_map = {}
-    conf_keys = sorted(config_map)
+    conf_keys = list(config_map.keys())
     conf_keys = sorted(conf_keys, key=lambda x: x is not None)
     for conf_key in conf_keys:
         config = config_map[conf_key]
@@ -1632,7 +1634,8 @@ def main():
         try:
             _, config_map, meta_config = load_conf_from_file(
                 conf_dir, config_file_path)
-        except TypeError:
+        except Exception as exc:
+            traceback.print_exc()
             sys.exit(1)
 
         # Report which config we are currently working on.

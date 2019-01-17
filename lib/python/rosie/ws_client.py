@@ -180,14 +180,14 @@ class RosieWSClient(object):
             try:
                 from requests.packages.urllib3.exceptions import (
                     InsecurePlatformWarning)
-            except ImportError:
+            except (ImportError, ModuleNotFoundError):
                 pass
             else:
                 warnings.simplefilter("ignore", InsecurePlatformWarning)
             try:
                 from requests.packages.urllib3.exceptions import (
                     SNIMissingWarning)
-            except ImportError:
+            except (ImportError, ModuleNotFoundError):
                 pass
             else:
                 warnings.simplefilter("ignore", SNIMissingWarning)

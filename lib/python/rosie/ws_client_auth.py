@@ -38,7 +38,7 @@ try:
         warnings.simplefilter('ignore')
         import gtk
     import gnomekeyring
-except ImportError:
+except (ImportError, ModuleNotFoundError):
     pass
 
 import ast

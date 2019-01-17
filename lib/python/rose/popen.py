@@ -227,6 +227,8 @@ class RosePopener(object):
         """
         ret_code, stdout, stderr = self.run(*args, **kwargs)
         if ret_code:
+            if type(stderr) == bytes:
+                stderr = stderr.decode()
             raise RosePopenError(
                 args, ret_code, stdout, stderr, kwargs.get("stdin"))
         return stdout, stderr
@@ -283,9 +285,16 @@ if __name__ == "__main__":
             try:
                 rose_popen.run(name)
             except RosePopenError as exc:
-                ose = OSError(errno.ENOENT, os.strerror(errno.ENOENT), name)
-                self.assertEqual(str(ose), exc.stderr)
+                ose = FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), name)
+                try:
+                    self.assertEqual(str(ose), exc.stderr)
+                except AssertionError:
+                    # This is horrible, but refers to a bug in some versions of
+                    # Python 2.6 - https://bugs.python.org/issue32490
+                    err_msg = ("[Errno 2] No such file or directory:"
+                               " 'bad-command': 'bad-command'")
+                    self.assertAlmostEqual(err_msg, exc.stderr)
             else:
-                self.fail("should return OSError")
+                self.fail("should return FileNotFoundError")
 
     unittest.main()

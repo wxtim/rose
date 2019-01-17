@@ -627,15 +627,15 @@ run_pass "$TEST_KEY" rose app-upgrade --downgrade \
  -y --meta-path=../rose-meta/ -C ../config/ 0.1
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUTPUT__'
 [D] Downgrade_0.2-0.1: changes: 6
-    env=A=5
-        Added with value '5'
     namelist:something=foo=bar
         Added with value 'bar'
     namelist:qwerty=None=None
         Added
-    env=B=5
-        Removed
+    env=A=5
+        Added with value '5'
     namelist:new=spam=eggs
+        Removed
+    env=B=5
         Removed
     =meta=test-app-upgrade/0.1
         Downgraded from 0.2 to 0.1
