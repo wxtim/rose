@@ -293,7 +293,7 @@ if __name__ == "__main__":
                     # Python 2.6 - https://bugs.python.org/issue32490
                     err_msg = ("[Errno 2] No such file or directory:"
                                " 'bad-command': 'bad-command'")
-                    self.assertAlmostEqual(err_msg, exc.stderr)
+                    self.assertEqual(err_msg, exc.stderr)
             else:
                 self.fail("should return FileNotFoundError")
 

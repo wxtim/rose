@@ -246,8 +246,8 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                     len(prev_target.paths) != len(target.paths))
                 if not target.is_out_of_date:
                     prev_target.paths.sort()
-                    for prev_path, path in list(zip(
-                            prev_target.paths, target.paths)):
+                    for prev_path, path in zip(
+                            prev_target.paths, target.paths):
                         if prev_path != path:
                             target.is_out_of_date = True
                             break
