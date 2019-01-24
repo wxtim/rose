@@ -61,7 +61,7 @@ class RsyncLocHandler(object):
         # Attempt to obtain the checksum(s) via "ssh"
         host, path = loc.name.split(":", 1)
         cmd = self.manager.popen.get_cmd(
-            "ssh", host, "python", "-", path, loc.TYPE_BLOB, loc.TYPE_TREE)
+            "ssh", host, "python3", "-", path, loc.TYPE_BLOB, loc.TYPE_TREE)
         temp_file = TemporaryFile()
         temp_file.write(b"""
 import os
