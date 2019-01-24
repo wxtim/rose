@@ -238,7 +238,7 @@ class MacroBase(object):
         id1 = self._get_id_from_section_option(rep1.section, rep1.option)
         id2 = self._get_id_from_section_option(rep2.section, rep2.option)
         if id1 == id2:
-            return cmp(rep1.value, rep2.value)
+            return (rep1.value > rep2.value) - (rep1.value < rep2.value)
         return rose.config.sort_settings(id1, id2)
 
     def _load_meta_config(self, config, meta=None, directory=None,
@@ -490,7 +490,7 @@ class MacroTransformerCollection(MacroBase):
                 continue
             macro_method = getattr(macro_inst, TRANSFORM_METHOD)
             config, c_list = macro_method(config, meta_config)
-            c_list.sort(self._sorter)
+            c_list.sort(key=cmp_to_key(self._sorter))
             self.reports += c_list
         return config, self.reports
 
@@ -751,7 +751,7 @@ def load_meta_macro_modules(meta_files, module_prefix=None):
             rose.reporter.Reporter()(
                 MacroLoadError(meta_file, traceback.format_exc()))
         sys.path.pop(0)
-    modules.sort()
+    modules.sort(key=lambda x: str(x))
     return modules
 
 
@@ -1236,7 +1236,7 @@ def report_sort(report1, report2):
         opt1 = report1.option
         opt2 = report2.option
         if opt1 is None or opt2 is None:
-            return cmp(opt1, opt2)
+            return (str(opt1) > str(opt2)) - (str(opt1) < str(opt2))
         return rose.config.sort_settings(opt1, opt2)
     return rose.config.sort_settings(sect1, sect2)
 
@@ -1635,7 +1635,7 @@ def main():
             _, config_map, meta_config = load_conf_from_file(
                 conf_dir, config_file_path)
         except Exception as exc:
-            traceback.print_exc()
+            #traceback.print_exc()
             sys.exit(1)
 
         # Report which config we are currently working on.

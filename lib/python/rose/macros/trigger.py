@@ -421,7 +421,7 @@ class TriggerMacro(rose.macro.MacroBaseRoseEdit):
             sect, opt = self._get_section_option_from_id(setting_id)
             base_sect = rose.macro.REC_ID_STRIP.sub("", sect)
             trig_id = self._get_id_from_section_option(base_sect, opt)
-            items = self.trigger_family_lookup.get(trig_id, {}).items()
+            items = list(self.trigger_family_lookup.get(trig_id, {}).items())
             for i, (child_id, vals) in enumerate(items):
                 ch_sect, ch_opt = self._get_section_option_from_id(child_id)
                 if rose.macro.REC_ID_STRIP.sub("", ch_sect) == base_sect:

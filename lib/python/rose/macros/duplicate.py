@@ -64,7 +64,7 @@ class DuplicateChecker(rose.macro.MacroBase):
         return self.reports
 
     def _get_has_metadata(self, metadata, basic_section, meta_config):
-        if metadata.keys() != ["id"]:
+        if list(metadata.keys()) != ["id"]:
             return True
         for meta_keys, meta_node in meta_config.walk(no_ignore=True):
             meta_section = meta_keys[0]
