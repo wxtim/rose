@@ -147,7 +147,9 @@ class RosieSvnPostCommitHook(object):
         os.environ["TZ"] = "UTC"
         date_time_str = self._svnlook("date", "-r", revision, repos)
         date, dtime, _ = date_time_str.split(None, 2)
-        date = mktime(strptime(" ".join([date, dtime, "UTC"]), self.DATE_FMT))
+        b" ".join([date, dtime, b"UTC"])
+        date = mktime(strptime(b" ".join([date, dtime, b"UTC"]).decode(),
+                      self.DATE_FMT))
 
         # Detail of changes
         changeset_attribs = {
@@ -184,7 +186,7 @@ class RosieSvnPostCommitHook(object):
             # Column 5+: path
             path = changed_line[4:].strip()
             path_status = changed_line[0]
-            if path.endswith("/") and path_status == "_":
+            if path.endswith(b"/") and path_status == "_":
                 # Ignore property change on a directory
                 continue
             # Path must be (under) a valid suite branch, including the special
