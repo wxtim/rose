@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Copyright (C) 2013-2019 British Crown (Met Office) & Contributors.
+# Copyright (C) 2013-2018 British Crown (Met Office) & Contributors.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -40,8 +40,7 @@ class StrptimeConversionError(ValueError):
 
     """An error denoting bad conversion from a strftime/strptime format."""
 
-    BAD_CONVERSION = "Bad conversion for strftime/strptime input {0}: {1}."
-
+    BAD_CONVERSION = "Bad conversion for strftime/strptime input '{0}': '{1}'"
 
     def __str__(self):
         return self.BAD_CONVERSION.format(*self.args)
@@ -284,7 +283,7 @@ class TimePointParser(object):
             except (TypeError, ValueError):
                 pass
         info.update(date_info)
-        for key, value in time_info.items():
+        for key, value in list(time_info.items()):
             if key.endswith("_decimal"):
                 value = "0." + value
             try:
@@ -345,7 +344,7 @@ class TimePointParser(object):
         if not result:
             raise StrptimeConversionError(source, data_string)
         info = result.groupdict()
-        for property_, value in info.items():
+        for property_, value in list(info.items()):
             if property_ in data.PARSE_PROPERTY_TRANSLATORS:
                 info.pop(property_)
                 translator = data.PARSE_PROPERTY_TRANSLATORS[property_]
@@ -559,7 +558,7 @@ class DurationParser(object):
             if not result:
                 continue
             result_map = result.groupdict()
-            for key, value in result_map.items():
+            for key, value in list(result_map.items()):
                 if value is None:
                     result_map.pop(key)
                     continue
