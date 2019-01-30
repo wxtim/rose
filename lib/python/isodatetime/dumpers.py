@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Copyright (C) 2013-2018 British Crown (Met Office) & Contributors.
+# Copyright (C) 2013-2019 British Crown (Met Office) & Contributors.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -21,7 +21,8 @@
 import re
 
 from . import parser_spec
-from . import util
+
+from functools import lru_cache
 
 
 class TimePointDumperBoundsError(ValueError):
@@ -148,8 +149,8 @@ class TimePointDumper(object):
             else:
                 current_time_zone = timepoint.get_time_zone()
                 new_time_zone = current_time_zone.copy()
-                new_time_zone.hours = int(custom_time_zone[0])
-                new_time_zone.minutes = int(custom_time_zone[1])
+                new_time_zone.hours = custom_time_zone[0]
+                new_time_zone.minutes = custom_time_zone[1]
                 new_time_zone.unknown = False
                 timepoint.set_time_zone(new_time_zone)
         property_map = {}
@@ -171,7 +172,7 @@ class TimePointDumper(object):
                     "year", value, min_value, max_value)
         return expression % property_map
 
-    @util.cache_results
+    @lru_cache(maxsize=100000)
     def _get_expression_and_properties(self, formatting_string):
         date_time_strings = formatting_string.split(
             self._time_designator)
@@ -213,7 +214,7 @@ class TimePointDumper(object):
         expression += string_map["time_zone"]
         return expression, tuple(point_prop_list), custom_time_zone
 
-    @util.cache_results
+    @lru_cache(maxsize=100000)
     def get_time_zone(self, time_zone_string):
         """Parse and return time zone from time_zone_string."""
         from . import parsers
@@ -229,4 +230,6 @@ class TimePointDumper(object):
             return 0, 0
         if "time_zone_hour" not in info and "time_zone_minute" not in info:
             return None
-        return info.get("time_zone_hour", 0), info.get("time_zone_minute", 0)
+        hour = int(info.get("time_zone_hour", 0))
+        minute = int(info.get("time_zone_minute", 0))
+        return hour, minute
