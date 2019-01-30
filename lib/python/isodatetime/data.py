@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------
-# Copyright (C) 2013-2019 British Crown (Met Office) & Contributors.
+# Copyright (C) 2013-2018 British Crown (Met Office) & Contributors.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -369,7 +369,7 @@ class Duration(object):
         if (not self.years and not self.months and not self.hours and
                 not self.minutes and not self.seconds and
                 weeks and not days):
-            self.weeks = self.days / CALENDAR.DAYS_IN_WEEK
+            self.weeks = self.days // CALENDAR.DAYS_IN_WEEK
             self.years, self.months, self.days = (None, None, None)
             self.hours, self.minutes, self.seconds = (None, None, None)
         if standardize:
@@ -453,11 +453,7 @@ class Duration(object):
     def to_weeks(self):
         """Convert to week representation (warning: use with caution)."""
         if not self.get_is_in_weeks():
-<<<<<<< HEAD
-            self.weeks = self.days / CALENDAR.DAYS_IN_WEEK
-=======
             self.weeks = self.days // CALENDAR.DAYS_IN_WEEK
->>>>>>> Re-added isodatetime from python3 version
             self.years, self.months, self.days = (None, None, None)
             self.hours, self.minutes, self.seconds = (None, None, None)
 
@@ -500,20 +496,13 @@ class Duration(object):
 
     def __mul__(self, other):
         # TODO: support float multiplication?
-<<<<<<< HEAD
-        new = self.copy()
-=======
->>>>>>> Re-added isodatetime from python3 version
         if not isinstance(other, int):
             raise TypeError(
                 "Invalid type for multiplication: " +
                 "'%s' should be integer." %
                 type(other).__name__
             )
-<<<<<<< HEAD
-=======
         new = self.copy()
->>>>>>> Re-added isodatetime from python3 version
         for attr in new.DATA_ATTRIBUTES:
             value = getattr(new, attr)
             if value is not None:
@@ -525,20 +514,13 @@ class Duration(object):
 
     def __floordiv__(self, other):
         # TODO: support float division?
-<<<<<<< HEAD
-        new = self.copy()
-=======
->>>>>>> Re-added isodatetime from python3 version
         if not isinstance(other, int):
             raise TypeError(
                 "Invalid type for division: " +
                 "'%s' should be integer." %
                 type(other).__name__
             )
-<<<<<<< HEAD
-=======
         new = self.copy()
->>>>>>> Re-added isodatetime from python3 version
         if self.get_is_in_weeks():
             new.weeks //= other
             return new
@@ -550,20 +532,6 @@ class Duration(object):
         new.seconds //= other
         return new
 
-<<<<<<< HEAD
-    def __cmp__(self, other):
-        if not isinstance(other, Duration):
-            raise TypeError(
-                "Invalid type for comparison: " +
-                "'%s' should be Duration." %
-                type(other).__name__
-            )
-        my_data = self.get_days_and_seconds()
-        other_data = other.get_days_and_seconds()
-        return cmp(my_data, other_data)
-
-    def __nonzero__(self):
-=======
     def __eq__(self, other: "Duration") -> bool:
         my_data = self.get_days_and_seconds()
         other_data = other.get_days_and_seconds()
@@ -593,7 +561,6 @@ class Duration(object):
         return my_data >= other_data
 
     def __bool__(self):
->>>>>>> Re-added isodatetime from python3 version
         for attr in ["years", "months", "weeks", "days", "hours",
                      "minutes", "seconds"]:
             if getattr(self, attr, None):
@@ -785,8 +752,6 @@ class TimePoint(object):
         if is_empty_instance:
             # This has been created for a copy - set properties later.
             return
-<<<<<<< HEAD
-=======
         if (dump_format is not None and not
                 isinstance(dump_format, str)):
             raise BadInputError(
@@ -806,7 +771,6 @@ class TimePoint(object):
                 BadInputError.VALUES, "truncated_property",
                 repr(truncated_property),
                 "'year_of_decade' or 'year_of_century'")
->>>>>>> Re-added isodatetime from python3 version
         _type_checker(
             (expanded_year_digits, "expanded_year_digits", int),
             (year, "year", None, int),
@@ -825,28 +789,6 @@ class TimePoint(object):
             (time_zone_hour, "time_zone_hour", None, int),
             (time_zone_minute, "time_zone_minute", None, int)
         )
-<<<<<<< HEAD
-        if (dump_format is not None and not
-                isinstance(dump_format, basestring)):
-            raise BadInputError(
-                BadInputError.TYPE,
-                "dump_format", repr(dump_format), type(dump_format))
-        if (truncated_dump_format is not None and not
-                isinstance(truncated_dump_format, basestring)):
-            raise BadInputError(
-                BadInputError.TYPE,
-                "truncated_dump_format", repr(truncated_dump_format),
-                type(truncated_dump_format)
-            )
-        if (truncated_property is not None and
-                truncated_property not in ["year_of_decade",
-                                           "year_of_century"]):
-            raise BadInputError(
-                BadInputError.VALUES, "truncated_property",
-                repr(truncated_property),
-                "'year_of_decade' or 'year_of_century'")
-=======
->>>>>>> Re-added isodatetime from python3 version
         self.dump_format = dump_format
         self.expanded_year_digits = _int_caster(expanded_year_digits,
                                                 "expanded_year_digits")
@@ -1023,11 +965,7 @@ class TimePoint(object):
         if property_name == "year_of_decade":
             return abs(self.year) % 10
         if property_name == "decade_of_century":
-<<<<<<< HEAD
-            return (abs(self.year) % 100 - abs(self.year) % 10) / 10
-=======
             return (abs(self.year) % 100 - abs(self.year) % 10) // 10
->>>>>>> Re-added isodatetime from python3 version
         if property_name == "minute_of_hour":
             if self.minute_of_hour is None:
                 return self.get_hour_minute_second()[1]
@@ -1394,14 +1332,6 @@ class TimePoint(object):
             hash_.append((attr, value))
         return hash_
 
-<<<<<<< HEAD
-    def __cmp__(self, other):
-        if not isinstance(other, TimePoint):
-            raise TypeError(
-                "Invalid comparison type '%s' - should be TimePoint." %
-                type(other).__name__
-            )
-=======
     def __eq__(self, other: "TimePoint") -> bool:
         if other is None:
             return False
@@ -1436,30 +1366,19 @@ class TimePoint(object):
     def __lt__(self, other: "TimePoint") -> bool:
         if other is None:
             return False
->>>>>>> Re-added isodatetime from python3 version
         if self.truncated != other.truncated:
             raise TypeError(
                 "Cannot compare truncated to non-truncated " +
                 "TimePoint: %s, %s" % (self, other))
         if self.get_props() == other.get_props():
-<<<<<<< HEAD
-            return 0
-=======
             return False
->>>>>>> Re-added isodatetime from python3 version
         if self.truncated:
             for attribute in self.DATA_ATTRIBUTES:
                 other_attr = getattr(other, attribute)
                 self_attr = getattr(self, attribute)
-<<<<<<< HEAD
-                if other_attr != self_attr:
-                    return cmp(self_attr, other_attr)
-            return 0
-=======
                 if self_attr != other_attr:
                     return self_attr < other_attr
             return True
->>>>>>> Re-added isodatetime from python3 version
         other = other.copy()
         other.set_time_zone(self.get_time_zone())
         if self.get_is_calendar_date():
@@ -1470,9 +1389,6 @@ class TimePoint(object):
             other_date = other.get_ordinal_date()
         my_datetime = list(my_date) + [self.get_second_of_day()]
         other_datetime = list(other_date) + [other.get_second_of_day()]
-<<<<<<< HEAD
-        return cmp(my_datetime, other_datetime)
-=======
         return my_datetime < other_datetime
 
     def __le__(self, other: "TimePoint") -> bool:
@@ -1558,7 +1474,6 @@ class TimePoint(object):
         my_datetime = list(my_date) + [self.get_second_of_day()]
         other_datetime = list(other_date) + [other.get_second_of_day()]
         return my_datetime >= other_datetime
->>>>>>> Re-added isodatetime from python3 version
 
     def __sub__(self, other):
         if isinstance(other, TimePoint):
@@ -1824,11 +1739,7 @@ class TimePoint(object):
             if self.time_zone.hours == 0 and self.time_zone.minutes == 0:
                 time_string += "Z"
             else:
-<<<<<<< HEAD
-                time_string += u"+hh:mm"
-=======
                 time_string += "+hh:mm"
->>>>>>> Re-added isodatetime from python3 version
         return date_string + time_string
 
     def _get_truncated_dump_format(self):
@@ -1900,11 +1811,7 @@ class TimePoint(object):
             if self.time_zone.hours == 0 and self.time_zone.minutes == 0:
                 time_string += "Z"
             else:
-<<<<<<< HEAD
-                time_string += u"+hh:mm"
-=======
                 time_string += "+hh:mm"
->>>>>>> Re-added isodatetime from python3 version
         if date_string == "YY":
             date_string = "-YY"
             time_string = time_string.replace(":", "")
@@ -1971,11 +1878,7 @@ def _get_days_in_year_range(start_year, end_year, _):
         if factor_start_year < end_year:
             num_corrections += 1
             num_corrections += (
-<<<<<<< HEAD
-                end_year - (factor_start_year + 1)) / factor
-=======
                 end_year - (factor_start_year + 1)) // factor
->>>>>>> Re-added isodatetime from python3 version
         if is_leap_factor:
             days += num_corrections * diff_days_leap
         else:
@@ -2008,15 +1911,9 @@ def _get_weeks_in_year(year, _):
     cal_year_next, cal_ord_days_next = get_ordinal_date_week_date_start(
         year + 1)
     diff_days = cal_ord_days_next - cal_ord_days
-<<<<<<< HEAD
-    for intervening_year in xrange(cal_year, cal_year_next):
-        diff_days += get_days_in_year(intervening_year)
-    return diff_days / CALENDAR.DAYS_IN_WEEK
-=======
     for intervening_year in range(cal_year, cal_year_next):
         diff_days += get_days_in_year(intervening_year)
     return diff_days // CALENDAR.DAYS_IN_WEEK
->>>>>>> Re-added isodatetime from python3 version
 
 
 def get_calendar_date_from_ordinal_date(year, day_of_year):
@@ -2164,11 +2061,7 @@ def get_week_date_from_calendar_date(year, month_of_year, day_of_month):
         if (start_year == year and
                 iter_month == month_of_year and
                 iter_day == day_of_month):
-<<<<<<< HEAD
-            week_of_year = (total_iter_days / CALENDAR.DAYS_IN_WEEK) + 1
-=======
             week_of_year = (total_iter_days // CALENDAR.DAYS_IN_WEEK) + 1
->>>>>>> Re-added isodatetime from python3 version
             day_of_week = (total_iter_days % CALENDAR.DAYS_IN_WEEK) + 1
             return week_date_start_year, week_of_year, day_of_week
 
@@ -2179,11 +2072,7 @@ def get_week_date_from_calendar_date(year, month_of_year, day_of_month):
             if (iter_start_year == year and
                     iter_month == month_of_year and
                     iter_day == day_of_month):
-<<<<<<< HEAD
-                week_of_year = (total_iter_days / CALENDAR.DAYS_IN_WEEK) + 1
-=======
                 week_of_year = (total_iter_days // CALENDAR.DAYS_IN_WEEK) + 1
->>>>>>> Re-added isodatetime from python3 version
                 day_of_week = (total_iter_days % CALENDAR.DAYS_IN_WEEK) + 1
                 return week_date_start_year, week_of_year, day_of_week
     raise ValueError("Bad calendar date: %s-%02d-%02d" % (year,
@@ -2229,11 +2118,7 @@ def _get_calendar_date_week_date_start(year, _):
         days_diff = ref_ordinal_day - 2
         days_diff += get_days_in_year_range(year, ref_year - 1)
 
-<<<<<<< HEAD
-    weekdays_diff = (days_diff) % CALENDAR.DAYS_IN_WEEK
-=======
     weekdays_diff = days_diff % CALENDAR.DAYS_IN_WEEK
->>>>>>> Re-added isodatetime from python3 version
     if year > ref_year:
         day_of_week_start_year = weekdays_diff + 1
     else:
@@ -2330,19 +2215,11 @@ def iter_months_days(year, month_of_year=None, day_of_month=None,
 @util.cache_results
 def _iter_months_days(is_leap_year, month_of_year, day_of_month, _,
                       in_reverse=False):
-<<<<<<< HEAD
-    source = CALENDAR.INDEXED_DAYS_IN_MONTHS
-    if is_leap_year:
-        source = CALENDAR.INDEXED_DAYS_IN_MONTHS_LEAP
-    if day_of_month is not None and month_of_year is None:
-        raise ValueError("Need to specify start month as well as day.")
-=======
     if day_of_month is not None and month_of_year is None:
         raise ValueError("Need to specify start month as well as day.")
     source = CALENDAR.INDEXED_DAYS_IN_MONTHS
     if is_leap_year:
         source = CALENDAR.INDEXED_DAYS_IN_MONTHS_LEAP
->>>>>>> Re-added isodatetime from python3 version
     results = []
     if in_reverse:
         if month_of_year is None:
