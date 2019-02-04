@@ -259,7 +259,6 @@ class RosieVCClient(object):
         """
         if from_id is not None and (not prefix or from_id.prefix == prefix):
             return self._copy1(info_config, from_id)
-
         dir_ = self._get_work_dir()
         try:
             # Create a temporary suite in the file system
@@ -556,7 +555,7 @@ def create(argv):
     interactive_mode = not opts.non_interactive
     if opts.info_file is None:
         info_config = client.generate_info_config(
-            from_id, opts.prefix, opts.project)
+            from_id, opts.prefix, opts.project)           
         if from_id is not None:
             meta_config = load_meta_config(
                 info_config,
@@ -569,12 +568,13 @@ def create(argv):
                     continue
                 sect, key = node_keys
                 value = node.value
-                #print(f'>>>sect is {sect}, type {type(sect)}')
-                sect = sect.translate("=")
+                sect = sect.replace("=", "")
                 if key == "copy-mode" and value == "clear":
                     info_config.set([sect], "")
                 if key == "copy-mode" and value == "never":
                     info_config.unset([sect])
+
+
         info_config = _edit_info_config(opts, client, info_config)
     else:
         file_ = opts.info_file
