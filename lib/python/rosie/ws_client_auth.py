@@ -169,10 +169,10 @@ class GPGAgentStore(object):
             gpg_socket.connect(socket_address)
         except socket.error as exc:
             raise GPGAgentStoreConnectionError("socket error: %s" % exc)
-        cls._socket_receive(gpg_socket, "^OK .*\n")
-        gpg_socket.send("GETINFO socket_name\n")
-        reply = cls._socket_receive(gpg_socket, "^(?!OK)[^ ]+ .*\n")
-        if not reply.startswith("D"):
+        cls._socket_receive(gpg_socket, b"^OK .*\n")
+        gpg_socket.send(b"GETINFO socket_name\n")
+        reply = cls._socket_receive(gpg_socket, b"^(?!OK)[^ ]+ .*\n")
+        if not reply.startswith(b"D"):
             raise GPGAgentStoreConnectionError(
                 "socket: bad reply: %r" % reply)
         reply_socket_address = reply.split()[1]
@@ -186,17 +186,17 @@ class GPGAgentStore(object):
                     "no $GPG_TTY env var and failed to extrapolate it")
             tty = os.ttyname(sys.stdin.fileno())
         gpg_socket.send("OPTION putenv=GPG_TTY=%s\n" % tty)
-        cls._socket_receive(gpg_socket, "^OK\n")
+        cls._socket_receive(gpg_socket, b"^OK\n")
         for name in ("TERM", "LANG", "LC_ALL", "DISPLAY"):
             val = os.environ.get(name)
             if val is not None:
                 gpg_socket.send("OPTION putenv=%s=%s\n" % (name, val))
-                cls._socket_receive(gpg_socket, "^OK\n")
+                cls._socket_receive(gpg_socket, b"^OK\n")
         return gpg_socket
 
     @classmethod
     def _socket_receive(cls, gpg_socket, pattern):
-        reply = ""
+        reply = b""
         while not reply or not re.search(pattern, reply, re.M):
             reply += gpg_socket.recv(cls.RECV_BUFSIZE)
         return reply
@@ -209,7 +209,7 @@ class GPGAgentStore(object):
         gpg_socket = self.get_socket()
         gpg_socket.send("CLEAR_PASSPHRASE rosie:%s:%s\n" % (scheme, host))
         # This command always returns 'OK', even when the cache id is invalid.
-        self._socket_receive(gpg_socket, "^OK")
+        self._socket_receive(gpg_socket, b"^OK")
 
     def find_password(self, scheme, host, username):
         """Return the password of username@root."""
@@ -227,7 +227,7 @@ class GPGAgentStore(object):
             prompt = prompt.replace(" ", "+")
         gpg_socket.send("GET_PASSPHRASE --data %s rosie:%s:%s X X %s\n" % (
             no_ask_option, scheme, host, prompt))
-        reply = self._socket_receive(gpg_socket, "^(?!OK)[^ ]+ .*\n")
+        reply = self._socket_receive(gpg_socket, b"^(?!OK)[^ ]+ .*\n")
         replylines = reply.splitlines()
         for line in replylines:
             if line.startswith("D"):

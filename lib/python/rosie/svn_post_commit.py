@@ -191,13 +191,13 @@ class RosieSvnPostCommitHook(object):
                 continue
             # Path must be (under) a valid suite branch, including the special
             # ROSIE suite
-            names = path.split("/", self.LEN_ID + 1)
+            names = path.split(b"/", self.LEN_ID + 1)
             if (len(names) < self.LEN_ID + 1 or (
-                    "".join(names[0:self.LEN_ID]) != "ROSIE" and
-                    any(name not in id_chars for name, id_chars in
+                    b"".join(names[0:self.LEN_ID]) != b"ROSIE" and
+                    any(name.decode() not in id_chars for name, id_chars in
                         zip(names, self.ID_CHARS_LIST)))):
                 continue
-            sid = "".join(names[0:self.LEN_ID])
+            sid = b"".join(names[0:self.LEN_ID])
             branch = names[self.LEN_ID]
             if branch:
                 # Change to a path in a suite branch
@@ -272,7 +272,7 @@ class RosieSvnPostCommitHook(object):
 
     def _load_info(self, repos, revision, sid, branch):
         """Load info file from branch_path in repos @revision."""
-        info_file_path = "%s/%s/%s" % ("/".join(sid), branch, self.INFO_FILE)
+        info_file_path = "%s/%s/%s" % ("/".join(str(sid)), branch, self.INFO_FILE)
         t_handle = TemporaryFile()
         try:
             t_handle.write(self._svnlook(
@@ -381,13 +381,13 @@ class RosieSvnPostCommitHook(object):
 
     def _update_info_db(self, dao, changeset_attribs, branch_attribs):
         """Update the suite info database for a suite branch."""
-        idx = changeset_attribs["prefix"] + "-" + branch_attribs["sid"]
+        idx = changeset_attribs["prefix"] + "-" + branch_attribs["sid"].decode()
         vc_attrs = {
             "idx": idx,
             "branch": branch_attribs["branch"],
             "revision": changeset_attribs["revision"]}
         for key in vc_attrs:
-            vc_attrs[key] = vc_attrs[key].decode("utf-8")
+            vc_attrs[key] = vc_attrs[key]
         # Latest table
         try:
             dao.delete(
