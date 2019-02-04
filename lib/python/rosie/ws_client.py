@@ -199,7 +199,7 @@ class RosieWSClient(object):
             results[url] = pool.apply_async(
                 requests.get, [url], request_detail["requests_kwargs"])
         while results:
-            for url, result in results.items():
+            for url, result in list(results.items()):
                 if not result.ready():
                     continue
                 results.pop(url)

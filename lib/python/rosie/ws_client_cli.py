@@ -224,7 +224,7 @@ def _display_maps(opts, ws_client, dict_rows, url=None):
 
     if opts.sort is None or opts.sort not in all_keys:
         opts.sort = "revision"
-    dict_rows.sort(lambda x, y: cmp(x[opts.sort], y[opts.sort]))
+    dict_rows.sort(key=lambda x: x[opts.sort])
     if opts.reverse:
         dict_rows.reverse()
 
