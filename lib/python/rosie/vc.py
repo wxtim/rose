@@ -348,7 +348,7 @@ class RosieVCClient(object):
                                                           from_id.branch,
                                                           from_id.revision)
             out_data = self.popen("svn", "cat", from_info_url)[0]
-            from_config = rose.config.load(StringIO(out_data))
+            from_config = rose.config.load(StringIO(out_data.decode()))
 
         res_loc = ResourceLocator.default()
         older_config = None
@@ -569,7 +569,8 @@ def create(argv):
                     continue
                 sect, key = node_keys
                 value = node.value
-                sect = sect.translate(None, "=")
+                #print(f'>>>sect is {sect}, type {type(sect)}')
+                sect = sect.translate("=")
                 if key == "copy-mode" and value == "clear":
                     info_config.set([sect], "")
                 if key == "copy-mode" and value == "never":
