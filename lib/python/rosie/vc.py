@@ -85,7 +85,7 @@ class LocalCopyStatusError(Exception):
         super(LocalCopyStatusError, self).__init__(id_, status)
 
     def __str__(self):
-        data = (str(self.id_), self.id_.to_local_copy(), self.status)
+        data = (str(self.id_), self.id_.to_local_copy(), self.status.decode())
         return "%s: %s: local copy has uncommitted changes:\n%s" % data
 
 
