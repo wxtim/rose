@@ -555,7 +555,7 @@ def create(argv):
     interactive_mode = not opts.non_interactive
     if opts.info_file is None:
         info_config = client.generate_info_config(
-            from_id, opts.prefix, opts.project)           
+            from_id, opts.prefix, opts.project)
         if from_id is not None:
             meta_config = load_meta_config(
                 info_config,
@@ -573,7 +573,6 @@ def create(argv):
                     info_config.set([sect], "")
                 if key == "copy-mode" and value == "never":
                     info_config.unset([sect])
-
 
         info_config = _edit_info_config(opts, client, info_config)
     else:

@@ -235,7 +235,8 @@ class StemRunner(object):
         project = None
         for line in kpoutput.splitlines():
             if line.rstrip().endswith(repo.encode('UTF-8')):
-                kpresult = re.search('^location{primary}\[(.*)\]', line.decode())
+                kpresult = re.search('^location{primary}\[(.*)\]',
+                                     line.decode())
                 if kpresult:
                     project = kpresult.group(1)
                     break

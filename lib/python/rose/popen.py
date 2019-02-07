@@ -285,7 +285,9 @@ if __name__ == "__main__":
             try:
                 rose_popen.run(name)
             except RosePopenError as exc:
-                ose = FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), name)
+                ose = FileNotFoundError(errno.ENOENT,
+                                        os.strerror(errno.ENOENT),
+                                        name)
                 try:
                     self.assertEqual(str(ose), exc.stderr)
                 except AssertionError:

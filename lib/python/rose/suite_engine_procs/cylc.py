@@ -77,11 +77,11 @@ class CylcProcessor(SuiteEngineProcessor):
             lines = out.splitlines()
             try:
                 lines = lines.decode()
-            except:
+            except AttributeError:
                 pass
             try:
                 lines[0] = lines[0].decode()
-            except:
+            except AttributeError:
                 pass
             if lines and lines[0] != expected:
                 raise SuiteEngineGlobalConfCompatError(

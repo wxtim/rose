@@ -465,7 +465,9 @@ class Analyse(object):
             contents = inspect.getmembers(module, inspect.isclass)
             for obj_name, obj in contents:
                 att_name = "run"
-                if hasattr(obj, att_name) and isinstance(getattr(obj, att_name), collections.Callable):
+                if hasattr(
+                    obj, att_name) and isinstance(getattr(obj, att_name),
+                                                  collections.Callable):
                     doc_string = obj.__doc__
                     user_methods.append((comparison_name, obj_name, att_name,
                                         doc_string))

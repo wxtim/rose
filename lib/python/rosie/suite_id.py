@@ -547,7 +547,6 @@ def main():
     opt_parser.add_my_options("latest", "next", "to_local_copy", "to_origin",
                               "to_output", "to_web")
     opts, args = opt_parser.parse_args()
-    #print(f"opts is {opts} \nof type {type(opts)}\n vars(opts) is {vars(opts)}")
     report = Reporter(opts.verbosity - opts.quietness)
     SuiteId.svn.event_handler = report  # FIXME: ugly?
     arg = None

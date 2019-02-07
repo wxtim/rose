@@ -1095,10 +1095,10 @@ class ConfigDumper(object):
                 self._write_safely(handle, self._comment_format(comment))
             self._write_safely(
                 handle, "%(open)s%(state)s%(key)s%(close)s\n" % {
-                "open": CHAR_SECTION_OPEN,
-                "state": section_node.state,
-                "key": section_key,
-                "close": CHAR_SECTION_CLOSE})
+                    "open": CHAR_SECTION_OPEN,
+                    "state": section_node.state,
+                    "key": section_key,
+                    "close": CHAR_SECTION_CLOSE})
             keys = list(section_node.value.keys())
             keys.sort(key=cmp_to_key(sort_option_items))
             for key in keys:
@@ -1339,7 +1339,7 @@ class ConfigLoader(object):
         # "ignore" flags. Rather than replicating the logic for parsing
         # ignore flags, it is actually easier to write the values in
         # "defines" to a file and pass it to the loader to parse it.
-        #source = TemporaryFile(mode='w', encoding='UTF-8')
+        # source = TemporaryFile(mode='w', encoding='UTF-8')
         source = TemporaryFile()
         for define in defines:
             sect, key, value = self.RE_OPT_DEFINE.match(define).groups()

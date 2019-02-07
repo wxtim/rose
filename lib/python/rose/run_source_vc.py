@@ -53,7 +53,7 @@ def write_source_vc_info(run_source_dir, output=None, popen=None):
         handle = output
     else:
         handle = open(output, "wb")
-    msg="%s\n" % run_source_dir
+    msg = "%s\n" % run_source_dir
     _write_safely(msg, handle)
     environ = dict(os.environ)
     environ["LANG"] = "C"
@@ -73,7 +73,8 @@ def write_source_vc_info(run_source_dir, output=None, popen=None):
                 ret_code, out, _ = popen.run(*cmd, env=environ)
                 if out:
                     _write_safely(("#" * 80 + "\n"), handle)
-                    _write_safely(("# %s\n" % popen.list_to_shell_str(cmd)), handle)
+                    _write_safely(("# %s\n" % popen.list_to_shell_str(cmd)),
+                                  handle)
                     _write_safely(("#" * 80 + "\n"), handle)
                     _write_safely(out, handle)
                 if ret_code:  # If cmd fails once, it will likely fail again

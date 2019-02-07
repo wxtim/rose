@@ -404,8 +404,8 @@ def _convert_duration(date_time_oper, opts, args):
         print(options[opts.duration_print_format.upper()])
     else:
         # supplied duration format not valid
-        print('Invalid date/time format, please use one of H, M, S ' + \
-            '(hours, minutes, seconds)')
+        print('Invalid date/time format, please use one of H, M, S ' +
+              '(hours, minutes, seconds)')
         sys.exit(1)
 
 

@@ -57,7 +57,7 @@ def _sort_config_key(key_1, key_2):
         name_2, index_2 = match_2.groups()
         if name_1.lower() == name_2.lower():
             return (int(index_1) > int(index_2)) -\
-                    (int(index_1) < int(index_2))
+                   (int(index_1) < int(index_2))
     return (key_1.lower() > key_2.lower()) - (key_1.lower() < key_2.lower())
 
 

@@ -766,7 +766,8 @@ def get_macro_class_methods(macro_modules):
                 continue
             for att_name in ALLOWED_MACRO_CLASS_METHODS:
                 if (hasattr(obj, att_name) and
-                        isinstance(getattr(obj, att_name), collections.Callable)):
+                        isinstance(getattr(obj, att_name),
+                                   collections.Callable)):
                     doc_string = obj.__doc__
                     macro_methods.append((macro_name, obj_name, att_name,
                                           doc_string))
@@ -1429,7 +1430,7 @@ def get_user_values(options, ignore=None):
         while not entered:
             try:
                 user_input = input("Value for " + str(key) + " (default " +
-                                       str(val) + "): ")
+                                   str(val) + "): ")
             except EOFError:
                 user_input = ""
                 entered = True
@@ -1634,8 +1635,8 @@ def main():
         try:
             _, config_map, meta_config = load_conf_from_file(
                 conf_dir, config_file_path)
-        except Exception as exc:
-            #traceback.print_exc()
+        except Exception: # as exc:
+            # traceback.print_exc()
             sys.exit(1)
 
         # Report which config we are currently working on.

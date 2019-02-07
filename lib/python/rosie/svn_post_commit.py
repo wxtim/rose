@@ -272,7 +272,9 @@ class RosieSvnPostCommitHook(object):
 
     def _load_info(self, repos, revision, sid, branch):
         """Load info file from branch_path in repos @revision."""
-        info_file_path = "%s/%s/%s" % ("/".join(str(sid)), branch, self.INFO_FILE)
+        info_file_path = "%s/%s/%s" % ("/".join(str(sid)),
+                                       branch,
+                                       self.INFO_FILE)
         t_handle = TemporaryFile()
         try:
             t_handle.write(self._svnlook(
@@ -381,7 +383,8 @@ class RosieSvnPostCommitHook(object):
 
     def _update_info_db(self, dao, changeset_attribs, branch_attribs):
         """Update the suite info database for a suite branch."""
-        idx = changeset_attribs["prefix"] + "-" + branch_attribs["sid"].decode()
+        idx = changeset_attribs["prefix"] + "-" +\
+            branch_attribs["sid"].decode()
         vc_attrs = {
             "idx": idx,
             "branch": branch_attribs["branch"],
