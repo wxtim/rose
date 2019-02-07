@@ -19,11 +19,12 @@
 # -----------------------------------------------------------------------------
 """Common option parser for Rose command utilities."""
 
-from optparse import OptionParser
+#from optparse import OptionParser
+from argparse import ArgumentParser
 from rose.resource import ResourceLocator
 
 
-class RoseOptionParser(OptionParser):
+class RoseOptionParser(ArgumentParser):
 
     """Option parser base class for Rose command utilities.
 
@@ -66,6 +67,7 @@ class RoseOptionParser(OptionParser):
         "archive_mode": [
             ["--archive"],
             {"action": "store_true",
+             "default": False,
              "dest": "archive_mode",
              "help": "Switch on archive mode."}],
         "auto_type": [
@@ -135,6 +137,7 @@ class RoseOptionParser(OptionParser):
             ["--debug"],
             {"action": "store_true",
              "dest": "debug_mode",
+             "default": None,
              "help": "Report trace back."}],
         "defines": [
             ["--define", "-D"],
@@ -165,16 +168,18 @@ class RoseOptionParser(OptionParser):
             {"action": "store",
              "dest": "distance",
              "default": None,
-             "type": "int",
+             "type": int,
              "help": "Specify a maximum distance."}],
         "downgrade": [
             ["--downgrade", "-d"],
             {"action": "store_true",
+             "default": False,
              "dest": "downgrade",
              "help": "Downgrade instead of upgrade."}],
         "env_var_process_mode": [
             ["--env-var-process", "-E"],
             {"action": "store_true",
+             "default": False,
              "dest": "env_var_process_mode",
              "help": "Process environment variable syntax."}],
         "files": [
@@ -193,6 +198,7 @@ class RoseOptionParser(OptionParser):
         "force_mode": [
             ["--force", "-f"],
             {"action": "store_true",
+             "default": False,
              "dest": "force_mode",
              "help": "Switch on force mode."}],
         "graphical": [
@@ -229,16 +235,19 @@ class RoseOptionParser(OptionParser):
         "install_only_mode": [
             ["--install-only", "-i"],
             {"action": "store_true",
+             "default": False,
              "dest": "install_only_mode",
              "help": "Install only. Don't run."}],
         "keys": [
             ["--keys", "-k"],
             {"action": "store_true",
+             "default": False,
              "dest": "keys_mode",
              "help": "Print SECTION/OPTION keys only."}],
         "latest": [
             ["--latest"],
             {"action": "store_true",
+             "default": False,
              "help": "Print the latest ID in the repository."}],
         "load_all_apps": [
             ["--load-all-apps"],
@@ -255,11 +264,13 @@ class RoseOptionParser(OptionParser):
         "local_install_only_mode": [
             ["--local-install-only", "-l"],
             {"action": "store_true",
+             "default": False,
              "dest": "local_install_only_mode",
              "help": "Install locally only. Don't run."}],
         "local_only": [
             ["--local-only"],
             {"action": "store_true",
+             "default": False,
              "help": "Delete only the local copy of a suite."}],
         "log_archive_mode": [
             ["--no-log-archive"],
@@ -331,16 +342,19 @@ class RoseOptionParser(OptionParser):
         "new_mode": [
             ["--new", "-N"],
             {"action": "store_true",
+             "default": False,
              "dest": "new_mode",
              "help": "Fresh start."}],
         "no_headers": [
             ["--no-headers", "-H"],
             {"action": "store_true",
+             "default": False,
              "dest": "no_headers",
              "help": "Suppress headers."}],
         "next": [
             ["--next"],
             {"action": "store_true",
+             "default": False,
              "help": "Print the next available ID in the " +
                      "repository."}],
         "non_interactive": [
@@ -364,12 +378,14 @@ class RoseOptionParser(OptionParser):
         "no_opts": [
             ["--no-opts"],
             {"action": "store_true",
+             "default": False,
              "dest": "no_opts",
              "help": "Do not load optional configurations."}],
         "no_overwrite_mode": [
             ["--no-overwrite"],
             {"action": "store_true",
              "dest": "no_overwrite_mode",
+             "default": False,
              "help": "Do not overwrite existing files."}],
         "no_pretty_mode": [
             ["--no-pretty"],
@@ -469,6 +485,7 @@ class RoseOptionParser(OptionParser):
         "print_conf_mode": [
             ["--print-conf"],
             {"action": "store_true",
+             "default": False,
              "dest": "print_conf_mode",
              "help": "Print result in Rose configuration format."}],
         "print_format": [
@@ -498,6 +515,7 @@ class RoseOptionParser(OptionParser):
         "prune_remote_mode": [
             ["--prune-remote", "--tidy-remote"],
             {"action": "store_true",
+             "default": False,
              "dest": "prune_remote_mode",
              "help": "Remove remote job logs after retrieval."}],
         "query_mode": [
@@ -602,12 +620,14 @@ class RoseOptionParser(OptionParser):
         "task_cycle_time_mode": [
             ["--use-task-cycle-time", "-c"],
             {"action": "store_true",
+             "default": False,
              "dest": "task_cycle_time_mode",
              "help": "Use ROSE_TASK_CYCLE_TIME."}],
         "text": [
             ["--text"],
             {"action": "store_true",
              "dest": "text",
+             "default": False,
              "help": "Print graph in text format"}],
         "thresholds": [
             ["--threshold"],
@@ -622,18 +642,22 @@ class RoseOptionParser(OptionParser):
         "to_local_copy": [
             ["--to-local-copy"],
             {"action": "store_true",
+             "default": False,
              "help": "Convert ID to to the local copy path"}],
         "to_origin": [
             ["--to-origin"],
             {"action": "store_true",
+             "default": False,
              "help": "Convert ID to the origin URL"}],
         "to_output": [
             ["--to-output"],
             {"action": "store_true",
+             "default": False,
              "help": "Get the ID output directory"}],
         "to_web": [
             ["--to-web"],
             {"action": "store_true",
+             "default": False,
              "help": "Convert ID to the web source URL"}],
         "transform_all": [
             ["-T", "--transform"],
@@ -695,15 +719,22 @@ class RoseOptionParser(OptionParser):
              "help": "View with web browser."}]}
 
     def __init__(self, *args, **kwargs):
+        # Grepping this cannot find any instances where this is called with
+        # args or kwargs, so I'm not sure what the logic is for.
+        #print('Hello')
         if hasattr(kwargs, "prog"):
             namespace, util = kwargs["prog"].split(None, 1)
             resource_loc = ResourceLocator(namespace=namespace, util=util)
         else:
+            # This supplies the name of the calling program
             resource_loc = ResourceLocator.default()
         kwargs["prog"] = resource_loc.get_util_name()
         if not hasattr(kwargs, "usage"):
+            # this seems to be called every time given that no kwargs are passed
             kwargs["usage"] = resource_loc.get_synopsis()
-        OptionParser.__init__(self, *args, **kwargs)
+        #print(f'>>>Kwargs are {kwargs}')
+#         OptionParser.__init__(self, *args, **kwargs)
+        ArgumentParser.__init__(self, *args, **kwargs)
         self.add_my_options("debug_mode", "profile_mode",
                             "quietness", "verbosity")
 
@@ -713,5 +744,10 @@ class RoseOptionParser(OptionParser):
         """
         for arg in args:
             o_args, o_kwargs = self.OPTIONS[arg]
-            self.add_option(*o_args, **o_kwargs)
+#             self.add_option(*o_args, **o_kwargs)
+            self.add_argument(*o_args, **o_kwargs)
         return self
+
+    def parse_args(self):
+        output = self.parse_known_args()
+        return vars(output[0]), output[1]
