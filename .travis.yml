@@ -4,7 +4,7 @@
 ---
 language: python
 python:
-    - 2.7
+    - 3.6
 dist: xenial
 
 before_install:
@@ -51,6 +51,7 @@ jobs:
       - export PYTHONPATH="${TRAVIS_BUILD_DIR}/.travis"
       - coverage run .travis/cover.py
       - rm ./lib/python/sitecustomize.py
+      - PYTHONPATH=$PYTHONPATH:lib/python/ pytest lib/python/rose/
     - name: "Documentation"
       script:
         - rose make-docs --venv --dev --strict clean linkcheck doctest html slides latexpdf

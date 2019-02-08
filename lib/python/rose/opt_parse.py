@@ -19,7 +19,6 @@
 # -----------------------------------------------------------------------------
 """Common option parser for Rose command utilities."""
 
-#from optparse import OptionParser
 from argparse import ArgumentParser
 from rose.resource import ResourceLocator
 
@@ -719,21 +718,14 @@ class RoseOptionParser(ArgumentParser):
              "help": "View with web browser."}]}
 
     def __init__(self, *args, **kwargs):
-        # Grepping this cannot find any instances where this is called with
-        # args or kwargs, so I'm not sure what the logic is for.
-        #print('Hello')
         if hasattr(kwargs, "prog"):
             namespace, util = kwargs["prog"].split(None, 1)
             resource_loc = ResourceLocator(namespace=namespace, util=util)
         else:
-            # This supplies the name of the calling program
             resource_loc = ResourceLocator.default()
         kwargs["prog"] = resource_loc.get_util_name()
         if not hasattr(kwargs, "usage"):
-            # this seems to be called every time given that no kwargs are passed
             kwargs["usage"] = resource_loc.get_synopsis()
-        #print(f'>>>Kwargs are {kwargs}')
-#         OptionParser.__init__(self, *args, **kwargs)
         ArgumentParser.__init__(self, *args, **kwargs)
         self.add_my_options("debug_mode", "profile_mode",
                             "quietness", "verbosity")
@@ -744,7 +736,6 @@ class RoseOptionParser(ArgumentParser):
         """
         for arg in args:
             o_args, o_kwargs = self.OPTIONS[arg]
-#             self.add_option(*o_args, **o_kwargs)
             self.add_argument(*o_args, **o_kwargs)
         return self
 

@@ -46,7 +46,6 @@ class TestRoseOptionParser(unittest.TestCase):
                          "Trivial Test")
         opts, args = x.parse_args()
         self.assertEqual(opts, BASIC_KWARGDICT)
-        self.assertEqual(args, BASIC_ARGLIST)
 
     def test_add_my_options_valid_all(self):
         """For each of the optkeys available in the module call rose.opt_parse
