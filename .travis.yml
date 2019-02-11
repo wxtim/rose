@@ -3,7 +3,10 @@
 
 ---
 language: python
+python:
+    - 3.6
 dist: xenial
+
 
 before_install:
     - wget 'https://github.com/cylc/cylc/archive/master.tar.gz' -O '/tmp/cylc-master.tar.gz'
@@ -40,9 +43,7 @@ after_success:
 
 jobs:
     include:
-    - name: "Test Battery 3.6"
-      python:
-        - 3.6
+    - name: "Test Battery"
       script:
       - export COVERAGE_PROCESS_START="${TRAVIS_BUILD_DIR}/.coveragerc"
       # ./bin/rose will change PYTHONPATH, so we cannot rely on that for sitecustomize.py
@@ -52,22 +53,6 @@ jobs:
       - coverage run .travis/cover.py
       - PYTHONPATH=$PYTHONPATH:lib/python/ pytest lib/python/rose/
       - rm ./lib/python/sitecustomize.py
-
-    - name: "Test Battery 3.7"
-      python:
-        - 3.7
-      script:
-      - export COVERAGE_PROCESS_START="${TRAVIS_BUILD_DIR}/.coveragerc"
-      # ./bin/rose will change PYTHONPATH, so we cannot rely on that for sitecustomize.py
-      # but instead we can move the sitecustomize.py to the place used as PYTHONPATH
-      - cp "${TRAVIS_BUILD_DIR}/.travis/sitecustomize.py" ./lib/python
-      - export PYTHONPATH="${TRAVIS_BUILD_DIR}/.travis"
-      - coverage run .travis/cover.py
-      - PYTHONPATH=$PYTHONPATH:lib/python/ pytest lib/python/rose/
-      - rm ./lib/python/sitecustomize.py
-
     - name: "Documentation"
-      python:
-        - 3.7
       script:
         - rose make-docs --venv --dev --strict clean linkcheck doctest html slides latexpdf
