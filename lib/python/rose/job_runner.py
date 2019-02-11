@@ -181,31 +181,7 @@ class JobRunner(object):
 
         When a job is completed, calls
             self.job_processor.post_process_job(job_proxy, *args)
-
         """
-#         nproc = self.nproc
-#         if nproc > len(job_manager.jobs):
-#             nproc = len(job_manager.jobs)
-#         pool = Pool(processes=nproc)
-#
-#         results = {}
-#         while job_manager.has_jobs():
-#             # Process results, if any is ready
-#             for name, result in results.items():
-#                 if result.ready():
-#                     results.pop(name)
-#                     job_proxy, args_of_events = result.get()
-#                     for args_of_event in args_of_events:  ##???
-#                         self.job_processor.handle_event(*args_of_event) #???
-#                     job = job_manager.put_job(job_proxy)
-#                     if job_proxy.exc is None:
-#                         self.job_processor.post_process_job(job, *args)
-#                         self.job_processor.handle_event(JobEvent(job))
-#                     else:
-#                         self.job_processor.handle_event(job_proxy.exc)
-#             # Add some more jobs into the worker pool, as they are ready
-#             import traceback
-
         while job_manager.has_ready_jobs():
             job = job_manager.get_job()
             if not job:
@@ -223,14 +199,6 @@ class JobRunner(object):
                 self.job_processor.handle_event(job.exc)
 
             job_manager.put_job(job)
-#                 if job is None:
-#                     break
-#                 job_run_args = [self.job_processor, job] + list(args)
-#                 result = pool.apply_async(_job_run, job_run_args)
-#                 results[job.name] = result
-#             if results:
-#                 sleep(self.POLL_DELAY)
-
         dead_jobs = job_manager.get_dead_jobs()
         if dead_jobs:
             raise JobRunnerNotCompletedError(dead_jobs)

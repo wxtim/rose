@@ -177,13 +177,11 @@ test_teardown
 TEST_KEY=$TEST_KEY_BASE-install-only
 test_setup
 run_pass "$TEST_KEY" rose app-run --config=../config -i --debug
-#sort "$TEST_KEY.out" > "$TEST_KEY.sorted.out"
 python3 -c "import re, sys
 print(''.join(sorted(sys.stdin.readlines(),
                      key=re.compile('hello(\d+)').findall)).rstrip())" \
     <"$TEST_KEY.out" >"$TEST_KEY.sorted.out"
-#cat "$TEST_KEY.sorted.out" >&2
-file_cmp "$TEST_KEY.sorted.out" "$TEST_KEY.sorted.out" <<__CONTENT__
+cat > "$TEST_KEY.out.control" <<__CONTENT__
 [INFO] export PATH=$PATH
 [INFO] install: vegetables.nl
 [INFO]     source: namelist:vegetables{green}(:)
@@ -201,6 +199,11 @@ file_cmp "$TEST_KEY.sorted.out" "$TEST_KEY.sorted.out" <<__CONTENT__
 [INFO]     source: namelist:hello
 [INFO] command: mkdir out && cp *.nl out/
 __CONTENT__
+python3 -c "import re, sys
+print(''.join(sorted(sys.stdin.readlines(),
+                     key=re.compile('hello(\d+)').findall)).rstrip())" \
+    <"$TEST_KEY.out.control" >"$TEST_KEY.sorted.out.control"
+file_cmp "$TEST_KEY.sorted.out" "$TEST_KEY.sorted.out.control"
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 test_teardown
 #-------------------------------------------------------------------------------

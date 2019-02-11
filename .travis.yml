@@ -5,6 +5,7 @@
 language: python
 python:
     - 3.6
+    - 3.7
 dist: xenial
 
 before_install:
@@ -50,6 +51,7 @@ jobs:
       - cp "${TRAVIS_BUILD_DIR}/.travis/sitecustomize.py" ./lib/python
       - export PYTHONPATH="${TRAVIS_BUILD_DIR}/.travis"
       - coverage run .travis/cover.py
+      - PYTHONPATH=$PYTHONPATH:lib/python/ pytest lib/python/rose/
       - rm ./lib/python/sitecustomize.py
     - name: "Documentation"
       script:
