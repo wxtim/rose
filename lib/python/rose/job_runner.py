@@ -19,9 +19,7 @@
 # -----------------------------------------------------------------------------
 """A multiprocessing runner of jobs with dependencies."""
 
-from multiprocessing import Pool
 from rose.reporter import Event
-from time import sleep
 
 
 class JobEvent(Event):
