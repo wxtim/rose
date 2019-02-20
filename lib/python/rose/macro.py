@@ -42,13 +42,13 @@ It also stores macro base classes and macro library functions.
 import ast
 import copy
 import glob
-import imp
 import inspect
 import os
 import re
 import sys
 import traceback
 from functools import cmp_to_key
+from importlib.machinery import SourceFileLoader
 
 import rose.config
 import rose.config_tree
@@ -57,7 +57,7 @@ from rose.opt_parse import RoseOptionParser
 import rose.reporter
 import rose.resource
 import rose.variable
-import collections
+import collections.abc
 
 
 ALLOWED_MACRO_CLASS_METHODS = ["transform", "validate", "downgrade", "upgrade",
@@ -746,7 +746,7 @@ def load_meta_macro_modules(meta_files, module_prefix=None):
         else:
             as_name = module_prefix + macro_name
         try:
-            modules.append(imp.load_source(as_name, meta_file))
+            modules.append(SourceFileLoader(as_name, meta_file).load_module())
         except Exception:
             rose.reporter.Reporter()(
                 MacroLoadError(meta_file, traceback.format_exc()))
@@ -767,7 +767,7 @@ def get_macro_class_methods(macro_modules):
             for att_name in ALLOWED_MACRO_CLASS_METHODS:
                 if (hasattr(obj, att_name) and
                         isinstance(getattr(obj, att_name),
-                                   collections.Callable)):
+                                   collections.abc.Callable)):
                     doc_string = obj.__doc__
                     macro_methods.append((macro_name, obj_name, att_name,
                                           doc_string))
@@ -878,8 +878,8 @@ def report_config(app_config, meta_config, run_macro_list, modules,
                     break
             res = {}
             if not opt_non_interactive:
-                arglist = inspect.getargspec(macro_meth).args
-                defaultlist = inspect.getargspec(macro_meth).defaults
+                arglist = inspect.getfullargspec(macro_meth).args
+                defaultlist = inspect.getfullargspec(macro_meth).defaults
                 optionals = {}
                 while defaultlist is not None and len(defaultlist) > 0:
                     if arglist[-1] not in ["self", "config", "meta_config"]:
@@ -935,8 +935,8 @@ def transform_config(config, meta_config, transformer_macro, modules,
                 break
         res = {}
         if not opt_non_interactive:
-            arglist = inspect.getargspec(macro_method).args
-            defaultlist = inspect.getargspec(macro_method).defaults
+            arglist = inspect.getfullargspec(macro_method).args
+            defaultlist = inspect.getfullargspec(macro_method).defaults
             optionals = {}
             while defaultlist is not None and len(defaultlist) > 0:
                 if arglist[-1] not in ["self", "config", "meta_config"]:
