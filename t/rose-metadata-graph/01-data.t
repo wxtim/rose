@@ -35,6 +35,10 @@ init < $TEST_SOURCE_DIR/lib/rose-app.conf
 init_meta < $TEST_SOURCE_DIR/lib/rose-meta.conf
 CONFIG_PATH=$(cd ../config && pwd -P)
 run_pass "$TEST_KEY" rose metadata-graph --debug --config=../config
+echo "+====> OUT"
+cat "$TEST_KET.out"
+echo "+====> ERR"
+cat "$TEST_KET.err"
 filter_graphviz <"$TEST_KEY.out" >"$TEST_KEY.filtered.out"
 sort "$TEST_KEY.filtered.out" >"$TEST_KEY.filtered.out.sorted" 
 sort >"$TEST_KEY.filtered.out.expected" <<__OUTPUT__
