@@ -33,6 +33,7 @@ tests 15
 TEST_KEY=$TEST_KEY_BASE-base
 setup
 run_fail "$TEST_KEY" rose metadata-graph --debug
+cat "$TEST_KEY.err"
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" </dev/null
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" <<__CONTENT__
 [FAIL] Could not load metadata 
