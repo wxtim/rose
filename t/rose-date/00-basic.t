@@ -300,7 +300,7 @@ __OUT__
 TEST_KEY=$TEST_KEY_BASE-as-total-PT1S-m
 run_pass "$TEST_KEY" rose date --as-total=m PT1S
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
-0.0166666666667
+0.016666666666666666
 __OUT__
 #-------------------------------------------------------------------------------
 # Test rose date --as-total=h P832DT23H12M45S
