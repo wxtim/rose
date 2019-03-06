@@ -21,7 +21,7 @@
 #-------------------------------------------------------------------------------
 . $(dirname $0)/test_header
 #-------------------------------------------------------------------------------
-tests 107
+tests 104
 #-------------------------------------------------------------------------------
 # Produce the correct format for the current date/time.
 TEST_KEY=$TEST_KEY_BASE-current-format
@@ -216,20 +216,12 @@ file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 __OUT__
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
-# Bad offsets.
-TEST_KEY=$TEST_KEY_BASE-offsets-bad
-run_fail "$TEST_KEY" rose date -s junk "2013010618"
-file_cmp "$TEST_KEY.out" "$TEST_KEY.out" </dev/null
-file_cmp "$TEST_KEY.err" "$TEST_KEY.err" <<'__ERR__'
-[FAIL] junk: bad offset value
-__ERR__
-#-------------------------------------------------------------------------------
 # Bad offsets, ISO 8601.
 TEST_KEY=$TEST_KEY_BASE-offsets-bad-iso
-run_fail "$TEST_KEY" rose date -s Pjunk "2013010618"
+run_fail "$TEST_KEY" rose date -s Pjunk "20130106T18"
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" </dev/null
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" <<'__ERR__'
-[FAIL] Pjunk: bad offset value
+Pjunk: bad offset value
 __ERR__
 #-------------------------------------------------------------------------------
 # Parse a Cylc date and print in ISO format.
@@ -330,7 +322,7 @@ __OUT__
 #-------------------------------------------------------------------------------
 # Test rose date --as-total=FORMAT for use case 2 with an offset
 TEST_KEY=$TEST_KEY_BASE-as-total-between-dates-with-offset
-run_pass "$TEST_KEY" rose date 2000-01-01T00:00:00 --offset=PT1H 2000-01-01T01:00:00 --as-total=s
+run_pass "$TEST_KEY" rose date 2000-01-01T00:00:00 2000-01-01T01:00:00 --as-total=s --offset=PT1H
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 0.0
 __OUT__
