@@ -20,9 +20,8 @@
 # Test "rose date".
 #-------------------------------------------------------------------------------
 . $(dirname $0)/test_header
-skip_all "@TODO: Awaiting App upgrade to Python3"
 #-------------------------------------------------------------------------------
-tests 113
+tests 107
 #-------------------------------------------------------------------------------
 # Produce the correct format for the current date/time.
 TEST_KEY=$TEST_KEY_BASE-current-format
@@ -201,27 +200,11 @@ file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 __OUT__
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
-# Parse an date time with some offsets.
-TEST_KEY=$TEST_KEY_BASE-offsets
-run_pass "$TEST_KEY" rose date -s 18h -s 6d "2012-12-24T06:00:00"
-file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
-2012-12-31T00:00:00
-__OUT__
-file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
-#-------------------------------------------------------------------------------
 # Parse an ISO date time with some offsets.
 TEST_KEY=$TEST_KEY_BASE-offsets-iso
 run_pass "$TEST_KEY" rose date --debug -s PT18H -s P6D "2012-12-24T06:00:00"
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 2012-12-31T00:00:00
-__OUT__
-file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
-#-------------------------------------------------------------------------------
-# Parse a Cylc date time with some negative offsets.
-TEST_KEY=$TEST_KEY_BASE-offsets-neg
-run_pass "$TEST_KEY" rose date -s -6h -s -12d12h "2013010618"
-file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
-2012122500
 __OUT__
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
