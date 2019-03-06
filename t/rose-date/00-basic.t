@@ -202,7 +202,7 @@ file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
 # Parse an ISO date time with some offsets.
 TEST_KEY=$TEST_KEY_BASE-offsets-iso
-run_pass "$TEST_KEY" rose date --debug -s PT18H -s P6D "2012-12-24T06:00:00"
+run_pass "$TEST_KEY" rose date -s PT18H -s P6D "2012-12-24T06:00:00"
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 2012-12-31T00:00:00
 __OUT__
@@ -242,7 +242,7 @@ file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
 # Print format with offset.
 TEST_KEY=$TEST_KEY_BASE-format-and-offset
-run_pass "$TEST_KEY" rose date --offset=-3h -f "%y%m" "2012112515" --debug
+run_pass "$TEST_KEY" rose date --offset=-3h -f "%y%m" "2012112515" 
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 1211
 __OUT__
