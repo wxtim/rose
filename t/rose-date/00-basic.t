@@ -210,7 +210,7 @@ file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
 # Parse a Cylc date time with some negative offsets.
 TEST_KEY=$TEST_KEY_BASE-offsets-neg-iso
-run_pass "$TEST_KEY" rose date -s -PT6H -s -P12DT12H "2013010618"
+run_pass "$TEST_KEY" rose date -s -PT6H -s -P12DT12H "20130106T18"
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 2012122500
 __OUT__
@@ -226,7 +226,7 @@ __ERR__
 #-------------------------------------------------------------------------------
 # Parse a Cylc date and print in ISO format.
 TEST_KEY=$TEST_KEY_BASE-format-iso
-run_pass "$TEST_KEY" rose date --print-format="%Y%m%dT%H%M%S" "2012122515"
+run_pass "$TEST_KEY" rose date --print-format="%Y%m%dT%H%M%S" "20121225T15"
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 20121225T150000
 __OUT__
@@ -234,7 +234,7 @@ file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
 # Print format with offset.
 TEST_KEY=$TEST_KEY_BASE-format-and-offset
-run_pass "$TEST_KEY" rose date --offset=-3h -f "%y%m" "2012112515" 
+run_pass "$TEST_KEY" rose date --offset=-PT3H -f "%y%m" "20121125T15" 
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 1211
 __OUT__
