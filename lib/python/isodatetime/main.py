@@ -92,10 +92,7 @@ ENVIRONMENT VARIABLES
     ISODATETIMECALENDAR=gregorian|360day|365day|366day
         Specify the calendar mode.
     ISODATETIMEREF
-        Specify the current cycle time of a task in a suite. If the
-        `--use-task-cycle-time` option is set, the value of this environment
-        variable is used by the command as the reference time instead of the
-        current time.
+        Specify the current cycle time of a task in a suite.
 
 OFFSET FORMAT
     `OFFSET` must follow the ISO 8601 duration representations such as
