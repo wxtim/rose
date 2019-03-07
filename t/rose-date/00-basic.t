@@ -300,7 +300,7 @@ run_fail "$TEST_KEY" rose date --as-total=y PT1M
 # Test rose date --as-total=FORMAT for negative durations
 TEST_KEY=$TEST_KEY_BASE-as-total-negative
 run_pass "$TEST_KEY" rose date --as-total=S \\-PT1M1S
-file_cmp "TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
+file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 -61.0
 __OUT__
 #-------------------------------------------------------------------------------
@@ -312,10 +312,16 @@ file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 __OUT__
 #-------------------------------------------------------------------------------
 # Test rose date --as-total=FORMAT for use case 2 with an offset
-TEST_KEY=$TEST_KEY_BASE-as-total-between-dates-with-offset
-run_pass "$TEST_KEY" rose date 2000-01-01T00:00:00 2000-01-01T01:00:00 --as-total=s --offset=PT1H
+python3 -c "import argparse; argparse.ArgumentParser.parse_intermixed_args" &> intermixed_args 
+grep "'ArgumentParser' has no attribute 'parse_intermixed_args'" intermixed_args &> intermixed_args
+if [ $(cat intermixed_args | wc -l) != 0 ]; then
+  TEST_KEY=$TEST_KEY_BASE-as-total-between-dates-with-offset
+  run_pass "$TEST_KEY" rose date 2000-01-01T00:00:00 --offset=PT1H   2000-01-01T01:00:00 --as-total=s
+else
+  run_pass "$TEST_KEY" rose date 2000-01-01T00:00:00  2000-01-01T01:00:00 --as-total=s --offset=PT1H
+fi
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 0.0
 __OUT__
 #-------------------------------------------------------------------------------
-exit 0
+exit 0cd
