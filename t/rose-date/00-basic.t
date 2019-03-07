@@ -21,7 +21,7 @@
 #-------------------------------------------------------------------------------
 . $(dirname $0)/test_header
 #-------------------------------------------------------------------------------
-tests 104
+tests 101
 #-------------------------------------------------------------------------------
 # Produce the correct format for the current date/time.
 TEST_KEY=$TEST_KEY_BASE-current-format
@@ -240,17 +240,8 @@ file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 __OUT__
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
-# Test -c option.
-TEST_KEY=$TEST_KEY_BASE-c
-ROSE_TASK_CYCLE_TIME=2012122500 \
-    run_pass "$TEST_KEY" rose date -c
-file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
-2012122500
-__OUT__
-file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
-#-------------------------------------------------------------------------------
 # Test -c option, ISO 8601.
-TEST_KEY=$TEST_KEY_BASE-c-iso8601
+TEST_KEY=$TEST_KEY_BASE-c
 ROSE_TASK_CYCLE_TIME=20121225T0000Z \
     run_pass "$TEST_KEY" rose date -c
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
