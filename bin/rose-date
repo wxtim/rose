@@ -1,4 +1,4 @@
-#!/data/users/tpilling/miniconda3/envs/packaging_sandpit/bin/python
+#!/usr/bin/env python
 #-------------------------------------------------------------------------------
 # Copyright (C) 2012-2019 British Crown (Met Office) & Contributors.
 #
@@ -187,15 +187,18 @@ if __name__ == '__main__':
 
     # Handle Legacy Rose-date -c functionality
     if '-c' in sys.argv:
-        if os.getenv('ROSE_TASK_CYCLE_TIME'):
-            os.environ['ISODATETIMEREF'] = os.getenv('ROSE_TASK_CYCLE_TIME')
+        rose_task_cycle_time = os.getenv('ROSE_TASK_CYCLE_TIME')
+        isodatetimeref = os.getenv('ISODATETIMEREF')
+        if rose_task_cycle_time:
+            os.environ['ISODATETIMEREF'] = rose_task_cycle_time
+        elif isodatetimeref:
+            pass
         else:
-            print("[FAIL] [UNDEFINED ENVIRONMENT VARIABLE] ROSE_TASK_CYCLE_TIME", file=sys.stderr)
             sys.exit("[FAIL] [UNDEFINED ENVIRONMENT VARIABLE] ROSE_TASK_CYCLE_TIME")
         sys.argv.remove('-c')
         sys.argv.append('ref')
 
-    # Convert ROSE_CYCLING_MODE
+    # Convert ROSE_CYCLING_MODE to ISODATETIMECALENDAR
     if os.getenv('ROSE_CYCLING_MODE'):
         os.environ['ISODATETIMECALENDAR'] = os.getenv('ROSE_CYCLING_MODE')
 
