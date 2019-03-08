@@ -92,7 +92,10 @@ ENVIRONMENT VARIABLES
     ISODATETIMECALENDAR=gregorian|360day|365day|366day
         Specify the calendar mode.
     ISODATETIMEREF
-        Specify the current cycle time of a task in a suite.
+        Specify the current cycle time of a task in a suite. If the
+        `--use-task-cycle-time` option is set, the value of this environment
+        variable is used by the command as the reference time instead of the
+        current time.
 
 OFFSET FORMAT
     `OFFSET` must follow the ISO 8601 duration representations such as
@@ -282,7 +285,10 @@ def main():
         ],
     ]:
         arg_parser.add_argument(*o_args, **o_kwargs)
-    args = arg_parser.parse_args()
+    if hasattr(arg_parser, 'parse_intermixed_args'):
+        args = arg_parser.parse_intermixed_args()
+    else:
+        args = arg_parser.parse_args()
     if args.version_mode:
         print(__version__)
         return
