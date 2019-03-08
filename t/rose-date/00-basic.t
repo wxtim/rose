@@ -21,7 +21,7 @@
 #-------------------------------------------------------------------------------
 . $(dirname $0)/test_header
 #-------------------------------------------------------------------------------
-tests 101
+tests 104
 #-------------------------------------------------------------------------------
 # Produce the correct format for the current date/time.
 TEST_KEY=$TEST_KEY_BASE-current-format
@@ -249,6 +249,15 @@ file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 __OUT__
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
+# Test -c option with ISODATETIMEREF
+TEST_KEY=$TEST_KEY_BASE-c-isodatetimeref
+ISODATETIMEREF=20121225T0000Z \
+    run_pass "$TEST_KEY" rose date -c
+file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
+20121225T0000Z
+__OUT__
+file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
+#-------------------------------------------------------------------------------
 # Test -c option, --utc
 TEST_KEY=$TEST_KEY_BASE-c-utc
 ROSE_TASK_CYCLE_TIME=20121225T0000+0100 \
@@ -261,6 +270,7 @@ file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 # Test -c option, ROSE_TASK_CYCLE_TIME not defined.
 TEST_KEY=$TEST_KEY_BASE-c-undef
 unset ROSE_TASK_CYCLE_TIME
+unset ISODATETIMEREF
 run_fail "$TEST_KEY" rose date -c
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" </dev/null
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" <<'__ERR__'
@@ -324,4 +334,4 @@ file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 0.0
 __OUT__
 #-------------------------------------------------------------------------------
-exit 0cd
+exit 0
