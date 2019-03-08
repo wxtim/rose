@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/data/users/tpilling/miniconda3/envs/packaging_sandpit/bin/python
 #-------------------------------------------------------------------------------
 # Copyright (C) 2012-2019 British Crown (Met Office) & Contributors.
 #
@@ -175,4 +175,28 @@
 #
 #     For example, for a duration `P57DT12H` - `y,m,d,h` -> `0,0,57,12`
 #-------------------------------------------------------------------------------
-exec python3 -m rose.date "$@"
+# -*- coding: utf-8 -*-
+import re
+import sys
+import os
+
+from isodatetime.main import main
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+
+    # Handle Legacy Rose-date -c functionality
+    if '-c' in sys.argv:
+        if os.getenv('ROSE_TASK_CYCLE_TIME'):
+            os.environ['ISODATETIMEREF'] = os.getenv('ROSE_TASK_CYCLE_TIME')
+        else:
+            print("[FAIL] [UNDEFINED ENVIRONMENT VARIABLE] ROSE_TASK_CYCLE_TIME", file=sys.stderr)
+            sys.exit("[FAIL] [UNDEFINED ENVIRONMENT VARIABLE] ROSE_TASK_CYCLE_TIME")
+        sys.argv.remove('-c')
+        sys.argv.append('ref')
+
+    # Convert ROSE_CYCLING_MODE
+    if os.getenv('ROSE_CYCLING_MODE'):
+        os.environ['ISODATETIMECALENDAR'] = os.getenv('ROSE_CYCLING_MODE')
+
+    sys.exit(main())

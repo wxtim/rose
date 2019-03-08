@@ -209,10 +209,10 @@ __OUT__
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
 # Parse a Cylc date time with some negative offsets.
-TEST_KEY=$TEST_KEY_BASE-offsets-neg-iso
-run_pass "$TEST_KEY" rose date -s -PT6H -s -P12DT12H "20130106T18"
+TEST_KEY=$TEST_KEY_BASE-offsets-negative
+run_pass "$TEST_KEY" rose date -s=-PT6H -s=-P12DT12H "20130106T18"
 file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
-2012122500
+20121225T00
 __OUT__
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
@@ -240,7 +240,7 @@ file_cmp "$TEST_KEY.out" "$TEST_KEY.out" <<'__OUT__'
 __OUT__
 file_cmp "$TEST_KEY.err" "$TEST_KEY.err" </dev/null
 #-------------------------------------------------------------------------------
-# Test -c option, ISO 8601.
+# Test -c option
 TEST_KEY=$TEST_KEY_BASE-c
 ROSE_TASK_CYCLE_TIME=20121225T0000Z \
     run_pass "$TEST_KEY" rose date -c
