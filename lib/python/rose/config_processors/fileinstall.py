@@ -317,8 +317,11 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                 nproc = None
                 if nproc_str is not None:
                     nproc = int(nproc_str)
+                print(f"AAA")
                 job_runner = JobRunner(self, nproc)
+                print(f"BBB")
                 job_runner(JobManager(jobs), conf_tree, loc_dao, work_dir)
+                print(f"CCC")
             except ValueError as exc:
                 if exc.args and exc.args[0] in jobs:
                     job = jobs[exc.args[0]]

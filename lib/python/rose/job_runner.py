@@ -18,7 +18,7 @@
 # along with Rose. If not, see <http://www.gnu.org/licenses/>.
 # -----------------------------------------------------------------------------
 """A multiprocessing runner of jobs with dependencies."""
-
+import asyncio
 from rose.reporter import Event
 
 
@@ -181,26 +181,71 @@ class JobRunner(object):
             self.job_processor.post_process_job(job_proxy, *args)
         """
         # @TODO reimplement this with asyncio
+        print('HI')
+        loop = asyncio.get_event_loop()
+        print(job_manager.ready_jobs)
+        #print(job_manager.get_job())
+
+        todo = []
         while job_manager.has_ready_jobs():
             job = job_manager.get_job()
+            if job and not job.exc:
+                todo.append(job)
+
+        print(todo)
+        awaiting = []
+        for ind, job in enumerate(todo):
+
             if not job:
                 continue
+            task = loop.create_task(self.job_processor.process_job(job, *args))
+            task.ind = ind
+            awaiting.append(task)
 
-            if job.exc is None:
-                try:
-                    self.job_processor.process_job(job, *args)
-                except Exception as exc:
-                    self.job_processor.handle_event(exc)
-                    job.exc = exc
-                self.job_processor.post_process_job(job, *args)
-                self.job_processor.handle_event(JobEvent(job))
-            else:
-                self.job_processor.handle_event(job.exc)
+        # awaiting = []
+        # for ind, job in enumerate(job_manager.ready_jobs):
+        #     print('ivbipapvhunpiauf', job)
+        #     if not job:
+        #         continue
+        #     task = loop.create_task(self.job_processor.process_job(job, *args))
+        #     task.ind = ind
+        #     awaiting.append(task)
+        #
+        # index = 0
+        # iteration =0
+        # completed_tasks = {}
+        # while awaiting:
+        #     completed, awaiting = loop.run_until_complete(
+        #         asyncio.wait(awaiting, return_when=asyncio.FIRST_COMPLETED))
+        #     completed_tasks.update({t.ind: t.result() for t in completed})
+        #     changed = True
+        #     while changed and completed_tasks:
+        #         if index in completed_tasks:
+        #             yield completed_tasks.pop(index)
+        #             changed = True
+        #             index += 1
 
-            job_manager.put_job(job)
-        dead_jobs = job_manager.get_dead_jobs()
-        if dead_jobs:
-            raise JobRunnerNotCompletedError(dead_jobs)
+
+        # while job_manager.has_ready_jobs():
+        #     job = job_manager.get_job()
+        #     if not job:
+        #         continue
+        #
+        #     if job.exc is None:
+        #         try:
+        #             self.job_processor.process_job(job, *args)
+        #         except Exception as exc:
+        #             self.job_processor.handle_event(exc)
+        #             job.exc = exc
+        #         self.job_processor.post_process_job(job, *args)
+        #         self.job_processor.handle_event(JobEvent(job))
+        #     else:
+        #         self.job_processor.handle_event(job.exc)
+        #
+        #     job_manager.put_job(job)
+        # dead_jobs = job_manager.get_dead_jobs()
+        # if dead_jobs:
+        #     raise JobRunnerNotCompletedError(dead_jobs)
 
     __call__ = run
 
