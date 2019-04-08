@@ -164,11 +164,22 @@ class JobRunner(object):
 
         """
         self.job_processor = job_processor
-        if nproc is None:
-            nproc = self.NPROC
-        self.nproc = nproc
 
-    def run(self, job_manager, *args):
+
+    async def job_processor_wrapper(self, job, job_manager, *args):
+        try:
+            await self.job_processor.process_job(job, *args)
+        except Exception as exc:
+            self.job_processor.handle_event(exc)
+            job.exc = exc
+        self.job_processor.post_process_job(job, *args)
+        self.job_processor.handle_event(JobEvent(job))
+        print('gajrgfioah')
+        job_manager.put_job(job)
+        return job
+
+
+    def run(self, jobs, *args):
         """
         Start the job runner with an instance of JobManager.
 
@@ -181,10 +192,10 @@ class JobRunner(object):
             self.job_processor.post_process_job(job_proxy, *args)
         """
         # @TODO reimplement this with asyncio
-        print('HI')
+        # # print('HI')
         loop = asyncio.get_event_loop()
-        print(job_manager.ready_jobs)
-        #print(job_manager.get_job())
+        # # print(f'job_manager.ready_jobs is {job_manager.ready_jobs}')
+        ## # print(job_manager.get_job())
 
         todo = []
         while job_manager.has_ready_jobs():
@@ -192,25 +203,26 @@ class JobRunner(object):
             if job and not job.exc:
                 todo.append(job)
 
-        print(todo)
+        # # print(f'todo is {todo}')
         awaiting = []
         for ind, job in enumerate(todo):
+            # # print(f'job is {job} of type {type(type)}')
+            if job:
+                # # print('a')
+                task = loop.create_task(self.job_processor_wrapper(job, job_manager, *args))
+                # # print('b')
+                task.ind = ind
+                awaiting.append(task)
 
-            if not job:
-                continue
-            task = loop.create_task(self.job_processor.process_job(job, *args))
-            task.ind = ind
-            awaiting.append(task)
+        print(f'>>> Awaiting is : {awaiting}\n\tof length {len(awaiting)}')
 
-        # awaiting = []
-        # for ind, job in enumerate(job_manager.ready_jobs):
-        #     print('ivbipapvhunpiauf', job)
-        #     if not job:
-        #         continue
-        #     task = loop.create_task(self.job_processor.process_job(job, *args))
-        #     task.ind = ind
-        #     awaiting.append(task)
-        #
+        group_of_tasks = asyncio.gather(*awaiting)
+        results = loop.run_until_complete(group_of_tasks)
+        loop.close()
+        print(results)
+
+        print(job_manager)
+
         # index = 0
         # iteration =0
         # completed_tasks = {}
@@ -248,6 +260,54 @@ class JobRunner(object):
         #     raise JobRunnerNotCompletedError(dead_jobs)
 
     __call__ = run
+
+
+class AsyncJobRunner():
+    def __init__(self, job_processor, nproc=None):
+        """
+        Initialise a job runner.
+
+        job_processor: the processor of a job. Must implement a process_job()
+        and a post_process_job() methods. See the run() method for detail.
+
+        nproc: maximum number of processes in the pool. If None or not
+        specified, use self.NPROC.
+
+        """
+        self.job_processor = job_processor
+
+    async def job_processor_wrapper(self, job, *args):
+        # print('M')
+        try:
+            # print('N')
+            await self.job_processor.process_job(job, *args)
+            # print('N1')
+        except Exception as exc:
+            import traceback
+            traceback.print_exc()
+            self.job_processor.handle_event(exc)
+        # print('P')
+        self.job_processor.post_process_job(job, *args)
+        self.job_processor.handle_event(JobEvent(job))
+
+    def run(self, jobs, *args):
+        loop = asyncio.get_event_loop()
+
+        awaiting = []
+        for ind, job in enumerate(jobs):
+            task = loop.create_task(self.job_processor_wrapper(jobs[job], *args))
+            task.ind = ind
+            task.name = jobs[job]
+            awaiting.append(task)
+
+        #print(f'>>> Awaiting is : {awaiting}\n\tof length {len(awaiting)}')
+
+        group_of_tasks = asyncio.gather(*awaiting)
+        loop.run_until_complete(group_of_tasks)
+        loop.close()
+
+    __call__ = run
+
 
 
 class JobRunnerNotCompletedError(Exception):

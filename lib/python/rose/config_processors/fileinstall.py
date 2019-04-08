@@ -27,7 +27,7 @@ from rose.checksum import (
 from rose.config_processor import ConfigProcessError, ConfigProcessorBase
 from rose.env import env_var_process, UnboundEnvironmentVariableError
 from rose.fs_util import FileSystemUtil
-from rose.job_runner import JobManager, JobProxy, JobRunner
+from rose.job_runner import JobManager, JobProxy, JobRunner, AsyncJobRunner
 from rose.popen import RosePopener
 from rose.reporter import Event
 from rose.scheme_handler import SchemeHandlersManager
@@ -318,9 +318,9 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                 if nproc_str is not None:
                     nproc = int(nproc_str)
                 print(f"AAA")
-                job_runner = JobRunner(self, nproc)
+                job_runner = AsyncJobRunner(self)
                 print(f"BBB")
-                job_runner(JobManager(jobs), conf_tree, loc_dao, work_dir)
+                job_runner(jobs, conf_tree, loc_dao, work_dir)
                 print(f"CCC")
             except ValueError as exc:
                 if exc.args and exc.args[0] in jobs:
@@ -356,11 +356,12 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             event = ChecksumEvent(target.name, target.paths[0].checksum)
             self.handle_event(event)
 
-    def process_job(self, job, conf_tree, loc_dao, work_dir):
+    async def process_job(self, job, conf_tree, loc_dao, work_dir):
         """Process a job, helper for "process"."""
         for key, method in [(Loc.A_INSTALL, self._target_install),
                             (Loc.A_SOURCE, self._source_pull)]:
             if job.context.action_key == key:
+                print(">>> job.context is >>>", job.context)
                 return method(job.context, conf_tree, work_dir)
 
     @classmethod
@@ -397,7 +398,10 @@ class ConfigProcessorForFile(ConfigProcessorBase):
         mod_bits = None
         is_first = True
         # Install target
+        print(f'>>> target.dep_locs is {target.dep_locs}')
         for source in target.dep_locs:
+            print(f'>>> source is {source}')
+            print(f'>>> source.cache is {source.cache}')
             if target.loc_type is None:
                 target.loc_type = source.loc_type
             elif target.loc_type != source.loc_type:
@@ -427,6 +431,12 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                 args = []
                 if is_first:
                     self.manager.fs_util.makedirs(target.name)
+
+                T = ">>> {} is {} of type {}"
+                print(T.format("source.cache", source.cache, type(source.cache)))
+                #
+                # print(T.format("target.name", target.name, type(target.name)))
+
                 args.extend(["--checksum", source.cache + "/", target.name])
                 cmd = self.manager.popen.get_cmd("rsync", *args)
                 self.manager.popen(*cmd)
