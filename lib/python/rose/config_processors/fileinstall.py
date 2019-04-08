@@ -317,11 +317,11 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                 nproc = None
                 if nproc_str is not None:
                     nproc = int(nproc_str)
-                print(f"AAA")
+                # # # print(f"AAA")
                 job_runner = AsyncJobRunner(self)
-                print(f"BBB")
+                # # # print(f"BBB")
                 job_runner(jobs, conf_tree, loc_dao, work_dir)
-                print(f"CCC")
+                # # # print(f"CCC")
             except ValueError as exc:
                 if exc.args and exc.args[0] in jobs:
                     job = jobs[exc.args[0]]
@@ -360,9 +360,14 @@ class ConfigProcessorForFile(ConfigProcessorBase):
         """Process a job, helper for "process"."""
         for key, method in [(Loc.A_INSTALL, self._target_install),
                             (Loc.A_SOURCE, self._source_pull)]:
+            # # # print(f'>>>> job.context.action_key is {job.context.action_key}')
             if job.context.action_key == key:
-                print(">>> job.context is >>>", job.context)
-                print (f">>>> job.context.cache is {job.context.cache}")
+                try:
+                    print(f'==== key is {key} ==='
+                          f'\n\tAAA job.context.dep_locs is: {job.context.dep_locs[0]}')
+                except:
+                    print(f'==== key is {key} ==='
+                          f'\n\tBBB job.context.dep_locs is: {job.context.dep_locs}')
                 return method(job.context, conf_tree, work_dir)
 
     @classmethod
@@ -386,6 +391,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             # and filesystem safe identifier for a source name (which could be
             # a url).
             get_checksum_func()(BytesIO(source.name.encode())))
+        # # # print(f'!!! {source.cache}')
         return self.loc_handlers_manager.pull(source, conf_tree)
 
     def _target_install(self, target, conf_tree, work_dir):
@@ -399,11 +405,11 @@ class ConfigProcessorForFile(ConfigProcessorBase):
         mod_bits = None
         is_first = True
         # Install target
-        print(f'>>> target.dep_locs is {target.dep_locs}')
-        print(f'v^v^v^ target.dep_locs[0].cache is {target.dep_locs[0].cache}')
+        # # # print(f'>>> target.dep_locs is {target.dep_locs}')
+        # # # print(f'v^v^v^ target.dep_locs[0].cache is {target.dep_locs[0].cache}')
         for source in target.dep_locs:
-            print(f'>>> source is {source}')
-            print(f'>>> source.cache is {source.cache}')
+            # # # print(f'>>> source is {source}')
+            # # # print(f'>>> source.cache is {source.cache}')
             if target.loc_type is None:
                 target.loc_type = source.loc_type
             elif target.loc_type != source.loc_type:
@@ -415,9 +421,9 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                         self.manager.fs_util.delete(target.name)
                     handle = open(target.name, "wb")
                 f_bsize = os.statvfs(source.cache).f_bsize
-                print(f'xxx source is {source}\n\t'
-                      f'source.cache is {source.cache}\n\t'
-                      f'f_bsize is {f_bsize}')
+                # # # print(f'xxx source is {source}\n\t')
+                #       f'source.cache is {source.cache}\n\t'
+                #       f'f_bsize is {f_bsize}')
                 source_handle = open(source.cache, 'rb')
                 while True:
                     bytes_ = source_handle.read(f_bsize)
@@ -438,9 +444,9 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                     self.manager.fs_util.makedirs(target.name)
 
                 T = ">>> {} is {} of type {}"
-                print(T.format("source.cache", source.cache, type(source.cache)))
+                # # # print(T.format("source.cache", source.cache, type(source.cache)))
                 #
-                # print(T.format("target.name", target.name, type(target.name)))
+                # # # # print(T.format("target.name", target.name, type(target.name)))
 
                 args.extend(["--checksum", source.cache + "/", target.name])
                 cmd = self.manager.popen.get_cmd("rsync", *args)
