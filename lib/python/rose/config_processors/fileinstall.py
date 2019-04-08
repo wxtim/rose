@@ -362,6 +362,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                             (Loc.A_SOURCE, self._source_pull)]:
             if job.context.action_key == key:
                 print(">>> job.context is >>>", job.context)
+                print (f">>>> job.context.cache is {job.context.cache}")
                 return method(job.context, conf_tree, work_dir)
 
     @classmethod
@@ -399,6 +400,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
         is_first = True
         # Install target
         print(f'>>> target.dep_locs is {target.dep_locs}')
+        print(f'v^v^v^ target.dep_locs[0].cache is {target.dep_locs[0].cache}')
         for source in target.dep_locs:
             print(f'>>> source is {source}')
             print(f'>>> source.cache is {source.cache}')
@@ -413,6 +415,9 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                         self.manager.fs_util.delete(target.name)
                     handle = open(target.name, "wb")
                 f_bsize = os.statvfs(source.cache).f_bsize
+                print(f'xxx source is {source}\n\t'
+                      f'source.cache is {source.cache}\n\t'
+                      f'f_bsize is {f_bsize}')
                 source_handle = open(source.cache, 'rb')
                 while True:
                     bytes_ = source_handle.read(f_bsize)
