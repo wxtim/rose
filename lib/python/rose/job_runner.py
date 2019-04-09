@@ -19,6 +19,9 @@
 # -----------------------------------------------------------------------------
 """A multiprocessing runner of jobs with dependencies."""
 
+import asyncio
+import functools
+
 from rose.reporter import Event
 
 
@@ -168,6 +171,23 @@ class JobRunner(object):
             nproc = self.NPROC
         self.nproc = nproc
 
+
+    def job_run_wrap(self, job, *args):
+            if not job:
+                return
+
+            if job.exc is None:
+                try:
+                    self.job_processor.process_job(job, *args)
+                except Exception as exc:
+                    self.job_processor.handle_event(exc)
+                    job.exc = exc
+                self.job_processor.post_process_job(job, *args)
+                self.job_processor.handle_event(JobEvent(job))
+            else:
+                self.job_processor.handle_event(job.exc)
+
+
     def run(self, job_manager, *args):
         """
         Start the job runner with an instance of JobManager.
@@ -181,26 +201,12 @@ class JobRunner(object):
             self.job_processor.post_process_job(job_proxy, *args)
         """
         # @TODO reimplement this with asyncio
+
+
+
         while job_manager.has_ready_jobs():
             job = job_manager.get_job()
-            if not job:
-                continue
-
-            if job.exc is None:
-                print(f'>>> Job is {job}')
-                print(f'<<< {job.context.dep_locs}')
-                if job.context.dep_locs:
-                    for item in job.context.dep_locs:
-                        print(f'\t>>> {item.cache}')
-                try:
-                    self.job_processor.process_job(job, *args)
-                except Exception as exc:
-                    self.job_processor.handle_event(exc)
-                    job.exc = exc
-                self.job_processor.post_process_job(job, *args)
-                self.job_processor.handle_event(JobEvent(job))
-            else:
-                self.job_processor.handle_event(job.exc)
+            self.job_run_wrap(job, *args)
 
             job_manager.put_job(job)
         dead_jobs = job_manager.get_dead_jobs()
