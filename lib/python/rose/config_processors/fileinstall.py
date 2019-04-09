@@ -358,17 +358,15 @@ class ConfigProcessorForFile(ConfigProcessorBase):
 
     async def process_job(self, job, conf_tree, loc_dao, work_dir):
         """Process a job, helper for "process"."""
-        for key, method in [(Loc.A_INSTALL, self._target_install),
-                            (Loc.A_SOURCE, self._source_pull)]:
-            # # # print(f'>>>> job.context.action_key is {job.context.action_key}')
-            if job.context.action_key == key:
-                try:
-                    print(f'==== key is {key} ==='
-                          f'\n\tAAA job.context.dep_locs is: {job.context.dep_locs[0]}')
-                except:
-                    print(f'==== key is {key} ==='
-                          f'\n\tBBB job.context.dep_locs is: {job.context.dep_locs}')
-                return method(job.context, conf_tree, work_dir)
+        if job.context.action_key == Loc.A_SOURCE:
+            print(f'=== starting on A_SOURCE ===')
+            return await self._source_pull(job.context, conf_tree, work_dir)
+        else:
+            print(f'=== starting on A_INSTALL ==='
+                  f'\n<<< job.context.dep_locs is {job.context.dep_locs}')
+            if job.context.dep_locs:
+                print([i.cache for i in job.context.dep_locs])
+            return await self._target_install(job.context, conf_tree, work_dir)
 
     @classmethod
     def post_process_job(cls, job, conf_tree, loc_dao, work_dir):
@@ -382,7 +380,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
         except AttributeError:
             pass
 
-    def _source_pull(self, source, conf_tree, work_dir):
+    async def _source_pull(self, source, conf_tree, work_dir):
         """Pulls a source to its cache in the work directory."""
         source.cache = os.path.join(
             work_dir,
@@ -391,10 +389,10 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             # and filesystem safe identifier for a source name (which could be
             # a url).
             get_checksum_func()(BytesIO(source.name.encode())))
-        # # # print(f'!!! {source.cache}')
+        print(f'!!! {source.cache}')
         return self.loc_handlers_manager.pull(source, conf_tree)
 
-    def _target_install(self, target, conf_tree, work_dir):
+    async def _target_install(self, target, conf_tree, work_dir):
         """Install target.
 
         Build target using its source(s).

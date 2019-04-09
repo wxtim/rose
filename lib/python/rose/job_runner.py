@@ -279,7 +279,8 @@ class AsyncJobRunner():
     async def job_processor_wrapper(self, job, *args):
         # print('M')
         try:
-            # print('N')
+            print(f'{"="*79}\nNNN job.context.dep_locs is {job.context.dep_locs}'
+                  f'\n\targs are {args}')
             await self.job_processor.process_job(job, *args)
             # print('N1')
         except Exception as exc:
@@ -294,7 +295,13 @@ class AsyncJobRunner():
         loop = asyncio.get_event_loop()
 
         awaiting = []
+        print(jobs)
         for ind, job in enumerate(jobs):
+            print(f'{"#"*79}\n>>>Job is {jobs[job]}\n\t'
+                  f'job.context is {jobs[job].context}\n\t'
+                  f'job.context.dep_locs is {jobs[job].context.dep_locs}')
+            # for item in jobs[job].context.dep_locs:
+            #     print(f'<><> {item} : {item.cache}')
             task = loop.create_task(self.job_processor_wrapper(jobs[job], *args))
             task.ind = ind
             task.name = jobs[job]
