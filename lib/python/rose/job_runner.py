@@ -187,6 +187,11 @@ class JobRunner(object):
                 continue
 
             if job.exc is None:
+                print(f'>>> Job is {job}')
+                print(f'<<< {job.context.dep_locs}')
+                if job.context.dep_locs:
+                    for item in job.context.dep_locs:
+                        print(f'\t>>> {item.cache}')
                 try:
                     self.job_processor.process_job(job, *args)
                 except Exception as exc:

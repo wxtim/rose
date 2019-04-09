@@ -374,6 +374,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
 
     def _source_pull(self, source, conf_tree, work_dir):
         """Pulls a source to its cache in the work directory."""
+        print(f'--> {source.cache}')
         source.cache = os.path.join(
             work_dir,
             # checksum the source name (not it's contents).
@@ -381,6 +382,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             # and filesystem safe identifier for a source name (which could be
             # a url).
             get_checksum_func()(BytesIO(source.name.encode())))
+        print(f'out -> {source.cache}')
         return self.loc_handlers_manager.pull(source, conf_tree)
 
     def _target_install(self, target, conf_tree, work_dir):
