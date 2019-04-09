@@ -172,20 +172,21 @@ class JobRunner(object):
         self.nproc = nproc
 
 
-    def job_run_wrap(self, job, *args):
-            if not job:
-                return
+    async def job_run_wrap(self, job, *args):
+        if not job:
+            return
 
-            if job.exc is None:
-                try:
-                    self.job_processor.process_job(job, *args)
-                except Exception as exc:
-                    self.job_processor.handle_event(exc)
-                    job.exc = exc
-                self.job_processor.post_process_job(job, *args)
-                self.job_processor.handle_event(JobEvent(job))
-            else:
-                self.job_processor.handle_event(job.exc)
+        if job.exc is None:
+            try:
+                await self.job_processor.process_job(job, *args)
+            except Exception as exc:
+                self.job_processor.handle_event(exc)
+                job.exc = exc
+            self.job_processor.post_process_job(job, *args)
+            self.job_processor.handle_event(JobEvent(job))
+        else:
+            self.job_processor.handle_event(job.exc)
+
 
 
     def run(self, job_manager, *args):
@@ -203,10 +204,10 @@ class JobRunner(object):
         # @TODO reimplement this with asyncio
 
 
-
+        # loop = asyncio.get_event_loop()
         while job_manager.has_ready_jobs():
             job = job_manager.get_job()
-            self.job_run_wrap(job, *args)
+            asyncio.run(self.job_run_wrap(job, *args))
 
             job_manager.put_job(job)
         dead_jobs = job_manager.get_dead_jobs()

@@ -38,7 +38,6 @@ from io import BytesIO
 import sys
 from tempfile import mkdtemp
 from urllib.parse import urlparse
-import collections.abc
 
 
 class ConfigProcessorForFile(ConfigProcessorBase):
@@ -353,12 +352,12 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             event = ChecksumEvent(target.name, target.paths[0].checksum)
             self.handle_event(event)
 
-    def process_job(self, job, conf_tree, loc_dao, work_dir):
+    async def process_job(self, job, conf_tree, loc_dao, work_dir):
         """Process a job, helper for "process"."""
         for key, method in [(Loc.A_INSTALL, self._target_install),
                             (Loc.A_SOURCE, self._source_pull)]:
             if job.context.action_key == key:
-                return method(job.context, conf_tree, work_dir)
+                return await method(job.context, conf_tree, work_dir)
 
     @classmethod
     def post_process_job(cls, job, conf_tree, loc_dao, work_dir):
@@ -372,7 +371,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
         except AttributeError:
             pass
 
-    def _source_pull(self, source, conf_tree, work_dir):
+    async def _source_pull(self, source, conf_tree, work_dir):
         """Pulls a source to its cache in the work directory."""
         print(f'--> {source.cache}')
         source.cache = os.path.join(
@@ -383,9 +382,9 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             # a url).
             get_checksum_func()(BytesIO(source.name.encode())))
         print(f'out -> {source.cache}')
-        return self.loc_handlers_manager.pull(source, conf_tree)
+        return await self.loc_handlers_manager.pull(source, conf_tree)
 
-    def _target_install(self, target, conf_tree, work_dir):
+    async def _target_install(self, target, conf_tree, work_dir):
         """Install target.
 
         Build target using its source(s).
