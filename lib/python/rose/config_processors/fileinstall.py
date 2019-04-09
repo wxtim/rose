@@ -390,7 +390,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             # a url).
             get_checksum_func()(BytesIO(source.name.encode())))
         print(f'!!! {source.cache}')
-        return self.loc_handlers_manager.pull(source, conf_tree)
+        return await self.loc_handlers_manager.pull(source, conf_tree)
 
     async def _target_install(self, target, conf_tree, work_dir):
         """Install target.
@@ -793,11 +793,12 @@ class PullableLocHandlersManager(SchemeHandlersManager):
                 handler = self.get_handler(self.DEFAULT_SCHEME)
         return handler.parse(loc, conf_tree)
 
-    def pull(self, loc, conf_tree):
+    async def pull(self, loc, conf_tree):
         """Pull loc to its cache."""
         if loc.scheme is None:
             self.parse(loc, conf_tree)
-        return self.get_handler(loc.scheme).pull(loc, conf_tree)
+        print(f'self.get_handler(loc.scheme).pull is {self.get_handler(loc.scheme).pull}')
+        return await self.get_handler(loc.scheme).pull(loc, conf_tree)
 
 
 class SourceSkipEvent(Event):

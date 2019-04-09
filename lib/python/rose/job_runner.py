@@ -279,7 +279,8 @@ class AsyncJobRunner():
     async def job_processor_wrapper(self, job, *args):
         # print('M')
         try:
-            print(f'{"="*79}\nNNN job.context.dep_locs is {job.context.dep_locs}'
+            print(f'{"="*79}\njob is {job.context.action_key}\n'
+                  f'NNN job.context.dep_locs is {job.context.dep_locs}'
                   f'\n\targs are {args}')
             await self.job_processor.process_job(job, *args)
             # print('N1')

@@ -20,6 +20,7 @@
 """A handler of Subversion locations."""
 
 import os
+import asyncio
 from urllib.parse import urlparse
 import xml.parsers.expat
 
@@ -65,11 +66,13 @@ class SvnLocHandler(object):
         loc.real_name = "%s@%s" % (info_entry["url"], info_entry["revision"])
         loc.key = info_entry["commit:revision"]
 
-    def pull(self, loc, conf_tree):
+    async def pull(self, loc, conf_tree):
         """Run "svn export" to get loc to its cache."""
         if not loc.real_name:
             self.parse(loc, conf_tree)
-        self.manager.popen("svn", "export", "-q", loc.real_name, loc.cache)
+        proc = await asyncio.create_subprocess_shell(
+            f"svn export -q {loc.real_name} {loc.cache}")
+        await proc.communicate()
 
 
 class SvnInfoXMLParser(object):
