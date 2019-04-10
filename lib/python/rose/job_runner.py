@@ -19,6 +19,9 @@
 # -----------------------------------------------------------------------------
 """A multiprocessing runner of jobs with dependencies."""
 
+import asyncio
+import functools
+import concurrent.futures
 from rose.reporter import Event
 
 
@@ -168,7 +171,7 @@ class JobRunner(object):
             nproc = self.NPROC
         self.nproc = nproc
 
-    def run(self, job_manager, *args):
+    async def run(self, job_manager, *args):
         """
         Start the job runner with an instance of JobManager.
 
@@ -181,6 +184,7 @@ class JobRunner(object):
             self.job_processor.post_process_job(job_proxy, *args)
         """
         # @TODO reimplement this with asyncio
+        loop = asyncio.get_running_loop()
         while job_manager.has_ready_jobs():
             job = job_manager.get_job()
             if not job:
@@ -188,7 +192,10 @@ class JobRunner(object):
 
             if job.exc is None:
                 try:
-                    self.job_processor.process_job(job, *args)
+                    # self.job_processor.process_job(job, *args)
+                    await loop.run_in_executor(
+                        None, functools.partial(
+                            self.job_processor.process_job, job, *args))
                 except Exception as exc:
                     self.job_processor.handle_event(exc)
                     job.exc = exc
@@ -202,7 +209,14 @@ class JobRunner(object):
         if dead_jobs:
             raise JobRunnerNotCompletedError(dead_jobs)
 
-    __call__ = run
+    def run_wrapper(self, job_manager, *args):
+        # import logging
+        # print(f'job_manager is {job_manager}')
+        # logging.basicConfig(level=logging.DEBUG)
+        asyncio.run(self.run(job_manager, *args), debug=False)
+
+
+    __call__ = run_wrapper
 
 
 class JobRunnerNotCompletedError(Exception):
