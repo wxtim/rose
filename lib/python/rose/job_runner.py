@@ -215,7 +215,6 @@ class JobRunner(object):
         # logging.basicConfig(level=logging.DEBUG)
         asyncio.run(self.run(job_manager, *args), debug=False)
 
-
     __call__ = run_wrapper
 
 
