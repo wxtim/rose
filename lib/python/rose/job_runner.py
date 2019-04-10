@@ -199,41 +199,26 @@ class JobRunner(object):
         When a job is completed, calls
             self.job_processor.post_process_job(job_proxy, *args)
         """
-        # @TODO reimplement this with asyncio
-        cycle = 0
+        cycle = 0  # Purely a debugging variable
+        loop = asyncio.get_event_loop()
         while job_manager.has_ready_jobs():
-            print(f'{cycle} >>> {job_manager.ready_jobs}')
+            # Collect genuinely ready jobs ≠ job_manager.ready_jobs :sad face:
+            # @TODO Refactor into job manager later
+            good_to_go = []
+            while job_manager.has_ready_jobs():
+                good_to_go.append(job_manager.get_job())
 
-
-            loop = asyncio.get_event_loop()
-
+            # Set up list of tasks
             awaiting = []
-            for ind, job in enumerate(job_manager.ready_jobs):
+            for ind, job in enumerate(good_to_go):
                 task = loop.create_task(
                     self.job_processing(job_manager, job, *args))
                 task.ind = ind
                 awaiting.append(task)
 
-            print(f'{cycle} >>> awaiting is {awaiting}')
-            index = 0
-            completed_tasks = {}
-            while awaiting:
-                completed, awaiting = loop.run_until_complete(
-                    asyncio.wait(awaiting)
-                )
-                completed_tasks.update({t.ind: t.result() for t in completed})
-
-                changed = True
-                while changed and completed_tasks:
-                    if index in completed_tasks:
-                        yield completed_tasks.pop(index)
-                        changed = True
-                        index += 1
-
-
-
-
-
+            # Use asyncio.gather to run a whole bunch of these tasks
+            group_of_tasks = asyncio.gather(*awaiting)
+            results = loop.run_until_complete(group_of_tasks)
 
             cycle += 1
 
