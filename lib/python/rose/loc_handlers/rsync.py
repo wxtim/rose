@@ -112,7 +112,7 @@ elif os.path.isfile(path):
                         name, mtime, size)
                 loc.add_path(name, fake_sum, access_mode)
 
-    def pull(self, loc, _):
+    async def pull(self, loc, _):
         """Run "rsync" to pull files or directories of loc to its cache."""
         name = loc.name
         if loc.loc_type == loc.TYPE_TREE:

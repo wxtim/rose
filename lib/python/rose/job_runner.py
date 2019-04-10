@@ -20,7 +20,9 @@
 """A multiprocessing runner of jobs with dependencies."""
 
 import asyncio
+import logging
 from rose.reporter import Event
+import time
 
 
 class JobEvent(Event):
@@ -150,9 +152,6 @@ class JobProxy(object):
 class JobRunner(object):
     """Runs JobProxy objects with pool of workers."""
 
-    NPROC = 6
-    POLL_DELAY = 0.05
-
     def __init__(self, job_processor, nproc=None):
         """
         Initialise a job runner.
@@ -165,10 +164,6 @@ class JobRunner(object):
 
         """
         self.job_processor = job_processor
-        if nproc is None:
-            nproc = self.NPROC
-        self.nproc = nproc
-
 
     async def job_processing(self, job_manager, job, *args):
         if not job:
@@ -176,7 +171,7 @@ class JobRunner(object):
 
         if job.exc is None:
             try:
-                self.job_processor.process_job(job, *args)
+                await self.job_processor.process_job(job, *args)
             except Exception as exc:
                 self.job_processor.handle_event(exc)
                 job.exc = exc
@@ -200,8 +195,11 @@ class JobRunner(object):
             self.job_processor.post_process_job(job_proxy, *args)
         """
         cycle = 0  # Purely a debugging variable
+        #logging.basicConfig(level=logging.DEBUG)
         loop = asyncio.get_event_loop()
+        #loop.set_debug(True)
         while job_manager.has_ready_jobs():
+            #print(f'>>> CYCLE = {cycle} {time.process_time()}')
             # Collect genuinely ready jobs ≠ job_manager.ready_jobs :sad face:
             # @TODO Refactor into job manager later
             good_to_go = []
@@ -221,6 +219,8 @@ class JobRunner(object):
             results = loop.run_until_complete(group_of_tasks)
 
             cycle += 1
+            #print(f'<<< CYCLE = {cycle} {time.process_time()}')
+
 
         dead_jobs = job_manager.get_dead_jobs()
         if dead_jobs:

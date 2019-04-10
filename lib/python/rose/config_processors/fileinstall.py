@@ -38,7 +38,7 @@ from io import BytesIO
 import sys
 from tempfile import mkdtemp
 from urllib.parse import urlparse
-import collections.abc
+import aiofiles
 
 
 class ConfigProcessorForFile(ConfigProcessorBase):
@@ -353,12 +353,13 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             event = ChecksumEvent(target.name, target.paths[0].checksum)
             self.handle_event(event)
 
-    def process_job(self, job, conf_tree, loc_dao, work_dir):
+    async def process_job(self, job, conf_tree, loc_dao, work_dir):
         """Process a job, helper for "process"."""
         for key, method in [(Loc.A_INSTALL, self._target_install),
                             (Loc.A_SOURCE, self._source_pull)]:
             if job.context.action_key == key:
-                return method(job.context, conf_tree, work_dir)
+                # print(f'>>> method is {method}')
+                return await method(job.context, conf_tree, work_dir)
 
     @classmethod
     def post_process_job(cls, job, conf_tree, loc_dao, work_dir):
@@ -372,7 +373,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
         except AttributeError:
             pass
 
-    def _source_pull(self, source, conf_tree, work_dir):
+    async def _source_pull(self, source, conf_tree, work_dir):
         """Pulls a source to its cache in the work directory."""
         source.cache = os.path.join(
             work_dir,
@@ -381,9 +382,10 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             # and filesystem safe identifier for a source name (which could be
             # a url).
             get_checksum_func()(BytesIO(source.name.encode())))
-        return self.loc_handlers_manager.pull(source, conf_tree)
+        #print(f'>>> self.loc_handlers_manager is {self.loc_handlers_manager}')
+        return await self.loc_handlers_manager.pull(source, conf_tree)
 
-    def _target_install(self, target, conf_tree, work_dir):
+    async def _target_install(self, target, conf_tree, work_dir):
         """Install target.
 
         Build target using its source(s).
@@ -405,17 +407,13 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                     if not os.path.isfile(target.name):
                         self.manager.fs_util.delete(target.name)
                     handle = open(target.name, "wb")
-                f_bsize = os.statvfs(source.cache).f_bsize
-                source_handle = open(source.cache, 'rb')
-                while True:
-                    bytes_ = source_handle.read(f_bsize)
-                    if not bytes_:
-                        break
+                    async with aiofiles.open(source.cache, 'rb') as source_handle:
+                            bytes_ = await source_handle.read()
+                    # Deal with possibility of different types of handle
                     try:
                         handle.write(bytes_.encode())
                     except AttributeError:
                         handle.write(bytes_)
-                source_handle.close()
                 if mod_bits is None:
                     mod_bits = os.stat(source.cache).st_mode
                 else:
