@@ -22,6 +22,7 @@
 from fnmatch import fnmatch
 from glob import glob
 import os
+import aiofiles
 from rose.checksum import (
     get_checksum, get_checksum_func, guess_checksum_algorithm)
 from rose.config_processor import ConfigProcessError, ConfigProcessorBase
@@ -373,7 +374,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
 
     async def _source_pull(self, source, conf_tree, work_dir):
         """Pulls a source to its cache in the work directory."""
-        print(f'--> {source.cache}')
+        # print(f'--> {source.cache}')
         source.cache = os.path.join(
             work_dir,
             # checksum the source name (not it's contents).
@@ -381,7 +382,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
             # and filesystem safe identifier for a source name (which could be
             # a url).
             get_checksum_func()(BytesIO(source.name.encode())))
-        print(f'out -> {source.cache}')
+        # print(f'out -> {source.cache}')
         return await self.loc_handlers_manager.pull(source, conf_tree)
 
     async def _target_install(self, target, conf_tree, work_dir):
@@ -406,17 +407,21 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                     if not os.path.isfile(target.name):
                         self.manager.fs_util.delete(target.name)
                     handle = open(target.name, "wb")
-                f_bsize = os.statvfs(source.cache).f_bsize
-                source_handle = open(source.cache, 'rb')
-                while True:
-                    bytes_ = source_handle.read(f_bsize)
-                    if not bytes_:
-                        break
+
+                async with aiofiles.open(source.cache, 'rb') as source_handle:
+                    bytes_ = await source_handle.read()
+
+                # f_bsize = os.statvfs(source.cache).f_bsize
+                # source_handle = open(source.cache, 'rb')
+                # while True:
+                #     bytes_ = source_handle.read(f_bsize)
+                #     if not bytes_:
+                #         break
                     try:
                         handle.write(bytes_.encode())
                     except AttributeError:
                         handle.write(bytes_)
-                source_handle.close()
+                # source_handle.close()
                 if mod_bits is None:
                     mod_bits = os.stat(source.cache).st_mode
                 else:
@@ -426,6 +431,7 @@ class ConfigProcessorForFile(ConfigProcessorBase):
                 if is_first:
                     self.manager.fs_util.makedirs(target.name)
                 args.extend(["--checksum", source.cache + "/", target.name])
+                # HEREE!!!!
                 cmd = self.manager.popen.get_cmd("rsync", *args)
                 self.manager.popen(*cmd)
             is_first = False

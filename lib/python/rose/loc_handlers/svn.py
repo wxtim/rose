@@ -70,7 +70,6 @@ class SvnLocHandler(object):
         """Run "svn export" to get loc to its cache."""
         if not loc.real_name:
             self.parse(loc, conf_tree)
-        print(f"self.manager is {self.manager.popen}")
         await self.manager.popen.run_ok_async("svn", "export", "-q", loc.real_name, loc.cache)
 
 

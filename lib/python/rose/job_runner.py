@@ -188,8 +188,7 @@ class JobRunner(object):
             self.job_processor.handle_event(job.exc)
 
 
-
-    def run(self, job_manager, *args):
+    async def run(self, job_manager, *args):
         """
         Start the job runner with an instance of JobManager.
 
@@ -207,14 +206,21 @@ class JobRunner(object):
         # loop = asyncio.get_event_loop()
         while job_manager.has_ready_jobs():
             job = job_manager.get_job()
-            asyncio.run(self.job_run_wrap(job, *args))
+
+            await self.job_run_wrap(job, *args)
 
             job_manager.put_job(job)
         dead_jobs = job_manager.get_dead_jobs()
         if dead_jobs:
             raise JobRunnerNotCompletedError(dead_jobs)
 
-    __call__ = run
+
+    def run_wrapper(self, job_manager, *args):
+        import logging
+        logging.basicConfig(level=logging.DEBUG)
+        asyncio.run(self.run(job_manager, *args), debug=True)
+
+    __call__ = run_wrapper
 
 
 class JobRunnerNotCompletedError(Exception):
