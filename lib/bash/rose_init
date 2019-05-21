@@ -36,7 +36,9 @@ function rose_init() {
     ROSE_NS=$(basename $0)
     ROSE_HOME_BIN=$(cd $(dirname $0) && pwd)
     ROSE_HOME=$(dirname $ROSE_HOME_BIN)
-    eval $(grep 'ROSE_VERSION' $ROSE_HOME/rose-version)
+    # Temporarilly fixed
+    # eval $(grep 'ROSE_VERSION' $ROSE_HOME/rose-version)
+    export ROSE_VERSION="0.0.3"
     local DESC=
     if DESC=$(cd $ROSE_HOME && git describe 2>/dev/null); then
         ROSE_VERSION=$DESC

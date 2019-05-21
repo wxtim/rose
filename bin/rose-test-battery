@@ -48,8 +48,8 @@
 # SEE ALSO
 #     * `prove(1)`
 #-------------------------------------------------------------------------------
-. $(dirname $0)/../lib/bash/rose_init
-. $(dirname $0)/../lib/bash/rose_log
+. $(dirname $0)/../bin/rose_init
+. $(dirname $0)/../bin/rose_log
 rose_init
 mkdir -p ~/.metomi
 if [[ $ROSE_HOME != . ]]; then
