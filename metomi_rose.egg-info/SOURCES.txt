@@ -1,5 +1,4 @@
 README.md
-rose-version
 setup.py
 bin/rose
 bin/rose-app-run
@@ -8,7 +7,6 @@ bin/rose-check-software
 bin/rose-config
 bin/rose-config-diff
 bin/rose-config-dump
-bin/rose-config-edit
 bin/rose-date
 bin/rose-edit
 bin/rose-env-cat
