@@ -92,7 +92,7 @@ class ConfigTreeLoader(object):
         conf_dir_paths -- A list of directories to locate relative paths to
                           configurations.
         opt_keys -- Optional configuration keys.
-        conf_node -- A rose.config.ConfigNode to extend, or None to use a
+        conf_node -- A metomi.rose.config.ConfigNode to extend, or None to use a
                      fresh one.
         no_ignore -- If True, skip loading ignored config settings.
 

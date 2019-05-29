@@ -79,7 +79,8 @@ ERROR_RETURN_VALUE = "{0}: incorrect return value"
 ERROR_RETURN_VALUE_STATE = "{0}: node.state: invalid returned value"
 MACRO_DIRNAME = os.path.join(os.path.join("lib", "python"),
                              metomi.rose.META_DIR_MACRO)
-ERROR_OUT_DIR_MULTIPLE_APPS = ("Cannot specify an output dir when running rose"
+ERROR_OUT_DIR_MULTIPLE_APPS = ("Cannot specify an output dir when running"""
+                               " metomi.rose."
                                " macro over multiple apps.")
 MACRO_EXT = ".py"
 MACRO_OUTPUT_HELP = "    # {0}\n"
@@ -240,12 +241,12 @@ class MacroBase(object):
             # This logic replicates output of the deprecated Python2 `cmp`
             # builtin
             return (rep1.value > rep2.value) - (rep1.value < rep2.value)
-        return rose.config.sort_settings(id1, id2)
+        return metomi.rose.config.sort_settings(id1, id2)
 
     def _load_meta_config(self, config, meta=None, directory=None,
                           config_type=None):
         """Return a metadata configuration object."""
-        if isinstance(meta, rose.config.ConfigNode):
+        if isinstance(meta, metomi.rose.config.ConfigNode):
             return meta
         return load_meta_config(config, directory, config_type=config_type)
 
@@ -261,7 +262,7 @@ class MacroBase(object):
             dict: A dictionary containing metadata options.
 
         Example:
-            >>> # Create a rose app.
+            >>> # Create a metomi.rose.app.
             >>> with open('rose-app.conf', 'w+') as app_config:
             ...     _ = app_config.write('''
             ... [foo]
@@ -282,7 +283,7 @@ class MacroBase(object):
             >>> get_metadata_for_config_id('foo=bar', meta_config)
             {'values': '1,2,3', 'id': 'foo=bar'}
 
-        .. testcleanup:: rose.macro.MacroBase.get_metadata_for_config_id
+        .. testcleanup:: metomi.rose.macro.MacroBase.get_metadata_for_config_id
 
             test_cleanup(['rose-app.conf', 'meta/rose-meta.conf', 'meta'])
         """
@@ -312,7 +313,7 @@ class MacroBase(object):
         macro_root_dir = os.path.dirname(macro_path)
         library_dir = os.path.dirname(os.path.dirname(macro_root_dir))
         root_dir = os.path.dirname(library_dir)
-        # root_dir is the directory of the rose-meta.conf file.
+        # root_dir is the directory of the metomi.rose.meta.conf file.
         etc_path = os.path.join(root_dir, 'etc')
         resource_path = os.path.join(etc_path, 'macros')
         resource_path = os.path.join(resource_path, macro_name)
@@ -338,7 +339,7 @@ class MacroBase(object):
         standard_format_config(config)
 
     def add_report(self, *args, **kwargs):
-        """Add a rose.macro.MacroReport.
+        """Add a metomi.rose.macro.MacroReport.
 
         See :class:`rose.macro.MacroReport` for details of arguments.
 
@@ -366,17 +367,17 @@ class MacroBaseRoseEdit(MacroBase):
     """This class extends MacroBase to provide a non-ConfigNode API.
 
     In the following methods, config_data can be a
-    rose.config.ConfigNode instance or a dictionary that
+    metomi.rose.config.ConfigNode instance or a dictionary that
     looks like this:
     {"sections":
-        {"namelist:foo": rose.section.Section instance,
-         "env": rose.section.Section instance},
+        {"namelist:foo": metomi.rose.section.Section instance,
+         "env": metomi.rose.section.Section instance},
         "variables":
-        {"namelist:foo": [rose.variable.Variable instance,
-                          rose.variable.Variable instance],
-         "env": [rose.variable.Variable instance]}
+        {"namelist:foo": [metomi.rose.variable.Variable instance,
+                          metomi.rose.variable.Variable instance],
+         "env": [metomi.rose.variable.Variable instance]}
     }
-    This makes it easy to interface with rose edit, which uses the
+    This makes it easy to interface with metomi.rose.edit, which uses the
     latter data structure internally.
 
     """
@@ -384,7 +385,7 @@ class MacroBaseRoseEdit(MacroBase):
     def _get_config_sections(self, config_data):
         """Return all sections within config_data."""
         sections = []
-        if isinstance(config_data, rose.config.ConfigNode):
+        if isinstance(config_data, metomi.rose.config.ConfigNode):
             for key, node in config_data.value.items():
                 if isinstance(node.value, dict):
                     sections.append(key)
@@ -398,7 +399,7 @@ class MacroBaseRoseEdit(MacroBase):
 
     def _get_config_section_options(self, config_data, section):
         """Return all options within a section in config_data."""
-        if isinstance(config_data, rose.config.ConfigNode):
+        if isinstance(config_data, metomi.rose.config.ConfigNode):
             names = []
             for keylist, _ in config_data.walk([section]):
                 names.append(keylist[-1])
@@ -409,7 +410,7 @@ class MacroBaseRoseEdit(MacroBase):
     def _get_config_has_id(self, config_data, id_):
         """Return whether the config_data contains the id_."""
         section, option = self._get_section_option_from_id(id_)
-        if isinstance(config_data, rose.config.ConfigNode):
+        if isinstance(config_data, metomi.rose.config.ConfigNode):
             return (config_data.get([section, option]) is not None)
         if option is None:
             return section in config_data["sections"]
@@ -419,7 +420,7 @@ class MacroBaseRoseEdit(MacroBase):
     def _get_config_id_state(self, config_data, id_):
         """Return the ConfigNode.STATE_* that applies to id_ or None."""
         section, option = self._get_section_option_from_id(id_)
-        if isinstance(config_data, rose.config.ConfigNode):
+        if isinstance(config_data, metomi.rose.config.ConfigNode):
             node = config_data.get([section, option])
             if node is None:
                 return None
@@ -436,18 +437,18 @@ class MacroBaseRoseEdit(MacroBase):
                     break
         if ignored_reason is None:
             return None
-        if rose.variable.IGNORED_BY_USER in ignored_reason:
-            return rose.config.ConfigNode.STATE_USER_IGNORED
-        if rose.variable.IGNORED_BY_SYSTEM in ignored_reason:
-            return rose.config.ConfigNode.STATE_SYST_IGNORED
-        return rose.config.ConfigNode.STATE_NORMAL
+        if metomi.rose.variable.IGNORED_BY_USER in ignored_reason:
+            return metomi.rose.config.ConfigNode.STATE_USER_IGNORED
+        if metomi.rose.variable.IGNORED_BY_SYSTEM in ignored_reason:
+            return metomi.rose.config.ConfigNode.STATE_SYST_IGNORED
+        return metomi.rose.config.ConfigNode.STATE_NORMAL
 
     def _get_config_id_value(self, config_data, id_):
         """Return a value (if any) for id_ in the config_data."""
         section, option = self._get_section_option_from_id(id_)
         if option is None:
             return None
-        if isinstance(config_data, rose.config.ConfigNode):
+        if isinstance(config_data, metomi.rose.config.ConfigNode):
             node = config_data.get([section, option])
             if node is None:
                 return None
@@ -1017,7 +1018,7 @@ def get_metadata_for_config_id(setting_id, meta_config):
         dict: A dictionary containing metadata options.
 
     Example:
-        >>> # Create a rose app.
+        >>> # Create a metomi.rose.app.
         >>> with open('rose-app.conf', 'w+') as app_config:
         ...     _ = app_config.write('''
         ... [foo]
@@ -1038,7 +1039,7 @@ def get_metadata_for_config_id(setting_id, meta_config):
         >>> get_metadata_for_config_id('foo=bar', meta_config)
         {'values': '1,2,3', 'id': 'foo=bar'}
 
-        .. testcleanup:: rose.macro.get_metadata_for_config_id
+        .. testcleanup:: metomi.rose.macro.get_metadata_for_config_id
 
             test_cleanup(['rose-app.conf', 'meta/rose-meta.conf', 'meta'])
 
@@ -1122,7 +1123,7 @@ def run_macros(config_map, meta_config, config_name, macro_names,
         for module_name, class_name, method, _ in macro_tuples:
             if opt_fix and not opt_transform_all:
                 # Only include internal transformer macros for
-                # rose macro --fix.
+                # metomi.rose.macro --fix.
                 if module_name != metomi.rose.macros.__name__:
                     continue
             if method == macro_method:
@@ -1522,7 +1523,7 @@ def load_conf_from_file(conf_dir, config_file_path, mode="macro"):
 
 
 def parse_macro_args(argv=None):
-    """Parse options/arguments for rose macro and upgrade."""
+    """Parse options/arguments for metomi.rose.macro and upgrade."""
     opt_parser = RoseOptionParser()
     options = ["conf_dir", "meta_path", "non_interactive", "output_dir",
                "fix", "validate_all", "no_warn", "suite_only", "transform_all"]
@@ -1557,7 +1558,7 @@ def _report_error(exception=None, text=""):
 
 
 def scan_rose_directory(conf_dir, suite_only=False):
-    """Returns a list of rose config files found within the given conf_dir.
+    """Returns a list of metomi.rose.config files found within the given conf_dir.
 
     * If the conf_dir is an application directory then return only the
       application configuration file
@@ -1580,9 +1581,9 @@ def scan_rose_directory(conf_dir, suite_only=False):
                 # Add app/*/rose-app.conf files.
                 confs = sorted(glob.glob(os.path.join(
                     path, metomi.rose.SUB_CONFIGS_DIR, '*', metomi.rose.SUB_CONFIG_NAME)))
-            # Add rose-suite.conf file.
+            # Add metomi.rose.suite.conf file.
             confs.append(os.path.join(path, metomi.rose.TOP_CONFIG_NAME))
-            # Add rose-suite.info file.
+            # Add metomi.rose.suite.info file.
             if metomi.rose.INFO_CONFIG_NAME in lstdir:
                 confs.append(os.path.join(path, metomi.rose.INFO_CONFIG_NAME))
             return confs
@@ -1598,7 +1599,7 @@ def scan_rose_directory(conf_dir, suite_only=False):
 
 
 def main():
-    """Run rose macro."""
+    """Run metomi.rose.macro."""
     reporter = metomi.rose.reporter.Reporter()
     add_meta_paths()
     opts, args = parse_macro_args()

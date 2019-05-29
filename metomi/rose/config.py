@@ -24,7 +24,7 @@
     import os
     from metomi.rose.config import *
 
-.. testcleanup:: rose.config
+.. testcleanup:: metomi.rose.config
 
     try:
         os.remove('config.conf')
@@ -68,15 +68,15 @@ Synopsis:
 
 Classes:
     .. autosummary::
-        rose.config.ConfigNode
-        rose.config.ConfigNodeDiff
-        rose.config.ConfigDumper
-        rose.config.ConfigLoader
+        metomi.rose.config.ConfigNode
+        metomi.rose.config.ConfigNodeDiff
+        metomi.rose.config.ConfigDumper
+        metomi.rose.config.ConfigLoader
 
 Functions:
     .. autosummary::
-       rose.config.load
-       rose.config.dump
+       metomi.rose.config.load
+       metomi.rose.config.dump
 
 Limitations:
     - The loader does not handle trailing comments.
@@ -1233,7 +1233,7 @@ class ConfigLoader(object):
                   pairs. Only returned if return_config_map is True.
 
         Examples:
-            .. testcleanup:: rose.config.ConfigLoader.load_with_opts
+            .. testcleanup:: metomi.rose.config.ConfigLoader.load_with_opts
 
                 try:
                     os.remove('config.conf')

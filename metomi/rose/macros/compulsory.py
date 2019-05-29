@@ -59,7 +59,7 @@ class CompulsoryChecker(metomi.rose.macro.MacroBaseRoseEdit):
             if sect_node.is_ignored() or isinstance(sect_node.value, str):
                 continue
             if (sect_node.get_value([metomi.rose.META_PROP_COMPULSORY]) ==
-                    rose.META_PROP_VALUE_TRUE):
+                    metomi.rose.META_PROP_VALUE_TRUE):
                 config_sect, config_opt = (
                     self._get_section_option_from_id(setting_id))
                 compulsory_data.setdefault(

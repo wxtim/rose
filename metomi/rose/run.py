@@ -129,7 +129,7 @@ class Runner(object):
     def config_load(self, opts):
         """Combine main config file with optional ones and defined ones.
 
-        Return an instance of rose.config_tree.ConfigTree.
+        Return an instance of metomi.rose.config_tree.ConfigTree.
 
         """
 

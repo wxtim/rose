@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Rose. If not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
-"""Builtin application: rose_bunch: run multiple commands in parallel."""
+"""Builtin application: metomi.rose.bunch: run multiple commands in parallel."""
 
 
 import itertools
@@ -140,13 +140,13 @@ class RoseBunchApp(BuiltinApp):
                                                          "names"])
         if self.invocation_names:
             self.invocation_names = shlex.split(
-                rose.env.env_var_process(self.invocation_names))
+                metomi.rose.env.env_var_process(self.invocation_names))
             if len(set(self.invocation_names)) != len(self.invocation_names):
                 raise ConfigValueError([self.BUNCH_SECTION, "names"],
                                        self.invocation_names,
                                        "names must be unique")
 
-        self.fail_mode = rose.env.env_var_process(conf_tree.node.get_value(
+        self.fail_mode = metomi.rose.env.env_var_process(conf_tree.node.get_value(
             [self.BUNCH_SECTION, "fail-mode"], self.TYPE_CONTINUE_ON_FAIL))
 
         if self.fail_mode not in self.FAIL_MODE_TYPES:
@@ -158,10 +158,10 @@ class RoseBunchApp(BuiltinApp):
                                                     "incremental"],
                                                     "true")
         if self.incremental:
-            self.incremental = rose.env.env_var_process(self.incremental)
+            self.incremental = metomi.rose.env.env_var_process(self.incremental)
 
         self.isformatted = True
-        self.command = rose.env.env_var_process(
+        self.command = metomi.rose.env.env_var_process(
             conf_tree.node.get_value([self.BUNCH_SECTION, "command-format"]))
 
         if not self.command:
@@ -395,7 +395,7 @@ class RoseBunchCmd(object):
 
 
 class RoseBunchDAO(object):
-    """Database object for rose_bunch"""
+    """Database object for metomi.rose.bunch"""
 
     TABLE_COMMANDS = "commands"
     TABLE_CONFIG = "config"

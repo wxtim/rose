@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Rose. If not, see <http://www.gnu.org/licenses/>.
 # -----------------------------------------------------------------------------
-"""Process an env section in node of a rose.config_tree.ConfigTree."""
+"""Process an env section in node of a metomi.rose.config_tree.ConfigTree."""
 
 import os
 from metomi.rose.env import (

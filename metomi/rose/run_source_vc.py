@@ -32,7 +32,7 @@ def write_source_vc_info(run_source_dir, output=None, popen=None):
     run_source_dir -- The source directory we are interested in.
     output -- An open file handle or a string containing a writable path.
               If not specified, use sys.stdout.
-    popen -- A rose.popen.RosePopener instance for running vc commands.
+    popen -- A metomi.rose.popen.RosePopener instance for running vc commands.
              If not specified, use a new local instance.
 
     """

@@ -292,7 +292,7 @@ class BuiltinApp(object):
     """An abstract base class for a builtin application.
 
     Instance of sub-classes are expected to be managed by
-    rose.scheme_handler.SchemeHandlersManager.
+    metomi.rose.scheme_handler.SchemeHandlersManager.
 
     """
 
@@ -334,7 +334,7 @@ class AppRunner(Runner):
         Runner.__init__(self, *args, **kwargs)
         path = os.path.dirname(os.path.dirname(sys.modules["metomi.rose"].__file__))
         self.builtins_manager = SchemeHandlersManager(
-            [path], "rose.apps", ["run"], None, *args, **kwargs)
+            [path], "metomi.rose.apps", ["run"], None, *args, **kwargs)
         self.date_time_oper = RoseDateTimeOperator()
 
     def run_impl(self, opts, args, uuid, work_files):
@@ -344,7 +344,6 @@ class AppRunner(Runner):
         conf_tree = self.config_load(opts)
         self._prep(conf_tree, opts)
         self._poll(conf_tree)
-
         # Run the application or the command.
         app_mode = conf_tree.node.get_value(["mode"])
         if app_mode is None:
@@ -380,8 +379,8 @@ class AppRunner(Runner):
         if opts.new_mode:
             self._prep_new(opts)
 
-        # Dump the actual configuration as rose-app-run.conf
-        ConfigDumper()(conf_tree.node, "rose-app-run.conf")
+        # Dump the actual configuration as metomi.rose.app-run.conf
+        ConfigDumper()(conf_tree.node, "metomi.rose-app-run.conf")
 
         # Environment variables: PATH
         self._prep_path(conf_tree)

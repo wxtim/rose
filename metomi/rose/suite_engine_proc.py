@@ -397,28 +397,28 @@ class SuiteEngineProcessor(object):
         suite_d = os.path.expanduser(suite_d)
         if not os.path.isdir(suite_d):
             raise NoSuiteLogError(user_name, suite_name)
-        rose_bush_url = None
+        metomi.rose.bush_url = None
         for f_name in glob(os.path.expanduser("~/.metomi/rose-bush*.status")):
             status = {}
             for line in open(f_name):
                 key, value = line.strip().split("=", 1)
                 status[key] = value
             if status.get("host"):
-                rose_bush_url = "http://" + status["host"]
+                metomi.rose.bush_url = "http://" + status["host"]
                 if status.get("port"):
-                    rose_bush_url += ":" + status["port"]
-            rose_bush_url += "/"
+                    metomi.rose.bush_url += ":" + status["port"]
+            metomi.rose.bush_url += "/"
             break
-        if not rose_bush_url:
+        if not metomi.rose.bush_url:
             conf = ResourceLocator.default().get_conf()
-            rose_bush_url = conf.get_value(["rose-suite-log", "rose-bush"])
-        if not rose_bush_url:
+            metomi.rose.bush_url = conf.get_value(["rose-suite-log", "rose-bush"])
+        if not metomi.rose.bush_url:
             return "file://" + suite_d
-        if not rose_bush_url.endswith("/"):
-            rose_bush_url += "/"
+        if not metomi.rose.bush_url.endswith("/"):
+            metomi.rose.bush_url += "/"
         if not user_name:
             user_name = pwd.getpwuid(os.getuid()).pw_name
-        return rose_bush_url + "/".join(["taskjobs", user_name, suite_name])
+        return metomi.rose.bush_url + "/".join(["taskjobs", user_name, suite_name])
 
     def get_task_auth(self, suite_name, task_name):
         """Return [user@]host for a remote task in a suite."""

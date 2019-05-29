@@ -102,7 +102,7 @@ def main():
             root_node.set(["meta"], opts.meta_key)
         else:
             fname = os.path.join(
-                os.getcwd(), rose.SUB_CONFIG_NAME)
+                os.getcwd(), metomi.rose.SUB_CONFIG_NAME)
             try:
                 root_node = config_loader.load(fname)
             except ConfigSyntaxError as exc:

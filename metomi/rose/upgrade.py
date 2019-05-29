@@ -681,7 +681,7 @@ def get_meta_upgrade_module(meta_path):
 
 
 def parse_upgrade_args(argv=None):
-    """Parse options/arguments for rose macro and upgrade."""
+    """Parse options/arguments for metomi.rose.macro and upgrade."""
     opt_parser = metomi.rose.macro.RoseOptionParser()
     options = ["conf_dir", "meta_path", "non_interactive", "output_dir",
                "downgrade", "all_versions"]
@@ -719,7 +719,7 @@ def parse_upgrade_args(argv=None):
 
 
 def main():
-    """Run rose upgrade."""
+    """Run metomi.rose.upgrade."""
     return_objects = parse_upgrade_args()
     if return_objects is None:
         sys.exit(1)

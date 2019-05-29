@@ -254,14 +254,14 @@ class SuiteRunner(Runner):
                 mode = "local-install-only"
             prefix = "rose-conf/%s-%s" % (strftime("%Y%m%dT%H%M%S"), mode)
 
-            # Dump the actual configuration as rose-suite-run.conf
+            # Dump the actual configuration as metomi.rose.suite-run.conf
             ConfigDumper()(conf_tree.node, "log/" + prefix + ".conf")
 
             # Install version information file
             write_source_vc_info(
                 suite_conf_dir, "log/" + prefix + ".version", self.popen)
 
-            # If run through rose-stem, install version information files for
+            # If run through metomi.rose.stem, install version information files for
             # each source tree if they're a working copy
             if hasattr(opts, 'source') and hasattr(opts, 'project'):
                 for i, url in enumerate(opts.source):
@@ -370,7 +370,7 @@ class SuiteRunner(Runner):
             if not no_login_shell or no_login_shell.lower() != "true":
                 shcommand += r""" bash -l -c '"$0" "$@"'"""
             # Path to "rose" command, if applicable
-            rose_bin = self._run_conf(
+            metomi.rose.bin = self._run_conf(
                 "remote-rose-bin", host=host, conf_tree=conf_tree,
                 default="rose")
             # Build remote "rose suite-run" command

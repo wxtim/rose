@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Rose. If not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
-"""Process "file:*" sections in node of a rose.config_tree.ConfigTree."""
+"""Process "file:*" sections in node of a metomi.rose.config_tree.ConfigTree."""
 
 from fnmatch import fnmatch
 from glob import glob
@@ -42,7 +42,7 @@ import aiofiles
 
 
 class ConfigProcessorForFile(ConfigProcessorBase):
-    """Processor for [file:*] in node of a rose.config_tree.ConfigTree."""
+    """Processor for [file:*] in node of a metomi.rose.config_tree.ConfigTree."""
 
     SCHEME = "file"
 

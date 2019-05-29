@@ -58,7 +58,7 @@ def get_allowed_metadata_properties():
 
 
 def _check_compulsory(value):
-    allowed_values = [rose.META_PROP_VALUE_TRUE,
+    allowed_values = [metomi.rose.META_PROP_VALUE_TRUE,
                       metomi.rose.META_PROP_VALUE_FALSE]
     if value not in allowed_values:
         return INVALID_SYNTAX.format(value)
@@ -66,12 +66,12 @@ def _check_compulsory(value):
 
 def _check_copy_mode(value):
     """Check that the value for copy-mode is allowed."""
-    if value not in [rose.COPY_MODE_NEVER, metomi.rose.COPY_MODE_CLEAR]:
+    if value not in [metomi.rose.COPY_MODE_NEVER, metomi.rose.COPY_MODE_CLEAR]:
         return INVALID_SYNTAX.format(value)
 
 
 def _check_duplicate(value):
-    allowed_values = [rose.META_PROP_VALUE_TRUE,
+    allowed_values = [metomi.rose.META_PROP_VALUE_TRUE,
                       metomi.rose.META_PROP_VALUE_FALSE]
     if value not in allowed_values:
         return INVALID_SYNTAX.format(value)
@@ -253,9 +253,9 @@ def metadata_check(meta_config, meta_dir=None,
         if (only_these_sections is not None and
                 section not in only_these_sections):
             continue
-        if node.get([rose.META_PROP_VALUES], no_ignore=True) is not None:
+        if node.get([metomi.rose.META_PROP_VALUES], no_ignore=True) is not None:
             # 'values' supercedes other type-like props, so don't use them.
-            for type_like_prop in [rose.META_PROP_PATTERN,
+            for type_like_prop in [metomi.rose.META_PROP_PATTERN,
                                    metomi.rose.META_PROP_RANGE,
                                    metomi.rose.META_PROP_TYPE]:
                 if node.get([type_like_prop], no_ignore=True) is not None:
@@ -263,10 +263,10 @@ def metadata_check(meta_config, meta_dir=None,
                     value = node.get([type_like_prop]).value
                     reports.append(rose.macro.MacroReport(
                         section, type_like_prop, value, info))
-        if node.get_value([rose.META_PROP_TYPE]) == "python_list":
-            if node.get_value([rose.META_PROP_LENGTH]):
+        if node.get_value([metomi.rose.META_PROP_TYPE]) == "python_list":
+            if node.get_value([metomi.rose.META_PROP_LENGTH]):
                 info = INCOMPATIBLE.format(rose.META_PROP_TYPE)
-                value = node.get_value([rose.META_PROP_LENGTH])
+                value = node.get_value([metomi.rose.META_PROP_LENGTH])
                 reports.append(rose.macro.MacroReport(
                     section, metomi.rose.META_PROP_LENGTH, value, info))
         options = list(node.value)
@@ -284,9 +284,9 @@ def metadata_check(meta_config, meta_dir=None,
                 reports.append(rose.macro.MacroReport(section, option,
                                                       value, info))
             if section.split('=')[0] == 'ns':
-                allowed = [rose.META_PROP_TITLE, metomi.rose.META_PROP_DESCRIPTION,
-                           metomi.rose.META_PROP_HELP, rose.META_PROP_SORT_KEY,
-                           metomi.rose.META_PROP_MACRO, rose.META_PROP_URL,
+                allowed = [metomi.rose.META_PROP_TITLE, metomi.rose.META_PROP_DESCRIPTION,
+                           metomi.rose.META_PROP_HELP, metomi.rose.META_PROP_SORT_KEY,
+                           metomi.rose.META_PROP_MACRO, metomi.rose.META_PROP_URL,
                            metomi.rose.META_PROP_WIDGET]
                 if option not in allowed:
                     info = INVALID_SETTING_FOR_NAMESPACE.format(option)
@@ -299,9 +299,9 @@ def metadata_check(meta_config, meta_dir=None,
             elif option == metomi.rose.META_PROP_VALUE_TITLES:
                 check_func = partial(
                     _check_value_titles,
-                    values_value=node.get_value([rose.META_PROP_VALUES])
+                    values_value=node.get_value([metomi.rose.META_PROP_VALUES])
                 )
-            elif option in [rose.META_PROP_FAIL_IF, metomi.rose.META_PROP_WARN_IF]:
+            elif option in [metomi.rose.META_PROP_FAIL_IF, metomi.rose.META_PROP_WARN_IF]:
                 check_func = partial(
                     _check_rule, setting_id=section, meta_config=meta_config)
             else:

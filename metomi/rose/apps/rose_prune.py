@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Rose. If not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
-"""Builtin application: rose_prune: suite housekeeping application."""
+"""Builtin application: metomi.rose.prune: suite housekeeping application."""
 
 import os
 from random import shuffle
