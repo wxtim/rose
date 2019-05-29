@@ -8,7 +8,6 @@ bin/rose-config
 bin/rose-config-diff
 bin/rose-config-dump
 bin/rose-date
-bin/rose-edit
 bin/rose-env-cat
 bin/rose-host-select
 bin/rose-macro
