@@ -240,9 +240,9 @@ class CylcProcessor(SuiteEngineProcessor):
             user, host = (None, None)
             items.pop(0)
             if items:
-                user = items.pop(0).decode().replace("*", " ")
+                user = items.pop(0).replace("*", " ")
             if items:
-                host = items.pop(0).decode().replace("*", " ")
+                host = items.pop(0).replace("*", " ")
             if host in actual_hosts:
                 host = str(actual_hosts[host])
                 auth = self._parse_user_host(user=user, host=host)
@@ -600,8 +600,6 @@ class CylcProcessor(SuiteEngineProcessor):
             host = auth
             if "@" in auth:
                 user, host = auth.split("@", 1)
-        user, host = [
-            i.decode() if isinstance(i, bytes) else i for i in [user, host]]
         if user in ["None", self.user]:
             user = None
         if host and ("`" in host or "$" in host):

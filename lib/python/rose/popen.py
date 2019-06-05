@@ -161,8 +161,9 @@ class RosePopener(object):
             stdin = kwargs.get("stdin")
         stdout, stderr = proc.communicate(stdin)
         retcode = proc.wait()
-        if isinstance(retcode, bytes):
-            retcode = retcode.decode()
+        stdout, stderr, retcode = [
+            i.decode() if isinstance(i, bytes) else i for i in [
+                stdout, stderr, retcode]]
         return retcode, stdout, stderr
 
     def run_bg(self, *args, **kwargs):
@@ -231,9 +232,7 @@ class RosePopener(object):
         """
         ret_code, stdout, stderr = self.run(*args, **kwargs)
         if ret_code:
-            if stderr:
-                stderr = stderr.decode()
-            else:
+            if not stderr:
                 stderr = ''
             raise RosePopenError(
                 args, ret_code, stdout, stderr, kwargs.get("stdin"))
@@ -251,9 +250,6 @@ class RosePopener(object):
         stderr_level = kwargs.pop("stderr_level", None)
         stdout_level = kwargs.pop("stdout_level", None)
         ret_code, stdout, stderr = self.run(*args, **kwargs)
-        stderr, stdout = [
-            i.decode() if isinstance(i, bytes) else i for i in [
-                stderr, stdout]]
         if stdout:
             self.handle_event(stdout, level=stdout_level)
         if ret_code:
@@ -328,9 +324,7 @@ class RosePopener(object):
     async def run_ok_async(self, *args, **kwargs):
         ret_code, stdout, stderr = await self.run_async(*args, **kwargs)
         if ret_code:
-            if stderr:
-                stderr = stderr.decode()
-            else:
+            if not stderr:
                 stderr = ''
             raise RosePopenError(
                 args, ret_code, stdout, stderr, kwargs.get("stdin"))

@@ -171,7 +171,7 @@ class SuiteRunner(Runner):
                 ["env", suite_engine_key])
         else:
             suite_engine_version =\
-                self.suite_engine_proc.get_version().decode()
+                self.suite_engine_proc.get_version()
         resloc = ResourceLocator.default()
         auto_items = [
             (suite_engine_key, suite_engine_version),
@@ -414,9 +414,6 @@ class SuiteRunner(Runner):
                 continue
             ret_code = proc.wait()
             out, err = proc.communicate()
-            ret_code, out, err = [
-                i.decode() if isinstance(i, bytes) else i for i in [
-                    ret_code, out, err]]
             if ret_code:
                 raise RosePopenError(command, ret_code, out, err)
             if command_name == "rsync":

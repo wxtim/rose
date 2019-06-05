@@ -146,7 +146,7 @@ class RosieSvnPostCommitHook(object):
 
         # Date-time of this commit
         os.environ["TZ"] = "UTC"
-        date_time = self._svnlook("date", "-r", revision, repos).decode()
+        date_time = self._svnlook("date", "-r", revision, repos)
         date, dtime, _ = date_time.split(None, 2)
         date = mktime(strptime(" ".join([date, dtime, "UTC"]), self.DATE_FMT))
         # Detail of changes
@@ -155,7 +155,7 @@ class RosieSvnPostCommitHook(object):
             "revision": revision,
             "prefix": prefix,
             "author": self._svnlook(
-                "author", "-r", revision, repos).decode("utf-8").strip(),
+                "author", "-r", revision, repos).strip(),
             "date": date}
         branch_attribs_dict = self._get_suite_branch_changes(repos, revision)
 
@@ -175,8 +175,7 @@ class RosieSvnPostCommitHook(object):
         """Retrieve changed statuses."""
         branch_attribs_dict = {}
         changed_lines = self._svnlook(
-            "changed", "--copy-info", "-r", revision, repos).decode(
-                "utf-8").splitlines(True)
+            "changed", "--copy-info", "-r", revision, repos).splitlines(True)
         while changed_lines:
             changed_line = changed_lines.pop(0)
             # A normal status changed_line
@@ -257,7 +256,7 @@ class RosieSvnPostCommitHook(object):
                 # The suite has been deleted
                 tree_out = self._svnlook(
                     "tree", "-r", str(int(revision) - 1), "-N", repos,
-                    path).decode("utf-8")
+                    path)
                 # Include all branches of the suite in the deletion info
                 for tree_line in tree_out.splitlines()[1:]:
                     del_branch = tree_line.strip().rstrip("/")
@@ -435,7 +434,7 @@ class RosieSvnPostCommitHook(object):
         revision = changeset_attribs["revision"]
         keys_str = self._svnlook(
             "cat", "-r", revision, repos, self.KNOWN_KEYS_FILE_PATH)
-        keys_str = " ".join(shlex.split(keys_str.decode("utf-8")))
+        keys_str = " ".join(shlex.split(keys_str))
         if keys_str:
             try:
                 dao.insert(META_TABLE_NAME, name="known_keys", value=keys_str)
