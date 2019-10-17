@@ -17,7 +17,7 @@ Rosie:
 .. ifnotslides::
 
    .. warning::
-      
+
       This tutorial does not require specific FCM knowledge but basic version
       control awareness is important. For more information on FCM version
       control see the `FCM User Guide`_.
@@ -36,7 +36,18 @@ system.
    Rosie suites can be created by the command:
 
 :ref:`command-rosie-create`
-   Create a new suite or copy an existing one.
+
+   To create a new suite...
+
+   .. code-block:: bash
+
+    rosie create
+
+   ... or copy an existing one
+
+   .. code-block:: bash
+
+    rosie create <existing suite name>
 
 .. ifnotslides::
 
@@ -54,6 +65,13 @@ Version Control
 
 In Rosie suites the :term:`suite directory` is added to `version control`_
 using `FCM`_.
+
+
+.. ifslides::
+
+   .. image:: ../../img/rosie.svg
+      :align: center
+
 
 .. ifnotslides::
 
@@ -166,6 +184,12 @@ Rosie provides commands for managing suites, including:
       from the :ref:`previous practical <suites-practical>` to a rosie
       repository, make some changes, and commit them to the repository.
 
+   Aims
+      - Become familiar with ``rosie checkout``, ``rosie ls``, ``rosie lookup``
+        and the Rosie GUI.
+      - learn how to version control your forecasting suite from
+        earlier excercises.
+
    Next section: :ref:`tutorial-rose-summary`
 
 
@@ -251,7 +275,7 @@ Rosie provides commands for managing suites, including:
       the Trac browser to see your suite::
 
          fcm browse
-      
+
       A web browser window will open, showing the Trac page for your Rosie
       suite.
 
