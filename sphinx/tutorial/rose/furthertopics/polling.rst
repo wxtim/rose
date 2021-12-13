@@ -95,7 +95,8 @@ We now have an app that does the following:
    In practice, it may be preferable to have the ``[command]`` section at
    the top as that should contain the main command(s) being run by the app.
 
-Save your changes and run the suite using :ref:`command-rose-suite-run`.
+Save your changes and install and run the suite using
+:ref:`cylc install <Install-Workflow>` and :ref:`cylc play <WorkflowStartUp>`.
 
 The suite should now run.
 
