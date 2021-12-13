@@ -15,8 +15,8 @@ Example
 
 Create a new Rose suite configuration::
 
-   mkdir -p ~/rose-tutorial/polling
-   cd ~/rose-tutorial/polling
+   mkdir -p ~/cylc-src/polling
+   cd ~/cylc-src/polling
 
 Create a blank :rose:file:`rose-suite.conf` and a ``flow.cylc``
 file that looks like this:
@@ -96,7 +96,11 @@ We now have an app that does the following:
    the top as that should contain the main command(s) being run by the app.
 
 Save your changes and install and run the suite using
-:ref:`cylc install <Install-Workflow>` and :ref:`cylc play <WorkflowStartUp>`.
+:ref:`cylc install <Install-Workflow>` and :ref:`cylc play <WorkflowStartUp>`::
+
+   cylc install polling
+   cylc validate polling
+   cylc play polling
 
 The suite should now run.
 
