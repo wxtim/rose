@@ -2,13 +2,14 @@ name: test rsync check
 
 on:
   pull_request:
+    paths:
+      - 'metomi/rose/loc_handlers/rsync.py'
+      - 'metomi/rose/loc_handlers/rsync_remote_check.py'
   workflow_dispatch:
     inputs:
       rose_ref:
         description: The Rose branch to test against
         required: true
-  schedule:
-  - cron: '37 04 * * 1-5' # 03:37, Monday-Friday
 
 defaults:
   run:
@@ -44,4 +45,4 @@ jobs:
       - name: Unit Tests
         working-directory: rose
         run: |
-          ./t/test_rsync_loc_handlers.sh
+          metomi/rose/.etc/bin/rose-test-battery t/rose-loc-handlers/
