@@ -45,4 +45,4 @@ jobs:
       - name: Unit Tests
         working-directory: rose
         run: |
-          ./t/test_rsync_loc_handlers.sh
+          .etc/bin/rose-test-battery t/rose-loc-handlers/
