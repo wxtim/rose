@@ -46,8 +46,6 @@ jobs:
 
       - name: Create pull request
         uses: cylc/release-actions/stage-1/create-release-pr@v1
-        title: Update tutorial workflow
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          test-workflows: test.yml
+
