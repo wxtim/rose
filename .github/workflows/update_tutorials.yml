@@ -6,7 +6,7 @@ on:
       branch:
         description: The branch to open the PR against
         required: false
-        default: 'master'
+        default: '2.0.x'
   schedule:
   - cron: '37 04 * * 6' # 03:37, Saturday
 
