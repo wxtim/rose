@@ -40,7 +40,7 @@ jobs:
           cp -r ../cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
               ../cylc-forecasting-suite
           rsync -va ../cylc-forecasting-suite \
-              rose/metomi/rose/etc/tutorial/
+              metomi/rose/etc/tutorial/
           git status
           git add metomi/rose/etc/tutorial/cylc-forecasting-suite
           git commit -a -m "automated update of cylc tutoral suite"
