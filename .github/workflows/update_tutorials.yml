@@ -37,7 +37,7 @@ jobs:
         working-directory: rose
         run: |
           git checkout -b "automated-update-tutorial-workflow"
-          gh pr create
+          gh pr create --title "Update Tutorial Workflow"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
