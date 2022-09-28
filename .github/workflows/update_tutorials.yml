@@ -2,6 +2,11 @@ name: update_tutorials
 
 on:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: The branch to open the PR against
+        required: false
+        default: 'master'
   schedule:
   - cron: '37 04 * * 6' # 03:37, Saturday
 
