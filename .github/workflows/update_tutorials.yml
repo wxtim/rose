@@ -33,12 +33,13 @@ jobs:
             rsync -aEim --delete cylc-forecasting-suite \
             rose/metomi/rose/etc/tutorial/\
           )
+          echo "::set-output name=tutorials_update::'True'"
 
-          if [ -n "${RSYNC_COMMAND}" ]; then
-            echo "::set-output name=tutorials_update::True"
-          else
-            echo "::set-output name=tutorials_update::False"
-          fi
+          # if [ -n "${RSYNC_COMMAND}" ]; then
+          #   echo "::set-output name=tutorials_update::'True'"
+          # else
+          #   echo "::set-output name=tutorials_update::False"
+          # fi
 
   create-tutorials-pr:
     needs: rsync-tutorials
