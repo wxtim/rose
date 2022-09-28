@@ -11,7 +11,7 @@ defaults:
     shell: bash  # macos default shell is zsh
 
 jobs:
-  create-tutorials-pr:
+  rsync-tutorials:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -40,12 +40,17 @@ jobs:
             echo "::set-output name=tutorials_update::False"
           fi
 
+  create-tutorials-pr:
+    needs: rsync-tutorials
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: needs.outputs.tutorials_update == 'True'
+    steps:
       - name: Configure Git
         uses: cylc/release-actions/configure-git@v1
 
       - name: Create PR
         working-directory: rose
-        if: steps.outputs.tutorials_update == 'True'
         run: |
           git checkout -b "automated-update-tutorial-workflow"
 
@@ -59,10 +64,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
-      - name: other
-        if: steps.outputs.tutorials_update == 'False'
+  other:
+    needs: rsync-tutorials
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: needs.outputs.tutorials_update == 'False'
+    steps:
+      - name: foo
         run: |
-          echo "ran"
-
+          echo "stuff"
 
 
