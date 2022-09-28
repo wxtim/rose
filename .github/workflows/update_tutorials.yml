@@ -20,18 +20,6 @@ jobs:
           ref: ${{ github.event.inputs.rose_ref || github.sha }}
           path: rose
 
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          name: cylc/cylc-flow
-          path: cylc
-
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          name: metomi/isodatetime
-          path: isodatetime
-
       # - name: Install repos
       #   run: |
       #     pip install isodatetime
@@ -40,10 +28,7 @@ jobs:
 
       - name: Update tutorials
         run: |
-          ls
-          tree cylc
-          tree rose
-
+          git clone git@github.com:cylc/cylc-flow.git cylc
           cp -r cylc/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
               cylc-forecasting-suite
           rsync -va cylc-forecasting-suite \
