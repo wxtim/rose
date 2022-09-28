@@ -39,12 +39,14 @@ jobs:
       #     echo "Hello World"
 
       - name: Create & checkout PR branch
-        working-directory: rose
         uses: cylc/release-actions/stage-1/checkout-pr-branch@v1
+        with:
+          path: rose
 
       - name: Create pull request
-        working-directory: rose
         uses: cylc/release-actions/stage-1/create-release-pr@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path: rose
 
