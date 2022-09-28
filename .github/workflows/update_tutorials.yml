@@ -11,11 +11,9 @@ defaults:
     shell: bash  # macos default shell is zsh
 
 jobs:
-  rsync-tutorials:
+  create-tutorials-pr:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    outputs:
-      tutorials_update: ${{steps.update_tutorials.outputs.tutorials_update}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -23,31 +21,14 @@ jobs:
           ref: ${{ github.event.inputs.rose_ref || github.sha }}
           path: rose
 
-      - name: update_tutorials
+      - name: Update tutorials
         run: |
           git clone https://github.com/cylc/cylc-flow.git
           git clone https://github.com/cylc/release-actions.git
-
           cp -r cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
               cylc-forecasting-suite
-
-          RSYNC_COMMAND=$(\
-            rsync -aEim --delete cylc-forecasting-suite \
-            rose/metomi/rose/etc/tutorial/\
-          )
-
-          if [ -n "${RSYNC_COMMAND}" ]; then
-            echo "::set-output name=tutorials_update::True"
-          else
-            echo "::set-output name=tutorials_update::False"
-          fi
-
-  create-tutorials-pr:
-    needs: rsync-tutorials
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    if: needs.rsync-tutorials.outputs.tutorials_update == 'True'
-    steps:
+          rsync -va cylc-forecasting-suite \
+              rose/metomi/rose/etc/tutorial/
       - name: Configure Git
         uses: cylc/release-actions/configure-git@v1
 
@@ -55,7 +36,6 @@ jobs:
         working-directory: rose
         run: |
           git checkout -b "automated-update-tutorial-workflow"
-
           git add .
           git commit -m "automated update of cylc tutoral suite"
           git push origin "automated-update-tutorial-workflow"
@@ -64,16 +44,5 @@ jobs:
             --base 2.0.x
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-  other:
-    needs: rsync-tutorials
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    if: needs.rsync-tutorials.outputs.tutorials_update == 'False'
-    steps:
-      - name: foo
-        run: |
-          echo "stuff"
 
 
