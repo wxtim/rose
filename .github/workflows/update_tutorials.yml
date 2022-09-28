@@ -26,10 +26,17 @@ jobs:
           name: cylc/cylc-flow
           path: cylc
 
-      - name: Install Rose
-        run: |
-          pip install cylc
-          pip install rose"[all]"
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          name: metomi/isodatetime
+          path: isodatetime
+
+      # - name: Install repos
+      #   run: |
+      #     pip install isodatetime
+      #     pip install cylc
+      #     pip install rose
 
       - name: Update tutorials
         run: |
