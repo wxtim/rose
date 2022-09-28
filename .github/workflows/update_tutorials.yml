@@ -39,7 +39,7 @@ jobs:
           git checkout -b "automated-update-tutorial-workflow"
           cp -r ../cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
               ../cylc-forecasting-suite
-          rsync -va cylc-forecasting-suite \
+          rsync -va ../cylc-forecasting-suite \
               rose/metomi/rose/etc/tutorial/
           git status
           git add metomi/rose/etc/tutorial/cylc-forecasting-suite
