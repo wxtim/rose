@@ -44,7 +44,7 @@ jobs:
     needs: rsync-tutorials
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    if: needs.outputs.tutorials_update == 'True'
+    if: needs.rsync-tutorials.outputs.tutorials_update == 'True'
     steps:
       - name: Configure Git
         uses: cylc/release-actions/configure-git@v1
@@ -68,7 +68,7 @@ jobs:
     needs: rsync-tutorials
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    if: needs.outputs.tutorials_update == 'False'
+    if: needs.rsync-tutorials.outputs.tutorials_update == 'False'
     steps:
       - name: foo
         run: |
