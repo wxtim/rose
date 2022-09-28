@@ -36,6 +36,8 @@ jobs:
 
           if [ -n "${RSYNC_COMMAND}" ]; then
             echo "::set-output name=tutorials_update::True"
+          else:
+            echo "::set-output name=tutorials_update::Fales"
           fi
 
       - name: Configure Git
@@ -43,7 +45,7 @@ jobs:
 
       - name: Create PR
         working-directory: rose
-        if: steps.outputs.tutorials_update == 'True'
+        if: steps.outputs.tutorials_update == True
         run: |
           git checkout -b "automated-update-tutorial-workflow"
 
@@ -55,6 +57,12 @@ jobs:
             --base 2.0.x
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+      - name: other
+        if: steps.outputs.tutorials_update == False
+        run: |
+          echo "ran"
 
 
 
