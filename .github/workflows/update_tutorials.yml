@@ -35,7 +35,7 @@ jobs:
       - name: Create PR
         working-directory: rose
         run: |
-          if [[ -n $(git status --short)]]; then
+          if [[ -n $(git status --short) ]]; then
             git checkout -b "automated-update-tutorial-workflow"
             git add .
             git commit -m "automated update of cylc tutoral suite"
