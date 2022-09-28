@@ -43,7 +43,8 @@ jobs:
 
       - name: Create PR
         working-directory: rose
-        if: jobs.create-tutorials-pr.steps.outputs.tutorials_update == 'True'
+        needs: create-tutorials-pr
+        if: needs.steps.outputs.tutorials_update == 'True'
         run: |
           git checkout -b "automated-update-tutorial-workflow"
 
