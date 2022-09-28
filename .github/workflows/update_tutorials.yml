@@ -38,7 +38,8 @@ jobs:
         run: |
           git checkout -b "automated-update-tutorial-workflow"
           gh pr create --title "Update Tutorial Workflow" \
-            --body "foo bar bas"
+            --body "foo bar bas"\
+            --head
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
