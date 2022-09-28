@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
-      tutorials_update: ${{steps.update_tutorials}}
+      tutorials_update: ${{steps.update_tutorials.outputs.tutorials_update}}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
