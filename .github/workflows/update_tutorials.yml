@@ -37,21 +37,13 @@ jobs:
         working-directory: rose
         run: |
           git checkout -b "automated-update-tutorial-workflow"
-          cp -r ../cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
-              ../cylc-forecasting-suite
-          rsync -va ../cylc-forecasting-suite \
-              metomi/rose/etc/tutorial/
+          # cp -r ../cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
+          #     ../cylc-forecasting-suite
+          # rsync -va ../cylc-forecasting-suite \
+          #     metomi/rose/etc/tutorial/
 
-          echo "--------------------------"
-          git status
           git add .
-          echo "--------------------------"
-          git status
           git commit -m "automated update of cylc tutoral suite"
-          echo "--------------------------"
-
-          git log
-          echo "--------------------------"
           git push origin "automated-update-tutorial-workflow"
           gh pr create --title "Update Tutorial Workflow" \
             --body "foo bar bas"\
