@@ -29,17 +29,14 @@ jobs:
           rsync -va cylc-forecasting-suite \
               rose/metomi/rose/etc/tutorial/
 
-      - name: Install repos
-        run: |
-          git clone https://github.com/metomi/isodatetime.git
+      # - name: Install repos
+      #   run: |
+      #     pip install cylc
+      #     pip install rose
 
-          pip install isodatetime
-          pip install cylc
-          pip install rose
-
-      - name: Test Tutorial updates
-        run: |
-          echo "Hello World"
+      # - name: Test Tutorial updates
+      #   run: |
+      #     echo "Hello World"
 
       - name: Create & checkout PR branch
         uses: cylc/release-actions/stage-1/checkout-pr-branch@v1
