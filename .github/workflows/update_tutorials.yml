@@ -21,33 +21,40 @@ jobs:
           ref: ${{ github.event.inputs.rose_ref || github.sha }}
           path: rose
 
-      - name: Update tutorials
+      - name: update_tutorials
         run: |
           git clone https://github.com/cylc/cylc-flow.git
           git clone https://github.com/cylc/release-actions.git
+
           cp -r cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
               cylc-forecasting-suite
-          rsync -va cylc-forecasting-suite \
-              rose/metomi/rose/etc/tutorial/
+
+          RSYNC_COMMAND=$(\
+            rsync -aEim --delete cylc-forecasting-suite \
+            rose/metomi/rose/etc/tutorial/\
+          )
+
+          if [ -n "${RSYNC_COMMAND}" ]; then
+            echo "::set-output name=tutorials_update::True"
+          fi
 
       - name: Configure Git
         uses: cylc/release-actions/configure-git@v1
 
       - name: Create PR
         working-directory: rose
+        if: jobs.create-tutorials-pr.steps.outputs.tutorials_update == 'True'
         run: |
           git checkout -b "automated-update-tutorial-workflow"
-          # cp -r ../cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
-          #     ../cylc-forecasting-suite
-          # rsync -va ../cylc-forecasting-suite \
-          #     metomi/rose/etc/tutorial/
 
           git add .
           git commit -m "automated update of cylc tutoral suite"
           git push origin "automated-update-tutorial-workflow"
           gh pr create --title "Update Tutorial Workflow" \
-            --body "foo bar bas"\
+            --body "This PR Pulls in changes to the tutorial workflow from cylc flow"\
+            --base 2.0.x
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
