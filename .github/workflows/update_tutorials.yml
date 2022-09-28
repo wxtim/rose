@@ -35,13 +35,15 @@ jobs:
       - name: Create PR
         working-directory: rose
         run: |
-          git checkout -b "automated-update-tutorial-workflow"
-          git add .
-          git commit -m "automated update of cylc tutoral suite"
-          git push origin "automated-update-tutorial-workflow"
-          gh pr create --title "Update Tutorial Workflow" \
-            --body "This PR Pulls in changes to the tutorial workflow from cylc flow"\
-            --base 2.0.x
+          if [[ -n $(git status --short)]] then;
+            git checkout -b "automated-update-tutorial-workflow"
+            git add .
+            git commit -m "automated update of cylc tutoral suite"
+            git push origin "automated-update-tutorial-workflow"
+            gh pr create --title "Update Tutorial Workflow" \
+              --body "This PR Pulls in changes to the tutorial workflow from cylc flow"\
+              --base 2.0.x
+          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
