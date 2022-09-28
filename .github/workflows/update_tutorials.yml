@@ -1,0 +1,53 @@
+name: update_tutorials
+
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+  - cron: '37 04 * * 6' # 03:37, Saturday
+
+defaults:
+  run:
+    shell: bash  # macos default shell is zsh
+
+jobs:
+  create-tutorials-pr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.rose_ref || github.sha }}
+          path: rose
+
+      - name: Update tutorials
+        run: |
+          git clone https://github.com/cylc/cylc-flow.git
+          git clone https://github.com/cylc/release-actions.git
+          cp -r cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
+              cylc-forecasting-suite
+          rsync -va cylc-forecasting-suite \
+              rose/metomi/rose/etc/tutorial/
+
+      - name: Configure Git
+        uses: cylc/release-actions/configure-git@v1
+
+      - name: Create PR
+        working-directory: rose
+        run: |
+          git checkout -b "automated-update-tutorial-workflow"
+          # cp -r ../cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
+          #     ../cylc-forecasting-suite
+          # rsync -va ../cylc-forecasting-suite \
+          #     metomi/rose/etc/tutorial/
+
+          git add .
+          git commit -m "automated update of cylc tutoral suite"
+          git push origin "automated-update-tutorial-workflow"
+          gh pr create --title "Update Tutorial Workflow" \
+            --body "foo bar bas"\
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
