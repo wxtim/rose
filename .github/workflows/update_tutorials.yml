@@ -4,27 +4,22 @@ on:
   pull_request:
   workflow_dispatch:
   schedule:
-  - cron: '37 04 * * 1-5' # 03:37, Monday-Friday
+  - cron: '37 04 * * 6' # 03:37, Saturday
 
 defaults:
   run:
     shell: bash  # macos default shell is zsh
 
 jobs:
-  test:
+  create-tutorials-pr:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           ref: ${{ github.event.inputs.rose_ref || github.sha }}
           path: rose
-
-      # - name: Install repos
-      #   run: |
-      #     pip install isodatetime
-      #     pip install cylc
-      #     pip install rose
 
       - name: Update tutorials
         run: |
@@ -34,6 +29,25 @@ jobs:
           rsync -va cylc-forecasting-suite \
               rose/metomi/rose/etc/tutorial/
 
+      - name: Install repos
+        run: |
+          git clone https://github.com/metomi/isodatetime.git
+
+          pip install isodatetime
+          pip install cylc
+          pip install rose
+
       - name: Test Tutorial updates
         run: |
           echo "Hello World"
+
+      - name: Create & checkout PR branch
+        uses: cylc/release-actions/stage-1/checkout-pr-branch@v1
+
+      - name: Create pull request
+        uses: cylc/release-actions/stage-1/create-release-pr@v1
+        title: Update tutorial workflow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          test-workflows: test.yml
