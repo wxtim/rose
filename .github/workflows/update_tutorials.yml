@@ -29,24 +29,14 @@ jobs:
           rsync -va cylc-forecasting-suite \
               rose/metomi/rose/etc/tutorial/
 
-      # - name: Install repos
-      #   run: |
-      #     pip install cylc
-      #     pip install rose
+      - name: Configure Git
+        uses: cylc/release-actions/configure-git@v1
 
-      # - name: Test Tutorial updates
-      #   run: |
-      #     echo "Hello World"
+      - name: Create PR
+        working-directory: rose
+        run: |
+          git co -b "automated-update-tutorial-workflow"
+          node .github/workflows/create_release_pr.js
 
-      - name: Create & checkout PR branch
-        uses: cylc/release-actions/stage-1/checkout-pr-branch@v1
-        with:
-          path: rose
 
-      - name: Create pull request
-        uses: cylc/release-actions/stage-1/create-release-pr@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          path: rose
 
