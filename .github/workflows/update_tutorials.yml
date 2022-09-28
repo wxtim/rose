@@ -37,7 +37,7 @@ jobs:
         working-directory: rose
         run: |
           git checkout -b "automated-update-tutorial-workflow"
-          git add metomi/rose/etc/tutorial/cylc-tutorial-suite
+          git add metomi/rose/etc/tutorial/cylc-forecasting-suite
           git commit -a -m "automated update of cylc tutoral suite"
           gh pr create --title "Update Tutorial Workflow" \
             --body "foo bar bas"\
