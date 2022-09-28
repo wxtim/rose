@@ -2,22 +2,6 @@ name: update tutorials
 
 on:
   workflow_dispatch:
-    inputs:
-      rose_ref:
-        description: The Rose branch to test against
-        required: true
-      fcm_ref:
-        description: The FCM branch to test against
-        required: false
-      fcm_repo:
-        description: The FCM repo to test against
-        required: false
-      cylc_ref:
-        description: The Cylc branch to test against
-        required: false
-      cylc_repo:
-        description: The Cylc repo to test against
-        required: false
   schedule:
   - cron: '37 04 * * 1-5' # 03:37, Monday-Friday
 
