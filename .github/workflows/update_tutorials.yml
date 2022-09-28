@@ -45,7 +45,7 @@ jobs:
 
       - name: Create PR
         working-directory: rose
-        if: steps.outputs.tutorials_update == "True"
+        if: steps.outputs.tutorials_update == 'True'
         run: |
           git checkout -b "automated-update-tutorial-workflow"
 
@@ -60,7 +60,7 @@ jobs:
 
 
       - name: other
-        if: steps.outputs.tutorials_update == "False"
+        if: steps.outputs.tutorials_update == 'False'
         run: |
           echo "ran"
 
