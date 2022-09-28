@@ -37,7 +37,6 @@ jobs:
         working-directory: rose
         run: |
           git checkout -b "automated-update-tutorial-workflow"
-          node ../release-actions/stage-1/create-release-pr/create-release-pr.js
-
+          gh pr create
 
 
