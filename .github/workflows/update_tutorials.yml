@@ -1,6 +1,7 @@
 name: update_tutorials
 
 on:
+  pull_request:
   workflow_dispatch:
   schedule:
   - cron: '37 04 * * 6' # 03:37, Saturday
