@@ -40,6 +40,7 @@ jobs:
 
       - name: Update tutorials
         run: |
+          ls
           cp -r cylc/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
               cylc-forecasting-suite
           rsync -va cylc-forecasting-suite \
