@@ -43,7 +43,7 @@ jobs:
           cp -r cylc/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
               cylc-forecasting-suite
           rsync -va cylc-forecasting-suite \
-              rose/metomi/rose/etc/tutorial/cylc-forecasting-suite
+              rose/metomi/rose/etc/tutorial/
 
       - name: Test Tutorial updates
         run: |
