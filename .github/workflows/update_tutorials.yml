@@ -52,9 +52,10 @@ jobs:
 
           git log
           echo "--------------------------"
-
+          git push origin "automated-update-tutorial-workflow"
           gh pr create --title "Update Tutorial Workflow" \
             --body "foo bar bas"\
+            -B "automated-update-tutorial-workflow"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
