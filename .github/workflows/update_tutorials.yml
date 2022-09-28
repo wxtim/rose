@@ -37,7 +37,7 @@ jobs:
           if [ -n "${RSYNC_COMMAND}" ]; then
             echo "::set-output name=tutorials_update::True"
           else
-            echo "::set-output name=tutorials_update::Fales"
+            echo "::set-output name=tutorials_update::False"
           fi
 
       - name: Configure Git
