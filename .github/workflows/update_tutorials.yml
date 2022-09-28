@@ -40,8 +40,10 @@ jobs:
 
       - name: Update tutorials
         run: |
-          rsync -a cylc/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
-            rose/metomi/rose/etc/tutorial/cylc-forecasting-suite
+          cp -r cylc/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
+              cylc-forecasting-suite
+          rsync -va cylc-forecasting-suite \
+              rose/metomi/rose/etc/tutorial/cylc-forecasting-suite
 
       - name: Test Tutorial updates
         run: |
