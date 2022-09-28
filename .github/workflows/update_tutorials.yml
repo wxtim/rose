@@ -28,7 +28,7 @@ jobs:
 
       - name: Update tutorials
         run: |
-          git clone git@github.com:cylc/cylc-flow.git
+          git clone https://github.com/cylc/cylc-flow.git
           cp -r cylc-flow/cylc/flow/etc/tutorial/cylc-forecasting-workflow \
               cylc-forecasting-suite
           rsync -va cylc-forecasting-suite \
