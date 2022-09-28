@@ -49,7 +49,7 @@ jobs:
             git commit -m "automated update of cylc tutoral suite"
             git push origin "automated-update-tutorial-workflow"
             gh pr create --title "Update Tutorial Workflow" \
-              --body ${{PR_BODY}}
+              --body "${PR_BODY}"
               --base 2.0.x
           fi
         env:
