@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>Installation &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="_static/js/spoiler.js?v=12631137"></script>
@@ -53,7 +53,7 @@
               <img src="_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -118,6 +118,7 @@
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Installation</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -126,10 +127,10 @@
            <div itemprop="articleBody">
              
   <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <p>Rose runs on Unix-like systems including Linux and MacOS.</p>
 <section id="quick-installation">
-<h2>Quick Installation<a class="headerlink" href="#quick-installation" title="Link to this heading"></a></h2>
+<h2>Quick Installation<a class="headerlink" href="#quick-installation" title="Permalink to this heading"></a></h2>
 <p>With <code class="docutils literal notranslate"><span class="pre">conda</span></code> (recommended):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install metomi-rose
 </pre></div>
@@ -139,7 +140,7 @@
 </pre></div>
 </div>
 <section id="installing-with-cylc">
-<h3>Installing With Cylc<a class="headerlink" href="#installing-with-cylc" title="Link to this heading"></a></h3>
+<h3>Installing With Cylc<a class="headerlink" href="#installing-with-cylc" title="Permalink to this heading"></a></h3>
 <p>Rose does not require and is distributed independently of <a class="reference external" href="https://cylc.github.io/">Cylc</a>.</p>
 <p>To use Rose with Cylc you will need to install <a class="reference external" href="https://github.com/cylc/cylc-flow">Cylc Flow</a> and <a class="reference external" href="https://github.com/cylc/cylc-rose">Cylc Rose</a>
 into the same Python environment as Rose.</p>
@@ -159,7 +160,7 @@ platforms.</p>
 </div>
 </section>
 <section id="non-python-dependencies">
-<h3>Non Python Dependencies<a class="headerlink" href="#non-python-dependencies" title="Link to this heading"></a></h3>
+<h3>Non Python Dependencies<a class="headerlink" href="#non-python-dependencies" title="Permalink to this heading"></a></h3>
 <p>The following packages are installed by <code class="docutils literal notranslate"><span class="pre">conda</span></code> but not by <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
 <ul class="simple">
 <li><p>FCM</p></li>
@@ -185,7 +186,7 @@ by the metomi-rose conda.</p>
 </section>
 </section>
 <section id="configuring-rose">
-<h2>Configuring Rose<a class="headerlink" href="#configuring-rose" title="Link to this heading"></a></h2>
+<h2>Configuring Rose<a class="headerlink" href="#configuring-rose" title="Permalink to this heading"></a></h2>
 <p>Rose configuration files can be located in the following places:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">/etc/.metomi/rose.conf</span></code></p></li>
@@ -195,7 +196,7 @@ by the metomi-rose conda.</p>
 <p>See <a class="reference internal" href="api/configuration/site-and-user.html#rose:file:rose.conf" title="rose:file:rose.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose.conf</span></code></a> in the API reference for more information.</p>
 </section>
 <section id="configuring-rosie-client">
-<h2>Configuring Rosie Client<a class="headerlink" href="#configuring-rosie-client" title="Link to this heading"></a></h2>
+<h2>Configuring Rosie Client<a class="headerlink" href="#configuring-rosie-client" title="Permalink to this heading"></a></h2>
 <p>Rosie is an optional suite storage and discovery system.</p>
 <p>Rosie stores suites using Subversion repositories, with databases behind
 a web interface for suite discovery and lookup.</p>
@@ -249,7 +250,7 @@ following on the command line:</p>
 </ol>
 </section>
 <section id="deploying-configuration-metadata">
-<h2>Deploying Configuration Metadata<a class="headerlink" href="#deploying-configuration-metadata" title="Link to this heading"></a></h2>
+<h2>Deploying Configuration Metadata<a class="headerlink" href="#deploying-configuration-metadata" title="Permalink to this heading"></a></h2>
 <p>You may want to deploy <a class="reference internal" href="api/configuration/metadata.html#conf-meta"><span class="std std-ref">Configuration Metadata</span></a> for projects using Rose
 in a globally readable location at your site, so that they can be
 easily accessed by users when using Rose utilities such as
@@ -305,7 +306,7 @@ rm &#39;crontab.tmp&#39;
 </div>
 </section>
 <section id="configuring-a-rosie-server">
-<h2>Configuring a Rosie Server<a class="headerlink" href="#configuring-a-rosie-server" title="Link to this heading"></a></h2>
+<h2>Configuring a Rosie Server<a class="headerlink" href="#configuring-a-rosie-server" title="Permalink to this heading"></a></h2>
 <p>You should only need to configure and run your own Rosie service if you do
 not have access to Rosie services on the Internet, or if you need a
 private Rosie service for your site. Depending on settings at your
@@ -412,14 +413,14 @@ ending in <code class="docutils literal notranslate"><span class="pre">aa000</sp
 </pre></div>
 </div>
 <section id="rosie-special-suite">
-<h3><code class="docutils literal notranslate"><span class="pre">ROSIE</span></code> special suite<a class="headerlink" href="#rosie-special-suite" title="Link to this heading"></a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">ROSIE</span></code> special suite<a class="headerlink" href="#rosie-special-suite" title="Permalink to this heading"></a></h3>
 <p>You can define a special suite in each Rosie repository that provides
 some additional repository-specific data and metadata. The suite
 ID will end with <code class="docutils literal notranslate"><span class="pre">ROSIE</span></code> - e.g. <code class="docutils literal notranslate"><span class="pre">foo-ROSIE</span></code>.</p>
 <p>This can be created by running <code class="docutils literal notranslate"><span class="pre">rosie</span> <span class="pre">create</span> <span class="pre">--meta-suite</span></code>.</p>
 </section>
 <section id="creating-a-known-keys-file">
-<h3>Creating a Known Keys File<a class="headerlink" href="#creating-a-known-keys-file" title="Link to this heading"></a></h3>
+<h3>Creating a Known Keys File<a class="headerlink" href="#creating-a-known-keys-file" title="Permalink to this heading"></a></h3>
 <p>You can extend the list of search keys used in the Rosie discovery
 interfaces (such as <code class="docutils literal notranslate"><span class="pre">rosie</span> <span class="pre">go</span></code>). Create a text file at the root
 of a Rosie suite working copy called <code class="docutils literal notranslate"><span class="pre">rosie-keys</span></code>.</p>
@@ -465,7 +466,7 @@ committing.</p>
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -491,7 +492,7 @@ committing.</p>
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

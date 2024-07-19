@@ -30,7 +30,7 @@
 <!-- rose_ana_position -->
 <g id="node3" class="node">
 <title>rose_ana_position</title>
-<ellipse fill="none" stroke="black" cx="108.36" cy="-19.45" rx="95.11" ry="19.45"/>
+<ellipse fill="none" stroke="black" cx="108.36" cy="-19.45" rx="94.58" ry="19.45"/>
 <text text-anchor="middle" x="108.36" y="-15.9" font-family="sans" font-size="14.00">rose_ana_position</text>
 </g>
 <!-- spaceship&#45;&gt;rose_ana_position -->

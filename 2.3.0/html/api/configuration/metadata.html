@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuration Metadata &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>Configuration Metadata &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../_static/js/spoiler.js?v=12631137"></script>
@@ -53,7 +53,7 @@
               <img src="../../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -136,6 +136,7 @@
           <li class="breadcrumb-item"><a href="index.html">Rose Configuration</a></li>
       <li class="breadcrumb-item active">Configuration Metadata</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/configuration/metadata.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -144,7 +145,7 @@
            <div itemprop="articleBody">
              
   <section id="configuration-metadata">
-<span id="conf-meta"></span><span id="metadata"></span><h1>Configuration Metadata<a class="headerlink" href="#configuration-metadata" title="Link to this heading"></a></h1>
+<span id="conf-meta"></span><span id="metadata"></span><h1>Configuration Metadata<a class="headerlink" href="#configuration-metadata" title="Permalink to this heading"></a></h1>
 <p>Configuration metadata uses the standard <a class="reference internal" href="rose-configuration-format.html#rose-configuration-format"><span class="std std-ref">Rose Configuration Format</span></a>.
 It is represented in a directory with the following:</p>
 <ul class="simple">
@@ -177,7 +178,7 @@ application.</p></li>
 <p>The configuration metadata that controls default behaviour will be located in
 <code class="docutils literal notranslate"><span class="pre">etc/rose-meta/</span></code> within the <code class="docutils literal notranslate"><span class="pre">metomi.rose</span></code> Python installation.</p>
 <section id="configuration-metadata-file">
-<h2>Configuration Metadata File<a class="headerlink" href="#configuration-metadata-file" title="Link to this heading"></a></h2>
+<h2>Configuration Metadata File<a class="headerlink" href="#configuration-metadata-file" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="#rose:file:rose-meta.conf" title="rose:file:rose-meta.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-meta.conf</span></code></a> contains a serialised data structure that is an
 unordered map (<code class="docutils literal notranslate"><span class="pre">sections=</span></code>) of unordered maps (<code class="docutils literal notranslate"><span class="pre">keys=values</span></code>).</p>
 <p>The section name in a configuration metadata file should be a unique ID to
@@ -199,7 +200,7 @@ may in turn have common configuration metadata settings. The ID for a
 namespace set in the metadata is <code class="docutils literal notranslate"><span class="pre">ns=NAME</span></code>, e.g.
 <code class="docutils literal notranslate"><span class="pre">ns=env/MyFavouriteEnvironmentVars</span></code>.</p>
 <section id="metadata-inheritance-import">
-<h3>Metadata Inheritance (Import)<a class="headerlink" href="#metadata-inheritance-import" title="Link to this heading"></a></h3>
+<h3>Metadata Inheritance (Import)<a class="headerlink" href="#metadata-inheritance-import" title="Permalink to this heading"></a></h3>
 <p>A root level <code class="docutils literal notranslate"><span class="pre">import=MY_COMMAND1/VERSION1</span> <span class="pre">MY_COMMAND2/VERSION2</span> <span class="pre">...</span></code> setting
 in the <a class="reference internal" href="#rose:file:rose-meta.conf" title="rose:file:rose-meta.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-meta.conf</span></code></a> file will tell Rose metadata utilities to
 locate the meta keys <code class="docutils literal notranslate"><span class="pre">MY_COMMAND1/VERSION1</span></code>, <code class="docutils literal notranslate"><span class="pre">MY_COMMAND2/VERSION2</span></code> (and
@@ -237,7 +238,7 @@ this:</p>
 <code class="docutils literal notranslate"><span class="pre">rose-meta/cheese/vn1.0/rose-meta.conf</span></code>.</p>
 </section>
 <section id="metadata-options">
-<h3>Metadata Options<a class="headerlink" href="#metadata-options" title="Link to this heading"></a></h3>
+<h3>Metadata Options<a class="headerlink" href="#metadata-options" title="Permalink to this heading"></a></h3>
 <p>The metadata options for a configuration fall into four categories:
 <a class="reference internal" href="#metadata-sorting"><span class="std std-ref">sorting</span></a>,
 <a class="reference internal" href="#metadata-values"><span class="std std-ref">values</span></a>,
@@ -245,10 +246,10 @@ this:</p>
 <a class="reference internal" href="#metadata-help"><span class="std std-ref">help</span></a> as outlined below.</p>
 <dl class="rose file">
 <dt class="sig sig-object rose" id="rose:file:rose-meta.conf">
-<em class="property"><span class="pre">Rose</span> <span class="pre">Configuration</span> </em><span class="sig-name descname"><span class="pre">rose-meta.conf</span></span><a class="headerlink" href="#rose:file:rose-meta.conf" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Rose</span> <span class="pre">Configuration</span> </em><span class="sig-name descname"><span class="pre">rose-meta.conf</span></span><a class="headerlink" href="#rose:file:rose-meta.conf" title="Permalink to this definition"></a></dt>
 <dd><dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[SETTING]</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[SETTING]</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]" title="Permalink to this definition"></a></dt>
 <dd><p>A section containing metadata items relating to a particular setting.</p>
 <p><code class="docutils literal notranslate"><span class="pre">SETTING</span></code> should be the full name of a configuration containing the
 name of the section and the name of the setting separated by an equals
@@ -263,7 +264,7 @@ name of the section and the name of the setting separated by an equals
 the configurations.</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]ns">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">ns</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]ns" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">ns</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]ns" title="Permalink to this definition"></a></dt>
 <dd><p>A forward slash <code class="docutils literal notranslate"><span class="pre">/</span></code> delimited hierarchical namespace for the
 container of the setting, which overrides the default. The default
 namespace for the setting is derived from the first part of the ID -
@@ -283,7 +284,7 @@ a section will become the default for all the settings in that section.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]sort-key">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">sort-key</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]sort-key" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">sort-key</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]sort-key" title="Permalink to this definition"></a></dt>
 <dd><p>A character string that can be used as a sort key for ordering an option
 within its namespace.</p>
 <p>It can also be used to order sections and namespaces.</p>
@@ -323,7 +324,7 @@ if the value of a setting contains a string that looks like an environment
 variable, these metadata will normally be ignored.</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]type">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]type" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]type" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>raw</p>
@@ -407,7 +408,7 @@ default is a raw string.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]length">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">length</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]length" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">length</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]length" title="Permalink to this definition"></a></dt>
 <dd><p>Define the length of an array. If not present, the setting is assumed
 to be a scalar. A positive integer defines a fixed length array. A
 colon <code class="docutils literal notranslate"><span class="pre">:</span></code> defines a dynamic length array.</p>
@@ -420,7 +421,7 @@ colon <code class="docutils literal notranslate"><span class="pre">:</span></cod
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]element-titles">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">element-titles</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]element-titles" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">element-titles</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]element-titles" title="Permalink to this definition"></a></dt>
 <dd><p>Define a list of comma separated “titles” to appear above array
 entries. If not present then no titles are displayed.</p>
 <div class="admonition note">
@@ -436,7 +437,7 @@ them.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]values">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">values</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]values" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">values</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]values" title="Permalink to this definition"></a></dt>
 <dd><p>Define a comma <code class="docutils literal notranslate"><span class="pre">,</span></code> separated list of permitted values of a setting
 (or an element in the setting if it is an array). This metadata
 overrides the <a class="reference internal" href="#rose:conf:rose-meta.conf[SETTING]type" title="rose:conf:rose-meta.conf[SETTING]type"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">type</span></code></a>, <a class="reference internal" href="#rose:conf:rose-meta.conf[SETTING]range" title="rose:conf:rose-meta.conf[SETTING]range"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">range</span></code></a> and
@@ -452,7 +453,7 @@ always have this value, and may display it as a special setting.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]value-titles">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">value-titles</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]value-titles" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">value-titles</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]value-titles" title="Permalink to this definition"></a></dt>
 <dd><p>Define a comma <code class="docutils literal notranslate"><span class="pre">,</span></code> separated list of titles to associate with each
 of the elements of <a class="reference internal" href="#rose:conf:rose-meta.conf[SETTING]values" title="rose:conf:rose-meta.conf[SETTING]values"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">values</span></code></a> which will be displayed
 instead of the value. This list should contain the same number of
@@ -469,7 +470,7 @@ elements as the <a class="reference internal" href="#rose:conf:rose-meta.conf[SE
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]value-hints">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">value-hints</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]value-hints" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">value-hints</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]value-hints" title="Permalink to this definition"></a></dt>
 <dd><p>Define a comma <code class="docutils literal notranslate"><span class="pre">,</span></code> separated list of suggested values for a variable
 as value “hints”, but still allows the user to provide their own
 override. This is like an auto-complete widget.</p>
@@ -485,7 +486,7 @@ the user starts typing if they match a suggested value.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]range">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">range</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]range" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">range</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]range" title="Permalink to this definition"></a></dt>
 <dd><p>Specify a range of values. It can either be a simple comma <code class="docutils literal notranslate"><span class="pre">,</span></code>
 separated list of allowed values, or a logical expression in the Rose
 metadata <a class="reference internal" href="#app-meta-mini-lang"><span class="std std-ref">mini-language</span></a>. This metadata is
@@ -506,7 +507,7 @@ property below for a way to implement this).</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]pattern">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">pattern</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]pattern" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">pattern</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]pattern" title="Permalink to this definition"></a></dt>
 <dd><p>Specify a regular expression (<a class="reference external" href="https://docs.python.org/3/library/re.html#regular-expression-syntax">Python Regular Expressions</a>) to
 compare against the whole value of the setting.</p>
 <p>For example, if we write the following metadata:</p>
@@ -533,7 +534,7 @@ regular expression <code class="docutils literal notranslate"><span class="pre">
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]fail-if">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">fail-if</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]fail-if" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">fail-if</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]fail-if" title="Permalink to this definition"></a></dt>
 <dd><p>Specify a logical expression using the Rose
 <a class="reference internal" href="#app-meta-mini-lang"><span class="std std-ref">mini-language</span></a> to validate the
 value of the current setting with respect to other settings. If the
@@ -617,7 +618,7 @@ denominator is a real number - e.g. by rewriting it as
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]warn-if">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">warn-if</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]warn-if" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">warn-if</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]warn-if" title="Permalink to this definition"></a></dt>
 <dd><p>Specify a logical expression using the Rose
 <a class="reference internal" href="#app-meta-mini-lang"><span class="std std-ref">mini-language</span></a> to validate the
 value of the current setting with respect to other settings. If
@@ -639,7 +640,7 @@ logical expressions that may be added.</p>
 different states.</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]compulsory">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">compulsory</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]compulsory" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">compulsory</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]compulsory" title="Permalink to this definition"></a></dt>
 <dd><p>A <code class="docutils literal notranslate"><span class="pre">true</span></code> value indicates that the setting should be compulsory. If
 this flag is not set, the setting is optional.</p>
 <p>Compulsory sections should be physically present in the configuration
@@ -654,7 +655,7 @@ variable that only has a single permitted value.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]trigger">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">trigger</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]trigger" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">trigger</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]trigger" title="Permalink to this definition"></a></dt>
 <dd><p>A setting has the following states:</p>
 <ul class="simple">
 <li><p>normal</p></li>
@@ -773,7 +774,7 @@ setting <code class="docutils literal notranslate"><span class="pre">trigger=fil
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]duplicate">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">duplicate</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]duplicate" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">duplicate</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]duplicate" title="Permalink to this definition"></a></dt>
 <dd><p>Allow duplicated copies of the setting. This is used for sections where
 there may be more than one with the same metadata - for example
 multiple namelist groups of the same name. If this setting is true for
@@ -787,7 +788,7 @@ copies or an index.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]macro">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">macro</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]macro" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">macro</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]macro" title="Permalink to this definition"></a></dt>
 <dd><blockquote>
 <div><p>Associate a setting with a comma-delimited set of custom macros (but
 not upgrade macros).</p>
@@ -808,7 +809,7 @@ by appending the method to the name e.g.:</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]widget[gui-application]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">widget[gui-application]</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]widget[gui-application]" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">widget[gui-application]</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]widget[gui-application]" title="Permalink to this definition"></a></dt>
 <dd><p>Indicate that the gui-application (e.g.
 <a class="reference internal" href="../command-reference.html#command-rose-config-edit"><span class="std std-ref">rose config-edit</span></a>) should use a special widget to display
 this setting.</p>
@@ -854,7 +855,7 @@ petits_fours    .false.     .true.       .false.       .true.
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]copy-mode">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">copy-mode</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]copy-mode" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">copy-mode</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]copy-mode" title="Permalink to this definition"></a></dt>
 <dd><p>For use with settings in the <a class="reference internal" href="suite.html#rose:file:rose-suite.info" title="rose:file:rose-suite.info"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-suite.info</span></code></a> file.</p>
 <p>Setting <a class="reference internal" href="#rose:conf:rose-meta.conf[SETTING]copy-mode" title="rose:conf:rose-meta.conf[SETTING]copy-mode"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">copy-mode</span></code></a> in the metadata allows for the field to
 be either <code class="docutils literal notranslate"><span class="pre">never</span></code> copied or copied with any value associated to be
@@ -879,7 +880,7 @@ associated with it would be cleared.</p>
 <p>These metadata provide help for a configuration.</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]url">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">url</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]url" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">url</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]url" title="Permalink to this definition"></a></dt>
 <dd><p>A web URL containing help for the setting. For example:</p>
 <div class="highlight-rose notranslate"><div class="highlight"><pre><span></span><span class="nv">url</span><span class="o">=</span><span class="s">http://www.something.com/FOO/view/dev/doc/FOO.html</span>
 </pre></div>
@@ -899,7 +900,7 @@ relevant parent <code class="docutils literal notranslate"><span class="pre">url
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]help">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">help</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]help" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">help</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]help" title="Permalink to this definition"></a></dt>
 <dd><p>(Long) help for the setting. For example,
 <a class="reference internal" href="../command-reference.html#command-rose-config-edit"><span class="std std-ref">rose config-edit</span></a> will use this in a pop-up dialog for
 a variable. Embedding variable IDs in the help string will allow
@@ -914,7 +915,7 @@ the <a class="reference internal" href="../command-reference.html#command-rose-c
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]description">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]description" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]description" title="Permalink to this definition"></a></dt>
 <dd><p>(Medium) description for the setting. For example,
 <a class="reference internal" href="../command-reference.html#command-rose-config-edit"><span class="std std-ref">rose config-edit</span></a> will use this as part of the hover over
 text.</p>
@@ -928,7 +929,7 @@ view options.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-meta.conf[SETTING]title">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]title" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#rose:conf:rose-meta.conf[SETTING]title" title="Permalink to this definition"></a></dt>
 <dd><p>(Short) title for the setting. For example,
 <a class="reference internal" href="../command-reference.html#command-rose-config-edit"><span class="std std-ref">rose config-edit</span></a> can use this specification as the label
 of a setting, instead of the variable name.</p>
@@ -941,7 +942,7 @@ of a setting, instead of the variable name.</p>
 </section>
 </section>
 <section id="appendix-metadata-location">
-<span id="app-meta-loc"></span><h2>Appendix: Metadata Location<a class="headerlink" href="#appendix-metadata-location" title="Link to this heading"></a></h2>
+<span id="app-meta-loc"></span><h2>Appendix: Metadata Location<a class="headerlink" href="#appendix-metadata-location" title="Permalink to this heading"></a></h2>
 <p>Centralised Rose metadata is referred to with either the
 <a class="reference internal" href="suite.html#rose:conf:rose-suite.conf|meta" title="rose:conf:rose-suite.conf|meta"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose-suite.conf|meta</span></code></a> or <a class="reference internal" href="suite.html#rose:conf:rose-suite.info|project" title="rose:conf:rose-suite.info|project"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose-suite.info|project</span></code></a>
 settings in a suite configuration. It needs to live in a
@@ -1015,7 +1016,7 @@ CAFFEINE/rose-meta/caffeine-tea/lapsang/
 </div>
 </section>
 <section id="upgrade-and-versions">
-<h2>Upgrade and Versions<a class="headerlink" href="#upgrade-and-versions" title="Link to this heading"></a></h2>
+<h2>Upgrade and Versions<a class="headerlink" href="#upgrade-and-versions" title="Permalink to this heading"></a></h2>
 <p>Terminology:</p>
 <dl class="simple">
 <dt>The HEAD (i.e. development) version</dt><dd><p>The configuration metadata most relevant to the latest revision of the
@@ -1074,7 +1075,7 @@ will be given.</p>
 the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> tag must be specified explicitly.</p>
 </div>
 <section id="when-to-create-named-versions">
-<h3>When to create named versions<a class="headerlink" href="#when-to-create-named-versions" title="Link to this heading"></a></h3>
+<h3>When to create named versions<a class="headerlink" href="#when-to-create-named-versions" title="Permalink to this heading"></a></h3>
 <p>One option is to create a new named version for each release of your system.
 This makes it easy for users to understand. However, if there is a new
 release which does not require a change to the metadata then you will still
@@ -1092,7 +1093,7 @@ you want if you’re not using a release).</p>
 </div>
 </section>
 <section id="sharing-metadata-between-different-executables">
-<h3>Sharing metadata between different executables<a class="headerlink" href="#sharing-metadata-between-different-executables" title="Link to this heading"></a></h3>
+<h3>Sharing metadata between different executables<a class="headerlink" href="#sharing-metadata-between-different-executables" title="Permalink to this heading"></a></h3>
 <p>If two different commands share the majority of their inputs then you may
 choose to use the same configuration metadata for both commands. Any
 differences (in terms of available inputs) can then be triggered by the
@@ -1115,7 +1116,7 @@ single application configuration).</p>
 and then using the <code class="docutils literal notranslate"><span class="pre">--command-key</span></code> option to <a class="reference internal" href="../command-reference.html#command-rose-app-run"><span class="std std-ref">rose app-run</span></a>.</p>
 </section>
 <section id="using-development-versions-of-upgrade-macros">
-<h3>Using development versions of upgrade macros<a class="headerlink" href="#using-development-versions-of-upgrade-macros" title="Link to this heading"></a></h3>
+<h3>Using development versions of upgrade macros<a class="headerlink" href="#using-development-versions-of-upgrade-macros" title="Permalink to this heading"></a></h3>
 <p>Users will be able to test out development versions of the upgrade macros by
 adding a working copy of the relevant branch into their metadata search path.
 However, care must be taken when doing this. Running the upgrade macro will
@@ -1130,7 +1131,7 @@ of the suite which you are happy to discard).</p>
 </section>
 </section>
 <section id="metadata-mini-language">
-<span id="app-meta-mini-lang"></span><h2>Metadata Mini-Language<a class="headerlink" href="#metadata-mini-language" title="Link to this heading"></a></h2>
+<span id="app-meta-mini-lang"></span><h2>Metadata Mini-Language<a class="headerlink" href="#metadata-mini-language" title="Permalink to this heading"></a></h2>
 <p>The Rose metadata mini-language supports writing a logical expression in
 Python-like syntax, using variable IDs to reference their associated values.</p>
 <p>Expressions are set as the value of metadata properties such as
@@ -1149,7 +1150,7 @@ as a macro.</p>
 <p>Nevertheless, the language allows considerable power in terms of defining
 simple rules for variable values.</p>
 <section id="operators">
-<h3>Operators<a class="headerlink" href="#operators" title="Link to this heading"></a></h3>
+<h3>Operators<a class="headerlink" href="#operators" title="Permalink to this heading"></a></h3>
 <p>The following <em>logical</em> operators are supported:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">and</span>   <span class="c1"># Logical AND</span>
 <span class="ow">or</span>    <span class="c1"># Logical OR</span>
@@ -1218,7 +1219,7 @@ obey this - make sure you force the correct behaviour using brackets.</p>
 </div>
 </section>
 <section id="constants">
-<h3>Constants<a class="headerlink" href="#constants" title="Link to this heading"></a></h3>
+<h3>Constants<a class="headerlink" href="#constants" title="Permalink to this heading"></a></h3>
 <p>The following are special constants:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">None</span>  <span class="c1"># Python None</span>
 <span class="kc">False</span> <span class="c1"># Python False</span>
@@ -1227,7 +1228,7 @@ obey this - make sure you force the correct behaviour using brackets.</p>
 </div>
 </section>
 <section id="using-variable-ids">
-<h3>Using Variable IDs<a class="headerlink" href="#using-variable-ids" title="Link to this heading"></a></h3>
+<h3>Using Variable IDs<a class="headerlink" href="#using-variable-ids" title="Permalink to this heading"></a></h3>
 <p>Putting a variable ID in the expression means that when the expression
 is evaluated, the string value of the variable is <a class="reference external" href="https://docs.python.org/3/library/ast.html#ast.literal_eval">cast</a> and substituted
 into the expression.</p>
@@ -1265,7 +1266,7 @@ example, the fail-if expression:</p>
 </div>
 </section>
 <section id="arrays">
-<h3>Arrays<a class="headerlink" href="#arrays" title="Link to this heading"></a></h3>
+<h3>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading"></a></h3>
 <p>The syntax has some special ways of dealing with variable values that are
 arrays - i.e. comma-separated lists.</p>
 <p>You can refer to a single element of the value for a given variable ID
@@ -1328,7 +1329,7 @@ configuration, this would be expanded before proper evaluation:</p>
 </div>
 </section>
 <section id="internals">
-<h3>Internals<a class="headerlink" href="#internals" title="Link to this heading"></a></h3>
+<h3>Internals<a class="headerlink" href="#internals" title="Permalink to this heading"></a></h3>
 <p>Rose uses an external engine to evaluate the raw language string after
 variable IDs and any <code class="docutils literal notranslate"><span class="pre">any()</span></code> and <code class="docutils literal notranslate"><span class="pre">all()</span></code> functions have been substituted
 and expanded.</p>
@@ -1341,7 +1342,7 @@ details of the supported Pythonic syntax. This may change.</p>
 </section>
 </section>
 <section id="config-editor-ignored-mechanics">
-<h2>Config Editor Ignored Mechanics<a class="headerlink" href="#config-editor-ignored-mechanics" title="Link to this heading"></a></h2>
+<h2>Config Editor Ignored Mechanics<a class="headerlink" href="#config-editor-ignored-mechanics" title="Permalink to this heading"></a></h2>
 <p>This describes the intended behaviour of <a class="reference internal" href="../command-reference.html#command-rose-config-edit"><span class="std std-ref">rose config-edit</span></a> when
 there is an ignored state mismatch for a setting - e.g. a setting might be
 enabled when it should be trigger-ignored.</p>
@@ -1549,7 +1550,7 @@ contains the trigger-mechanism’s expected states. The states can be:</p>
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -1575,7 +1576,7 @@ contains the trigger-mechanism’s expected states. The states can be:</p>
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

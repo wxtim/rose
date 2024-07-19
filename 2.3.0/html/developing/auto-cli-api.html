@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Auto CLI API &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>Auto CLI API &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../_static/js/spoiler.js?v=12631137"></script>
@@ -51,7 +51,7 @@
               <img src="../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -101,6 +101,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Auto CLI API</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/developing/auto-cli-api.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -109,7 +110,7 @@
            <div itemprop="articleBody">
              
   <section id="auto-cli-api">
-<h1>Auto CLI API<a class="headerlink" href="#auto-cli-api" title="Link to this heading"></a></h1>
+<h1>Auto CLI API<a class="headerlink" href="#auto-cli-api" title="Permalink to this heading"></a></h1>
 <p>The Rose command line API is auto-documented by the extension <code class="docutils literal notranslate"><span class="pre">auto-cli-api</span></code>.</p>
 <p>This translates the Rose CLI help into reStructuredText. To keep the CLI docs
 clean they are written in a plain format which has some reStructuredText
@@ -120,7 +121,7 @@ with <code class="docutils literal notranslate"><span class="pre">command</span>
 </pre></div>
 </div>
 <section id="basic-help-page">
-<h2>Basic Help Page<a class="headerlink" href="#basic-help-page" title="Link to this heading"></a></h2>
+<h2>Basic Help Page<a class="headerlink" href="#basic-help-page" title="Permalink to this heading"></a></h2>
 <p>Help pages are written in sections with content indented four spaces after
 section headings. Sections are separated by a single blank line.</p>
 <p>The following sections are compulsory:</p>
@@ -146,7 +147,7 @@ underlying reStructuredText try:</p>
 </div>
 </section>
 <section id="restructuredtext-markup">
-<h2>reStructuredText Markup<a class="headerlink" href="#restructuredtext-markup" title="Link to this heading"></a></h2>
+<h2>reStructuredText Markup<a class="headerlink" href="#restructuredtext-markup" title="Permalink to this heading"></a></h2>
 <p>The following reStructuredText markup elements are supported:</p>
 <ul>
 <li><p>Bullet Lists</p>
@@ -182,7 +183,7 @@ above is recommended.</p>
 </div>
 </section>
 <section id="custom-markup">
-<h2>Custom Markup<a class="headerlink" href="#custom-markup" title="Link to this heading"></a></h2>
+<h2>Custom Markup<a class="headerlink" href="#custom-markup" title="Permalink to this heading"></a></h2>
 <p>The following reStructuredText markup elements have been mutated for the
 plain text format:</p>
 <ul>
@@ -216,7 +217,7 @@ within the CLI API documentation.</p>
 </ul>
 </section>
 <section id="argument-option-sections">
-<h2>Argument/Option Sections<a class="headerlink" href="#argument-option-sections" title="Link to this heading"></a></h2>
+<h2>Argument/Option Sections<a class="headerlink" href="#argument-option-sections" title="Permalink to this heading"></a></h2>
 <p>The following help sections will be interpreted as argument/option lists:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">OPTIONS</span></code></p></li>
@@ -244,7 +245,7 @@ within the CLI API documentation.</p>
 </div>
 </section>
 <section id="code-sections">
-<h2>Code Sections<a class="headerlink" href="#code-sections" title="Link to this heading"></a></h2>
+<h2>Code Sections<a class="headerlink" href="#code-sections" title="Permalink to this heading"></a></h2>
 <p>The following sections will be interpreted as plain-text with bash syntax.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SYNOPSIS</span></code></p></li>
@@ -252,7 +253,7 @@ within the CLI API documentation.</p>
 </ul>
 </section>
 <section id="user-defined-sections">
-<h2>User-Defined Sections<a class="headerlink" href="#user-defined-sections" title="Link to this heading"></a></h2>
+<h2>User-Defined Sections<a class="headerlink" href="#user-defined-sections" title="Permalink to this heading"></a></h2>
 <p>Any user-defined sections will be interpreted as free-form reStructuredText.</p>
 <dl class="field-list simple">
 <dt class="field-odd">orphan<span class="colon">:</span></dt>
@@ -284,7 +285,7 @@ within the CLI API documentation.</p>
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -310,7 +311,7 @@ within the CLI API documentation.</p>
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>rose_arch &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>rose_arch &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../_static/js/spoiler.js?v=12631137"></script>
@@ -53,7 +53,7 @@
               <img src="../../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -127,6 +127,7 @@
           <li class="breadcrumb-item"><a href="../rose-built-in-applications.html">Rose Built-In Applications</a></li>
       <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">rose_arch</span></code></li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/built-in/rose_arch.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -135,7 +136,7 @@
            <div itemprop="articleBody">
              
   <section id="rose-arch">
-<span id="id1"></span><h1><code class="docutils literal notranslate"><span class="pre">rose_arch</span></code><a class="headerlink" href="#rose-arch" title="Link to this heading"></a></h1>
+<span id="id1"></span><h1><code class="docutils literal notranslate"><span class="pre">rose_arch</span></code><a class="headerlink" href="#rose-arch" title="Permalink to this heading"></a></h1>
 <p>This built-in application provides a generic solution to configure
 site-specific archiving of suite files for use with
 <a class="reference internal" href="../command-reference.html#command-rose-task-run"><span class="std std-ref">rose task-run</span></a>.</p>
@@ -165,7 +166,7 @@ would only redo targets that did not succeed in the previous attempts.</p></li>
 <li><p>Tar-Gzip or Gzip source files before sending them to the archive.</p></li>
 </ul>
 <section id="invocation">
-<h2>Invocation<a class="headerlink" href="#invocation" title="Link to this heading"></a></h2>
+<h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this heading"></a></h2>
 <p>In automatic selection mode, this built-in application will be invoked
 automatically if a task has a name that starts with <code class="docutils literal notranslate"><span class="pre">rose_arch*</span></code>.</p>
 <p>This means that you can use Rose Arch with something like the example below
@@ -185,10 +186,10 @@ in your <code class="docutils literal notranslate"><span class="pre">flow.cylc</
 </div>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p>The following examples all form part of a single <a class="reference internal" href="../configuration/application.html#rose:file:rose-app.conf" title="rose:file:rose-app.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-app.conf</span></code></a> file:</p>
 <section id="general-settings">
-<h3>General Settings<a class="headerlink" href="#general-settings" title="Link to this heading"></a></h3>
+<h3>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this heading"></a></h3>
 <p>These settings are placed here to be inherited by other archive tasks in the
 file: In this case we’ve set <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">format</span></code> which sets how we are going
 to copy the files to the archive location.
@@ -203,7 +204,7 @@ don’t have repeatedly specify common locations.</p>
 </div>
 </section>
 <section id="archive-a-file-to-a-file">
-<h3>Archive a file to a file<a class="headerlink" href="#archive-a-file-to-a-file" title="Link to this heading"></a></h3>
+<h3>Archive a file to a file<a class="headerlink" href="#archive-a-file-to-a-file" title="Permalink to this heading"></a></h3>
 <p>In this simplest use case rose arch is just moving a single file to another
 location.</p>
 <div class="highlight-rose notranslate"><div class="highlight"><pre><span></span><span class="c1"># Archive a file to a file</span>
@@ -213,7 +214,7 @@ location.</p>
 </div>
 </section>
 <section id="archiving-directories">
-<h3>Archiving directories<a class="headerlink" href="#archiving-directories" title="Link to this heading"></a></h3>
+<h3>Archiving directories<a class="headerlink" href="#archiving-directories" title="Permalink to this heading"></a></h3>
 <p>You can archive files matched by one or more glob expressions to a directory:</p>
 <div class="highlight-rose notranslate"><div class="highlight"><pre><span></span><span class="c1"># A single glob</span>
 <span class="nt">[arch:worlds/]</span>
@@ -226,7 +227,7 @@ location.</p>
 </div>
 </section>
 <section id="missing-files-and-directories">
-<h3>Missing files and directories<a class="headerlink" href="#missing-files-and-directories" title="Link to this heading"></a></h3>
+<h3>Missing files and directories<a class="headerlink" href="#missing-files-and-directories" title="Permalink to this heading"></a></h3>
 <p>It’s also possibly to deal with a situation where one or more of the source
 expressions might not return anything by putting brackets - <code class="docutils literal notranslate"><span class="pre">()</span></code> - around it:</p>
 <div class="highlight-rose notranslate"><div class="highlight"><pre><span></span><span class="c1"># If there isn&#39;t anything in greeting/worlds/ Rose Arch continues</span>
@@ -242,7 +243,7 @@ on:</p>
 </div>
 </section>
 <section id="zipping-files">
-<h3>Zipping files<a class="headerlink" href="#zipping-files" title="Link to this heading"></a></h3>
+<h3>Zipping files<a class="headerlink" href="#zipping-files" title="Permalink to this heading"></a></h3>
 <p>There are multiple ways of specifying that you want your archive to be
 compressed:</p>
 <p>You can infer compression from the target extension:</p>
@@ -260,7 +261,7 @@ not recognized by rose arch as an extension to be compressed.)</p>
 <p>For more details see <a class="reference internal" href="#rose:conf:rose_arch[arch]compress" title="rose:conf:rose_arch[arch]compress"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose_arch[arch]compress</span></code></a></p>
 </section>
 <section id="zipping-directories">
-<h3>Zipping directories<a class="headerlink" href="#zipping-directories" title="Link to this heading"></a></h3>
+<h3>Zipping directories<a class="headerlink" href="#zipping-directories" title="Permalink to this heading"></a></h3>
 <p>You can tar and zip entire directories - as with single files Rose Arch will
 attempt to infer archive and compression from <code class="docutils literal notranslate"><span class="pre">[arch:TARGET.extension]</span></code> if it
 can:</p>
@@ -280,7 +281,7 @@ can:</p>
 </div>
 </section>
 <section id="renaming-files-simply">
-<h3>Renaming files simply<a class="headerlink" href="#renaming-files-simply" title="Link to this heading"></a></h3>
+<h3>Renaming files simply<a class="headerlink" href="#renaming-files-simply" title="Permalink to this heading"></a></h3>
 <p>You may wish to change the name of the archived files. By default the contents
 of your app’a <a class="reference internal" href="#rose:conf:rose_arch[arch]source" title="rose:conf:rose_arch[arch]source"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose_arch[arch]source</span></code></a> and
 <code class="docutils literal notranslate"><span class="pre">$CYLC_TASK_CYCLE_TIME</span></code> are available to you as python formatting strings
@@ -297,7 +298,7 @@ prepend <code class="docutils literal notranslate"><span class="pre">%(cycle)s</
 </div>
 </section>
 <section id="renaming-using-a-rename-parser">
-<h3>Renaming using a <code class="docutils literal notranslate"><span class="pre">rename-parser</span></code><a class="headerlink" href="#renaming-using-a-rename-parser" title="Link to this heading"></a></h3>
+<h3>Renaming using a <code class="docutils literal notranslate"><span class="pre">rename-parser</span></code><a class="headerlink" href="#renaming-using-a-rename-parser" title="Permalink to this heading"></a></h3>
 <p>See <a class="reference internal" href="#rose:conf:rose_arch[arch]rename-parser" title="rose:conf:rose_arch[arch]rename-parser"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose_arch[arch]rename-parser</span></code></a>.</p>
 <p>This allows you to parse the the name you give in <a class="reference internal" href="#rose:conf:rose_arch[arch]source" title="rose:conf:rose_arch[arch]source"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose_arch[arch]source</span></code></a> using
 regular expressions for use in <code class="docutils literal notranslate"><span class="pre">rename-format</span></code>.</p>
@@ -313,7 +314,7 @@ with names in the form <code class="docutils literal notranslate"><span class="p
 </section>
 </section>
 <section id="output">
-<h2>Output<a class="headerlink" href="#output" title="Link to this heading"></a></h2>
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this heading"></a></h2>
 <p>On completion, <a class="reference internal" href="#rose:app:rose_arch" title="rose:app:rose_arch"><code class="xref rose rose-app docutils literal notranslate"><span class="pre">rose_arch</span></code></a> writes a status summary for each
 target to the standard output, which looks like this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0 foo:///fred/my-su173/output0.tar.gz [compress=tar.gz]
@@ -348,16 +349,16 @@ command. For a source line, the third column contains the original name of
 the source.</p>
 </section>
 <section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
 <dl class="rose app">
 <dt class="sig sig-object rose" id="rose:app:rose_arch">
-<em class="property"><span class="pre">Rose</span> <span class="pre">App</span> </em><span class="sig-name descname"><span class="pre">rose_arch</span></span><a class="headerlink" href="#rose:app:rose_arch" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Rose</span> <span class="pre">App</span> </em><span class="sig-name descname"><span class="pre">rose_arch</span></span><a class="headerlink" href="#rose:app:rose_arch" title="Permalink to this definition"></a></dt>
 <dd><dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[arch]</span></span><em class="property"><span class="pre">(alternate:</span> <span class="pre">arch:TARGET)</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[arch]</span></span><em class="property"><span class="pre">(alternate:</span> <span class="pre">arch:TARGET)</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]" title="Permalink to this definition"></a></dt>
 <dd><dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]command-format">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">command-format</span></span><em class="property"><span class="pre">=</span> <span class="pre">FORMAT</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]command-format" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">command-format</span></span><em class="property"><span class="pre">=</span> <span class="pre">FORMAT</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]command-format" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Compulsory<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True</p>
@@ -371,7 +372,7 @@ respectively.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]compress">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">compress</span></span><em class="property"><span class="pre">=</span> <span class="pre">pax|tar|pax.gz|tar.gz|tgz|gz</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]compress" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">compress</span></span><em class="property"><span class="pre">=</span> <span class="pre">pax|tar|pax.gz|tar.gz|tgz|gz</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]compress" title="Permalink to this definition"></a></dt>
 <dd><p>If specified, compress source files scheme before sending them to the
 archive. If not set Rose Arch will attempt to set a compression scheme
 if the file extension of the target implies compression: For
@@ -403,7 +404,7 @@ before being sent to the target.</p></td>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]rename-format">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">rename-format</span></span><a class="headerlink" href="#rose:conf:rose_arch[arch]rename-format" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">rename-format</span></span><a class="headerlink" href="#rose:conf:rose_arch[arch]rename-format" title="Permalink to this definition"></a></dt>
 <dd><p>If specified, the source files will be renamed according to the
 specified format. The format string should be a Pythonic
 <code class="docutils literal notranslate"><span class="pre">printf</span></code>-style format string.</p>
@@ -426,7 +427,7 @@ should use <a class="reference internal" href="#rose:conf:rose_arch[arch]rename-
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]rename-parser">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">rename-parser</span></span><a class="headerlink" href="#rose:conf:rose_arch[arch]rename-parser" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">rename-parser</span></span><a class="headerlink" href="#rose:conf:rose_arch[arch]rename-parser" title="Permalink to this definition"></a></dt>
 <dd><p>Ignored if <a class="reference internal" href="#rose:conf:rose_arch[arch]rename-format" title="rose:conf:rose_arch[arch]rename-format"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rename-format</span></code></a> is not specified.</p>
 <p>Specify a regular expression to parse the name provided by <a class="reference internal" href="#rose:conf:rose_arch[arch]source" title="rose:conf:rose_arch[arch]source"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">source</span></code></a>,
 using the Python regex syntax <code class="docutils literal notranslate"><span class="pre">(?P&lt;label&gt;what</span> <span class="pre">you</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">capture)</span></code></p>
@@ -441,7 +442,7 @@ In this example you would then have <code class="docutils literal notranslate"><
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]source">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">source</span></span><em class="property"><span class="pre">=</span> <span class="pre">NAME</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]source" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">source</span></span><em class="property"><span class="pre">=</span> <span class="pre">NAME</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]source" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Compulsory<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True</p>
@@ -469,7 +470,7 @@ will be considered a failure.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]source-edit-format">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">source-edit-format</span></span><em class="property"><span class="pre">=</span> <span class="pre">FORMAT</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]source-edit-format" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">source-edit-format</span></span><em class="property"><span class="pre">=</span> <span class="pre">FORMAT</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]source-edit-format" title="Permalink to this definition"></a></dt>
 <dd><p>Construct a command to edit or modify the content of source files
 before archiving them. It uses a Pythonic <code class="docutils literal notranslate"><span class="pre">printf</span></code>-style format
 string to describe inputs and outputs.</p>
@@ -486,7 +487,7 @@ using sed:</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]source-prefix">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">source-prefix</span></span><em class="property"><span class="pre">=</span> <span class="pre">PREFIX</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]source-prefix" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">source-prefix</span></span><em class="property"><span class="pre">=</span> <span class="pre">PREFIX</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]source-prefix" title="Permalink to this definition"></a></dt>
 <dd><p>Add a prefix to each value in a source declaration. A trailing
 slash should be added for a directory. Paths are assumed to be
 relative to <span class="target" id="index-2"></span><a class="reference internal" href="../environment-variables.html#envvar-ROSE_SUITE_DIR"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">ROSE_SUITE_DIR</span></code></a>. This setting serves two
@@ -503,7 +504,7 @@ this being a full path.</p></li>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]target-prefix">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">target-prefix</span></span><em class="property"><span class="pre">=</span> <span class="pre">PREFIX</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]target-prefix" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">target-prefix</span></span><em class="property"><span class="pre">=</span> <span class="pre">PREFIX</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]target-prefix" title="Permalink to this definition"></a></dt>
 <dd><p>Add a prefix to each target declaration. This setting provides
 a way to avoid typing the same thing repeatedly. A trailing
 slash (or whatever is relevant for the archiving system) should
@@ -512,7 +513,7 @@ be added for a directory.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_arch[arch]update-check">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">update-check</span></span><em class="property"><span class="pre">=</span> <span class="pre">mtime+size|md5|sha1|...</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]update-check" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">update-check</span></span><em class="property"><span class="pre">=</span> <span class="pre">mtime+size|md5|sha1|...</span></em><a class="headerlink" href="#rose:conf:rose_arch[arch]update-check" title="Permalink to this definition"></a></dt>
 <dd><p>Specify the method for checking whether a source has changed
 since the previous run. If the value is mtime+size, the
 application will use the modified time and size of the source,
@@ -561,7 +562,7 @@ to determine if it has changed or not.</p>
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -587,7 +588,7 @@ to determine if it has changed or not.</p>
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

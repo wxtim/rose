@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rose Macro API &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>Rose Macro API &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../_static/js/spoiler.js?v=12631137"></script>
@@ -53,7 +53,7 @@
               <img src="../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -124,6 +124,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Rose Macro API</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/rose-macro.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -132,7 +133,7 @@
            <div itemprop="articleBody">
              
   <section id="rose-macro-api">
-<span id="api-rose-macro"></span><h1>Rose Macro API<a class="headerlink" href="#rose-macro-api" title="Link to this heading"></a></h1>
+<span id="api-rose-macro"></span><h1>Rose Macro API<a class="headerlink" href="#rose-macro-api" title="Permalink to this heading"></a></h1>
 <p>Rose macros manipulate or check configurations, often based on their
 metadata. There are four types of macros:</p>
 <dl class="simple">
@@ -164,7 +165,7 @@ usual to follow the standard Python style guidance (<a class="reference external
 via <a class="reference internal" href="configuration/metadata.html#metadata-values"><span class="std std-ref">metadata</span></a>.</p>
 </div>
 <section id="location">
-<h2>Location<a class="headerlink" href="#location" title="Link to this heading"></a></h2>
+<h2>Location<a class="headerlink" href="#location" title="Permalink to this heading"></a></h2>
 <p>A module containing macros should be stored under a directory
 <code class="docutils literal notranslate"><span class="pre">lib/python/macros/</span></code> in the metadata for a configuration. This directory
 should be a Python package.</p>
@@ -175,7 +176,7 @@ them can be added in the <code class="docutils literal notranslate"><span class=
 they need to be run implicitly by the config editor.</p>
 </section>
 <section id="writing-macros">
-<h2>Writing Macros<a class="headerlink" href="#writing-macros" title="Link to this heading"></a></h2>
+<h2>Writing Macros<a class="headerlink" href="#writing-macros" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For basic usage see the <a class="reference internal" href="../tutorial/rose/furthertopics/macro-development.html#macro-dev"><span class="std std-ref">macro tutorial</span></a>.</p>
@@ -195,7 +196,7 @@ configuration that provides information about the configuration items.</p>
 <p>See also <a class="reference internal" href="configuration/api.html#config-api"><span class="std std-ref">Python</span></a>.</p>
 </div>
 <section id="validator-reporter-macros">
-<h3>Validator / Reporter Macros<a class="headerlink" href="#validator-reporter-macros" title="Link to this heading"></a></h3>
+<h3>Validator / Reporter Macros<a class="headerlink" href="#validator-reporter-macros" title="Permalink to this heading"></a></h3>
 <p>A validator macro should look like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">metomi.rose.macro</span>
 
@@ -245,7 +246,7 @@ to <a class="reference internal" href="#metomi.rose.macro.MacroBase.add_report" 
 </div>
 </section>
 <section id="transformer-macros">
-<h3>Transformer Macros<a class="headerlink" href="#transformer-macros" title="Link to this heading"></a></h3>
+<h3>Transformer Macros<a class="headerlink" href="#transformer-macros" title="Permalink to this heading"></a></h3>
 <p>A transformer macro should look like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">metomi.rose.macro</span>
 
@@ -295,7 +296,7 @@ as validator and transform macros but does not require a return value.</p>
 </div>
 </section>
 <section id="optional-arguments">
-<h3>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Link to this heading"></a></h3>
+<h3>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this heading"></a></h3>
 <p>Macros also support the use of keyword arguments, giving you the ability to
 have the user specify some input or override to your macro. For example a
 transformer macro could be written as follows to allow the user to input
@@ -318,12 +319,12 @@ example). You should add error handling for the input accordingly.</p>
 </section>
 </section>
 <section id="module-metomi.rose.macro">
-<span id="python-api"></span><span id="api-rose-macro-base"></span><h2>Python API<a class="headerlink" href="#module-metomi.rose.macro" title="Link to this heading"></a></h2>
+<span id="python-api"></span><span id="api-rose-macro-base"></span><h2>Python API<a class="headerlink" href="#module-metomi.rose.macro" title="Permalink to this heading"></a></h2>
 <p>Module to list or run available custom macros for a configuration.</p>
 <p>It also stores macro base classes and macro library functions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.macro.MacroBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.macro.</span></span><span class="sig-name descname"><span class="pre">MacroBase</span></span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.macro.</span></span><span class="sig-name descname"><span class="pre">MacroBase</span></span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase" title="Permalink to this definition"></a></dt>
 <dd><p>Base class for macros for validating or transforming configurations.</p>
 <dl>
 <dt>Synopsis:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">metomi.rose.macro</span>
@@ -373,7 +374,7 @@ used.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.macro.MacroBase.add_report">
-<span class="sig-name descname"><span class="pre">add_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.add_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.add_report" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.add_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.add_report" title="Permalink to this definition"></a></dt>
 <dd><p>Add a metomi.rose.macro.MacroReport.</p>
 <p>See <a class="reference internal" href="#metomi.rose.macro.MacroReport" title="metomi.rose.macro.MacroReport"><code class="xref py py-class docutils literal notranslate"><span class="pre">metomi.rose.macro.MacroReport</span></code></a> for details of arguments.</p>
 <p class="rubric">Examples</p>
@@ -396,7 +397,7 @@ used.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.macro.MacroBase.get_metadata_for_config_id">
-<span class="sig-name descname"><span class="pre">get_metadata_for_config_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setting_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.get_metadata_for_config_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.get_metadata_for_config_id" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_metadata_for_config_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setting_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.get_metadata_for_config_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.get_metadata_for_config_id" title="Permalink to this definition"></a></dt>
 <dd><p>Return a dict of metadata properties and values for a setting id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -440,7 +441,7 @@ the metadata to extract from.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.macro.MacroBase.get_resource_path">
-<span class="sig-name descname"><span class="pre">get_resource_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.get_resource_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.get_resource_path" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_resource_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.get_resource_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.get_resource_path" title="Permalink to this definition"></a></dt>
 <dd><p>Load the resource according to the path of the calling macro.</p>
 <p>The returned path will be based on the macro location under
 <code class="docutils literal notranslate"><span class="pre">lib/python</span></code> in the metadata directory.</p>
@@ -463,7 +464,7 @@ to.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.macro.MacroBase.pretty_format_config">
-<span class="sig-name descname"><span class="pre">pretty_format_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.pretty_format_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.pretty_format_config" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">pretty_format_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.pretty_format_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.pretty_format_config" title="Permalink to this definition"></a></dt>
 <dd><p>Standardise the keys and values of a config node.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -474,7 +475,7 @@ to.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.macro.MacroBase.standard_format_config">
-<span class="sig-name descname"><span class="pre">standard_format_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.standard_format_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.standard_format_config" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">standard_format_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroBase.standard_format_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroBase.standard_format_config" title="Permalink to this definition"></a></dt>
 <dd><p>Standardise any degenerate representations e.g. namelist repeats.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -487,7 +488,7 @@ to.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.macro.MacroReport">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.macro.</span></span><span class="sig-name descname"><span class="pre">MacroReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroReport"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroReport" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.macro.</span></span><span class="sig-name descname"><span class="pre">MacroReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/macro.html#MacroReport"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.macro.MacroReport" title="Permalink to this definition"></a></dt>
 <dd><p>Class to hold information about a macro issue.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -543,7 +544,7 @@ warning.</p></li>
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -569,7 +570,7 @@ warning.</p></li>
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

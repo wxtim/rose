@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Date and Time Manipulation &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>Date and Time Manipulation &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -53,7 +53,7 @@
               <img src="../../../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -134,6 +134,7 @@
           <li class="breadcrumb-item"><a href="index.html">Further Topics</a></li>
       <li class="breadcrumb-item active">Date and Time Manipulation</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/rose/furthertopics/date-time-manipulation.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -142,8 +143,8 @@
            <div itemprop="articleBody">
              
   <section id="date-and-time-manipulation">
-<span id="rose-tutorial-datetime-manipulation"></span><h1>Date and Time Manipulation<a class="headerlink" href="#date-and-time-manipulation" title="Link to this heading"></a></h1>
-<p><a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-datetime-cycling" title="(in Cylc v8.2)"><span class="xref std std-term">Datetime cycling</span></a> suites inevitably involve
+<span id="rose-tutorial-datetime-manipulation"></span><h1>Date and Time Manipulation<a class="headerlink" href="#date-and-time-manipulation" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-datetime-cycling" title="(in Cylc v8.3)"><span class="xref std std-term">Datetime cycling</span></a> suites inevitably involve
 performing some form of datetime arithmetic. For example, in a Cylc task we
 can calculate the cycle point three hours before the
 present cycle using:</p>
@@ -155,7 +156,7 @@ beyond <code class="docutils literal notranslate"><span class="pre">cylc</span> 
 variable which provides an easy way to get the path of the <code class="docutils literal notranslate"><span class="pre">share/cycle</span></code>
 directory.</p>
 <section id="the-isodatetime-command">
-<h2>The <code class="docutils literal notranslate"><span class="pre">isodatetime</span></code> Command<a class="headerlink" href="#the-isodatetime-command" title="Link to this heading"></a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">isodatetime</span></code> Command<a class="headerlink" href="#the-isodatetime-command" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">isodatetime</span></code> command provides functionality for:</p>
 <ul>
 <li><p>Parsing and formatting datetimes e.g:</p>
@@ -182,7 +183,7 @@ directory.</p>
 <p>See the <code class="docutils literal notranslate"><span class="pre">isodatetime</span> <span class="pre">--help</span></code> command reference for more information.</p>
 </section>
 <section id="using-isodatetime-in-a-suite">
-<h2>Using <code class="docutils literal notranslate"><span class="pre">isodatetime</span></code> In A Suite<a class="headerlink" href="#using-isodatetime-in-a-suite" title="Link to this heading"></a></h2>
+<h2>Using <code class="docutils literal notranslate"><span class="pre">isodatetime</span></code> In A Suite<a class="headerlink" href="#using-isodatetime-in-a-suite" title="Permalink to this heading"></a></h2>
 <p>In datetime cycling suites, <code class="docutils literal notranslate"><span class="pre">isodatetime</span></code> can work with the
 cyclepoint using the <code class="docutils literal notranslate"><span class="pre">CYLC_TASK_CYCLE_POINT</span></code> environment variable:</p>
 <div class="highlight-cylc notranslate"><div class="highlight"><pre><span></span><span class="nt">[runtime]</span>
@@ -199,17 +200,17 @@ which allows you to use the special <code class="docutils literal notranslate"><
 </div>
 </section>
 <section id="the-rose-datac-environment-variable">
-<h2>The <code class="docutils literal notranslate"><span class="pre">ROSE_DATAC</span></code> Environment Variable<a class="headerlink" href="#the-rose-datac-environment-variable" title="Link to this heading"></a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">ROSE_DATAC</span></code> Environment Variable<a class="headerlink" href="#the-rose-datac-environment-variable" title="Permalink to this heading"></a></h2>
 <p>There are two locations where task output is likely to be located:</p>
 <dl>
-<dt>The work directory</dt><dd><p>Each task is executed within its <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-work-directory" title="(in Cylc v8.2)"><span class="xref std std-term">work directory</span></a> which is located in:</p>
+<dt>The work directory</dt><dd><p>Each task is executed within its <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-work-directory" title="(in Cylc v8.3)"><span class="xref std std-term">work directory</span></a> which is located in:</p>
 <div class="highlight-sub notranslate"><div class="highlight"><pre><span></span><span class="s">&lt;run directory&gt;</span>/work/<span class="s">&lt;cycle&gt;</span>/<span class="s">&lt;task-name&gt;</span>
 </pre></div>
 </div>
 <p>The path to a task’s work directory can be obtained from the
 <code class="docutils literal notranslate"><span class="pre">CYLC_TASK_WORK_DIR</span></code> environment variable.</p>
 </dd>
-<dt>The share directory</dt><dd><p>The <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-share-directory" title="(in Cylc v8.2)"><span class="xref std std-term">share directory</span></a> serves the purpose of providing a storage place
+<dt>The share directory</dt><dd><p>The <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-share-directory" title="(in Cylc v8.3)"><span class="xref std std-term">share directory</span></a> serves the purpose of providing a storage place
 for any files which need to be shared between different tasks.</p>
 <p>Within the share directory data is typically stored within cycle
 subdirectories i.e:</p>
@@ -267,7 +268,7 @@ provide an offset to <a class="reference internal" href="../../../api/command-re
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -293,7 +294,7 @@ provide an offset to <a class="reference internal" href="../../../api/command-re
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

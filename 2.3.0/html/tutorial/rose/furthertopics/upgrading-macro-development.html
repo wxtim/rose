@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrading Macro Development &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>Upgrading Macro Development &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -53,7 +53,7 @@
               <img src="../../../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -134,6 +134,7 @@
           <li class="breadcrumb-item"><a href="index.html">Further Topics</a></li>
       <li class="breadcrumb-item active">Upgrading Macro Development</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/rose/furthertopics/upgrading-macro-development.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -142,7 +143,7 @@
            <div itemprop="articleBody">
              
   <section id="upgrading-macro-development">
-<h1>Upgrading Macro Development<a class="headerlink" href="#upgrading-macro-development" title="Link to this heading"></a></h1>
+<h1>Upgrading Macro Development<a class="headerlink" href="#upgrading-macro-development" title="Permalink to this heading"></a></h1>
 <p>Upgrade macros are used to upgrade <a class="reference internal" href="../../../glossary.html#term-Rose-app"><span class="xref std std-term">Rose apps</span></a> to newer
 metadata versions. They are intended to keep application configurations in
 sync with changes to application inputs e.g. from new code releases.</p>
@@ -150,7 +151,7 @@ sync with changes to application inputs e.g. from new code releases.</p>
 the <a class="reference internal" href="upgrading.html#tutorial-rose-upgrade-macros"><span class="std std-ref">Upgrading tutorial</span></a> and the concepts
 in the reference material).</p>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/b/b9/Proa1.jpg"><img alt="https://upload.wikimedia.org/wikipedia/commons/b/b9/Proa1.jpg" class="align-right" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Proa1.jpg" style="width: 250px;" /></a>
 <p>In this example, we’ll be upgrading a boat on a desert island.</p>
 <p>Create a Rose application called <code class="docutils literal notranslate"><span class="pre">make-boat-app</span></code>:</p>
@@ -181,7 +182,7 @@ makes all the difference!</p>
 <p>We need to create some metadata to make this work.</p>
 </section>
 <section id="example-metadata">
-<h2>Example Metadata<a class="headerlink" href="#example-metadata" title="Link to this heading"></a></h2>
+<h2>Example Metadata<a class="headerlink" href="#example-metadata" title="Permalink to this heading"></a></h2>
 <p>We need a <code class="docutils literal notranslate"><span class="pre">rose-meta/</span></code> directory somewhere, to store our metadata -
 for the purposes of this tutorial it’s easiest to put in in your homespace,
 but the location does not matter.</p>
@@ -274,7 +275,7 @@ something like:</p>
 <code class="docutils literal notranslate"><span class="pre">make-boat/0.1</span></code> to the new <code class="docutils literal notranslate"><span class="pre">make-boat/0.2</span></code> version.</p>
 </section>
 <section id="versions-py">
-<h2><code class="docutils literal notranslate"><span class="pre">versions.py</span></code><a class="headerlink" href="#versions-py" title="Link to this heading"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">versions.py</span></code><a class="headerlink" href="#versions-py" title="Permalink to this heading"></a></h2>
 <p>Upgrade macros are invoked through a Python module, <code class="docutils literal notranslate"><span class="pre">versions.py</span></code>,
 that doesn’t live with any particular version metadata - it should be
 present at the root of the category directory.</p>
@@ -282,7 +283,7 @@ present at the root of the category directory.</p>
 (<code class="docutils literal notranslate"><span class="pre">~/rose-meta/make-boat/versions.py</span></code>). We’ll add a macro to it in a
 little bit.</p>
 <section id="upgrade-macros-explained">
-<h3>Upgrade Macros Explained<a class="headerlink" href="#upgrade-macros-explained" title="Link to this heading"></a></h3>
+<h3>Upgrade Macros Explained<a class="headerlink" href="#upgrade-macros-explained" title="Permalink to this heading"></a></h3>
 <p>Upgrade macros are Python objects with a <code class="docutils literal notranslate"><span class="pre">BEFORE_TAG</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;0.1&quot;</span></code>)
 and an <code class="docutils literal notranslate"><span class="pre">AFTER_TAG</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;0.2&quot;</span></code>). The <code class="docutils literal notranslate"><span class="pre">BEFORE_TAG</span></code> is the ‘start’
 version (if upgrading) and the <code class="docutils literal notranslate"><span class="pre">AFTER_TAG</span></code> is the ‘destination’ version.</p>
@@ -303,7 +304,7 @@ was equal to the last <code class="docutils literal notranslate"><span class="pr
 <p>We’ll cover multiple version upgrading later in the tutorial.</p>
 </section>
 <section id="upgrade-macro-skeleton">
-<h3>Upgrade Macro Skeleton<a class="headerlink" href="#upgrade-macro-skeleton" title="Link to this heading"></a></h3>
+<h3>Upgrade Macro Skeleton<a class="headerlink" href="#upgrade-macro-skeleton" title="Permalink to this heading"></a></h3>
 <p>Upgrade macros are bits of Python code that essentially look like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Upgrade272to273</span><span class="p">(</span><span class="n">rose</span><span class="o">.</span><span class="n">upgrade</span><span class="o">.</span><span class="n">MacroUpgrade</span><span class="p">):</span>
 
@@ -325,7 +326,7 @@ to make things easier.</p>
 <p>You shouldn’t need to know very much Python to get most things done.</p>
 </section>
 <section id="example-upgrade-macro">
-<h3>Example Upgrade Macro<a class="headerlink" href="#example-upgrade-macro" title="Link to this heading"></a></h3>
+<h3>Example Upgrade Macro<a class="headerlink" href="#example-upgrade-macro" title="Permalink to this heading"></a></h3>
 <p>Paste the following into your <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Designed to be compatible with both</span>
@@ -391,7 +392,7 @@ to assign to them.</p>
 </div>
 </section>
 <section id="customising-the-output">
-<h3>Customising the Output<a class="headerlink" href="#customising-the-output" title="Link to this heading"></a></h3>
+<h3>Customising the Output<a class="headerlink" href="#customising-the-output" title="Permalink to this heading"></a></h3>
 <p>The methods <code class="docutils literal notranslate"><span class="pre">self.add_setting</span></code> and <code class="docutils literal notranslate"><span class="pre">self.remove_setting</span></code> will provide
 a default message to the user about the change (e.g.
 <code class="docutils literal notranslate"><span class="pre">&quot;Added</span> <span class="pre">X</span> <span class="pre">with</span> <span class="pre">value</span> <span class="pre">Y&quot;</span></code>), but you can customise them to add your own
@@ -404,7 +405,7 @@ using the info ‘keyword argument’ like this:</p>
 <p>If you want to, try adding your own messages.</p>
 </section>
 <section id="running-rose-app-upgrade">
-<h3>Running <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">app-upgrade</span></code><a class="headerlink" href="#running-rose-app-upgrade" title="Link to this heading"></a></h3>
+<h3>Running <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">app-upgrade</span></code><a class="headerlink" href="#running-rose-app-upgrade" title="Permalink to this heading"></a></h3>
 <p>Our upgrade macro will now work - change directory to the application
 directory and run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">app</span><span class="o">-</span><span class="n">upgrade</span> <span class="o">--</span><span class="n">meta</span><span class="o">-</span><span class="n">path</span><span class="o">=~/</span><span class="n">rose</span><span class="o">-</span><span class="n">meta</span><span class="o">/</span>
@@ -426,7 +427,7 @@ and have a look at the app config file - it should have been changed
 accordingly.</p>
 </section>
 <section id="using-patch-configurations">
-<h3>Using Patch Configurations<a class="headerlink" href="#using-patch-configurations" title="Link to this heading"></a></h3>
+<h3>Using Patch Configurations<a class="headerlink" href="#using-patch-configurations" title="Permalink to this heading"></a></h3>
 <p>For relatively straightforward changes like the one above, we can
 configure a macro to apply patches to the configuration without having
 to write setting-specific Python code.</p>
@@ -498,7 +499,7 @@ don’t need a <code class="docutils literal notranslate"><span class="pre">rose
 <code class="docutils literal notranslate"><span class="pre">l_rudder_branch</span></code>.</p>
 </section>
 <section id="more-complex-upgrade-macros">
-<h3>More Complex Upgrade Macros<a class="headerlink" href="#more-complex-upgrade-macros" title="Link to this heading"></a></h3>
+<h3>More Complex Upgrade Macros<a class="headerlink" href="#more-complex-upgrade-macros" title="Permalink to this heading"></a></h3>
 <p>The <a class="reference internal" href="../../../api/rose-upgrader-macros.html#rose-upgr-macros"><span class="std std-ref">Rose Upgrade Macro API</span></a> gives us quite a bit of power without having to
 write too much Python.</p>
 <p>For our <code class="docutils literal notranslate"><span class="pre">1.0</span></code> release we want to make some improvements to out sailing
@@ -589,7 +590,7 @@ your changes. You should see a warning message for
 <code class="docutils literal notranslate"><span class="pre">namelist:materials=paddling_branches</span></code> as well.</p>
 </section>
 <section id="upgrading-many-versions-at-once">
-<h3>Upgrading Many Versions at Once<a class="headerlink" href="#upgrading-many-versions-at-once" title="Link to this heading"></a></h3>
+<h3>Upgrading Many Versions at Once<a class="headerlink" href="#upgrading-many-versions-at-once" title="Permalink to this heading"></a></h3>
 <p>We’ve kept in step with the metadata by upgrading incrementally, but
 typically users will need to upgrade across multiple versions. When this
 happens, the relevant macros will be applied in turn, and their changes
@@ -655,7 +656,7 @@ had before.</p>
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -681,7 +682,7 @@ had before.</p>
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>metomi.rose.macro &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>metomi.rose.macro &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -24,9 +24,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -50,7 +50,7 @@
               <img src="../../../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -290,9 +290,7 @@
         <span class="k">return</span> <span class="n">ERROR_LOAD_CONF_META_NODE</span>
 
 
-<div class="viewcode-block" id="MacroBase">
-<a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase">[docs]</a>
-<span class="k">class</span> <span class="nc">MacroBase</span><span class="p">:</span>
+<div class="viewcode-block" id="MacroBase"><a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase">[docs]</a><span class="k">class</span> <span class="nc">MacroBase</span><span class="p">:</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for macros for validating or transforming configurations.</span>
 
@@ -370,9 +368,7 @@
             <span class="k">return</span> <span class="n">meta</span>
         <span class="k">return</span> <span class="n">load_meta_config</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">config_type</span><span class="o">=</span><span class="n">config_type</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MacroBase.get_metadata_for_config_id">
-<a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.get_metadata_for_config_id">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_metadata_for_config_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setting_id</span><span class="p">,</span> <span class="n">meta_config</span><span class="p">):</span>
+<div class="viewcode-block" id="MacroBase.get_metadata_for_config_id"><a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.get_metadata_for_config_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_metadata_for_config_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setting_id</span><span class="p">,</span> <span class="n">meta_config</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a dict of metadata properties and values for a setting id.</span>
 
 <span class="sd">        Args:</span>
@@ -411,10 +407,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">get_metadata_for_config_id</span><span class="p">(</span><span class="n">setting_id</span><span class="p">,</span> <span class="n">meta_config</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="MacroBase.get_resource_path">
-<a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.get_resource_path">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_resource_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="MacroBase.get_resource_path"><a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.get_resource_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_resource_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Load the resource according to the path of the calling macro.</span>
 
 <span class="sd">        The returned path will be based on the macro location under</span>
@@ -445,10 +438,7 @@
         <span class="n">resource_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resource_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">resource_path</span></div>
 
-
-<div class="viewcode-block" id="MacroBase.pretty_format_config">
-<a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.pretty_format_config">[docs]</a>
-    <span class="k">def</span> <span class="nf">pretty_format_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+<div class="viewcode-block" id="MacroBase.pretty_format_config"><a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.pretty_format_config">[docs]</a>    <span class="k">def</span> <span class="nf">pretty_format_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Standardise the keys and values of a config node.</span>
 
 <span class="sd">        Args:</span>
@@ -457,10 +447,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">pretty_format_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="MacroBase.standard_format_config">
-<a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.standard_format_config">[docs]</a>
-    <span class="k">def</span> <span class="nf">standard_format_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+<div class="viewcode-block" id="MacroBase.standard_format_config"><a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.standard_format_config">[docs]</a>    <span class="k">def</span> <span class="nf">standard_format_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Standardise any degenerate representations e.g. namelist repeats.</span>
 
 <span class="sd">        Args:</span>
@@ -469,10 +456,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">standard_format_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="MacroBase.add_report">
-<a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.add_report">[docs]</a>
-    <span class="k">def</span> <span class="nf">add_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="MacroBase.add_report"><a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroBase.add_report">[docs]</a>    <span class="k">def</span> <span class="nf">add_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a metomi.rose.macro.MacroReport.</span>
 
 <span class="sd">        See :class:`metomi.rose.macro.MacroReport` for details of arguments.</span>
@@ -493,9 +477,7 @@
 <span class="sd">            ...         return self.reports</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">reports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">MacroReport</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
-</div>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">reports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">MacroReport</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div></div>
 
 
 <span class="k">class</span> <span class="nc">MacroBaseRoseEdit</span><span class="p">(</span><span class="n">MacroBase</span><span class="p">):</span>
@@ -637,9 +619,7 @@
         <span class="k">return</span> <span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reports</span>
 
 
-<div class="viewcode-block" id="MacroReport">
-<a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroReport">[docs]</a>
-<span class="k">class</span> <span class="nc">MacroReport</span><span class="p">:</span>
+<div class="viewcode-block" id="MacroReport"><a class="viewcode-back" href="../../../api/rose-macro.html#metomi.rose.macro.MacroReport">[docs]</a><span class="k">class</span> <span class="nc">MacroReport</span><span class="p">:</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to hold information about a macro issue.</span>
 
@@ -686,7 +666,6 @@
         <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span>
             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">option</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_warning</span><span class="p">)</span>
         <span class="p">)</span></div>
-
 
 
 <span class="k">def</span> <span class="nf">add_meta_paths</span><span class="p">():</span>
@@ -2086,7 +2065,7 @@
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -2112,7 +2091,7 @@
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

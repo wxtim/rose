@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fail-If, Warn-If &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>Fail-If, Warn-If &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -53,7 +53,7 @@
               <img src="../../../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -136,6 +136,7 @@
           <li class="breadcrumb-item"><a href="index.html">Further Topics</a></li>
       <li class="breadcrumb-item active">Fail-If, Warn-If</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/rose/furthertopics/failif-warnif.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -144,7 +145,7 @@
            <div itemprop="articleBody">
              
   <section id="fail-if-warn-if">
-<span id="tutorial-rose-fail-if-warn-if"></span><h1>Fail-If, Warn-If<a class="headerlink" href="#fail-if-warn-if" title="Link to this heading"></a></h1>
+<span id="tutorial-rose-fail-if-warn-if"></span><h1>Fail-If, Warn-If<a class="headerlink" href="#fail-if-warn-if" title="Permalink to this heading"></a></h1>
 <p>Basic validation can be achieved using metadata settings such as <code class="docutils literal notranslate"><span class="pre">type</span></code> and
 <code class="docutils literal notranslate"><span class="pre">range</span></code>. The <code class="docutils literal notranslate"><span class="pre">fail-if</span></code> and <code class="docutils literal notranslate"><span class="pre">warn-if</span></code> metadata settings are scriptable
 enabling more advanced validation. They evaluate logical expressions,
@@ -160,7 +161,7 @@ they must be done on-demand in the <a class="reference internal" href="../../../
 on the command line.</p>
 </div>
 <section id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading"></a></h2>
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading"></a></h2>
 <p>The syntax is Pythonic, and relies on <a class="reference external" href="https://jinja.palletsprojects.com/en/2.11.x/">Jinja2</a> to actually evaluate
 relationships between values, after some initial pre-processing.</p>
 <p>You can reference setting values by using their IDs - for example:</p>
@@ -178,7 +179,7 @@ ID - e.g.:</p>
 (it’s a delimiter), but it’s better style to keep it.</p>
 </section>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
 <p>We’ll use the example of a rocket launch.</p>
 <p>Create a new application called <code class="docutils literal notranslate"><span class="pre">failif-warnif</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">rose</span><span class="o">-</span><span class="n">tutorial</span>
@@ -214,7 +215,7 @@ be able to navigate between the pages and view the help and description for the
 settings.</p>
 </section>
 <section id="fail-if">
-<h2><code class="docutils literal notranslate"><span class="pre">fail-if</span></code><a class="headerlink" href="#fail-if" title="Link to this heading"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">fail-if</span></code><a class="headerlink" href="#fail-if" title="Permalink to this heading"></a></h2>
 <p>If the ratio of rocket fuel to total weight is too high, or the efficiency
 of the rocket (specific impulse) is too low, the Lunar Module will never
 make it off the Moon.</p>
@@ -262,7 +263,7 @@ inside the app directory. Try saving the configuration in a failed
 state, and then run the command.</p>
 </section>
 <section id="warn-if">
-<h2><code class="docutils literal notranslate"><span class="pre">warn-if</span></code><a class="headerlink" href="#warn-if" title="Link to this heading"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">warn-if</span></code><a class="headerlink" href="#warn-if" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">warn-if</span></code> metadata setting is exactly the same as <code class="docutils literal notranslate"><span class="pre">fail-if</span></code>,
 but is used to report non-critical concerns.</p>
 <p>Let’s try adding something for <code class="docutils literal notranslate"><span class="pre">namelist:rocket=battery_levels</span></code>.</p>
@@ -294,7 +295,7 @@ and <code class="docutils literal notranslate"><span class="pre">all()</span></c
 values are less than 75.</p>
 </section>
 <section id="multiple-expressions">
-<h2>Multiple Expressions<a class="headerlink" href="#multiple-expressions" title="Link to this heading"></a></h2>
+<h2>Multiple Expressions<a class="headerlink" href="#multiple-expressions" title="Permalink to this heading"></a></h2>
 <p>In both <code class="docutils literal notranslate"><span class="pre">fail-if</span></code> and <code class="docutils literal notranslate"><span class="pre">warn-if</span></code>, expressions can be chained
 using the Python operator <code class="docutils literal notranslate"><span class="pre">or</span></code>, or you can separate them to give
 clearer error/warning messages. Using our <code class="docutils literal notranslate"><span class="pre">battery_levels</span></code> example
@@ -351,7 +352,7 @@ the <code class="docutils literal notranslate"><span class="pre">fail-if</span><
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -377,7 +378,7 @@ the <code class="docutils literal notranslate"><span class="pre">fail-if</span><
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

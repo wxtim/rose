@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>fcm_make &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>fcm_make &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../_static/js/spoiler.js?v=12631137"></script>
@@ -53,7 +53,7 @@
               <img src="../../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -116,6 +116,7 @@
           <li class="breadcrumb-item"><a href="../rose-built-in-applications.html">Rose Built-In Applications</a></li>
       <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">fcm_make</span></code></li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api/built-in/fcm_make.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -124,7 +125,7 @@
            <div itemprop="articleBody">
              
   <section id="fcm-make">
-<span id="builtin-fcm-make"></span><h1><code class="docutils literal notranslate"><span class="pre">fcm_make</span></code><a class="headerlink" href="#fcm-make" title="Link to this heading"></a></h1>
+<span id="builtin-fcm-make"></span><h1><code class="docutils literal notranslate"><span class="pre">fcm_make</span></code><a class="headerlink" href="#fcm-make" title="Permalink to this heading"></a></h1>
 <p>An application for running the <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">make</span></code> command.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">fcm_make</span></code> application expects a file <code class="docutils literal notranslate"><span class="pre">file/fcm-make.cfg</span></code> in
 its application configuration. It runs <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">make</span></code> using this
@@ -137,7 +138,7 @@ the <code class="docutils literal notranslate"><span class="pre">PATH</span></co
 and/or <a class="reference internal" href="../command-reference.html#command-rose-task-run"><span class="std std-ref">rose task-run</span></a> commands run by subsequent
 tasks in the suite.</p>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
 <div class="highlight-rose notranslate"><div class="highlight"><pre><span></span><span class="nv">meta</span><span class="o">=</span><span class="s">fcm_make</span>
 <span class="nv">mode</span><span class="o">=</span><span class="s">fcm_make</span>
 <span class="nv">opt.jobs</span><span class="o">=</span><span class="s">8</span>
@@ -145,7 +146,7 @@ tasks in the suite.</p>
 </div>
 </section>
 <section id="invocation">
-<h2>Invocation<a class="headerlink" href="#invocation" title="Link to this heading"></a></h2>
+<h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>If a task’s name contains the string <code class="docutils literal notranslate"><span class="pre">fcm_make</span></code> then
 <a class="reference internal" href="../command-reference.html#command-rose-task-run"><span class="std std-ref">rose task-run</span></a> will run this built-in application
@@ -157,13 +158,13 @@ the corresponding <code class="docutils literal notranslate"><span class="pre">f
 </ul>
 </section>
 <section id="rose-configuration-api">
-<h2>Rose Configuration API<a class="headerlink" href="#rose-configuration-api" title="Link to this heading"></a></h2>
+<h2>Rose Configuration API<a class="headerlink" href="#rose-configuration-api" title="Permalink to this heading"></a></h2>
 <dl class="rose app">
 <dt class="sig sig-object rose" id="rose:app:fcm_make">
-<em class="property"><span class="pre">Rose</span> <span class="pre">App</span> </em><span class="sig-name descname"><span class="pre">fcm_make</span></span><a class="headerlink" href="#rose:app:fcm_make" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Rose</span> <span class="pre">App</span> </em><span class="sig-name descname"><span class="pre">fcm_make</span></span><a class="headerlink" href="#rose:app:fcm_make" title="Permalink to this definition"></a></dt>
 <dd><dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|args">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">args</span></span><em class="property"><span class="pre">=</span> <span class="pre">ARG</span> <span class="pre">...</span></em><a class="headerlink" href="#rose:conf:fcm_make|args" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">args</span></span><em class="property"><span class="pre">=</span> <span class="pre">ARG</span> <span class="pre">...</span></em><a class="headerlink" href="#rose:conf:fcm_make|args" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Env Var<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="target" id="index-0"></span><a class="reference internal" href="../environment-variables.html#envvar-ROSE_TASK_OPTIONS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">ROSE_TASK_OPTIONS</span></code></a></p>
@@ -174,7 +175,7 @@ the corresponding <code class="docutils literal notranslate"><span class="pre">f
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|dest-orig">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">dest-orig</span></span><em class="property"><span class="pre">=</span> <span class="pre">PATH</span></em><a class="headerlink" href="#rose:conf:fcm_make|dest-orig" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">dest-orig</span></span><em class="property"><span class="pre">=</span> <span class="pre">PATH</span></em><a class="headerlink" href="#rose:conf:fcm_make|dest-orig" title="Permalink to this definition"></a></dt>
 <dd><p>Specify the path to the destination of the original make. This
 is normally specified as a relative path under <code class="docutils literal notranslate"><span class="pre">$ROSE_SUITE_DIR/</span></code>.
 The default is <code class="docutils literal notranslate"><span class="pre">share/$ROSE_TASK_NAME</span></code>. If
@@ -184,7 +185,7 @@ application will remove this directory before running <code class="docutils lite
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|dest-cont">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">dest-cont</span></span><em class="property"><span class="pre">=</span> <span class="pre">PATH</span></em><a class="headerlink" href="#rose:conf:fcm_make|dest-cont" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">dest-cont</span></span><em class="property"><span class="pre">=</span> <span class="pre">PATH</span></em><a class="headerlink" href="#rose:conf:fcm_make|dest-cont" title="Permalink to this definition"></a></dt>
 <dd><p>Specify the path to the destination of the continuation make. This
 is normally specified as a relative path under <code class="docutils literal notranslate"><span class="pre">$ROSE_SUITE_DIR/</span></code>.
 The default is to use the same location as
@@ -199,7 +200,7 @@ make will be wiped clean before the continuation make begins.)</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|fast-dest-root-orig">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">fast-dest-root-orig</span></span><em class="property"><span class="pre">=</span> <span class="pre">PATH</span></em><a class="headerlink" href="#rose:conf:fcm_make|fast-dest-root-orig" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">fast-dest-root-orig</span></span><em class="property"><span class="pre">=</span> <span class="pre">PATH</span></em><a class="headerlink" href="#rose:conf:fcm_make|fast-dest-root-orig" title="Permalink to this definition"></a></dt>
 <dd><p>Specify the path to an existing location that can be used as a
 fast working directory for the original make. If this is specified,
 the <code class="docutils literal notranslate"><span class="pre">fcm</span></code> make command will be invoked in a temporary directory
@@ -208,7 +209,7 @@ under this location before being copied back to the actual destination.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|fast-dest-root-cont">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">fast-dest-root-cont</span></span><em class="property"><span class="pre">=</span> <span class="pre">PATH</span></em><a class="headerlink" href="#rose:conf:fcm_make|fast-dest-root-cont" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">fast-dest-root-cont</span></span><em class="property"><span class="pre">=</span> <span class="pre">PATH</span></em><a class="headerlink" href="#rose:conf:fcm_make|fast-dest-root-cont" title="Permalink to this definition"></a></dt>
 <dd><p>Specify the path to an existing location that can be used as a fast
 working directory for the continuation make. If this is specified,
 the <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">make</span></code> command will be invoked in a temporary directory
@@ -217,7 +218,7 @@ under this location before being copied back to the actual destination.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|make-name-orig">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">make-name-orig</span></span><em class="property"><span class="pre">=</span> <span class="pre">NAME</span></em><a class="headerlink" href="#rose:conf:fcm_make|make-name-orig" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">make-name-orig</span></span><em class="property"><span class="pre">=</span> <span class="pre">NAME</span></em><a class="headerlink" href="#rose:conf:fcm_make|make-name-orig" title="Permalink to this definition"></a></dt>
 <dd><p>Specify the context name of the original make. The default is a
 null string. You can specify an alternate context name if this
 is undesirable. The <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">make</span></code> command will be invoked with the
@@ -226,7 +227,7 @@ is undesirable. The <code class="docutils literal notranslate"><span class="pre"
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|make-name-cont">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">make-name-cont</span></span><em class="property"><span class="pre">=</span> <span class="pre">NAME</span></em><a class="headerlink" href="#rose:conf:fcm_make|make-name-cont" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">make-name-cont</span></span><em class="property"><span class="pre">=</span> <span class="pre">NAME</span></em><a class="headerlink" href="#rose:conf:fcm_make|make-name-cont" title="Permalink to this definition"></a></dt>
 <dd><p>Specify the context name of the continuation make. If the default
 <code class="docutils literal notranslate"><span class="pre">fcm_make</span></code> → <code class="docutils literal notranslate"><span class="pre">fcm_make2</span></code> mapping is used, the context name of
 the continuation make will be set to <code class="docutils literal notranslate"><span class="pre">2</span></code>. You can specify an alternate
@@ -236,7 +237,7 @@ be invoked with the <code class="docutils literal notranslate"><span class="pre"
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|mirror-step">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">mirror-step</span></span><em class="property"><span class="pre">=</span> <span class="pre">STEP-NAME</span></em><a class="headerlink" href="#rose:conf:fcm_make|mirror-step" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">mirror-step</span></span><em class="property"><span class="pre">=</span> <span class="pre">STEP-NAME</span></em><a class="headerlink" href="#rose:conf:fcm_make|mirror-step" title="Permalink to this definition"></a></dt>
 <dd><p>Specify the name of the mirror step, if not mirror. The application
 will normally look for a matching task in the suite (e.g.
 <code class="docutils literal notranslate"><span class="pre">fcm_make</span></code> → <code class="docutils literal notranslate"><span class="pre">fcm_make2</span></code>) which will continue the <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">make</span></code>
@@ -250,7 +251,7 @@ string, i.e. <code class="docutils literal notranslate"><span class="pre">mirror
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|opt.jobs">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">opt.jobs</span></span><em class="property"><span class="pre">=</span> <span class="pre">N</span></em><a class="headerlink" href="#rose:conf:fcm_make|opt.jobs" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">opt.jobs</span></span><em class="property"><span class="pre">=</span> <span class="pre">N</span></em><a class="headerlink" href="#rose:conf:fcm_make|opt.jobs" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Env Var<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="target" id="index-1"></span><a class="reference internal" href="../environment-variables.html#envvar-ROSE_TASK_N_JOBS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">ROSE_TASK_N_JOBS</span></code></a></p>
@@ -265,7 +266,7 @@ would use in parallel.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|orig-cont-map">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">orig-cont-map</span></span><em class="property"><span class="pre">=</span> <span class="pre">ORIG-NAME:CONT-NAME</span></em><a class="headerlink" href="#rose:conf:fcm_make|orig-cont-map" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">orig-cont-map</span></span><em class="property"><span class="pre">=</span> <span class="pre">ORIG-NAME:CONT-NAME</span></em><a class="headerlink" href="#rose:conf:fcm_make|orig-cont-map" title="Permalink to this definition"></a></dt>
 <dd><p>This setting allows you to override the default <code class="docutils literal notranslate"><span class="pre">fcm_make</span></code> →
 <code class="docutils literal notranslate"><span class="pre">fcm_make2</span></code> mapping between the names of the original and the
 continuation tasks in the suite.</p>
@@ -273,7 +274,7 @@ continuation tasks in the suite.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:fcm_make|use-pwd">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">use-pwd</span></span><em class="property"><span class="pre">=</span> <span class="pre">true</span></em><a class="headerlink" href="#rose:conf:fcm_make|use-pwd" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">use-pwd</span></span><em class="property"><span class="pre">=</span> <span class="pre">true</span></em><a class="headerlink" href="#rose:conf:fcm_make|use-pwd" title="Permalink to this definition"></a></dt>
 <dd><p>By default, the application changes the working directory to
 <code class="docutils literal notranslate"><span class="pre">$ROSE_SUITE_DIR/share/$ROSE_TASK_NAME</span></code>. This option will stop
 this, and the working directory is the normal working directory of
@@ -315,7 +316,7 @@ the task.</p>
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -341,7 +342,7 @@ the task.</p>
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

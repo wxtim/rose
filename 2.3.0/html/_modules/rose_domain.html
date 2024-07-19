@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>rose_domain &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>rose_domain &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -24,9 +24,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../_static/js/spoiler.js?v=12631137"></script>
@@ -50,7 +50,7 @@
               <img src="../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -422,9 +422,7 @@
     <span class="k">return</span> <span class="n">ret</span>
 
 
-<div class="viewcode-block" id="RoseDirective">
-<a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseDirective">[docs]</a>
-<span class="k">class</span> <span class="nc">RoseDirective</span><span class="p">(</span><span class="n">ObjectDescription</span><span class="p">):</span>
+<div class="viewcode-block" id="RoseDirective"><a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseDirective">[docs]</a><span class="k">class</span> <span class="nc">RoseDirective</span><span class="p">(</span><span class="n">ObjectDescription</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for implementing Rose objects.</span>
 
 <span class="sd">    Subclasses must provide:</span>
@@ -679,10 +677,7 @@
         <span class="k">return</span> <span class="s1">&#39;&#39;</span></div>
 
 
-
-<div class="viewcode-block" id="RoseAppDirective">
-<a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseAppDirective">[docs]</a>
-<span class="k">class</span> <span class="nc">RoseAppDirective</span><span class="p">(</span><span class="n">RoseDirective</span><span class="p">):</span>
+<div class="viewcode-block" id="RoseAppDirective"><a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseAppDirective">[docs]</a><span class="k">class</span> <span class="nc">RoseAppDirective</span><span class="p">(</span><span class="n">RoseDirective</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Directive for documenting Rose apps.</span>
 
 <span class="sd">    Example:</span>
@@ -701,10 +696,7 @@
     <span class="n">LABEL</span> <span class="o">=</span> <span class="s1">&#39;Rose App&#39;</span></div>
 
 
-
-<div class="viewcode-block" id="RoseFileDirective">
-<a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseFileDirective">[docs]</a>
-<span class="k">class</span> <span class="nc">RoseFileDirective</span><span class="p">(</span><span class="n">RoseDirective</span><span class="p">):</span>
+<div class="viewcode-block" id="RoseFileDirective"><a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseFileDirective">[docs]</a><span class="k">class</span> <span class="nc">RoseFileDirective</span><span class="p">(</span><span class="n">RoseDirective</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Directive for documenting Rose files.</span>
 
 <span class="sd">    Example:</span>
@@ -723,10 +715,7 @@
     <span class="n">LABEL</span> <span class="o">=</span> <span class="s1">&#39;Rose Configuration&#39;</span></div>
 
 
-
-<div class="viewcode-block" id="RoseConfigDirective">
-<a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseConfigDirective">[docs]</a>
-<span class="k">class</span> <span class="nc">RoseConfigDirective</span><span class="p">(</span><span class="n">RoseDirective</span><span class="p">):</span>
+<div class="viewcode-block" id="RoseConfigDirective"><a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseConfigDirective">[docs]</a><span class="k">class</span> <span class="nc">RoseConfigDirective</span><span class="p">(</span><span class="n">RoseDirective</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Directive for documenting config sections.</span>
 
 <span class="sd">    Optional Attributes:</span>
@@ -815,7 +804,6 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">add_ref_context</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SECTION_REF_CONTEXT</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">RoseDirective</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
-
 
 
 <span class="k">class</span> <span class="nc">RoseXRefRole</span><span class="p">(</span><span class="n">XRefRole</span><span class="p">):</span>
@@ -1079,9 +1067,7 @@
         <span class="p">)</span>
 
 
-<div class="viewcode-block" id="RoseAutoDirective">
-<a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseAutoDirective">[docs]</a>
-<span class="k">class</span> <span class="nc">RoseAutoDirective</span><span class="p">(</span><span class="n">Directive</span><span class="p">):</span>
+<div class="viewcode-block" id="RoseAutoDirective"><a class="viewcode-back" href="../developing/domains.html#rose_domain.RoseAutoDirective">[docs]</a><span class="k">class</span> <span class="nc">RoseAutoDirective</span><span class="p">(</span><span class="n">Directive</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Directive for autodocumenting Rose configuration files.</span>
 
 <span class="sd">    Uses RST formatted comments in Rose configuration files using</span>
@@ -1176,7 +1162,6 @@
         <span class="k">return</span> <span class="n">nodes</span></div>
 
 
-
 <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
     <span class="n">app</span><span class="o">.</span><span class="n">add_domain</span><span class="p">(</span><span class="n">RoseDomain</span><span class="p">)</span>
     <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;autoconfig&#39;</span><span class="p">,</span> <span class="n">RoseAutoDirective</span><span class="p">)</span>
@@ -1204,7 +1189,7 @@
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -1230,7 +1215,7 @@
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page

@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../../../">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Command Keys &mdash; Rose Documentation 2.3.0 documentation</title>
+  <title>Command Keys &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=c3c8ae58"></script>
-        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -53,7 +53,7 @@
               <img src="../../../_static/rose-logo-crop.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                2.3.0
+                2.4.0.dev
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -134,6 +134,7 @@
           <li class="breadcrumb-item"><a href="index.html">Further Topics</a></li>
       <li class="breadcrumb-item active">Command Keys</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/tutorial/rose/furthertopics/command-keys.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -142,14 +143,14 @@
            <div itemprop="articleBody">
              
   <section id="command-keys">
-<span id="rose-tutorial-command-keys"></span><h1>Command Keys<a class="headerlink" href="#command-keys" title="Link to this heading"></a></h1>
+<span id="rose-tutorial-command-keys"></span><h1>Command Keys<a class="headerlink" href="#command-keys" title="Permalink to this heading"></a></h1>
 <p>This tutorial walks you through using command keys.</p>
 <p>Command keys allow you to specify and run different commands for a
 <a class="reference internal" href="../../../glossary.html#term-Rose-app"><span class="xref std std-term">Rose app</span></a>.</p>
 <p>They work just like the default command for an app but have to be specified
 explicitly as an option of <a class="reference internal" href="../../../api/command-reference.html#command-rose-task-run"><span class="std std-ref">rose task-run</span></a>.</p>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
 <p>Create a new Rose suite configuration called <code class="docutils literal notranslate"><span class="pre">command-keys</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">cylc</span><span class="o">-</span><span class="n">src</span><span class="o">/</span><span class="n">command</span><span class="o">-</span><span class="n">keys</span>
 <span class="n">cd</span> <span class="o">~/</span><span class="n">cylc</span><span class="o">-</span><span class="n">src</span><span class="o">/</span><span class="n">command</span><span class="o">-</span><span class="n">keys</span>
@@ -185,7 +186,7 @@ looks like this:</p>
 <li><p>A <code class="docutils literal notranslate"><span class="pre">breadmaker</span></code> task that runs the <code class="docutils literal notranslate"><span class="pre">breadmaker</span></code> app</p></li>
 </ul>
 <p>Save your changes then install and run the suite using
-<a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/user-guide/installing-workflows.html#install-workflow" title="(in Cylc v8.2)"><span class="xref std std-ref">cylc install</span></a> and <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/user-guide/running-workflows/scheduler-start-up.html#workflowstartup" title="(in Cylc v8.2)"><span class="xref std std-ref">cylc play</span></a>:</p>
+<a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/user-guide/installing-workflows.html#install-workflow" title="(in Cylc v8.3)"><span class="xref std std-ref">cylc install</span></a> and <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/user-guide/running-workflows/scheduler-start-up.html#workflowstartup" title="(in Cylc v8.3)"><span class="xref std std-ref">cylc play</span></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cylc</span> <span class="n">validate</span> <span class="o">.</span>
 <span class="n">cylc</span> <span class="n">install</span>
 <span class="n">cylc</span> <span class="n">play</span> <span class="n">command</span><span class="o">-</span><span class="n">keys</span>
@@ -198,7 +199,7 @@ looks like this:</p>
 <p>The output should include the line “fresh bread”.</p>
 </section>
 <section id="adding-alternative-commands">
-<h2>Adding Alternative Commands<a class="headerlink" href="#adding-alternative-commands" title="Link to this heading"></a></h2>
+<h2>Adding Alternative Commands<a class="headerlink" href="#adding-alternative-commands" title="Permalink to this heading"></a></h2>
 <p>Open the <a class="reference internal" href="../../../api/configuration/application.html#rose:file:rose-app.conf" title="rose:file:rose-app.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-app.conf</span></code></a> file and edit to look like this:</p>
 <div class="highlight-rose notranslate"><div class="highlight"><pre><span></span><span class="nt">[command]</span>
 <span class="nv">default</span><span class="o">=</span><span class="s">sleep 10; echo &#39;fresh bread&#39;</span>
@@ -219,7 +220,7 @@ breadmaker task you should see the line “dough for later”.</p>
 run.</p>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading"></a></h2>
 <p>You have successfully made use of command keys to run alternate commands in
 an app.</p>
 <p>Possible uses of command keys might be:</p>
@@ -262,7 +263,7 @@ an app.</p>
      aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 2.3.0
+    v: 2.4.0.dev
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions" id="version-selector">
@@ -288,7 +289,7 @@ an app.</p>
         delete version_dir;
         delete rel_path;
         // the name of the current version of the documentation
-        const current_version = "2.3.0";
+        const current_version = "2.4.0.dev";
         // the name of the builder (i.e. html)
         const current_builder = "html";
         // the name of the current page
