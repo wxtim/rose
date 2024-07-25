@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>rose_bunch &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../_static/js/spoiler.js?v=12631137"></script>
@@ -116,7 +116,7 @@
           <li class="breadcrumb-item"><a href="../rose-built-in-applications.html">Rose Built-In Applications</a></li>
       <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">rose_bunch</span></code></li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/api/built-in/rose_bunch.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/api/built-in/rose_bunch.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -125,7 +125,7 @@
            <div itemprop="articleBody">
              
   <section id="rose-bunch">
-<span id="builtin-rose-bunch"></span><h1><code class="docutils literal notranslate"><span class="pre">rose_bunch</span></code><a class="headerlink" href="#rose-bunch" title="Permalink to this heading"></a></h1>
+<span id="builtin-rose-bunch"></span><h1><code class="docutils literal notranslate"><span class="pre">rose_bunch</span></code><a class="headerlink" href="#rose-bunch" title="Link to this heading"></a></h1>
 <p>For the running of multiple command variants in parallel under a single
 job, as defined by the application configuration.</p>
 <p>Each variant of the command is run in the same working directory with
@@ -144,7 +144,7 @@ memory and you have configured your app to run up to four commands at
 once then you will need to request 4GB of memory.</p>
 </div>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <div class="highlight-rose notranslate"><div class="highlight"><pre><span></span><span class="nv">meta</span><span class="o">=</span><span class="s">rose_bunch</span>
 <span class="nv">mode</span><span class="o">=</span><span class="s">rose_bunch</span>
 
@@ -163,20 +163,20 @@ once then you will need to request 4GB of memory.</p>
 </div>
 </section>
 <section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The application is normally configured in the
 <a class="reference internal" href="#rose:conf:rose_bunch[bunch]" title="rose:conf:rose_bunch[bunch]"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose_bunch[bunch]</span></code></a> and <a class="reference internal" href="#rose:conf:rose_bunch[bunch-args]" title="rose:conf:rose_bunch[bunch-args]"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose_bunch[bunch-args]</span></code></a>
 sections of the <a class="reference internal" href="../configuration/application.html#rose:file:rose-app.conf" title="rose:file:rose-app.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-app.conf</span></code></a> file, but
 <a class="reference internal" href="../configuration/application.html#rose:conf:rose-app.conf[command]" title="rose:conf:rose-app.conf[command]"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose-app.conf[command]</span></code></a> can be used too, see below for details.</p>
 <dl class="rose app">
 <dt class="sig sig-object rose" id="rose:app:rose_bunch">
-<em class="property"><span class="pre">Rose</span> <span class="pre">App</span> </em><span class="sig-name descname"><span class="pre">rose_bunch</span></span><a class="headerlink" href="#rose:app:rose_bunch" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Rose</span> <span class="pre">App</span> </em><span class="sig-name descname"><span class="pre">rose_bunch</span></span><a class="headerlink" href="#rose:app:rose_bunch" title="Link to this definition"></a></dt>
 <dd><dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[bunch]</span></span><a class="headerlink" href="#rose:conf:rose_bunch[bunch]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[bunch]</span></span><a class="headerlink" href="#rose:conf:rose_bunch[bunch]" title="Link to this definition"></a></dt>
 <dd><dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch]command-format">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">command-format</span></span><em class="property"><span class="pre">=</span> <span class="pre">FORMAT</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]command-format" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">command-format</span></span><em class="property"><span class="pre">=</span> <span class="pre">FORMAT</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]command-format" title="Link to this definition"></a></dt>
 <dd><p>A Pythonic <code class="docutils literal notranslate"><span class="pre">printf</span></code>-style format string to construct the commands
 to run. Insert placeholders <code class="docutils literal notranslate"><span class="pre">%(argname)s</span></code> for substitution of the
 arguments specified under <a class="reference internal" href="#rose:conf:rose_bunch[bunch-args]" title="rose:conf:rose_bunch[bunch-args]"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">[bunch-args]</span></code></a> to the invoked
@@ -190,7 +190,7 @@ are made accessible to the command as environment variables.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch]command-instances">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">command-instances</span></span><em class="property"><span class="pre">=</span> <span class="pre">N</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]command-instances" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">command-instances</span></span><em class="property"><span class="pre">=</span> <span class="pre">N</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]command-instances" title="Link to this definition"></a></dt>
 <dd><p>Allows the user to specify an integer value for the number of
 instances of a command they want to run. This generates the values
 used by the <code class="docutils literal notranslate"><span class="pre">%(command-instances)s</span></code> value in command-format.
@@ -203,7 +203,7 @@ indexes start at <code class="docutils literal notranslate"><span class="pre">0<
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch]pool-size">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">pool-size</span></span><em class="property"><span class="pre">=</span> <span class="pre">N</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]pool-size" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">pool-size</span></span><em class="property"><span class="pre">=</span> <span class="pre">N</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]pool-size" title="Link to this definition"></a></dt>
 <dd><p>Allows the user to limit the number of concurrently running commands.
 If not specified then all command variations will be run at the same
 time.</p>
@@ -211,7 +211,7 @@ time.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch]fail-mode">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">fail-mode</span></span><em class="property"><span class="pre">=</span> <span class="pre">continue|abort</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]fail-mode" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">fail-mode</span></span><em class="property"><span class="pre">=</span> <span class="pre">continue|abort</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]fail-mode" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>continue</p>
@@ -236,7 +236,7 @@ non-zero error code without having run the third variant.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch]incremental">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">incremental</span></span><em class="property"><span class="pre">=</span> <span class="pre">true|false</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]incremental" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">incremental</span></span><em class="property"><span class="pre">=</span> <span class="pre">true|false</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]incremental" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>true</p>
@@ -258,7 +258,7 @@ in the job output with a <code class="docutils literal notranslate"><span class=
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch]names">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">names</span></span><em class="property"><span class="pre">=</span> <span class="pre">name1</span> <span class="pre">name2</span> <span class="pre">...</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]names" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">names</span></span><em class="property"><span class="pre">=</span> <span class="pre">name1</span> <span class="pre">name2</span> <span class="pre">...</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]names" title="Link to this definition"></a></dt>
 <dd><p>Allows defining names for each of the command variants to be run,
 facilitating identification in logs. If not set then commands will
 be identified by their index. The number of entries in the names
@@ -268,7 +268,7 @@ be used.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch]argument-mode">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">argument-mode</span></span><em class="property"><span class="pre">=</span> <span class="pre">Default|zip</span> <span class="pre">or</span> <span class="pre">izip|zip_longest</span> <span class="pre">or</span> <span class="pre">izip_longest|product</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]argument-mode" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">argument-mode</span></span><em class="property"><span class="pre">=</span> <span class="pre">Default|zip</span> <span class="pre">or</span> <span class="pre">izip|zip_longest</span> <span class="pre">or</span> <span class="pre">izip_longest|product</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch]argument-mode" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Default</p>
@@ -295,13 +295,13 @@ older rose bunch tasks.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch-args]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[bunch-args]</span></span><a class="headerlink" href="#rose:conf:rose_bunch[bunch-args]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[bunch-args]</span></span><a class="headerlink" href="#rose:conf:rose_bunch[bunch-args]" title="Link to this definition"></a></dt>
 <dd><p>This section is used to specify the various combinations of args to be
 passed to the command specified under <a class="reference internal" href="#rose:conf:rose_bunch[bunch]command-format" title="rose:conf:rose_bunch[bunch]command-format"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">[bunch]command-format</span></code></a>,
 if defined, or <a class="reference internal" href="../configuration/application.html#rose:conf:rose-app.conf[command]" title="rose:conf:rose-app.conf[command]"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose-app.conf[command]</span></code></a> otherwise.</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_bunch[bunch-args]argname">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">argname</span></span><em class="property"><span class="pre">=</span> <span class="pre">val1</span> <span class="pre">val2</span> <span class="pre">...</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch-args]argname" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">argname</span></span><em class="property"><span class="pre">=</span> <span class="pre">val1</span> <span class="pre">val2</span> <span class="pre">...</span></em><a class="headerlink" href="#rose:conf:rose_bunch[bunch-args]argname" title="Link to this definition"></a></dt>
 <dd><p>Allows defining named lists of argument values to pass to
 the commands being run. Multiple named sets of arguments can be
 defined. Each <cite>argname</cite> can be referenced  using <code class="docutils literal notranslate"><span class="pre">%(argname)s</span></code> in
@@ -318,7 +318,7 @@ for the auto-generated list of instances when the
 
 </section>
 <section id="incremental-mode-in-cylc-tasks">
-<span id="rosebunch-cylctasks"></span><h2>Incremental Mode In Cylc Tasks<a class="headerlink" href="#incremental-mode-in-cylc-tasks" title="Permalink to this heading"></a></h2>
+<span id="rosebunch-cylctasks"></span><h2>Incremental Mode In Cylc Tasks<a class="headerlink" href="#incremental-mode-in-cylc-tasks" title="Link to this heading"></a></h2>
 <p>When incremental mode is turned on, only failed commands will be re-run
 if the task is run again (e.g. by manual triggering, or automatic retries).</p>
 <p>If the task is run again as part of a new flow (e.g. <code class="docutils literal notranslate"><span class="pre">--flow=new</span></code>),

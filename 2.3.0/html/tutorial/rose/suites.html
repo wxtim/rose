@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Rose Suite Configurations &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../_static/js/spoiler.js?v=12631137"></script>
@@ -117,7 +117,7 @@
           <li class="breadcrumb-item"><a href="index.html">Rose Tutorial</a></li>
       <li class="breadcrumb-item active">Rose Suite Configurations</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/tutorial/rose/suites.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/tutorial/rose/suites.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -126,7 +126,7 @@
            <div itemprop="articleBody">
              
   <section id="rose-suite-configurations">
-<span id="tutorial-rose-suites"></span><h1>Rose Suite Configurations<a class="headerlink" href="#rose-suite-configurations" title="Permalink to this heading"></a></h1>
+<span id="tutorial-rose-suites"></span><h1>Rose Suite Configurations<a class="headerlink" href="#rose-suite-configurations" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The following documentation reflects installing and running a Cylc
@@ -148,7 +148,7 @@ can be used to encapsulate the environment and resources required by a Cylc
 <p>Similarly <a class="reference internal" href="../../glossary.html#term-Rose-suite-configuration"><span class="xref std std-term">Rose suite configurations</span></a> can
 be used to do the same for a <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-workflow" title="(in Cylc v8.3)"><span class="xref std std-term">workflow</span></a>.</p>
 <section id="configuration-format">
-<h2>Configuration Format<a class="headerlink" href="#configuration-format" title="Permalink to this heading"></a></h2>
+<h2>Configuration Format<a class="headerlink" href="#configuration-format" title="Link to this heading"></a></h2>
 <p>A Rose suite configuration is a Cylc <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-source-directory" title="(in Cylc v8.3)"><span class="xref std std-term">source directory</span></a> containing a
 <a class="reference internal" href="../../api/configuration/suite.html#rose:file:rose-suite.conf" title="rose:file:rose-suite.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-suite.conf</span></code></a> file.</p>
 <p>The <a class="reference internal" href="../../api/configuration/suite.html#rose:file:rose-suite.conf" title="rose:file:rose-suite.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-suite.conf</span></code></a> file is written in the same
@@ -179,14 +179,14 @@ suite configurations.</p>
 the <a class="reference internal" href="../../api/configuration/suite.html#rose:file:rose-suite.conf" title="rose:file:rose-suite.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-suite.conf</span></code></a> file.
 This can then be used in the <code class="docutils literal notranslate"><span class="pre">flow.cylc</span></code> file:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">rose-suite.conf</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-text">rose-suite.conf</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
 <div class="highlight-rose notranslate"><div class="highlight"><pre><span></span><span class="nt">[template variables]</span>
 <span class="nv">WORLD</span><span class="o">=</span><span class="s">Earth</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">flow.cylc</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-text">flow.cylc</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
 <div class="highlight-cylc notranslate"><div class="highlight"><pre><span></span><span class="ch">#!jinja2</span>
 <span class="nt">[scheduling]</span>
     <span class="nt">[[graph]]</span>
@@ -200,7 +200,7 @@ This can then be used in the <code class="docutils literal notranslate"><span cl
 </div>
 </section>
 <section id="using-a-rose-workflow-configuration-with-cylc-8">
-<h2>Using a Rose workflow configuration with Cylc 8<a class="headerlink" href="#using-a-rose-workflow-configuration-with-cylc-8" title="Permalink to this heading"></a></h2>
+<h2>Using a Rose workflow configuration with Cylc 8<a class="headerlink" href="#using-a-rose-workflow-configuration-with-cylc-8" title="Link to this heading"></a></h2>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>This section acts to demonstrate how Cylc 8 can be used to install Rose
@@ -215,7 +215,7 @@ explain the usage of Cylc.</p>
 <p>Rose configurations are installed alongside Cylc workflows by
 <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/user-guide/installing-workflows.html#install-workflow" title="(in Cylc v8.3)"><span class="xref std std-ref">cylc install</span></a>, if a <code class="docutils literal notranslate"><span class="pre">rose-suite.conf</span></code> file is present.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Using a Rose Configuration for a Cylc 8 workflow.</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-text">Using a Rose Configuration for a Cylc 8 workflow.</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assuming that the example above was developed in ~/cylc-src/my-workflow</span>
 cylc<span class="w"> </span>validate<span class="w"> </span>my-workflow<span class="w">    </span><span class="c1"># Checks that the workflow configuration is valid</span>
 cylc<span class="w"> </span>install<span class="w"> </span>my-workflow<span class="w">     </span><span class="c1"># Installs workflow to ~/cylc-run/my-workflow</span>
@@ -362,7 +362,7 @@ contained in the run directory.</p>
 </div>
 </section>
 <section id="rose-applications-in-rose-suite-configurations">
-<h2>Rose Applications In Rose Suite Configurations<a class="headerlink" href="#rose-applications-in-rose-suite-configurations" title="Permalink to this heading"></a></h2>
+<h2>Rose Applications In Rose Suite Configurations<a class="headerlink" href="#rose-applications-in-rose-suite-configurations" title="Link to this heading"></a></h2>
 <p>In Cylc workflows, Rose applications are placed in an <code class="docutils literal notranslate"><span class="pre">app/</span></code> directory which
 is copied across to the <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-run-directory" title="(in Cylc v8.3)"><span class="xref std std-term">run directory</span></a> with the rest of the suite by
 <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/user-guide/installing-workflows.html#install-workflow" title="(in Cylc v8.3)"><span class="xref std std-ref">cylc install</span></a> when the workflow configuration is installed.</p>
@@ -379,7 +379,7 @@ regular Cylc task.</p>
 <p>In this example the <code class="docutils literal notranslate"><span class="pre">hello</span></code> task will run the application located in
 <code class="docutils literal notranslate"><span class="pre">app/hello/</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">flow.cylc</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-text">flow.cylc</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
 <div class="highlight-cylc notranslate"><div class="highlight"><pre><span></span><span class="nt">[runtime]</span>
     <span class="nt">[[hello]]</span>
         <span class="nv">script </span><span class="o">=</span><span class="s"> rose task-run</span>
@@ -387,7 +387,7 @@ regular Cylc task.</p>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">app/hello/rose-app.conf</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-text">app/hello/rose-app.conf</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
 <div class="highlight-rose notranslate"><div class="highlight"><pre><span></span><span class="nt">[command]</span>
 <span class="nv">default</span><span class="o">=</span><span class="s">echo &quot;Hello World!&quot;</span>
 </pre></div>
@@ -398,7 +398,7 @@ command-line option or the <span class="target" id="index-0"></span><a class="re
 example the <code class="docutils literal notranslate"><span class="pre">greetings</span></code> <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-task" title="(in Cylc v8.3)"><span class="xref std std-term">task</span></a> will run the <code class="docutils literal notranslate"><span class="pre">hello</span></code>
 <a class="reference internal" href="../../glossary.html#term-Rose-app"><span class="xref std std-term">app</span></a> in the task defined below.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">flow.cylc</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="code-block-caption"><span class="caption-text">flow.cylc</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
 <div class="highlight-cylc notranslate"><div class="highlight"><pre><span></span><span class="nt">[runtime]</span>
     <span class="nt">[[greetings]]</span>
         <span class="nv">script </span><span class="o">=</span><span class="s"> rose task-run --app-key hello</span>

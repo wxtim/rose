@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Rose Stem Tutorial &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -144,7 +144,7 @@
           <li class="breadcrumb-item"><a href="index.html">Further Topics</a></li>
       <li class="breadcrumb-item active">Rose Stem Tutorial</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/tutorial/rose/furthertopics/rose-stem-tutorial.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/tutorial/rose/furthertopics/rose-stem-tutorial.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -153,7 +153,7 @@
            <div itemprop="articleBody">
              
   <section id="rose-stem-tutorial">
-<span id="id1"></span><h1>Rose Stem Tutorial<a class="headerlink" href="#rose-stem-tutorial" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1>Rose Stem Tutorial<a class="headerlink" href="#rose-stem-tutorial" title="Link to this heading"></a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Before proceeding you should already be familiar with the <a class="reference internal" href="rose-stem.html#rose-stem"><span class="std std-ref">Rose Stem</span></a>
@@ -164,7 +164,7 @@ section.</p>
 Rose Stem testing system which will involve piloting a spaceship
 through space.</p>
 <section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
 <p>We will start the Rose Stem tutorial by setting up an <a class="reference external" href="https://metomi.github.io/fcm/doc/">FCM</a> repository
 called <code class="docutils literal notranslate"><span class="pre">SPACESHIP</span></code> to store the code and test suite in.</p>
 <p>Usually you would add a Rose Stem suite to an existing repository with
@@ -197,7 +197,7 @@ specified in the <code class="docutils literal notranslate"><span class="pre">sv
 </div>
 </section>
 <section id="spaceship-command-f90">
-<h2><code class="docutils literal notranslate"><span class="pre">spaceship_command.f90</span></code><a class="headerlink" href="#spaceship-command-f90" title="Permalink to this heading"></a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">spaceship_command.f90</span></code><a class="headerlink" href="#spaceship-command-f90" title="Link to this heading"></a></h2>
 <p>Our Fortran program is <code class="docutils literal notranslate"><span class="pre">spaceship_command.f90</span></code>, which reads in an
 initial position and spaceship mass from one namelist, and a series
 of commands to apply thrust in three-dimensional space. It then uses
@@ -206,7 +206,7 @@ Newtonian mechanics to calculate a final position.</p>
 what it does.</p>
 </section>
 <section id="the-spaceship-app">
-<h2>The <code class="docutils literal notranslate"><span class="pre">spaceship</span></code> app<a class="headerlink" href="#the-spaceship-app" title="Permalink to this heading"></a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">spaceship</span></code> app<a class="headerlink" href="#the-spaceship-app" title="Link to this heading"></a></h2>
 <p>Create a new Rose app called <code class="docutils literal notranslate"><span class="pre">spaceship</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">spaceship</span>
 </pre></div>
@@ -234,7 +234,7 @@ that directory:</p>
 </div>
 </section>
 <section id="the-fcm-make-app">
-<h2>The <code class="docutils literal notranslate"><span class="pre">fcm-make</span></code> app<a class="headerlink" href="#the-fcm-make-app" title="Permalink to this heading"></a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">fcm-make</span></code> app<a class="headerlink" href="#the-fcm-make-app" title="Link to this heading"></a></h2>
 <p>We now need to provide the instructions for <a class="reference internal" href="../../../api/built-in/fcm_make.html#rose:app:fcm_make" title="rose:app:fcm_make"><code class="xref rose rose-app docutils literal notranslate"><span class="pre">fcm_make</span></code></a> to build the
 Fortran executable.</p>
 <p>Create a new app called <code class="docutils literal notranslate"><span class="pre">fcm_make_spaceship</span></code> with an empty
@@ -250,7 +250,7 @@ into the <code class="docutils literal notranslate"><span class="pre">fcm-make.c
 Jinja2 variable of the same name which is provided by Rose Stem.</p>
 </section>
 <section id="the-flow-cylc-file">
-<h2>The <code class="docutils literal notranslate"><span class="pre">flow.cylc</span></code> file<a class="headerlink" href="#the-flow-cylc-file" title="Permalink to this heading"></a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">flow.cylc</span></code> file<a class="headerlink" href="#the-flow-cylc-file" title="Link to this heading"></a></h2>
 <p>Next we will look at the <code class="docutils literal notranslate"><span class="pre">rose-stem/flow.cylc</span></code> file.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">flow.cylc</span></code> file starts off with <code class="docutils literal notranslate"><span class="pre">UTC</span> <span class="pre">mode</span> <span class="pre">=</span> <span class="pre">True</span></code>, which you
 should already be <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/tutorial/scheduling/datetime-cycling.html#tutorial-cylc-datetime-utc" title="(in Cylc v8.3)"><span class="xref std std-ref">familiar with</span></a>.
@@ -278,7 +278,7 @@ passed to <code class="docutils literal notranslate"><span class="pre">fcm-make<
 its own configuration files.</p>
 </section>
 <section id="the-rose-suite-conf-file">
-<h2>The <code class="docutils literal notranslate"><span class="pre">rose-suite.conf</span></code> file<a class="headerlink" href="#the-rose-suite-conf-file" title="Permalink to this heading"></a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">rose-suite.conf</span></code> file<a class="headerlink" href="#the-rose-suite-conf-file" title="Link to this heading"></a></h2>
 <p>The suites associated with Rose Stem require a version number
 indicating the version of the <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span></code> command with which they
 are compatible. This is specified in the <a class="reference internal" href="../../../api/configuration/suite.html#rose:file:rose-suite.conf" title="rose:file:rose-suite.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-suite.conf</span></code></a> file,
@@ -295,7 +295,7 @@ Paste the following into your <a class="reference internal" href="../../../api/c
 execute <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span></code> on the command line.</p>
 </section>
 <section id="the-rose-ana-position-app">
-<h2>The <code class="docutils literal notranslate"><span class="pre">rose_ana_position</span></code> app<a class="headerlink" href="#the-rose-ana-position-app" title="Permalink to this heading"></a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">rose_ana_position</span></code> app<a class="headerlink" href="#the-rose-ana-position-app" title="Link to this heading"></a></h2>
 <p>The final component is a <a class="reference internal" href="../../../api/built-in/rose_ana.html#rose:app:rose_ana" title="rose:app:rose_ana"><code class="xref rose rose-app docutils literal notranslate"><span class="pre">rose_ana</span></code></a> app to test whether the position
 of our spaceship matches the correct output.</p>
 <p>Create an app named <code class="docutils literal notranslate"><span class="pre">rose_ana_position</span></code> and paste the following into its
@@ -320,7 +320,7 @@ of our spaceship matches the correct output.</p>
 within the known good output file.</p>
 </section>
 <section id="known-good-output">
-<h2>Known Good Output<a class="headerlink" href="#known-good-output" title="Permalink to this heading"></a></h2>
+<h2>Known Good Output<a class="headerlink" href="#known-good-output" title="Link to this heading"></a></h2>
 <p>In the root of the working copy is a file called <code class="docutils literal notranslate"><span class="pre">kgo.txt</span></code>.</p>
 <p>The known good output should be the result of a control run. Rose Ana
 will compare the answers from this file (obtained using the extract and
@@ -330,14 +330,14 @@ from the user’s code change.</p>
 app with the path to this file.</p>
 </section>
 <section id="adding-the-suite-to-version-control">
-<h2>Adding the suite to version control<a class="headerlink" href="#adding-the-suite-to-version-control" title="Permalink to this heading"></a></h2>
+<h2>Adding the suite to version control<a class="headerlink" href="#adding-the-suite-to-version-control" title="Link to this heading"></a></h2>
 <p>Before running the suite we need to make sure that all the files and
 directories we have created are known to the version control system.</p>
 <p>Add all the new files you’ve created using <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">add</span> <span class="pre">-c</span></code> <em>(answer yes
 to the prompts)</em>.</p>
 </section>
 <section id="running-the-test-suite">
-<h2>Running the test suite<a class="headerlink" href="#running-the-test-suite" title="Permalink to this heading"></a></h2>
+<h2>Running the test suite<a class="headerlink" href="#running-the-test-suite" title="Link to this heading"></a></h2>
 <p>We should now be able to install the test suite. Simply type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">command_spaceship</span>
 </pre></div>
@@ -361,7 +361,7 @@ browser and checking the jobs. Alternatively, use the Cylc GUI or Cylc TUI to
 view the result of the run.</p>
 </section>
 <section id="a-failing-test">
-<h2>A failing test<a class="headerlink" href="#a-failing-test" title="Permalink to this heading"></a></h2>
+<h2>A failing test<a class="headerlink" href="#a-failing-test" title="Link to this heading"></a></h2>
 <p>Now edit the file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">spaceship</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">app</span><span class="o">.</span><span class="n">conf</span>
 </pre></div>
@@ -383,14 +383,14 @@ from the velocity rather than added). Again, rerun <code class="docutils literal
 any of the code alterations you have made.</p>
 </section>
 <section id="further-exercises">
-<h2>Further Exercises<a class="headerlink" href="#further-exercises" title="Permalink to this heading"></a></h2>
+<h2>Further Exercises<a class="headerlink" href="#further-exercises" title="Link to this heading"></a></h2>
 <p>If you wish, you can try extending the suite to include the <code class="docutils literal notranslate"><span class="pre">fire_lasers</span></code>
 group of tasks which was in the list of groups in the <code class="docutils literal notranslate"><span class="pre">flow.cylc</span></code> file.
 Using the same technique as we’ve just demonstrated for piloting the
 spaceship, you should be able to aim and fire the ship’s weapons.</p>
 </section>
 <section id="automatic-options">
-<h2>Automatic Options<a class="headerlink" href="#automatic-options" title="Permalink to this heading"></a></h2>
+<h2>Automatic Options<a class="headerlink" href="#automatic-options" title="Link to this heading"></a></h2>
 <p>It is possible to automatically add options to <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span></code> using the
 <a class="reference internal" href="../../../api/configuration/site-and-user.html#rose:conf:rose.conf[rose-stem]automatic-options" title="rose:conf:rose.conf[rose-stem]automatic-options"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose.conf[rose-stem]automatic-options</span></code></a> variable in the
 <a class="reference internal" href="../../../api/configuration/site-and-user.html#site-and-user-configuration"><span class="std std-ref">Site And User Configuration</span></a> file.

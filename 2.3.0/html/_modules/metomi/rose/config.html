@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>metomi.rose.config &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -24,9 +24,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -222,7 +222,9 @@
 <span class="n">OPT_CONFIG_SETTING_COMMENT</span> <span class="o">=</span> <span class="s2">&quot; setting from opt config </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)&quot;</span>
 
 
-<div class="viewcode-block" id="ConfigNode"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode">[docs]</a><span class="k">class</span> <span class="nc">ConfigNode</span><span class="p">:</span>
+<div class="viewcode-block" id="ConfigNode">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode">[docs]</a>
+<span class="k">class</span> <span class="nc">ConfigNode</span><span class="p">:</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Represent a node in a configuration file.</span>
 
@@ -347,11 +349,16 @@
     <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
-<div class="viewcode-block" id="ConfigNode.is_ignored"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.is_ignored">[docs]</a>    <span class="k">def</span> <span class="nf">is_ignored</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ConfigNode.is_ignored">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.is_ignored">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_ignored</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return True if current node is in the &quot;ignored&quot; state.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">STATE_NORMAL</span></div>
 
-<div class="viewcode-block" id="ConfigNode.walk"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.walk">[docs]</a>    <span class="k">def</span> <span class="nf">walk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNode.walk">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.walk">[docs]</a>
+    <span class="k">def</span> <span class="nf">walk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all keylist - sub-node pairs below keys.</span>
 
 <span class="sd">        Args:</span>
@@ -414,7 +421,10 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="p">(</span><span class="n">node_keys</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ConfigNode.get"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNode.get">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.get">[docs]</a>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a node at the position of keys, if any.</span>
 
 <span class="sd">        Args:</span>
@@ -464,7 +474,10 @@
                 <span class="n">node</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">node</span></div>
 
-<div class="viewcode-block" id="ConfigNode.get_filter"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.get_filter">[docs]</a>    <span class="k">def</span> <span class="nf">get_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">no_ignore</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNode.get_filter">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.get_filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">no_ignore</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return this ConfigNode unless no_ignore and node is ignored.</span>
 
 <span class="sd">        Args:</span>
@@ -494,7 +507,10 @@
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ConfigNode.get_value"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.get_value">[docs]</a>    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNode.get_value">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.get_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the value of a normal node at the position of keys, if any.</span>
 
 <span class="sd">        If the node does not exist or is ignored, return None.</span>
@@ -538,7 +554,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">no_ignore</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ConfigNode.set"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNode.set">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.set">[docs]</a>
+    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set node properties at the position of keys, if any.</span>
 
 <span class="sd">        Arguments:</span>
@@ -604,7 +623,10 @@
             <span class="n">node</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="n">comments</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="ConfigNode.unset"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.unset">[docs]</a>    <span class="k">def</span> <span class="nf">unset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNode.unset">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.unset">[docs]</a>
+    <span class="k">def</span> <span class="nf">unset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove a node at the position of keys, if any.</span>
 
 <span class="sd">        Args:</span>
@@ -646,7 +668,10 @@
         <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="ConfigNode.add"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_diff</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNode.add">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNode.add">[docs]</a>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_diff</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply a ConfigNodeDiff object to self.</span>
 
 <span class="sd">        Args:</span>
@@ -695,6 +720,7 @@
                 <span class="p">)</span>
         <span class="k">for</span> <span class="n">removed_key</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">config_diff</span><span class="o">.</span><span class="n">get_removed</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">unset</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="n">removed_key</span><span class="p">)</span></div>
+
 
     <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_diff</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a new node by applying a node or diff to self.</span>
@@ -784,7 +810,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;comments&quot;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="ConfigNodeDiff"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff">[docs]</a><span class="k">class</span> <span class="nc">ConfigNodeDiff</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff">[docs]</a>
+<span class="k">class</span> <span class="nc">ConfigNodeDiff</span><span class="p">:</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Represent differences between two ConfigNode instances.</span>
 
@@ -836,7 +865,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">KEY_MODIFIED</span><span class="p">:</span> <span class="p">{},</span>
         <span class="p">}</span>
 
-<div class="viewcode-block" id="ConfigNodeDiff.set_from_configs"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.set_from_configs">[docs]</a>    <span class="k">def</span> <span class="nf">set_from_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_node_1</span><span class="p">,</span> <span class="n">config_node_2</span><span class="p">):</span>
+<div class="viewcode-block" id="ConfigNodeDiff.set_from_configs">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.set_from_configs">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_from_configs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_node_1</span><span class="p">,</span> <span class="n">config_node_2</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create diff data from two ConfigNode instances.</span>
 
 <span class="sd">        Args:</span>
@@ -882,7 +913,10 @@
                     <span class="n">keys</span><span class="p">,</span> <span class="n">settings_1</span><span class="p">[</span><span class="n">keys</span><span class="p">],</span> <span class="n">settings_2</span><span class="p">[</span><span class="n">keys</span><span class="p">]</span>
                 <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.get_as_opt_config"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_as_opt_config">[docs]</a>    <span class="k">def</span> <span class="nf">get_as_opt_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.get_as_opt_config">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_as_opt_config">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_as_opt_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a ConfigNode such that main + new_node = main + diff.</span>
 
 <span class="sd">        Add all the added settings, add all the modified settings,</span>
@@ -921,7 +955,10 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">node</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.set_added_setting"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.set_added_setting">[docs]</a>    <span class="k">def</span> <span class="nf">set_added_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.set_added_setting">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.set_added_setting">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_added_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a config setting to be &quot;added&quot; in this ConfigNodeDiff.</span>
 
 <span class="sd">        Args:</span>
@@ -952,7 +989,10 @@
         <span class="n">keys</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">KEY_ADDED</span><span class="p">][</span><span class="n">keys</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.set_modified_setting"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.set_modified_setting">[docs]</a>    <span class="k">def</span> <span class="nf">set_modified_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">old_data</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.set_modified_setting">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.set_modified_setting">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_modified_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">old_data</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a config setting to be &quot;modified&quot; in this ConfigNodeDiff.</span>
 
 <span class="sd">        If a property in both the old_data and data (new data) are both set to</span>
@@ -988,7 +1028,10 @@
         <span class="n">keys</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">KEY_MODIFIED</span><span class="p">][</span><span class="n">keys</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">old_data</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.set_removed_setting"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.set_removed_setting">[docs]</a>    <span class="k">def</span> <span class="nf">set_removed_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.set_removed_setting">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.set_removed_setting">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_removed_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a config setting to be &quot;removed&quot; in this ConfigNodeDiff.</span>
 
 <span class="sd">        Arguments:</span>
@@ -1017,7 +1060,10 @@
         <span class="n">keys</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">KEY_REMOVED</span><span class="p">][</span><span class="n">keys</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.get_added"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_added">[docs]</a>    <span class="k">def</span> <span class="nf">get_added</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.get_added">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_added">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_added</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a list of tuples of added keys with their data.</span>
 
 <span class="sd">        The data is a tuple of value, state, comments, where value is</span>
@@ -1039,7 +1085,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">KEY_ADDED</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.get_modified"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_modified">[docs]</a>    <span class="k">def</span> <span class="nf">get_modified</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.get_modified">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_modified">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_modified</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a dict of altered keys with before and after data.</span>
 
 <span class="sd">        The data is a list of two tuples (before and after) of value,</span>
@@ -1063,7 +1112,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">KEY_MODIFIED</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.get_removed"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_removed">[docs]</a>    <span class="k">def</span> <span class="nf">get_removed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.get_removed">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_removed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_removed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a dict of removed keys with their data.</span>
 
 <span class="sd">        The data is a tuple of value, state, comments, where value is</span>
@@ -1085,7 +1137,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">KEY_REMOVED</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.get_all_keys"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_all_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.get_all_keys">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_all_keys">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_all_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all keys affected by this ConfigNodeDiff.</span>
 
 <span class="sd">        Returns:</span>
@@ -1106,7 +1161,10 @@
             <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">KEY_REMOVED</span><span class="p">])</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.get_reversed"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_reversed">[docs]</a>    <span class="k">def</span> <span class="nf">get_reversed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.get_reversed">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.get_reversed">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_reversed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return an inverse (add-&gt;remove, etc) copy of this ConfigNodeDiff.</span>
 
 <span class="sd">        Returns:</span>
@@ -1135,7 +1193,10 @@
             <span class="n">rev_diff</span><span class="o">.</span><span class="n">set_removed_setting</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">rev_diff</span></div>
 
-<div class="viewcode-block" id="ConfigNodeDiff.delete_removed"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.delete_removed">[docs]</a>    <span class="k">def</span> <span class="nf">delete_removed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigNodeDiff.delete_removed">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigNodeDiff.delete_removed">[docs]</a>
+    <span class="k">def</span> <span class="nf">delete_removed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Deletes all &#39;removed&#39; keys from this ConfigNodeDiff.</span>
 
 <span class="sd">        Examples:</span>
@@ -1146,10 +1207,14 @@
 <span class="sd">            &gt;&gt;&gt; config_node_diff.get_removed()</span>
 <span class="sd">            []</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">KEY_REMOVED</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">KEY_REMOVED</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span></div>
+</div>
 
 
-<div class="viewcode-block" id="ConfigDumper"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigDumper">[docs]</a><span class="k">class</span> <span class="nc">ConfigDumper</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ConfigDumper">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigDumper">[docs]</a>
+<span class="k">class</span> <span class="nc">ConfigDumper</span><span class="p">:</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Dumper of a ConfigNode object in Rose INI format.</span>
 
@@ -1176,7 +1241,9 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">char_assign</span> <span class="o">=</span> <span class="n">char_assign</span>
 
-<div class="viewcode-block" id="ConfigDumper.dump"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigDumper.dump">[docs]</a>    <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span>
+<div class="viewcode-block" id="ConfigDumper.dump">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigDumper.dump">[docs]</a>
+    <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">root</span><span class="p">,</span>
         <span class="n">target</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
@@ -1271,6 +1338,7 @@
             <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">handle</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">st_mode</span><span class="p">)</span>
             <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">handle</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span></div>
 
+
     <span class="fm">__call__</span> <span class="o">=</span> <span class="n">dump</span>
 
     <span class="k">def</span> <span class="nf">_string_node_dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">handle</span><span class="p">,</span> <span class="n">env_escape_ok</span><span class="p">):</span>
@@ -1304,7 +1372,10 @@
         <span class="k">return</span> <span class="s2">&quot;#</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">comment</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="ConfigLoader"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigLoader">[docs]</a><span class="k">class</span> <span class="nc">ConfigLoader</span><span class="p">:</span>
+
+<div class="viewcode-block" id="ConfigLoader">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigLoader">[docs]</a>
+<span class="k">class</span> <span class="nc">ConfigLoader</span><span class="p">:</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Loader of an INI format configuration into a ConfigNode object.</span>
 
@@ -1359,7 +1430,9 @@
             <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;\s*(?P&lt;value&gt;.*)$&quot;</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="ConfigLoader.can_miss_opt_conf_key"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigLoader.can_miss_opt_conf_key">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ConfigLoader.can_miss_opt_conf_key">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigLoader.can_miss_opt_conf_key">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">can_miss_opt_conf_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return KEY if key is a string like &quot;(KEY)&quot;, None otherwise.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">key</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">):</span>
@@ -1367,7 +1440,10 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span></div>
 
-<div class="viewcode-block" id="ConfigLoader.load_with_opts"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigLoader.load_with_opts">[docs]</a>    <span class="k">def</span> <span class="nf">load_with_opts</span><span class="p">(</span>
+
+<div class="viewcode-block" id="ConfigLoader.load_with_opts">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigLoader.load_with_opts">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_with_opts</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">source</span><span class="p">,</span>
         <span class="n">node</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1506,7 +1582,10 @@
             <span class="k">return</span> <span class="n">node</span><span class="p">,</span> <span class="n">config_map</span>
         <span class="k">return</span> <span class="n">node</span></div>
 
-<div class="viewcode-block" id="ConfigLoader.load"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigLoader.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_comments</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigLoader.load">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigLoader.load">[docs]</a>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">default_comments</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Read a source configuration file.</span>
 
 <span class="sd">        Arguments:</span>
@@ -1640,6 +1719,7 @@
             <span class="n">comments</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">return</span> <span class="n">node</span></div>
 
+
     <span class="fm">__call__</span> <span class="o">=</span> <span class="n">load</span>
 
     <span class="nd">@classmethod</span>
@@ -1725,11 +1805,17 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">file_</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="ConfigError"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigError">[docs]</a><span class="k">class</span> <span class="nc">ConfigError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigError">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigError">[docs]</a>
+<span class="k">class</span> <span class="nc">ConfigError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for config errors.&quot;&quot;&quot;</span></div>
 
 
-<div class="viewcode-block" id="ConfigSyntaxError"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigSyntaxError">[docs]</a><span class="k">class</span> <span class="nc">ConfigSyntaxError</span><span class="p">(</span><span class="n">ConfigError</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigSyntaxError">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigSyntaxError">[docs]</a>
+<span class="k">class</span> <span class="nc">ConfigSyntaxError</span><span class="p">(</span><span class="n">ConfigError</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised for syntax error loading a configuration file.</span>
 
@@ -1784,7 +1870,10 @@
         <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="ConfigDecodeError"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigDecodeError">[docs]</a><span class="k">class</span> <span class="nc">ConfigDecodeError</span><span class="p">(</span><span class="n">ConfigError</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ConfigDecodeError">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.ConfigDecodeError">[docs]</a>
+<span class="k">class</span> <span class="nc">ConfigDecodeError</span><span class="p">(</span><span class="n">ConfigError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception that should be raised when loading a configuration file that</span>
 <span class="sd">    is not encoded in a UTF-8 compatible charset.</span>
 
@@ -1806,7 +1895,10 @@
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">MESSAGE</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span></div>
 
 
-<div class="viewcode-block" id="dump"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.dump">[docs]</a><span class="k">def</span> <span class="nf">dump</span><span class="p">(</span>
+
+<div class="viewcode-block" id="dump">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.dump">[docs]</a>
+<span class="k">def</span> <span class="nf">dump</span><span class="p">(</span>
     <span class="n">root</span><span class="p">,</span>
     <span class="n">target</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span>
     <span class="n">sort_sections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1819,12 +1911,18 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="load"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.load">[docs]</a><span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="load">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.load">[docs]</a>
+<span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Shorthand for :py:func:`ConfigLoader.load`.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">ConfigLoader</span><span class="p">()(</span><span class="n">source</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="sort_element"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.sort_element">[docs]</a><span class="k">def</span> <span class="nf">sort_element</span><span class="p">(</span><span class="n">elem_1</span><span class="p">,</span> <span class="n">elem_2</span><span class="p">):</span>
+
+<div class="viewcode-block" id="sort_element">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.sort_element">[docs]</a>
+<span class="k">def</span> <span class="nf">sort_element</span><span class="p">(</span><span class="n">elem_1</span><span class="p">,</span> <span class="n">elem_2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sort pieces of text, numerically if possible.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">elem_1</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="n">elem_2</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
         <span class="c1"># This logic replicates output of the deprecated Python2 `cmp` builtin</span>
@@ -1837,7 +1935,10 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">elem_1</span> <span class="o">&gt;</span> <span class="n">elem_2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">elem_1</span> <span class="o">&lt;</span> <span class="n">elem_2</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="sort_settings"><a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.sort_settings">[docs]</a><span class="k">def</span> <span class="nf">sort_settings</span><span class="p">(</span><span class="n">setting_1</span><span class="p">,</span> <span class="n">setting_2</span><span class="p">):</span>
+
+<div class="viewcode-block" id="sort_settings">
+<a class="viewcode-back" href="../../../api/configuration/api.html#metomi.rose.config.sort_settings">[docs]</a>
+<span class="k">def</span> <span class="nf">sort_settings</span><span class="p">(</span><span class="n">setting_1</span><span class="p">,</span> <span class="n">setting_2</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sort sections and options, by numeric element if possible.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">setting_1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">setting_2</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="c1"># This logic replicates output of the deprecated Python2 `cmp` builtin</span>
@@ -1851,6 +1952,7 @@
             <span class="k">return</span> <span class="n">sort_element</span><span class="p">(</span><span class="n">num_1</span><span class="p">,</span> <span class="n">num_2</span><span class="p">)</span>
     <span class="c1"># This logic replicates output of the deprecated Python2 `cmp` builtin</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">setting_1</span> <span class="o">&gt;</span> <span class="n">setting_2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">setting_1</span> <span class="o">&lt;</span> <span class="n">setting_2</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>

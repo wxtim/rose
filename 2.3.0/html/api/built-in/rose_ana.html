@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>rose_ana &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../_static/js/spoiler.js?v=12631137"></script>
@@ -123,7 +123,7 @@
           <li class="breadcrumb-item"><a href="../rose-built-in-applications.html">Rose Built-In Applications</a></li>
       <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">rose_ana</span></code></li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/api/built-in/rose_ana.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/api/built-in/rose_ana.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -132,7 +132,7 @@
            <div itemprop="articleBody">
              
   <section id="rose-ana">
-<span id="builtin-rose-ana"></span><h1><code class="docutils literal notranslate"><span class="pre">rose_ana</span></code><a class="headerlink" href="#rose-ana" title="Permalink to this heading"></a></h1>
+<span id="builtin-rose-ana"></span><h1><code class="docutils literal notranslate"><span class="pre">rose_ana</span></code><a class="headerlink" href="#rose-ana" title="Link to this heading"></a></h1>
 <p>This built-in application runs the <code class="docutils literal notranslate"><span class="pre">rose-ana</span></code> analysis engine.</p>
 <p><code class="docutils literal notranslate"><span class="pre">rose-ana</span></code> performs various configurable analysis steps. For example
 a common usage is to compare two files and report whether they differ
@@ -140,12 +140,12 @@ or not. It can write the details of any comparisons it runs to a
 database in the suite’s log directory to assist with any automated
 updating of control data.</p>
 <section id="invocation">
-<h2>Invocation<a class="headerlink" href="#invocation" title="Permalink to this heading"></a></h2>
+<h2>Invocation<a class="headerlink" href="#invocation" title="Link to this heading"></a></h2>
 <p>In automatic selection mode, this built-in application will be
 invoked automatically if a task has a name that starts with <code class="docutils literal notranslate"><span class="pre">rose_ana*</span></code>.</p>
 </section>
 <section id="analysis-modules">
-<h2>Analysis Modules<a class="headerlink" href="#analysis-modules" title="Permalink to this heading"></a></h2>
+<h2>Analysis Modules<a class="headerlink" href="#analysis-modules" title="Link to this heading"></a></h2>
 <p>The built-in application will search for suitable analysis modules to
 load firstly in the <code class="docutils literal notranslate"><span class="pre">ana</span></code> subdirectory of the <code class="docutils literal notranslate"><span class="pre">rose-ana</span></code> app, then in
 the <code class="docutils literal notranslate"><span class="pre">ana</span></code> subdirectory of the top-most suite directory. Any
@@ -156,7 +156,7 @@ directory) may be specified by setting the
 any built-in comparisons.</p>
 </section>
 <section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
 <p>The application configuration should contain configuration sections which
 describe an analysis step. These sections must follow a particular format:</p>
 <ul class="simple">
@@ -200,27 +200,27 @@ class(es), so their documentation or source code should be consulted for
 details.</p>
 <dl class="rose app">
 <dt class="sig sig-object rose" id="rose:app:rose_ana">
-<em class="property"><span class="pre">Rose</span> <span class="pre">App</span> </em><span class="sig-name descname"><span class="pre">rose_ana</span></span><a class="headerlink" href="#rose:app:rose_ana" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Rose</span> <span class="pre">App</span> </em><span class="sig-name descname"><span class="pre">rose_ana</span></span><a class="headerlink" href="#rose:app:rose_ana" title="Link to this definition"></a></dt>
 <dd><dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_ana[ana:config]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[ana:config]</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:config]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[ana:config]</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:config]" title="Link to this definition"></a></dt>
 <dd><dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_ana[ana:config]grepper-report-limit">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">grepper-report-limit</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:config]grepper-report-limit" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">grepper-report-limit</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:config]grepper-report-limit" title="Link to this definition"></a></dt>
 <dd><p>Limits the number of lines printed when using the
 <a class="reference internal" href="#module-metomi.rose.apps.ana_builtin.grepper" title="metomi.rose.apps.ana_builtin.grepper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">metomi.rose.apps.ana_builtin.grepper</span></code></a> analysis class.</p>
 </dd></dl>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_ana[ana:config]skip-if-all-files-missing">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">skip-if-all-files-missing</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:config]skip-if-all-files-missing" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">skip-if-all-files-missing</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:config]skip-if-all-files-missing" title="Link to this definition"></a></dt>
 <dd><p>Causes the <a class="reference internal" href="#module-metomi.rose.apps.ana_builtin.grepper" title="metomi.rose.apps.ana_builtin.grepper"><code class="xref py py-mod docutils literal notranslate"><span class="pre">metomi.rose.apps.ana_builtin.grepper</span></code></a> class
 to pass if all files to be compared are missing.</p>
 </dd></dl>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_ana[ana:config]kgo-database">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">kgo-database</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:config]kgo-database" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">kgo-database</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:config]kgo-database" title="Link to this definition"></a></dt>
 <dd><p>Turns on the <a class="reference internal" href="../../tutorial/rose/furthertopics/rose-stem.html#the-rose-ana-comparison-database"><span class="std std-ref">Rose Ana Comparison Database</span></a>.</p>
 </dd></dl>
 
@@ -228,12 +228,12 @@ to pass if all files to be compared are missing.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_ana[ana:ANALYSIS_CLASS]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[ana:ANALYSIS_CLASS]</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:ANALYSIS_CLASS]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[ana:ANALYSIS_CLASS]</span></span><a class="headerlink" href="#rose:conf:rose_ana[ana:ANALYSIS_CLASS]" title="Link to this definition"></a></dt>
 <dd><p>Define a new analysis step. <code class="docutils literal notranslate"><span class="pre">ANALYSIS_CLASS</span></code> is the name of
 the analysis class e.g. <code class="docutils literal notranslate"><span class="pre">grepper.FilePattern</span></code>.</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose_ana[ana:ANALYSIS_CLASS]KEY">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">KEY</span></span><em class="property"><span class="pre">=</span> <span class="pre">VALUE</span></em><a class="headerlink" href="#rose:conf:rose_ana[ana:ANALYSIS_CLASS]KEY" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">KEY</span></span><em class="property"><span class="pre">=</span> <span class="pre">VALUE</span></em><a class="headerlink" href="#rose:conf:rose_ana[ana:ANALYSIS_CLASS]KEY" title="Link to this definition"></a></dt>
 <dd><p>Define an argument to <code class="docutils literal notranslate"><span class="pre">ANALYSIS_CLASS</span></code>.</p>
 </dd></dl>
 
@@ -243,9 +243,9 @@ the analysis class e.g. <code class="docutils literal notranslate"><span class="
 
 </section>
 <section id="analysis-classes">
-<h2>Analysis Classes<a class="headerlink" href="#analysis-classes" title="Permalink to this heading"></a></h2>
+<h2>Analysis Classes<a class="headerlink" href="#analysis-classes" title="Link to this heading"></a></h2>
 <p>There is one built-in module of analysis classes called <code class="docutils literal notranslate"><span class="pre">grepper</span></code>.</p>
-<span class="target" id="module-metomi.rose.apps.ana_builtin.grepper"></span><p>The following options can be specified in:</p>
+<p id="module-metomi.rose.apps.ana_builtin.grepper">The following options can be specified in:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../configuration/site-and-user.html#rose:conf:rose.conf[rose-ana]" title="rose:conf:rose.conf[rose-ana]"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose.conf[rose-ana]</span></code></a></p></li>
 <li><p><a class="reference internal" href="#rose:conf:rose_ana[ana:config]" title="rose:conf:rose_ana[ana:config]"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">rose_ana[ana:config]</span></code></a></p></li>
@@ -272,7 +272,7 @@ rather than passed/failed.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.FileCommandPattern">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.apps.ana_builtin.grepper.</span></span><span class="sig-name descname"><span class="pre">FileCommandPattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FileCommandPattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FileCommandPattern" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.apps.ana_builtin.grepper.</span></span><span class="sig-name descname"><span class="pre">FileCommandPattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FileCommandPattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FileCommandPattern" title="Link to this definition"></a></dt>
 <dd><p>Check for occurrences of a particular expression or value in the
 standard output from a command applied to two or more files.</p>
 <dl class="simple">
@@ -293,13 +293,13 @@ specifier to be expanded using the list of files above.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.FileCommandPattern.run_analysis">
-<span class="sig-name descname"><span class="pre">run_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FileCommandPattern.run_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FileCommandPattern.run_analysis" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FileCommandPattern.run_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FileCommandPattern.run_analysis" title="Link to this definition"></a></dt>
 <dd><p>Main analysis routine called from rose_ana.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.FileCommandPattern.search_for_matches">
-<span class="sig-name descname"><span class="pre">search_for_matches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FileCommandPattern.search_for_matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FileCommandPattern.search_for_matches" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">search_for_matches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FileCommandPattern.search_for_matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FileCommandPattern.search_for_matches" title="Link to this definition"></a></dt>
 <dd><p>Run the command on each file then search its output for the pattern;
 returning a dictionary whose keys are the file-names and whose values
 are lists of the groupings (one for each occurrence).</p>
@@ -309,7 +309,7 @@ are lists of the groupings (one for each occurrence).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.FilePattern">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.apps.ana_builtin.grepper.</span></span><span class="sig-name descname"><span class="pre">FilePattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FilePattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FilePattern" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.apps.ana_builtin.grepper.</span></span><span class="sig-name descname"><span class="pre">FilePattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FilePattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FilePattern" title="Link to this definition"></a></dt>
 <dd><p>Check for occurrences of a particular expression or value within the
 contents of two or more files.</p>
 <dl class="simple">
@@ -334,20 +334,20 @@ relative tolerance (otherwise absolute).</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.FilePattern.process_opt_tolerance">
-<span class="sig-name descname"><span class="pre">process_opt_tolerance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FilePattern.process_opt_tolerance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FilePattern.process_opt_tolerance" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">process_opt_tolerance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FilePattern.process_opt_tolerance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FilePattern.process_opt_tolerance" title="Link to this definition"></a></dt>
 <dd><p>Process the tolerance option; a value given either an absolute or
 relative tolerance which a numeric value must lie within.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.FilePattern.run_analysis">
-<span class="sig-name descname"><span class="pre">run_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FilePattern.run_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FilePattern.run_analysis" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FilePattern.run_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FilePattern.run_analysis" title="Link to this definition"></a></dt>
 <dd><p>Main analysis routine called from rose_ana.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.FilePattern.search_for_matches">
-<span class="sig-name descname"><span class="pre">search_for_matches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FilePattern.search_for_matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FilePattern.search_for_matches" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">search_for_matches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#FilePattern.search_for_matches"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.FilePattern.search_for_matches" title="Link to this definition"></a></dt>
 <dd><p>Search the contents of the files for the patterns; returning a
 dictionary whose keys are the file-names and whose values are
 lists of the groupings (one for each occurrence)</p>
@@ -357,7 +357,7 @@ lists of the groupings (one for each occurrence)</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.apps.ana_builtin.grepper.</span></span><span class="sig-name descname"><span class="pre">SingleCommandPattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandPattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.apps.ana_builtin.grepper.</span></span><span class="sig-name descname"><span class="pre">SingleCommandPattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandPattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern" title="Link to this definition"></a></dt>
 <dd><p>Run a single command and then pass/fail depending on the presence of a
 particular expression in that command’s standard output.</p>
 <dl class="simple">
@@ -374,20 +374,20 @@ command.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern.process_opt_pattern">
-<span class="sig-name descname"><span class="pre">process_opt_pattern</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandPattern.process_opt_pattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern.process_opt_pattern" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">process_opt_pattern</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandPattern.process_opt_pattern"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern.process_opt_pattern" title="Link to this definition"></a></dt>
 <dd><p>Process the pattern option; a regular expression which will be
 checked against the command output.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern.run_analysis">
-<span class="sig-name descname"><span class="pre">run_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandPattern.run_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern.run_analysis" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandPattern.run_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern.run_analysis" title="Link to this definition"></a></dt>
 <dd><p>Main analysis routine called from rose_ana.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern.run_command_and_check">
-<span class="sig-name descname"><span class="pre">run_command_and_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandPattern.run_command_and_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern.run_command_and_check" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_command_and_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandPattern.run_command_and_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandPattern.run_command_and_check" title="Link to this definition"></a></dt>
 <dd><p>Run the command and check for the presence of the pattern in its
 standard output.</p>
 </dd></dl>
@@ -396,7 +396,7 @@ standard output.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.apps.ana_builtin.grepper.</span></span><span class="sig-name descname"><span class="pre">SingleCommandStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.apps.ana_builtin.grepper.</span></span><span class="sig-name descname"><span class="pre">SingleCommandStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_app</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task_options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus" title="Link to this definition"></a></dt>
 <dd><p>Run a shell command, passing or failing depending on the exit
 status of that command.</p>
 <dl class="simple">
@@ -417,33 +417,33 @@ output for use with the comparisons database (if active).</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.check_for_skip">
-<span class="sig-name descname"><span class="pre">check_for_skip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.check_for_skip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.check_for_skip" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">check_for_skip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.check_for_skip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.check_for_skip" title="Link to this definition"></a></dt>
 <dd><p>If the user’s config options specified that the task should be
 ignored if all of its files were missing, set skipped attribute here.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.get_config_opts">
-<span class="sig-name descname"><span class="pre">get_config_opts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.get_config_opts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.get_config_opts" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_config_opts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.get_config_opts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.get_config_opts" title="Link to this definition"></a></dt>
 <dd><p>Process any configuration options.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.process_opt_command">
-<span class="sig-name descname"><span class="pre">process_opt_command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.process_opt_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.process_opt_command" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">process_opt_command</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.process_opt_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.process_opt_command" title="Link to this definition"></a></dt>
 <dd><p>Process the command option; this is the (shell) command that will
 be run for this task.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.process_opt_files">
-<span class="sig-name descname"><span class="pre">process_opt_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.process_opt_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.process_opt_files" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">process_opt_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.process_opt_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.process_opt_files" title="Link to this definition"></a></dt>
 <dd><p>Process the files option; a list of one or more filenames.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.process_opt_kgo">
-<span class="sig-name descname"><span class="pre">process_opt_kgo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.process_opt_kgo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.process_opt_kgo" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">process_opt_kgo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.process_opt_kgo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.process_opt_kgo" title="Link to this definition"></a></dt>
 <dd><p>Process the KGO option; an index indicating which file (if any) is
 the KGO (Known Good Output) - this may be needed later to assist in
 updating of test results.</p>
@@ -451,31 +451,31 @@ updating of test results.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.read_file">
-<span class="sig-name descname"><span class="pre">read_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.read_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.read_file" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">read_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.read_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.read_file" title="Link to this definition"></a></dt>
 <dd><p>Return the content of a given file as a list of lines.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.run_analysis">
-<span class="sig-name descname"><span class="pre">run_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.run_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.run_analysis" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.run_analysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.run_analysis" title="Link to this definition"></a></dt>
 <dd><p>Main analysis routine called from rose_ana.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.run_command">
-<span class="sig-name descname"><span class="pre">run_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.run_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.run_command" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.run_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.run_command" title="Link to this definition"></a></dt>
 <dd><p>Simple command runner; returns output error and return code.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.run_command_and_check">
-<span class="sig-name descname"><span class="pre">run_command_and_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.run_command_and_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.run_command_and_check" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">run_command_and_check</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.run_command_and_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.run_command_and_check" title="Link to this definition"></a></dt>
 <dd><p>Run the command and return based on the output.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.update_kgo">
-<span class="sig-name descname"><span class="pre">update_kgo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.update_kgo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.update_kgo" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_kgo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/apps/ana_builtin/grepper.html#SingleCommandStatus.update_kgo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.apps.ana_builtin.grepper.SingleCommandStatus.update_kgo" title="Link to this definition"></a></dt>
 <dd><p>Update the KGO database with the status of any files marked by the
 kgo_file option (i.e. whether they have passed/failed the test.</p>
 </dd></dl>

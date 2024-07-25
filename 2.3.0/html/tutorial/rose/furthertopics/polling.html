@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Polling &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -136,7 +136,7 @@
           <li class="breadcrumb-item"><a href="index.html">Further Topics</a></li>
       <li class="breadcrumb-item active">Polling</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/tutorial/rose/furthertopics/polling.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/tutorial/rose/furthertopics/polling.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -145,7 +145,7 @@
            <div itemprop="articleBody">
              
   <section id="polling">
-<h1>Polling<a class="headerlink" href="#polling" title="Permalink to this heading"></a></h1>
+<h1>Polling<a class="headerlink" href="#polling" title="Link to this heading"></a></h1>
 <p>Polling allows you to check for some condition to be met prior to running the
 main command in an app without the need for additional entries in the
 dependencies graph.</p>
@@ -153,7 +153,7 @@ dependencies graph.</p>
 existence of a particular file before running the main command which
 requires said file.</p>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>Create a new Rose suite configuration:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">cylc</span><span class="o">-</span><span class="n">src</span><span class="o">/</span><span class="n">polling</span>
 <span class="n">cd</span> <span class="o">~/</span><span class="n">cylc</span><span class="o">-</span><span class="n">src</span><span class="o">/</span><span class="n">polling</span>
@@ -202,7 +202,7 @@ file that looks like this:</p>
 </div>
 </section>
 <section id="adding-polling">
-<h2>Adding Polling<a class="headerlink" href="#adding-polling" title="Permalink to this heading"></a></h2>
+<h2>Adding Polling<a class="headerlink" href="#adding-polling" title="Link to this heading"></a></h2>
 <p>In the source directory create an <code class="docutils literal notranslate"><span class="pre">app</span></code> directory.</p>
 <p>In the <code class="docutils literal notranslate"><span class="pre">app</span></code> directory create a directory called <code class="docutils literal notranslate"><span class="pre">bob</span></code>.</p>
 <p>In the newly-created <code class="docutils literal notranslate"><span class="pre">bob</span></code> directory, create a <a class="reference internal" href="../../../api/configuration/application.html#rose:file:rose-app.conf" title="rose:file:rose-app.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-app.conf</span></code></a>
@@ -240,7 +240,7 @@ the top as that should contain the main command(s) being run by the app.</p>
 been met, allowing the main command in <code class="docutils literal notranslate"><span class="pre">bob</span></code> to be run.</p>
 </section>
 <section id="improving-the-polling">
-<h2>Improving The Polling<a class="headerlink" href="#improving-the-polling" title="Permalink to this heading"></a></h2>
+<h2>Improving The Polling<a class="headerlink" href="#improving-the-polling" title="Link to this heading"></a></h2>
 <p>At present we have specified our own routine for testing for the existence
 of a particular file using the <code class="docutils literal notranslate"><span class="pre">test</span></code> option. However, Rose provides a
 simpler method for doing this.</p>
@@ -259,7 +259,7 @@ specify a list of files to check the existence of. Save your changes, install
 and run the workflow to confirm it still works.</p>
 </section>
 <section id="available-polling-types">
-<h2>Available Polling Types<a class="headerlink" href="#available-polling-types" title="Permalink to this heading"></a></h2>
+<h2>Available Polling Types<a class="headerlink" href="#available-polling-types" title="Link to this heading"></a></h2>
 <p>Test and all-files are just two of the available polling options:</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">all-files</span></code></dt><dd><p>Tests if all of the files in a list exist.</p>
@@ -281,7 +281,7 @@ logic.</em></p>
 </div>
 </section>
 <section id="possible-uses-for-polling">
-<h2>Possible Uses For Polling<a class="headerlink" href="#possible-uses-for-polling" title="Permalink to this heading"></a></h2>
+<h2>Possible Uses For Polling<a class="headerlink" href="#possible-uses-for-polling" title="Link to this heading"></a></h2>
 <p>Depending on your needs, possible uses for polling might include:</p>
 <ul class="simple">
 <li><p>Checking for required output from a long-running task rather than waiting

@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>metomi.rose.popen &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -24,9 +24,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -228,7 +228,9 @@
         <span class="k">return</span> <span class="n">ret</span>
 
 
-<div class="viewcode-block" id="RosePopener"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener">[docs]</a><span class="k">class</span> <span class="nc">RosePopener</span><span class="p">:</span>
+<div class="viewcode-block" id="RosePopener">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener">[docs]</a>
+<span class="k">class</span> <span class="nc">RosePopener</span><span class="p">:</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Wrap Python&#39;s subprocess.Popen.&quot;&quot;&quot;</span>
 
@@ -251,7 +253,9 @@
     <span class="p">}</span>
     <span class="n">ENVS_OF_CMDS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;editor&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;VISUAL&quot;</span><span class="p">,</span> <span class="s2">&quot;EDITOR&quot;</span><span class="p">]}</span>
 
-<div class="viewcode-block" id="RosePopener.shlex_join"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.shlex_join">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="RosePopener.shlex_join">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.shlex_join">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">shlex_join</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert a list of strings into a shell command, safely quoting</span>
 <span class="sd">        when the strings contain whitespace and special chars.</span>
@@ -270,7 +274,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">shlex</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RosePopener.list_to_shell_str"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.list_to_shell_str">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="RosePopener.list_to_shell_str">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.list_to_shell_str">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">list_to_shell_str</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert a list of strings into a shell command, escaping whitespace</span>
 <span class="sd">        and quotes, but otherwise allowing special chars so user defined</span>
@@ -293,16 +300,22 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([</span><span class="se">\&quot;</span><span class="s2">&#39;\s])&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">\1&quot;</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event_handler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">event_handler</span> <span class="o">=</span> <span class="n">event_handler</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cmds</span> <span class="o">=</span> <span class="p">{}</span>
 
-<div class="viewcode-block" id="RosePopener.handle_event"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.handle_event">[docs]</a>    <span class="k">def</span> <span class="nf">handle_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="RosePopener.handle_event">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.handle_event">[docs]</a>
+    <span class="k">def</span> <span class="nf">handle_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Handle an event using the runner&#39;s event handler.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">event_handler</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">event_handler</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RosePopener.get_cmd"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.get_cmd">[docs]</a>    <span class="k">def</span> <span class="nf">get_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="RosePopener.get_cmd">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.get_cmd">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return default options and arguments of a known command as a list.</span>
 
 <span class="sd">        If a setting [external] &lt;key&gt; is defined in the site/user</span>
@@ -334,7 +347,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">cmds</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">CMDS</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmds</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RosePopener.run"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RosePopener.run">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run">[docs]</a>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide a Rose-friendly interface to subprocess.Popen.</span>
 
 <span class="sd">        Return ret_code, out, err.</span>
@@ -351,7 +367,10 @@
 
         <span class="k">return</span> <span class="n">retcode</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span></div>
 
-<div class="viewcode-block" id="RosePopener.run_bg"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_bg">[docs]</a>    <span class="k">def</span> <span class="nf">run_bg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RosePopener.run_bg">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_bg">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_bg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide a Rose-friendly interface to subprocess.Popen.</span>
 
 <span class="sd">        Return a subprocess.Popen object.</span>
@@ -382,7 +401,10 @@
             <span class="k">raise</span> <span class="n">RosePopenError</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">proc</span></div>
 
-<div class="viewcode-block" id="RosePopener.run_nohup_gui"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_nohup_gui">[docs]</a>    <span class="k">def</span> <span class="nf">run_nohup_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RosePopener.run_nohup_gui">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_nohup_gui">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_nohup_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Launch+detach a GUI command with nohup.</span>
 
 <span class="sd">        Launch the GUI command with `nohup bash -c &#39;exec ...&#39;` redirecting</span>
@@ -409,7 +431,10 @@
             <span class="n">stderr</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">devnull</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="RosePopener.run_ok"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_ok">[docs]</a>    <span class="k">def</span> <span class="nf">run_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RosePopener.run_ok">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_ok">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Same as RosePopener.run, but raise RosePopenError if ret_code != 1.</span>
 
 <span class="sd">        Return out, err.</span>
@@ -422,7 +447,10 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span></div>
 
-<div class="viewcode-block" id="RosePopener.run_simple"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_simple">[docs]</a>    <span class="k">def</span> <span class="nf">run_simple</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RosePopener.run_simple">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_simple">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_simple</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Similar to RosePopener.run_ok, but event handle stdout and stderr.</span>
 
 <span class="sd">        kwargs[&quot;stderr_level&quot;] -- set event level of stderr</span>
@@ -443,7 +471,10 @@
         <span class="k">if</span> <span class="n">stderr</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">handle_event</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">stderr_level</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RosePopener.which"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.which">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="RosePopener.which">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.which">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">which</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Search an executable file name in PATH, and return its full path.</span>
 
@@ -458,7 +489,10 @@
             <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">access</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">F_OK</span> <span class="o">|</span> <span class="n">os</span><span class="o">.</span><span class="n">X_OK</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">file_name</span></div>
 
-<div class="viewcode-block" id="RosePopener.run_bg_async"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_bg_async">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_bg_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RosePopener.run_bg_async">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_bg_async">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_bg_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide a Rose-friendly interface to subprocess.Popen.</span>
 
 <span class="sd">        Return a subprocess.Popen object.</span>
@@ -490,7 +524,10 @@
             <span class="k">raise</span> <span class="n">RosePopenError</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">proc</span></div>
 
-<div class="viewcode-block" id="RosePopener.run_async"><a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_async">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+<div class="viewcode-block" id="RosePopener.run_async">
+<a class="viewcode-back" href="../../../api/other.html#metomi.rose.popen.RosePopener.run_async">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Provide a Rose-friendly interface to subprocess.Popen.</span>
 
 <span class="sd">        Return ret_code, out, err.</span>
@@ -506,6 +543,7 @@
         <span class="k">await</span> <span class="n">proc</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">proc</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span></div>
 
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">run_ok_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">ret_code</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_async</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ret_code</span><span class="p">:</span>
@@ -519,6 +557,7 @@
         <span class="k">return</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span>
 
     <span class="fm">__call__</span> <span class="o">=</span> <span class="n">run_ok</span></div>
+
 </pre></div>
 
            </div>

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Rosie &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -136,7 +136,7 @@
           <li class="breadcrumb-item"><a href="index.html">Further Topics</a></li>
       <li class="breadcrumb-item active">Rosie</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/tutorial/rose/furthertopics/rosie.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/tutorial/rose/furthertopics/rosie.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -145,7 +145,7 @@
            <div itemprop="articleBody">
              
   <section id="rosie">
-<span id="tutorial-rosie"></span><h1>Rosie<a class="headerlink" href="#rosie" title="Permalink to this heading"></a></h1>
+<span id="tutorial-rosie"></span><h1>Rosie<a class="headerlink" href="#rosie" title="Link to this heading"></a></h1>
 <p>Rosie is a tool for managing Rose suite configurations which is included in
 Rose. The purpose of Rosie is to facilitate suite development, management and
 collaboration.
@@ -161,7 +161,7 @@ control awareness is important. For more information on FCM version
 control see the <a class="reference external" href="http://metomi.github.io/fcm/doc/user_guide/">FCM User Guide</a>.</p>
 </div>
 <section id="rosie-suites">
-<h2>Rosie Suites<a class="headerlink" href="#rosie-suites" title="Permalink to this heading"></a></h2>
+<h2>Rosie Suites<a class="headerlink" href="#rosie-suites" title="Link to this heading"></a></h2>
 <p>A Rosie suite is a Rose suite configuration which is managed by the Rosie
 system.</p>
 <p>Rosie suites can be created by the command:</p>
@@ -178,7 +178,7 @@ the <code class="docutils literal notranslate"><span class="pre">~/roses</span><
 elsewhere.</p>
 </section>
 <section id="version-control">
-<h2>Version Control<a class="headerlink" href="#version-control" title="Permalink to this heading"></a></h2>
+<h2>Version Control<a class="headerlink" href="#version-control" title="Link to this heading"></a></h2>
 <p>In Rosie suites the <a class="reference external" href="https://cylc.github.io/cylc-doc/stable/html/glossary.html#term-run-directory" title="(in Cylc v8.3)"><span class="xref std std-term">run directory</span></a> is added to <a class="reference internal" href="#version-control">version control</a>
 using <a class="reference external" href="https://metomi.github.io/fcm/doc/">FCM</a>.</p>
 <p>FCM is a <a class="reference external" href="http://subversion.apache.org/">SVN</a> (Subversion) wrapper which provides a standard working
@@ -186,7 +186,7 @@ practice for SVN projects. FCM implements all of the SVN commands as well as
 additional functionality. See the <a class="reference external" href="http://metomi.github.io/fcm/doc/user_guide/">FCM User Guide</a> for more information.</p>
 </section>
 <section id="suite-naming">
-<h2>Suite Naming<a class="headerlink" href="#suite-naming" title="Permalink to this heading"></a></h2>
+<h2>Suite Naming<a class="headerlink" href="#suite-naming" title="Link to this heading"></a></h2>
 <p>Each Rosie suite is assigned a unique name made up of a <em>prefix</em> followed by
 a hyphen and then an <em>identifier</em> made up of two characters and three
 numbers, e.g:</p>
@@ -216,7 +216,7 @@ site specific and are configured by the
 point at the <code class="docutils literal notranslate"><span class="pre">https://code.metoffice.gov.uk</span></code> repository.</p>
 </section>
 <section id="the-rose-suite-info-file">
-<h2>The <a class="reference internal" href="../../../api/configuration/suite.html#rose:file:rose-suite.info" title="rose:file:rose-suite.info"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-suite.info</span></code></a> File<a class="headerlink" href="#the-rose-suite-info-file" title="Permalink to this heading"></a></h2>
+<h2>The <a class="reference internal" href="../../../api/configuration/suite.html#rose:file:rose-suite.info" title="rose:file:rose-suite.info"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-suite.info</span></code></a> File<a class="headerlink" href="#the-rose-suite-info-file" title="Link to this heading"></a></h2>
 <p>All Rosie suites require a <a class="reference internal" href="../../../api/configuration/suite.html#rose:file:rose-suite.info" title="rose:file:rose-suite.info"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-suite.info</span></code></a> file. This file
 provides information about the suite for use in the suite management and
 version control systems. The <a class="reference internal" href="../../../api/configuration/suite.html#rose:file:rose-suite.info" title="rose:file:rose-suite.info"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-suite.info</span></code></a> file uses the
@@ -235,7 +235,7 @@ suite.</p>
 </dl>
 </section>
 <section id="managing-suites">
-<h2>Managing Suites<a class="headerlink" href="#managing-suites" title="Permalink to this heading"></a></h2>
+<h2>Managing Suites<a class="headerlink" href="#managing-suites" title="Link to this heading"></a></h2>
 <p>Rosie provides commands for managing suites, including:</p>
 <dl class="simple">
 <dt><a class="reference internal" href="../../../api/command-reference.html#command-rosie-checkout"><span class="std std-ref">rosie checkout</span></a></dt><dd><p>Creates a local copy of a suite.</p>

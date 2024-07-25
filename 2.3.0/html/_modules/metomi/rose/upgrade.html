@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>metomi.rose.upgrade &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -24,9 +24,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -179,7 +179,9 @@
         <span class="k">return</span> <span class="n">SAME_UPGRADE_VERSION</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 
-<div class="viewcode-block" id="MacroUpgrade"><a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade">[docs]</a><span class="k">class</span> <span class="nc">MacroUpgrade</span><span class="p">(</span><span class="n">metomi</span><span class="o">.</span><span class="n">rose</span><span class="o">.</span><span class="n">macro</span><span class="o">.</span><span class="n">MacroBase</span><span class="p">):</span>
+<div class="viewcode-block" id="MacroUpgrade">
+<a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade">[docs]</a>
+<span class="k">class</span> <span class="nc">MacroUpgrade</span><span class="p">(</span><span class="n">metomi</span><span class="o">.</span><span class="n">rose</span><span class="o">.</span><span class="n">macro</span><span class="o">.</span><span class="n">MacroBase</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Class derived from MacroBase to aid upgrade functionality.&quot;&quot;&quot;</span>
 
@@ -196,7 +198,9 @@
     <span class="n">WARNING_ADD_CLASH</span> <span class="o">=</span> <span class="s2">&quot;Warning: cannot add </span><span class="si">{0}</span><span class="s2">: clash with </span><span class="si">{1}</span><span class="s2">&quot;</span>
     <span class="n">UPGRADE_RESOURCE_DIR</span> <span class="o">=</span> <span class="n">MACRO_UPGRADE_RESOURCE_DIR</span>
 
-<div class="viewcode-block" id="MacroUpgrade.act_from_files"><a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.act_from_files">[docs]</a>    <span class="k">def</span> <span class="nf">act_from_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">downgrade</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="MacroUpgrade.act_from_files">
+<a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.act_from_files">[docs]</a>
+    <span class="k">def</span> <span class="nf">act_from_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">downgrade</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Parse a change configuration into actions.</span>
 
 <span class="sd">        Searches for:</span>
@@ -252,6 +256,7 @@
                 <span class="k">continue</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">remove_setting</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="p">[</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">])</span></div>
 
+
     <span class="k">def</span> <span class="nf">_get_config_resources</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get macro configuration resources.&quot;&quot;&quot;</span>
         <span class="n">macro_file</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
@@ -271,7 +276,9 @@
                 <span class="n">file_map</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">file_map</span>
 
-<div class="viewcode-block" id="MacroUpgrade.add_setting"><a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.add_setting">[docs]</a>    <span class="k">def</span> <span class="nf">add_setting</span><span class="p">(</span>
+<div class="viewcode-block" id="MacroUpgrade.add_setting">
+<a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.add_setting">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_setting</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">config</span><span class="p">,</span>
         <span class="n">keys</span><span class="p">,</span>
@@ -397,7 +404,10 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_report</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MacroUpgrade.change_setting_value"><a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.change_setting_value">[docs]</a>    <span class="k">def</span> <span class="nf">change_setting_value</span><span class="p">(</span>
+
+<div class="viewcode-block" id="MacroUpgrade.change_setting_value">
+<a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.change_setting_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">change_setting_value</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">forced</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">None</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Change a setting (option) value in the configuration.</span>
@@ -443,7 +453,10 @@
             <span class="n">node</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="n">comments</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_report</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MacroUpgrade.get_setting_value"><a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.get_setting_value">[docs]</a>    <span class="k">def</span> <span class="nf">get_setting_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">no_ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MacroUpgrade.get_setting_value">
+<a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.get_setting_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_setting_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">no_ignore</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the value of a setting or ``None`` if not set.</span>
 
 <span class="sd">        Args:</span>
@@ -463,7 +476,10 @@
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">([</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">])</span><span class="o">.</span><span class="n">value</span></div>
 
-<div class="viewcode-block" id="MacroUpgrade.remove_setting"><a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.remove_setting">[docs]</a>    <span class="k">def</span> <span class="nf">remove_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MacroUpgrade.remove_setting">
+<a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.remove_setting">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove a setting from the configuration.</span>
 
 <span class="sd">        Args:</span>
@@ -488,7 +504,10 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">_remove_setting</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="p">[</span><span class="n">section</span><span class="p">,</span> <span class="n">opt</span><span class="p">],</span> <span class="n">info</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remove_setting</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="p">[</span><span class="n">section</span><span class="p">,</span> <span class="n">option</span><span class="p">],</span> <span class="n">info</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MacroUpgrade.rename_setting"><a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.rename_setting">[docs]</a>    <span class="k">def</span> <span class="nf">rename_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">new_keys</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MacroUpgrade.rename_setting">
+<a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.rename_setting">[docs]</a>
+    <span class="k">def</span> <span class="nf">rename_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">new_keys</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Rename a setting in the configuration.</span>
 
 <span class="sd">        Args:</span>
@@ -564,7 +583,10 @@
             <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">remove_setting</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="MacroUpgrade.enable_setting"><a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.enable_setting">[docs]</a>    <span class="k">def</span> <span class="nf">enable_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="MacroUpgrade.enable_setting">
+<a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.enable_setting">[docs]</a>
+    <span class="k">def</span> <span class="nf">enable_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Enable a setting in the configuration.</span>
 
 <span class="sd">        This will reset ignored and trigger ignored settings back to the</span>
@@ -589,7 +611,10 @@
             <span class="n">state</span><span class="o">=</span><span class="n">metomi</span><span class="o">.</span><span class="n">rose</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">ConfigNode</span><span class="o">.</span><span class="n">STATE_NORMAL</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="MacroUpgrade.ignore_setting"><a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.ignore_setting">[docs]</a>    <span class="k">def</span> <span class="nf">ignore_setting</span><span class="p">(</span>
+
+<div class="viewcode-block" id="MacroUpgrade.ignore_setting">
+<a class="viewcode-back" href="../../../api/rose-upgrader-macros.html#metomi.rose.upgrade.MacroUpgrade.ignore_setting">[docs]</a>
+    <span class="k">def</span> <span class="nf">ignore_setting</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">config</span><span class="p">,</span>
         <span class="n">keys</span><span class="p">,</span>
@@ -617,6 +642,7 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ignore_setting</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">keys</span><span class="p">),</span> <span class="n">info</span><span class="o">=</span><span class="n">info</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="n">state</span><span class="p">)</span></div>
+
 
     <span class="k">def</span> <span class="nf">_ignore_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the ignored state of a setting, if it exists.&quot;&quot;&quot;</span>
@@ -653,6 +679,7 @@
 
     <span class="k">def</span> <span class="nf">_get_section_option_from_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keys</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">keys</span> <span class="o">+</span> <span class="p">[</span><span class="kc">None</span><span class="p">])[:</span><span class="mi">2</span><span class="p">]</span></div>
+
 
 
 <span class="k">class</span> <span class="nc">MacroUpgradeManager</span><span class="p">:</span>

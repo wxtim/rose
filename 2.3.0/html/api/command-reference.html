@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Command Reference &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../_static/js/spoiler.js?v=12631137"></script>
@@ -257,7 +257,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Command Reference</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/api/command-reference.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/api/command-reference.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -266,11 +266,11 @@
            <div itemprop="articleBody">
              
   <section id="command-reference">
-<span id="id1"></span><h1>Command Reference<a class="headerlink" href="#command-reference" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1>Command Reference<a class="headerlink" href="#command-reference" title="Link to this heading"></a></h1>
 <section id="rose-commands">
-<h2>Rose Commands<a class="headerlink" href="#rose-commands" title="Permalink to this heading"></a></h2>
+<h2>Rose Commands<a class="headerlink" href="#rose-commands" title="Link to this heading"></a></h2>
 <section id="rose-app-run">
-<span id="command-rose-app-run"></span><h3>rose app-run<a class="headerlink" href="#rose-app-run" title="Permalink to this heading"></a></h3>
+<span id="command-rose-app-run"></span><h3>rose app-run<a class="headerlink" href="#rose-app-run" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>app-run<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>--<span class="o">]</span><span class="w"> </span><span class="o">[</span>COMMAND<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
@@ -292,7 +292,7 @@ command.</p></li>
 <li><p>Invoke the command specified in <code class="docutils literal notranslate"><span class="pre">[command]default</span></code>.</p></li>
 </ol>
 <section id="options">
-<h4>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#options" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>--app-mode=MODE       Run a command or builtin application identified by 
                       `MODE`. The default `MODE` is `command`.
 -c KEY, --command-key=KEY
@@ -333,7 +333,7 @@ command.</p></li>
 </div>
 </section>
 <section id="environment-variables">
-<h4>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading"></a></h4>
+<h4>Environment variables<a class="headerlink" href="#environment-variables" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>optional ROSE_APP_COMMAND_KEY</dt><dd><p>Switch to a particular command specified in <code class="docutils literal notranslate"><span class="pre">[command]KEY</span></code>.</p>
 </dd>
@@ -348,7 +348,7 @@ configuration. The configurations are applied first-to-last.</p>
 </section>
 </section>
 <section id="rose-app-upgrade">
-<span id="command-rose-app-upgrade"></span><h3>rose app-upgrade<a class="headerlink" href="#rose-app-upgrade" title="Permalink to this heading"></a></h3>
+<span id="command-rose-app-upgrade"></span><h3>rose app-upgrade<a class="headerlink" href="#rose-app-upgrade" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>app-upgrade<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>VERSION<span class="o">]</span>
 </pre></div>
 </div>
@@ -362,7 +362,7 @@ configuration. The configurations are applied first-to-last.</p>
 each one, combine with the main, upgrade it, and re-create it as
 a diff vs the upgraded main configuration.</p>
 <section id="id2">
-<h4>Options<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="o">--</span><span class="nb">all</span><span class="o">-</span><span class="n">versions</span>    <span class="n">Use</span> <span class="nb">all</span> <span class="n">tagged</span> <span class="n">versions</span><span class="o">.</span>
 <span class="o">-</span><span class="n">C</span> <span class="n">DIR</span><span class="p">,</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">DIR</span>  <span class="n">Specify</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">directory</span> <span class="n">of</span> <span class="n">the</span> 
                       <span class="n">application</span><span class="o">.</span>
@@ -386,7 +386,7 @@ a diff vs the upgraded main configuration.</p>
 </div>
 </section>
 <section id="arguments">
-<h4>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading"></a></h4>
+<h4>Arguments<a class="headerlink" href="#arguments" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>VERSION</dt><dd><p>A version to change to. If no version is specified, show available
 versions. If <code class="docutils literal notranslate"><span class="pre">--non-interactive</span></code> is used, use the latest version
@@ -396,7 +396,7 @@ the earliest version available.</p>
 </dl>
 </section>
 <section id="id3">
-<h4>Environment variables<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
+<h4>Environment variables<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>optional ROSE_META_PATH</dt><dd><p>Prepend <code class="docutils literal notranslate"><span class="pre">$ROSE_META_PATH</span></code> to the metadata search path.</p>
 </dd>
@@ -404,13 +404,13 @@ the earliest version available.</p>
 </section>
 </section>
 <section id="rose-check-software">
-<span id="command-rose-check-software"></span><h3>rose check-software<a class="headerlink" href="#rose-check-software" title="Permalink to this heading"></a></h3>
+<span id="command-rose-check-software"></span><h3>rose check-software<a class="headerlink" href="#rose-check-software" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rose<span class="w"> </span>check-software<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
 </div>
 <p>Check software dependencies for the rose documentation builder.</p>
 <section id="id4">
-<h4>Options<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">doc</span>   <span class="n">Only</span> <span class="n">check</span> <span class="n">dependencies</span> <span class="k">for</span> <span class="n">the</span> <span class="n">documentation</span> <span class="n">builder</span><span class="o">.</span>
 <span class="o">--</span><span class="n">rst</span>   <span class="n">Output</span> <span class="n">dependencies</span> <span class="k">as</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">rst</span> <span class="nb">format</span><span class="o">.</span>
 </pre></div>
@@ -418,14 +418,14 @@ the earliest version available.</p>
 </section>
 </section>
 <section id="rose-config">
-<span id="command-rose-config"></span><h3>rose config<a class="headerlink" href="#rose-config" title="Permalink to this heading"></a></h3>
+<span id="command-rose-config"></span><h3>rose config<a class="headerlink" href="#rose-config" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>config<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 </div>
 <p>Parse and print rose configuration files.</p>
 <p>With no option and no argument, print the rose site + user configuration.</p>
 <section id="examples">
-<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h4>
+<h4>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the value of OPTION in SECTION.</span>
 rose<span class="w"> </span>config<span class="w"> </span>SECTION<span class="w"> </span>OPTION
 
@@ -466,7 +466,7 @@ rose<span class="w"> </span>config<span class="w"> </span>--meta-key<span class=
 </div>
 </section>
 <section id="id5">
-<h4>Options<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>--default=VALUE       Specify a default value
 -E, --env-var-process
                       Process environment variable substitution.
@@ -502,7 +502,7 @@ rose<span class="w"> </span>config<span class="w"> </span>--meta-key<span class=
 </div>
 </section>
 <section id="id6">
-<h4>Environment variables<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h4>
+<h4>Environment variables<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>optional ROSE_META_PATH</dt><dd><p>Prepend <code class="docutils literal notranslate"><span class="pre">$ROSE_META_PATH</span></code> to the metadata search path.</p>
 </dd>
@@ -510,13 +510,13 @@ rose<span class="w"> </span>config<span class="w"> </span>--meta-key<span class=
 </section>
 </section>
 <section id="rose-config-diff">
-<span id="command-rose-config-diff"></span><h3>rose config-diff<a class="headerlink" href="#rose-config-diff" title="Permalink to this heading"></a></h3>
+<span id="command-rose-config-diff"></span><h3>rose config-diff<a class="headerlink" href="#rose-config-diff" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>config-diff<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>FILE1<span class="w"> </span>FILE2<span class="w"> </span><span class="o">[</span>--<span class="w"> </span><span class="o">[</span>DIFF_OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>DIFF_ARGUMENTS<span class="o">]]</span>
 </pre></div>
 </div>
 <p>Display the metadata-annotated difference between two Rose config files.</p>
 <section id="id7">
-<h4>Examples<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h4>
+<h4>Examples<a class="headerlink" href="#id7" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display the metadata-annotated diff between two Rose config files.</span>
 rose<span class="w"> </span>config-diff<span class="w"> </span>FILE1<span class="w"> </span>FILE2
 
@@ -535,7 +535,7 @@ rose<span class="w"> </span>config-diff<span class="w"> </span>FILE1<span class=
 </div>
 </section>
 <section id="id8">
-<h4>Options<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>--diff-tool=DIFF_TOOL
                       Specify an alternate diff tool.
 
@@ -571,14 +571,14 @@ rose<span class="w"> </span>config-diff<span class="w"> </span>FILE1<span class=
 </div>
 </section>
 <section id="id9">
-<h4>Environment variables<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h4>
+<h4>Environment variables<a class="headerlink" href="#id9" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>optional ROSE_META_PATH</dt><dd><p>Prepend <code class="docutils literal notranslate"><span class="pre">$ROSE_META_PATH</span></code> to the metadata search path.</p>
 </dd>
 </dl>
 </section>
 <section id="id10">
-<h4>Arguments<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h4>
+<h4>Arguments<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>PATH1, PATH2</dt><dd><p>Two Rose configuration files or directories to compare.
 If the path is a directory, look underneath for a Rose configuration
@@ -590,7 +590,7 @@ diff tool.</p>
 </dl>
 </section>
 <section id="configuration">
-<h4>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h4>
+<h4>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h4>
 <dl>
 <dt>[external]diff-tool, [external]gdiff-tool</dt><dd><p>You can override the default non-graphical and graphical diff tools
 by setting e.g:</p>
@@ -626,7 +626,7 @@ You can also set shorthand ignore patterns by setting e.g.:</p>
 </section>
 </section>
 <section id="rose-config-dump">
-<span id="command-rose-config-dump"></span><h3>rose config-dump<a class="headerlink" href="#rose-config-dump" title="Permalink to this heading"></a></h3>
+<span id="command-rose-config-dump"></span><h3>rose config-dump<a class="headerlink" href="#rose-config-dump" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>config-dump<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 </div>
@@ -636,7 +636,7 @@ pretty-printing.</p>
 <p>By default, it recursively loads and dumps all <code class="docutils literal notranslate"><span class="pre">rose-*.conf</span></code> files in the
 current working directory.</p>
 <section id="id11">
-<h4>Examples<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h4>
+<h4>Examples<a class="headerlink" href="#id11" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rose<span class="w"> </span>config-dump
 rose<span class="w"> </span>config-dump<span class="w"> </span>-C<span class="w"> </span>/path/to/conf/dir
 rose<span class="w"> </span>config-dump<span class="w"> </span>-f<span class="w"> </span>/path/to/file1<span class="w"> </span>-f<span class="w"> </span>/path/to/file2
@@ -644,7 +644,7 @@ rose<span class="w"> </span>config-dump<span class="w"> </span>-f<span class="w"
 </div>
 </section>
 <section id="id12">
-<h4>Options<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id12" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-C DIR, --config=DIR  Specify the configuration directory of the 
                       application.
 
@@ -665,7 +665,7 @@ rose<span class="w"> </span>config-dump<span class="w"> </span>-f<span class="w"
 </section>
 </section>
 <section id="rose-date">
-<span id="command-rose-date"></span><h3>rose date<a class="headerlink" href="#rose-date" title="Permalink to this heading"></a></h3>
+<span id="command-rose-date"></span><h3>rose date<a class="headerlink" href="#rose-date" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Print date time point</span>
 <span class="c1"># 1.1 Current date time with an optional offset</span>
 rose<span class="w"> </span>date<span class="w"> </span><span class="o">[</span>--offset<span class="o">=</span>OFFSET<span class="o">]</span>
@@ -709,7 +709,7 @@ point with an optional offset.</p></li>
 <li><p>With 2 arguments. Print the duration between the 2 arguments.</p></li>
 </ol>
 <section id="id13">
-<h4>Options<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id13" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>--as-total=TIME_FORMAT
     Used to express an ISO8601 duration in the specified time format,
     hours `H`, minutes `M` or seconds `S`.
@@ -734,7 +734,7 @@ point with an optional offset.</p></li>
 </div>
 </section>
 <section id="calendar-mode">
-<h4>Calendar mode<a class="headerlink" href="#calendar-mode" title="Permalink to this heading"></a></h4>
+<h4>Calendar mode<a class="headerlink" href="#calendar-mode" title="Link to this heading"></a></h4>
 <p>The calendar mode is determined (in order) by:</p>
 <ol class="arabic simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">--calendar=MODE</span></code> option.</p></li>
@@ -747,7 +747,7 @@ point with an optional offset.</p></li>
 </ol>
 </section>
 <section id="id14">
-<h4>Environment variables<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h4>
+<h4>Environment variables<a class="headerlink" href="#id14" title="Link to this heading"></a></h4>
 <p>In both cases the ROSE.* variable will over-ride the ISODATETIME variable
 if both are set to ensure legacy behaviour for Rose.</p>
 <dl class="simple">
@@ -761,7 +761,7 @@ current time.</p>
 </dl>
 </section>
 <section id="offset-format">
-<h4>Offset format<a class="headerlink" href="#offset-format" title="Permalink to this heading"></a></h4>
+<h4>Offset format<a class="headerlink" href="#offset-format" title="Link to this heading"></a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">OFFSET</span></code> must follow the ISO 8601 duration representations such as
 <code class="docutils literal notranslate"><span class="pre">PnW</span></code> or <code class="docutils literal notranslate"><span class="pre">PnYnMnDTnHnMnS</span> <span class="pre">-</span> <span class="pre">P</span></code> followed by a series of <code class="docutils literal notranslate"><span class="pre">nU</span></code> where <code class="docutils literal notranslate"><span class="pre">U</span></code> is
 the unit (<code class="docutils literal notranslate"><span class="pre">Y</span></code>, <code class="docutils literal notranslate"><span class="pre">M</span></code>, <code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">H</span></code>, <code class="docutils literal notranslate"><span class="pre">M</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code>) and <code class="docutils literal notranslate"><span class="pre">n</span></code> is a positive integer,
@@ -782,7 +782,7 @@ For example:</p>
 </ul>
 </section>
 <section id="parse-format">
-<h4>Parse format<a class="headerlink" href="#parse-format" title="Permalink to this heading"></a></h4>
+<h4>Parse format<a class="headerlink" href="#parse-format" title="Link to this heading"></a></h4>
 <p>The format for parsing a date time point should be compatible with the
 POSIX strptime template format (see the strptime command help), with the
 following subset supported across all date/time ranges:</p>
@@ -799,7 +799,7 @@ the following formats:</p>
 the full ISO 8601 date/time standard.</p>
 </section>
 <section id="print-format">
-<h4>Print format<a class="headerlink" href="#print-format" title="Permalink to this heading"></a></h4>
+<h4>Print format<a class="headerlink" href="#print-format" title="Link to this heading"></a></h4>
 <p>For printing a date time point, the print format will default to the same
 format as the parse format. Also supports the isodatetime library dump
 syntax for these operations which follows ISO 8601 example syntax - for
@@ -830,7 +830,7 @@ statements:</p>
 </section>
 </section>
 <section id="rose-env-cat">
-<span id="command-rose-env-cat"></span><h3>rose env-cat<a class="headerlink" href="#rose-env-cat" title="Permalink to this heading"></a></h3>
+<span id="command-rose-env-cat"></span><h3>rose env-cat<a class="headerlink" href="#rose-env-cat" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>env-cat<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>FILE<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
@@ -843,13 +843,13 @@ syntax and substitute them with the value of the environment variable
 will escape the substitution.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">match-mode=brace</span></code>, the command will look for <code class="docutils literal notranslate"><span class="pre">${NAME}</span></code> syntax only.</p>
 <section id="id15">
-<h4>Examples<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h4>
+<h4>Examples<a class="headerlink" href="#id15" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rose<span class="w"> </span>env-cat<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>FILE<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
 </section>
 <section id="id16">
-<h4>Options<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id16" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-h, --help            show this help message and exit
 -m MODE, --match-mode=MODE
                       Specify the match mode.
@@ -879,7 +879,7 @@ will escape the substitution.</p>
 </section>
 </section>
 <section id="rose-host-select">
-<span id="command-rose-host-select"></span><h3>rose host-select<a class="headerlink" href="#rose-host-select" title="Permalink to this heading"></a></h3>
+<span id="command-rose-host-select"></span><h3>rose host-select<a class="headerlink" href="#rose-host-select" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>host-select<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>GROUP/HOST<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
@@ -887,7 +887,7 @@ will escape the substitution.</p>
 or by random.</p>
 <p>Print the selected host name.</p>
 <section id="id17">
-<h4>Options<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id17" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  --choice=N            Choose from any of the top N items.
   -h, --help            show this help message and exit
   --rank-method=METHOD  Specify the method for ranking hosts.
@@ -936,7 +936,7 @@ RANKING METHODS IN DETAIL (--rank-method):
 </div>
 </section>
 <section id="id18">
-<h4>Configuration<a class="headerlink" href="#id18" title="Permalink to this heading"></a></h4>
+<h4>Configuration<a class="headerlink" href="#id18" title="Link to this heading"></a></h4>
 <p>The command reads its settings from the <code class="docutils literal notranslate"><span class="pre">[rose-host-select]</span></code> section in
 the Rose configuration. All settings are optional. Type
 <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">config</span> <span class="pre">rose-host-select</span></code> to print settings.</p>
@@ -957,7 +957,7 @@ the Rose configuration. All settings are optional. Type
 </section>
 </section>
 <section id="rose-host-select-client">
-<span id="command-rose-host-select-client"></span><h3>rose host-select-client<a class="headerlink" href="#rose-host-select-client" title="Permalink to this heading"></a></h3>
+<span id="command-rose-host-select-client"></span><h3>rose host-select-client<a class="headerlink" href="#rose-host-select-client" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
@@ -966,7 +966,7 @@ Python psutil module.</p>
 <p>The names of psutil methods are passed to stdin along with any arguments
 as a JSON list.</p>
 <section id="id19">
-<h4>Examples<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h4>
+<h4>Examples<a class="headerlink" href="#id19" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="c1"># return the virtual memory and cpu usage</span>
 <span class="w">    </span><span class="o">[[</span><span class="s2">&quot;virtual_memory&quot;</span><span class="o">]</span>,<span class="w"> </span><span class="o">[</span><span class="s2">&quot;cpu_percent&quot;</span><span class="o">]]</span>
 
@@ -992,7 +992,7 @@ $<span class="w"> </span>rose<span class="w"> </span>host-select-client<span cla
 </section>
 </section>
 <section id="rose-macro">
-<span id="command-rose-macro"></span><h3>rose macro<a class="headerlink" href="#rose-macro" title="Permalink to this heading"></a></h3>
+<span id="command-rose-macro"></span><h3>rose macro<a class="headerlink" href="#rose-macro" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>macro<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>MACRO_NAME<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
@@ -1015,7 +1015,7 @@ transform each main + optional configuration, recreating each
 optional configuration as the diff vs the transformed main.</p></li>
 </ul>
 <section id="id20">
-<h4>Options<a class="headerlink" href="#id20" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id20" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">C</span> <span class="n">DIR</span><span class="p">,</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">DIR</span>  <span class="n">Specify</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">directory</span> <span class="n">of</span> <span class="n">the</span> 
                       <span class="n">application</span><span class="o">.</span>
 
@@ -1047,7 +1047,7 @@ optional configuration as the diff vs the transformed main.</p></li>
 </div>
 </section>
 <section id="id21">
-<h4>Arguments<a class="headerlink" href="#id21" title="Permalink to this heading"></a></h4>
+<h4>Arguments<a class="headerlink" href="#id21" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>MACRO_NAME …</dt><dd><p>A list of macro names to run. If no macro names are specified and
 <code class="docutils literal notranslate"><span class="pre">--fix</span></code>, <code class="docutils literal notranslate"><span class="pre">--validate</span></code> are not used, list all available macros.
@@ -1056,7 +1056,7 @@ Otherwise, run the specified macro names.</p>
 </dl>
 </section>
 <section id="id22">
-<h4>Environment variables<a class="headerlink" href="#id22" title="Permalink to this heading"></a></h4>
+<h4>Environment variables<a class="headerlink" href="#id22" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>optional ROSE_META_PATH</dt><dd><p>Prepend <code class="docutils literal notranslate"><span class="pre">$ROSE_META_PATH</span></code> to the metadata search path.</p>
 </dd>
@@ -1064,13 +1064,13 @@ Otherwise, run the specified macro names.</p>
 </section>
 </section>
 <section id="rose-metadata-check">
-<span id="command-rose-metadata-check"></span><h3>rose metadata-check<a class="headerlink" href="#rose-metadata-check" title="Permalink to this heading"></a></h3>
+<span id="command-rose-metadata-check"></span><h3>rose metadata-check<a class="headerlink" href="#rose-metadata-check" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>metadata-check<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>ID<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
 <p>Validate configuration metadata.</p>
 <section id="id23">
-<h4>Options<a class="headerlink" href="#id23" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id23" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">C</span> <span class="n">DIR</span><span class="p">,</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">DIR</span>  <span class="n">Specify</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">directory</span> <span class="n">of</span> <span class="n">the</span> 
                       <span class="n">application</span><span class="o">.</span>
 
@@ -1088,7 +1088,7 @@ Otherwise, run the specified macro names.</p>
 </div>
 </section>
 <section id="id24">
-<h4>Arguments<a class="headerlink" href="#id24" title="Permalink to this heading"></a></h4>
+<h4>Arguments<a class="headerlink" href="#id24" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>ID</dt><dd><p>One or more sections (configuration IDs) to check in the
 metadata e.g.<code class="docutils literal notranslate"><span class="pre">env=FOO</span></code> or <code class="docutils literal notranslate"><span class="pre">namelist:bar</span></code>. If specified, only
@@ -1098,7 +1098,7 @@ this section will be checked.</p>
 </section>
 </section>
 <section id="rose-metadata-gen">
-<span id="command-rose-metadata-gen"></span><h3>rose metadata-gen<a class="headerlink" href="#rose-metadata-gen" title="Permalink to this heading"></a></h3>
+<span id="command-rose-metadata-gen"></span><h3>rose metadata-gen<a class="headerlink" href="#rose-metadata-gen" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>metadata-gen<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="nv">PROPERTY</span><span class="o">=</span>VALUE<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
@@ -1106,7 +1106,7 @@ this section will be checked.</p>
 configuration. An aid for metadata development.</p>
 <p>WARNING: May Contain Thorns.</p>
 <section id="id25">
-<h4>Options<a class="headerlink" href="#id25" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id25" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>--auto-type           Add a &#39;best guess&#39; for the `type` and `length` 
                       metadata.
 -C DIR, --config=DIR  Specify the configuration directory of the 
@@ -1126,7 +1126,7 @@ configuration. An aid for metadata development.</p>
 </div>
 </section>
 <section id="id26">
-<h4>Arguments<a class="headerlink" href="#id26" title="Permalink to this heading"></a></h4>
+<h4>Arguments<a class="headerlink" href="#id26" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>PROPERTY[=VALUE] …</dt><dd><p>One or more <code class="docutils literal notranslate"><span class="pre">key=value</span></code> pairs of properties to specify for
 every setting e.g. <code class="docutils literal notranslate"><span class="pre">compulsory=true</span></code>. If <code class="docutils literal notranslate"><span class="pre">=VALUE</span></code> is missing,
@@ -1136,7 +1136,7 @@ the property will be set to a null string in each setting.</p>
 </section>
 </section>
 <section id="rose-mpi-launch">
-<span id="command-rose-mpi-launch"></span><h3>rose mpi-launch<a class="headerlink" href="#rose-mpi-launch" title="Permalink to this heading"></a></h3>
+<span id="command-rose-mpi-launch"></span><h3>rose mpi-launch<a class="headerlink" href="#rose-mpi-launch" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span>.<span class="w"> </span>rose<span class="w"> </span>mpi-launch<span class="w"> </span>-f<span class="w"> </span>FILE
 <span class="m">2</span>.<span class="w"> </span>rose<span class="w"> </span>mpi-launch
 <span class="m">3</span>.<span class="w"> </span>rose<span class="w"> </span>mpi-launch<span class="w"> </span>COMMAND<span class="w"> </span><span class="o">[</span>ARGS<span class="w"> </span>...<span class="o">]</span>
@@ -1156,7 +1156,7 @@ launcher command.</p></li>
 <p>In all cases, the remaining arguments will be appended to the command
 line of the launcher program.</p>
 <section id="id27">
-<h4>Options<a class="headerlink" href="#id27" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id27" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>--command-file=FILE, -f FILE
     Specify a command file for the MPI launcher.
 --debug
@@ -1170,7 +1170,7 @@ line of the launcher program.</p>
 </div>
 </section>
 <section id="id28">
-<h4>Configuration<a class="headerlink" href="#id28" title="Permalink to this heading"></a></h4>
+<h4>Configuration<a class="headerlink" href="#id28" title="Link to this heading"></a></h4>
 <p>The command reads from the <code class="docutils literal notranslate"><span class="pre">[rose-mpi-launch]</span></code> section in
 the Rose configuration.</p>
 <p>Valid settings are:</p>
@@ -1203,7 +1203,7 @@ the remaining arguments.</p>
 </dl>
 </section>
 <section id="id29">
-<h4>Environment variables<a class="headerlink" href="#id29" title="Permalink to this heading"></a></h4>
+<h4>Environment variables<a class="headerlink" href="#id29" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>optional ROSE_LAUNCHER</dt><dd><p>Specify the launcher program.</p>
 </dd>
@@ -1229,12 +1229,12 @@ results in <code class="docutils literal notranslate"><span class="pre">ulimit</
 </dl>
 </section>
 <section id="diagnostics">
-<h4>Diagnostics<a class="headerlink" href="#diagnostics" title="Permalink to this heading"></a></h4>
+<h4>Diagnostics<a class="headerlink" href="#diagnostics" title="Link to this heading"></a></h4>
 <p>Return 0 on success, 1 or exit code of the launcher program on failure.</p>
 </section>
 </section>
 <section id="rose-namelist-dump">
-<span id="command-rose-namelist-dump"></span><h3>rose namelist-dump<a class="headerlink" href="#rose-namelist-dump" title="Permalink to this heading"></a></h3>
+<span id="command-rose-namelist-dump"></span><h3>rose namelist-dump<a class="headerlink" href="#rose-namelist-dump" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose-namelist-dump<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>FILE<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
@@ -1246,7 +1246,7 @@ standard input is specified. Where possible, use relative path for file
 names, as the file names appear as-specified in the generated
 configuration.</p>
 <section id="id30">
-<h4>Options<a class="headerlink" href="#id30" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id30" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>--case=MODE           Output names in lower|upper case.
 
                       Can be `upper`, `lower` or `unchanged` (default).
@@ -1264,7 +1264,7 @@ configuration.</p>
 </section>
 </section>
 <section id="rose-resource">
-<span id="command-rose-resource"></span><h3>rose resource<a class="headerlink" href="#rose-resource" title="Permalink to this heading"></a></h3>
+<span id="command-rose-resource"></span><h3>rose resource<a class="headerlink" href="#rose-resource" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>resource<span class="w"> </span>RESOURCE_PATH
 </pre></div>
 </div>
@@ -1275,7 +1275,7 @@ configuration.</p>
 </ul>
 <p>Provide no arguments to see a list of top-level resources.</p>
 <section id="id31">
-<h4>Examples<a class="headerlink" href="#id31" title="Permalink to this heading"></a></h4>
+<h4>Examples<a class="headerlink" href="#id31" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List top-level resources:</span>
 $<span class="w"> </span>rose<span class="w"> </span>resource
 
@@ -1288,7 +1288,7 @@ $<span class="w"> </span>rose<span class="w"> </span>resource<span class="w"> </
 </div>
 </section>
 <section id="id32">
-<h4>Options<a class="headerlink" href="#id32" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id32" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>     <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
 <span class="o">--</span><span class="n">debug</span>        <span class="n">Report</span> <span class="n">trace</span> <span class="n">back</span> <span class="n">on</span> <span class="n">error</span><span class="o">.</span>
 <span class="o">--</span><span class="n">profile</span>      <span class="n">Switch</span> <span class="n">on</span> <span class="n">profiling</span><span class="o">.</span>
@@ -1298,7 +1298,7 @@ $<span class="w"> </span>rose<span class="w"> </span>resource<span class="w"> </
 </div>
 </section>
 <section id="id33">
-<h4>Arguments<a class="headerlink" href="#id33" title="Permalink to this heading"></a></h4>
+<h4>Arguments<a class="headerlink" href="#id33" title="Link to this heading"></a></h4>
 <dl>
 <dt>RESOURCE_PATH</dt><dd><p>Path of the resource to extract.</p>
 <p>Run <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">resource</span></code> to see the list of resources.</p>
@@ -1307,7 +1307,7 @@ $<span class="w"> </span>rose<span class="w"> </span>resource<span class="w"> </
 </section>
 </section>
 <section id="rose-stem">
-<span id="command-rose-stem"></span><h3>rose stem<a class="headerlink" href="#rose-stem" title="Permalink to this heading"></a></h3>
+<span id="command-rose-stem"></span><h3>rose stem<a class="headerlink" href="#rose-stem" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>stem<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span><span class="o">[</span>path<span class="o">]</span>
 </pre></div>
 </div>
@@ -1350,7 +1350,7 @@ is intended to specify the revision of <code class="docutils literal notranslate
 </dl>
 </div></blockquote>
 <section id="id34">
-<h4>Options<a class="headerlink" href="#id34" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id34" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-h, --help            show this help message and exit
 -O OPT_CONF_KEYS, --opt-conf-key=OPT_CONF_KEYS
                       Use optional Rose Config Setting (If Cylc-Rose is
@@ -1415,12 +1415,12 @@ Rose Stem Specific Options:
 </section>
 </section>
 <section id="rose-task-env">
-<span id="command-rose-task-env"></span><h3>rose task-env<a class="headerlink" href="#rose-task-env" title="Permalink to this heading"></a></h3>
+<span id="command-rose-task-env"></span><h3>rose task-env<a class="headerlink" href="#rose-task-env" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>task-env<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 </div>
 <section id="standard-usage">
-<h4>Standard usage<a class="headerlink" href="#standard-usage" title="Permalink to this heading"></a></h4>
+<h4>Standard usage<a class="headerlink" href="#standard-usage" title="Link to this heading"></a></h4>
 <blockquote>
 <div><p>eval $(rose task-env)</p>
 </div></blockquote>
@@ -1487,7 +1487,7 @@ directory of 1 day before the current cycle time.</p>
 </dl>
 </section>
 <section id="id35">
-<h4>Options<a class="headerlink" href="#id35" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id35" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-t TIME, --cycle=TIME
                       Specify current cycle time.
 
@@ -1543,14 +1543,14 @@ directory of 1 day before the current cycle time.</p>
 </div>
 </section>
 <section id="usage-in-suites">
-<h4>Usage in suites<a class="headerlink" href="#usage-in-suites" title="Permalink to this heading"></a></h4>
+<h4>Usage in suites<a class="headerlink" href="#usage-in-suites" title="Link to this heading"></a></h4>
 <p>rose <code class="docutils literal notranslate"><span class="pre">task-env</span></code> can be used to make environment variables available to a
 suite by defining its <code class="docutils literal notranslate"><span class="pre">flow.cylc</span></code> <code class="docutils literal notranslate"><span class="pre">env-script</span></code> option as
 <code class="docutils literal notranslate"><span class="pre">env-script</span> <span class="pre">=</span> <span class="pre">eval</span> <span class="pre">$(rose</span> <span class="pre">task-env)</span></code>.</p>
 </section>
 </section>
 <section id="rose-task-run">
-<span id="command-rose-task-run"></span><h3>rose task-run<a class="headerlink" href="#rose-task-run" title="Permalink to this heading"></a></h3>
+<span id="command-rose-task-run"></span><h3>rose task-run<a class="headerlink" href="#rose-task-run" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rose<span class="w"> </span>task-run<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>--<span class="o">]</span><span class="w"> </span><span class="o">[</span>APP-COMMAND<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
@@ -1562,7 +1562,7 @@ noting that if the environment variables are already provided by
 that has the same name as the task. This can be overridden by the
 <code class="docutils literal notranslate"><span class="pre">--app-key=KEY</span></code> option or the <code class="docutils literal notranslate"><span class="pre">ROSE_TASK_APP</span></code> environment variable.</p>
 <section id="short-options">
-<h4>Short options<a class="headerlink" href="#short-options" title="Permalink to this heading"></a></h4>
+<h4>Short options<a class="headerlink" href="#short-options" title="Link to this heading"></a></h4>
 <p>All options of <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">app-run</span></code> and <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">task-env</span></code> are supported.
 Additional options are:</p>
 <dl class="option-list">
@@ -1572,7 +1572,7 @@ Additional options are:</p>
 </dl>
 </section>
 <section id="id36">
-<h4>Options<a class="headerlink" href="#id36" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id36" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>--app-key=KEY         Specify a named application configuration.
 --app-mode=MODE       Run a command or builtin application identified by 
                       `MODE`. The default `MODE` is `command`.
@@ -1660,7 +1660,7 @@ Additional options are:</p>
 </div>
 </section>
 <section id="id37">
-<h4>Environment variables<a class="headerlink" href="#id37" title="Permalink to this heading"></a></h4>
+<h4>Environment variables<a class="headerlink" href="#id37" title="Link to this heading"></a></h4>
 <p>All environment variables of <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">app-run</span></code> and <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">task-env</span></code> are
 supported. All environment variables documented in <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">task-env</span></code> are
 passed to the application <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">task-run</span></code> runs.
@@ -1671,7 +1671,7 @@ The following environment variables are used by <code class="docutils literal no
 </dl>
 </section>
 <section id="see-also">
-<h4>See also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h4>
+<h4>See also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">app-run</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">task-env</span></code></p></li>
@@ -1679,7 +1679,7 @@ The following environment variables are used by <code class="docutils literal no
 </section>
 </section>
 <section id="rose-tutorial">
-<span id="command-rose-tutorial"></span><h3>rose tutorial<a class="headerlink" href="#rose-tutorial" title="Permalink to this heading"></a></h3>
+<span id="command-rose-tutorial"></span><h3>rose tutorial<a class="headerlink" href="#rose-tutorial" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print list of available suites.</span>
 rose<span class="w"> </span>tutorial
 <span class="c1"># Copy SUITE to DIR (defaults to ~/cylc-run/SUITE).</span>
@@ -1690,7 +1690,7 @@ rose<span class="w"> </span>tutorial<span class="w"> </span>SUITE<span class="w"
 </section>
 <hr class="docutils" />
 <section id="rose-config-edit">
-<span id="command-rose-config-edit"></span><h3>rose config-edit<a class="headerlink" href="#rose-config-edit" title="Permalink to this heading"></a></h3>
+<span id="command-rose-config-edit"></span><h3>rose config-edit<a class="headerlink" href="#rose-config-edit" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The Rose Edit GUI has not yet been reimplemented in Rose 2.</p>
@@ -1699,16 +1699,16 @@ configurations.</p>
 </div>
 </section>
 <section id="rose-suite-run">
-<span id="command-rose-suite-run"></span><h3>rose suite-run<a class="headerlink" href="#rose-suite-run" title="Permalink to this heading"></a></h3>
+<span id="command-rose-suite-run"></span><h3>rose suite-run<a class="headerlink" href="#rose-suite-run" title="Link to this heading"></a></h3>
 <p>This command has been replaced by <code class="docutils literal notranslate"><span class="pre">cylc</span> <span class="pre">validate;</span> <span class="pre">cylc</span> <span class="pre">install;</span> <span class="pre">cylc</span> <span class="pre">play</span></code>.</p>
 </section>
 <section id="rose-suite-restart">
-<span id="command-rose-suite-restart"></span><h3>rose suite-restart<a class="headerlink" href="#rose-suite-restart" title="Permalink to this heading"></a></h3>
+<span id="command-rose-suite-restart"></span><h3>rose suite-restart<a class="headerlink" href="#rose-suite-restart" title="Link to this heading"></a></h3>
 <p>This command has been replaced by <code class="docutils literal notranslate"><span class="pre">cylc</span> <span class="pre">play</span></code>.</p>
 <hr class="docutils" />
 </section>
 <section id="etc-bin-rose-test-battery">
-<span id="command-rose-test-battery"></span><h3>etc/bin/rose-test-battery<a class="headerlink" href="#etc-bin-rose-test-battery" title="Permalink to this heading"></a></h3>
+<span id="command-rose-test-battery"></span><h3>etc/bin/rose-test-battery<a class="headerlink" href="#etc-bin-rose-test-battery" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$ROSE_DEVELOPER_DIR</span>/etc/bin/rose-test-battery
 </pre></div>
 </div>
@@ -1740,9 +1740,9 @@ rose<span class="w"> </span>test-battery<span class="w"> </span>-v<span class="w
 </section>
 <hr class="docutils" />
 <section id="rosie-commands">
-<h2>Rosie Commands<a class="headerlink" href="#rosie-commands" title="Permalink to this heading"></a></h2>
+<h2>Rosie Commands<a class="headerlink" href="#rosie-commands" title="Link to this heading"></a></h2>
 <section id="rosie-checkout">
-<span id="command-rosie-checkout"></span><h3>rosie checkout<a class="headerlink" href="#rosie-checkout" title="Permalink to this heading"></a></h3>
+<span id="command-rosie-checkout"></span><h3>rosie checkout<a class="headerlink" href="#rosie-checkout" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rosie<span class="w"> </span>checkout<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>ID<span class="w"> </span>...
 </pre></div>
 </div>
@@ -1750,7 +1750,7 @@ rose<span class="w"> </span>test-battery<span class="w"> </span>-v<span class="w
 <p>For each <code class="docutils literal notranslate"><span class="pre">ID</span></code> in the argument list, checkout a working copy of the suite
 identified by <code class="docutils literal notranslate"><span class="pre">ID</span></code> to the standard location.</p>
 <section id="id38">
-<h4>Options<a class="headerlink" href="#id38" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id38" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-f, --force    If working copy for suite identified by `ID` already exists, 
                remove it. Continue to the next `ID` if checkout of a suite 
                fails.
@@ -1764,7 +1764,7 @@ identified by <code class="docutils literal notranslate"><span class="pre">ID</s
 </section>
 </section>
 <section id="rosie-create">
-<span id="command-rosie-create"></span><h3>rosie create<a class="headerlink" href="#rosie-create" title="Permalink to this heading"></a></h3>
+<span id="command-rosie-create"></span><h3>rosie create<a class="headerlink" href="#rosie-create" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rosie<span class="w"> </span>create<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span>
 
 <span class="w">    </span>rosie<span class="w"> </span>copy<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>ID-OF-EXISTING-SUITE
@@ -1791,7 +1791,7 @@ the last changed revision of the branch is used. If BRANCH is not specified,
 “trunk” is used.</p>
 <p>NOTE: ID-OF-EXISTING-SUITE is _not_ a filepath.</p>
 <section id="id39">
-<h4>Options<a class="headerlink" href="#id39" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id39" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-h, --help            show this help message and exit
 --info-file=FILE      Specify the discovery information file.
 
@@ -1820,7 +1820,7 @@ the last changed revision of the branch is used. If BRANCH is not specified,
 </section>
 </section>
 <section id="rosie-delete">
-<span id="command-rosie-delete"></span><h3>rosie delete<a class="headerlink" href="#rosie-delete" title="Permalink to this heading"></a></h3>
+<span id="command-rosie-delete"></span><h3>rosie delete<a class="headerlink" href="#rosie-delete" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rosie<span class="w"> </span>delete<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>--<span class="o">]</span><span class="w"> </span><span class="o">[</span>ID<span class="w"> </span>...<span class="o">]</span>
 </pre></div>
 </div>
@@ -1833,7 +1833,7 @@ repository matching the <code class="docutils literal notranslate"><span class="
 <p>If no <code class="docutils literal notranslate"><span class="pre">ID</span></code> is specified and <code class="docutils literal notranslate"><span class="pre">$PWD</span></code> is a working copy of a suite, use the
 <code class="docutils literal notranslate"><span class="pre">ID</span></code> of the suite in the working copy.</p>
 <section id="id40">
-<h4>Options<a class="headerlink" href="#id40" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id40" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-f, --force           Remove working copies even if there are uncommitted 
                       changes.
 
@@ -1852,13 +1852,13 @@ repository matching the <code class="docutils literal notranslate"><span class="
 </section>
 </section>
 <section id="rosie-graph">
-<span id="command-rosie-graph"></span><h3>rosie graph<a class="headerlink" href="#rosie-graph" title="Permalink to this heading"></a></h3>
+<span id="command-rosie-graph"></span><h3>rosie graph<a class="headerlink" href="#rosie-graph" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rosie<span class="w"> </span>graph<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span><span class="o">[</span>ID<span class="o">]</span>
 </pre></div>
 </div>
 <p>Graph suite copy ancestry.</p>
 <section id="id41">
-<h4>Options<a class="headerlink" href="#id41" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id41" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-d DISTANCE, --distance=DISTANCE
                       The maximum distance (graph depth) for suites related 
                       to `ID` to be plotted. For example, if the distance is
@@ -1909,7 +1909,7 @@ repository matching the <code class="docutils literal notranslate"><span class="
 </div>
 </section>
 <section id="id42">
-<h4>Arguments<a class="headerlink" href="#id42" title="Permalink to this heading"></a></h4>
+<h4>Arguments<a class="headerlink" href="#id42" title="Link to this heading"></a></h4>
 <dl class="simple">
 <dt>ID</dt><dd><p>A suite id to graph. If given, only the suites that are
 connected to this id by copy history will be graphed.</p>
@@ -1918,13 +1918,13 @@ connected to this id by copy history will be graphed.</p>
 </section>
 </section>
 <section id="rosie-hello">
-<span id="command-rosie-hello"></span><h3>rosie hello<a class="headerlink" href="#rosie-hello" title="Permalink to this heading"></a></h3>
+<span id="command-rosie-hello"></span><h3>rosie hello<a class="headerlink" href="#rosie-hello" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rosie<span class="w"> </span>hello<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 </div>
 <p>Set up connection to one or more Rosie web service servers.</p>
 <section id="id43">
-<h4>Options<a class="headerlink" href="#id43" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id43" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>       <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
 <span class="o">--</span><span class="n">prefix</span><span class="o">=</span><span class="n">PREFIX</span>  <span class="n">Specify</span> <span class="n">the</span> <span class="n">Rosie</span> <span class="n">web</span> <span class="n">service</span> <span class="n">names</span><span class="o">.</span>
 <span class="o">--</span><span class="n">debug</span>          <span class="n">Report</span> <span class="n">trace</span> <span class="n">back</span> <span class="n">on</span> <span class="n">error</span><span class="o">.</span>
@@ -1936,13 +1936,13 @@ connected to this id by copy history will be graphed.</p>
 </section>
 </section>
 <section id="rosie-id">
-<span id="command-rosie-id"></span><h3>rosie id<a class="headerlink" href="#rosie-id" title="Permalink to this heading"></a></h3>
+<span id="command-rosie-id"></span><h3>rosie id<a class="headerlink" href="#rosie-id" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rosie<span class="w"> </span>id<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 </div>
 <p>Utility for working with suite IDs.</p>
 <section id="id44">
-<h4>Examples<a class="headerlink" href="#id44" title="Permalink to this heading"></a></h4>
+<h4>Examples<a class="headerlink" href="#id44" title="Link to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the repository URL of a given suite ID</span>
 rosie<span class="w"> </span>id<span class="w"> </span>--to-origin<span class="w"> </span>mo1-abc45
 
@@ -1973,7 +1973,7 @@ rosie<span class="w"> </span>id<span class="w"> </span>--next
 </div>
 </section>
 <section id="id45">
-<h4>Options<a class="headerlink" href="#id45" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id45" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>       <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
 <span class="o">--</span><span class="n">latest</span>         <span class="n">Print</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">ID</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">repository</span><span class="o">.</span>
 <span class="o">--</span><span class="nb">next</span>           <span class="n">Print</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">available</span> <span class="n">ID</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">repository</span><span class="o">.</span>
@@ -1989,7 +1989,7 @@ rosie<span class="w"> </span>id<span class="w"> </span>--next
 </section>
 </section>
 <section id="rosie-lookup">
-<span id="command-rosie-lookup"></span><h3>rosie lookup<a class="headerlink" href="#rosie-lookup" title="Permalink to this heading"></a></h3>
+<span id="command-rosie-lookup"></span><h3>rosie lookup<a class="headerlink" href="#rosie-lookup" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rosie<span class="w"> </span>lookup<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>LOOKUP-TEXT<span class="w"> </span>...
 </pre></div>
 </div>
@@ -2021,7 +2021,7 @@ in quotes.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">_</span></code> (underscore) is a substitute for a single character.</p></li>
 </ul>
 <section id="id46">
-<h4>Options<a class="headerlink" href="#id46" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id46" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-A, -U, --address-mode, --url
                       Shorthand for --lookup-mode=address
 --all-revs            Specify whether to search deleted suites and 
@@ -2056,7 +2056,7 @@ in quotes.</p>
 </section>
 </section>
 <section id="rosie-ls">
-<span id="command-rosie-ls"></span><h3>rosie ls<a class="headerlink" href="#rosie-ls" title="Permalink to this heading"></a></h3>
+<span id="command-rosie-ls"></span><h3>rosie ls<a class="headerlink" href="#rosie-ls" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Usage:<span class="w"> </span>rosie<span class="w"> </span>ls<span class="w"> </span><span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 </div>
@@ -2074,7 +2074,7 @@ A blank field means there is no related suite checked out.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> means that the suite is checked out but is corrupted.</p></li>
 </ul>
 <section id="id47">
-<h4>Options<a class="headerlink" href="#id47" title="Permalink to this heading"></a></h4>
+<h4>Options<a class="headerlink" href="#id47" title="Link to this heading"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-h, --help            show this help message and exit
 -H, --no-headers      Do not print column headers.
 --prefix=PREFIX       Specify the Rosie web service names.

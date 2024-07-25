@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Trigger &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -138,7 +138,7 @@
           <li class="breadcrumb-item"><a href="index.html">Further Topics</a></li>
       <li class="breadcrumb-item active">Trigger</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/tutorial/rose/furthertopics/trigger.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/tutorial/rose/furthertopics/trigger.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -147,7 +147,7 @@
            <div itemprop="articleBody">
              
   <section id="trigger">
-<h1>Trigger<a class="headerlink" href="#trigger" title="Permalink to this heading"></a></h1>
+<h1>Trigger<a class="headerlink" href="#trigger" title="Link to this heading"></a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">trigger</span></code> metadata item can be used to cut down the amount of irrelevant
 settings presented to the user in the <a class="reference internal" href="../../../api/command-reference.html#command-rose-config-edit"><span class="std std-ref">rose config-edit</span></a> GUI by
 hiding any settings which are not relevant based on the value or state of other
@@ -156,7 +156,7 @@ settings.</p>
 included in output files at runtime. In effect, they are commented
 out (<code class="docutils literal notranslate"><span class="pre">!</span></code> or <code class="docutils literal notranslate"><span class="pre">!!</span></code> prefix in Rose configurations).</p>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>In this example, we’ll be ordering pizza.</p>
 <p>Create a new Rose application called <code class="docutils literal notranslate"><span class="pre">trigger</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">rose</span><span class="o">-</span><span class="n">tutorial</span><span class="o">/</span><span class="n">trigger</span>
@@ -228,7 +228,7 @@ contexts - for example, <code class="docutils literal notranslate"><span class="
 pretty irrelevant if we’re ordering a <code class="docutils literal notranslate"><span class="pre">'Veggie</span> <span class="pre">Supreme'</span></code>.</p>
 </section>
 <section id="adding-triggers">
-<h2>Adding Triggers<a class="headerlink" href="#adding-triggers" title="Permalink to this heading"></a></h2>
+<h2>Adding Triggers<a class="headerlink" href="#adding-triggers" title="Link to this heading"></a></h2>
 <p>Let’s add some trigger information.</p>
 <p>In the <a class="reference internal" href="../../../api/configuration/metadata.html#rose:file:rose-meta.conf" title="rose:file:rose-meta.conf"><code class="xref rose rose-file docutils literal notranslate"><span class="pre">rose-meta.conf</span></code></a> file, under
 <code class="docutils literal notranslate"><span class="pre">[namelist:pizza_order=pizza_type]</span></code>, add:</p>
@@ -259,7 +259,7 @@ The truffle option will be ignored unless <code class="docutils literal notransl
 25.</p>
 </section>
 <section id="fixing-trigger-errors">
-<h2>Fixing Trigger Errors<a class="headerlink" href="#fixing-trigger-errors" title="Permalink to this heading"></a></h2>
+<h2>Fixing Trigger Errors<a class="headerlink" href="#fixing-trigger-errors" title="Link to this heading"></a></h2>
 <p>If we load the config editor (or reload the metadata) again, we
 should get some trigger errors. These essentially say that some of
 our settings are in the wrong state now - in our case, they should
@@ -279,7 +279,7 @@ in this case <code class="docutils literal notranslate"><span class="pre">pizza_
 </ul>
 <p>Run “Autofix” in one of the above ways.</p>
 <section id="results">
-<h3>Results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h3>
+<h3>Results<a class="headerlink" href="#results" title="Link to this heading"></a></h3>
 <p>If you accept the changes, the state of these settings will be corrected
 - if you go to the page, you’ll see that they’ve vanished! They’re
 actually just commented out, and viewable via the menu
@@ -298,7 +298,7 @@ you can go directly to the relevant id.</p>
 </section>
 </section>
 <section id="multiple-inheritance">
-<h2>Multiple Inheritance<a class="headerlink" href="#multiple-inheritance" title="Permalink to this heading"></a></h2>
+<h2>Multiple Inheritance<a class="headerlink" href="#multiple-inheritance" title="Link to this heading"></a></h2>
 <p>More than one setting can decide whether something is relevant. In that
 case, the subject is relevant only if all the parents agree that it is -
 an AND relationship.</p>
@@ -317,7 +317,7 @@ and <code class="docutils literal notranslate"><span class="pre">namelist:pizza_
 test it for yourself.</p>
 </section>
 <section id="cascading-triggering">
-<h2>Cascading Triggering<a class="headerlink" href="#cascading-triggering" title="Permalink to this heading"></a></h2>
+<h2>Cascading Triggering<a class="headerlink" href="#cascading-triggering" title="Link to this heading"></a></h2>
 <p>Triggering is not just based on values - if a setting is missing or
 <code class="docutils literal notranslate"><span class="pre">trigger-ignored</span></code>, any settings that it triggers will be
 <code class="docutils literal notranslate"><span class="pre">trigger-ignored</span></code> by default i.e. triggers can
@@ -344,7 +344,7 @@ replace the <code class="docutils literal notranslate"><span class="pre">[nameli
 to the options in <code class="docutils literal notranslate"><span class="pre">namelist:pizza_order</span></code>.</p>
 </section>
 <section id="triggering-based-on-state">
-<h2>Triggering Based On State<a class="headerlink" href="#triggering-based-on-state" title="Permalink to this heading"></a></h2>
+<h2>Triggering Based On State<a class="headerlink" href="#triggering-based-on-state" title="Link to this heading"></a></h2>
 <p>There’s also another way to express a trigger - you don’t have to express
 a value or range of values in a trigger expression.</p>
 <p>Quite often you only want a setting to be <code class="docutils literal notranslate"><span class="pre">trigger-ignored</span></code> or enabled
@@ -385,7 +385,7 @@ that this works! You can then just add it via the menu button for the
 option.</p>
 </section>
 <section id="further-reading">
-<h2>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this heading"></a></h2>
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading"></a></h2>
 <p>For more information see <a class="reference internal" href="../../../api/configuration/metadata.html#metadata"><span class="std std-ref">Configuration Metadata</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">orphan<span class="colon">:</span></dt>

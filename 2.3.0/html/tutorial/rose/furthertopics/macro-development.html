@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Custom Macros &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../../_static/js/spoiler.js?v=12631137"></script>
@@ -136,7 +136,7 @@
           <li class="breadcrumb-item"><a href="index.html">Further Topics</a></li>
       <li class="breadcrumb-item active">Custom Macros</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/tutorial/rose/furthertopics/macro-development.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/tutorial/rose/furthertopics/macro-development.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -145,14 +145,14 @@
            <div itemprop="articleBody">
              
   <section id="custom-macros">
-<span id="macro-dev"></span><h1>Custom Macros<a class="headerlink" href="#custom-macros" title="Permalink to this heading"></a></h1>
+<span id="macro-dev"></span><h1>Custom Macros<a class="headerlink" href="#custom-macros" title="Link to this heading"></a></h1>
 <p>Rose macros are custom python modules which can perform checking
 beyond that which (e.g. <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">warn-if</span></code>, etc)
 can provide.</p>
 <p>This tutorial covers the development of checking (<strong>validator</strong>),
 changing (<strong>transformer</strong>) and reporting (<strong>reporter</strong>) macros.</p>
 <section id="warning">
-<h2>Warning<a class="headerlink" href="#warning" title="Permalink to this heading"></a></h2>
+<h2>Warning<a class="headerlink" href="#warning" title="Link to this heading"></a></h2>
 <p>Macros should <strong>only</strong> be written if there is a genuine need that is not
 covered by <a class="reference internal" href="../../../api/configuration/metadata.html#metadata-values"><span class="std std-ref">other metadata</span></a> - make sure you are
 familiar with <a class="reference internal" href="../../../api/configuration/metadata.html#conf-meta"><span class="std std-ref">Configuration Metadata</span></a> before you write your own (real-life)
@@ -162,7 +162,7 @@ complex inter-setting validation. See the
 <a class="reference internal" href="failif-warnif.html#tutorial-rose-fail-if-warn-if"><span class="std std-ref">tutorial</span></a> for details.</p>
 </section>
 <section id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this heading"></a></h2>
+<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading"></a></h2>
 <p>Macros are used in Rose to report problems with a configuration,
 and to change it. Nearly all metadata mechanics (checking vs metadata
 settings, and changing - e.g. <code class="docutils literal notranslate"><span class="pre">trigger</span></code>) are performed within Rose
@@ -173,7 +173,7 @@ the command line (<a class="reference internal" href="../../../api/command-refer
 <span class="menuselection">Metadata</span> menu in the config editor.</p>
 </section>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>For these examples we will create an example app called
 <code class="docutils literal notranslate"><span class="pre">macro_tutorial_app</span></code> that could be part of a typical suite.</p>
 <p>Create a directory for your suite app called <code class="docutils literal notranslate"><span class="pre">macro_tutorial_app</span></code>:</p>
@@ -212,7 +212,7 @@ is too far away from Earth.</p>
 </pre></div>
 </div>
 <section id="validator-macro">
-<h3>Validator Macro<a class="headerlink" href="#validator-macro" title="Permalink to this heading"></a></h3>
+<h3>Validator Macro<a class="headerlink" href="#validator-macro" title="Link to this heading"></a></h3>
 <p>Open <code class="docutils literal notranslate"><span class="pre">planet.py</span></code> in a text editor and paste in the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Rose validator macro for &quot;planet&quot;.</span>
@@ -379,7 +379,7 @@ Rose to see if the macro reports any problems.</p>
 </pre></div>
 </div>
 <section id="results">
-<h4>Results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h4>
+<h4>Results<a class="headerlink" href="#results" title="Link to this heading"></a></h4>
 <p>Your validator macro is now ready to use.</p>
 <p>Modify the top level <code class="docutils literal notranslate"><span class="pre">rose-app.conf</span></code> such that <code class="docutils literal notranslate"><span class="pre">WORLD=Jupiter</span></code>.</p>
 <p>Run your macro from the command line:</p>
@@ -391,7 +391,7 @@ and re-running the macro.</p>
 </section>
 </section>
 <section id="transformer-macro">
-<h3>Transformer Macro<a class="headerlink" href="#transformer-macro" title="Permalink to this heading"></a></h3>
+<h3>Transformer Macro<a class="headerlink" href="#transformer-macro" title="Link to this heading"></a></h3>
 <p>We’ll now make a macro that changes the configuration. Our example
 will change the value of <code class="docutils literal notranslate"><span class="pre">env=WORLD</span></code> to something else.</p>
 <p>Open <code class="docutils literal notranslate"><span class="pre">planet.py</span></code> in a text editor and append the following code:</p>
@@ -486,7 +486,7 @@ the user about the change.</p>
 directory by invoking <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">macro</span> <span class="pre">planet.PlanetChanger</span></code>.</p>
 </section>
 <section id="reporter-macro">
-<h3>Reporter Macro<a class="headerlink" href="#reporter-macro" title="Permalink to this heading"></a></h3>
+<h3>Reporter Macro<a class="headerlink" href="#reporter-macro" title="Link to this heading"></a></h3>
 <p>Along with validator and transformer macros there are also reporter
 macros. These are used when you want to output information about a
 configuration but do not want to make any changes to it.</p>
@@ -555,7 +555,7 @@ top of the file.</p>
 </section>
 </section>
 <section id="macro-arguments">
-<h2>Macro Arguments<a class="headerlink" href="#macro-arguments" title="Permalink to this heading"></a></h2>
+<h2>Macro Arguments<a class="headerlink" href="#macro-arguments" title="Link to this heading"></a></h2>
 <p>From time to time, we may want to change some macro settings.
 Rather than altering the macro each time or creating a separate
 macro for every possible setting, we can make use of Python keyword
@@ -609,7 +609,7 @@ variable should now be set to <code class="docutils literal notranslate"><span c
 to confirm this.</p>
 </section>
 <section id="metadata-option">
-<h2>Metadata Option<a class="headerlink" href="#metadata-option" title="Permalink to this heading"></a></h2>
+<h2>Metadata Option<a class="headerlink" href="#metadata-option" title="Link to this heading"></a></h2>
 <p>If a macro addresses particular sections, namespaces, or options,
 then it makes sense to write the relationship down in the metadata
 for the particular settings. You can do this using the <code class="docutils literal notranslate"><span class="pre">macro</span></code>

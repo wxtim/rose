@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Rose Configuration API &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../_static/js/spoiler.js?v=12631137"></script>
@@ -135,7 +135,7 @@
           <li class="breadcrumb-item"><a href="index.html">Rose Configuration</a></li>
       <li class="breadcrumb-item active">Rose Configuration API</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/api/configuration/api.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/api/configuration/api.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -144,9 +144,9 @@
            <div itemprop="articleBody">
              
   <section id="rose-configuration-api">
-<h1>Rose Configuration API<a class="headerlink" href="#rose-configuration-api" title="Permalink to this heading"></a></h1>
+<h1>Rose Configuration API<a class="headerlink" href="#rose-configuration-api" title="Link to this heading"></a></h1>
 <section id="cli">
-<h2>CLI<a class="headerlink" href="#cli" title="Permalink to this heading"></a></h2>
+<h2>CLI<a class="headerlink" href="#cli" title="Link to this heading"></a></h2>
 <p>The <a class="reference internal" href="../command-reference.html#command-rose-config"><span class="std std-ref">rose config</span></a> command provides a command line tool for
 reading, processing and dumping files written in the <a class="reference internal" href="rose-configuration-format.html#rose-configuration-format"><span class="std std-ref">Rose Configuration Format</span></a>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span>
@@ -161,11 +161,11 @@ reading, processing and dumping files written in the <a class="reference interna
 <p>For more information see the <a class="reference internal" href="../command-reference.html#command-rose-config"><span class="std std-ref">rose config</span></a> command line reference.</p>
 </section>
 <section id="python">
-<span id="config-api"></span><h2>Python<a class="headerlink" href="#python" title="Permalink to this heading"></a></h2>
+<span id="config-api"></span><h2>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
 <p>Rose provides a Python API for loading, processing, editing and dumping Rose
 configurations via the <a class="reference internal" href="#module-metomi.rose.config" title="metomi.rose.config"><code class="xref py py-mod docutils literal notranslate"><span class="pre">metomi.rose.config</span></code></a> module located within the
 Rose Python library.</p>
-<span class="target" id="module-metomi.rose.config"></span><p>Simple INI-style configuration data model, loader and dumper.</p>
+<p id="module-metomi.rose.config">Simple INI-style configuration data model, loader and dumper.</p>
 <dl>
 <dt>Synopsis:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a config file.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;config.conf&#39;</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_file</span><span class="p">:</span>
@@ -250,7 +250,7 @@ Rose Python library.</p>
 </dl>
 <dl class="py exception">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigDecodeError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigDecodeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode_decode_err</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigDecodeError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigDecodeError" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigDecodeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unicode_decode_err</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigDecodeError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigDecodeError" title="Link to this definition"></a></dt>
 <dd><p>Exception that should be raised when loading a configuration file that
 is not encoded in a UTF-8 compatible charset.</p>
 <dl class="field-list simple">
@@ -266,7 +266,7 @@ when doing bytes.decode()</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigDumper">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigDumper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">char_assign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'='</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigDumper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigDumper" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigDumper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">char_assign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'='</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigDumper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigDumper" title="Link to this definition"></a></dt>
 <dd><p>Dumper of a ConfigNode object in Rose INI format.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config_node</span> <span class="o">=</span> <span class="n">ConfigNode</span><span class="p">()</span>
@@ -284,7 +284,7 @@ when doing bytes.decode()</p></li>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigDumper.dump">
-<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_sections=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_option_items=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_escape_ok=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concat_mode=False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigDumper.dump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigDumper.dump" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_sections=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_option_items=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_escape_ok=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concat_mode=False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigDumper.dump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigDumper.dump" title="Link to this definition"></a></dt>
 <dd><p>Format a ConfigNode object and write result to target.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -311,13 +311,13 @@ True, add [] before root level options.</p></li>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigError</span></span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigError" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigError</span></span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigError" title="Link to this definition"></a></dt>
 <dd><p>Base class for config errors.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigLoader">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">char_assign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'='</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">char_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_sections</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigLoader" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">char_assign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'='</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">char_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_sections</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigLoader" title="Link to this definition"></a></dt>
 <dd><p>Loader of an INI format configuration into a ConfigNode object.</p>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;config.conf&#39;</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">config_file</span><span class="p">:</span>
@@ -337,13 +337,13 @@ True, add [] before root level options.</p></li>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigLoader.can_miss_opt_conf_key">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">can_miss_opt_conf_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigLoader.can_miss_opt_conf_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigLoader.can_miss_opt_conf_key" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">can_miss_opt_conf_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigLoader.can_miss_opt_conf_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigLoader.can_miss_opt_conf_key" title="Link to this definition"></a></dt>
 <dd><p>Return KEY if key is a string like “(KEY)”, None otherwise.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigLoader.load">
-<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigLoader.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigLoader.load" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigLoader.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigLoader.load" title="Link to this definition"></a></dt>
 <dd><p>Read a source configuration file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -385,7 +385,7 @@ created.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigLoader.load_with_opts">
-<span class="sig-name descname"><span class="pre">load_with_opts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">more_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_config_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mark_opt_confs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigLoader.load_with_opts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigLoader.load_with_opts" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">load_with_opts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">more_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">used_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_config_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mark_opt_confs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigLoader.load_with_opts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigLoader.load_with_opts" title="Link to this definition"></a></dt>
 <dd><p>Read a source configuration file with optional configurations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -466,7 +466,7 @@ pairs. Only returned if return_config_map is True.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode" title="Link to this definition"></a></dt>
 <dd><p>Represent a node in a configuration file.</p>
 <dl class="simple">
 <dt>Nodes are stored hierarchically, for instance the following config</dt><dd><p>[foo]
@@ -524,26 +524,26 @@ setting “bar”.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.STATE_NORMAL">
-<span class="sig-name descname"><span class="pre">STATE_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#metomi.rose.config.ConfigNode.STATE_NORMAL" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">STATE_NORMAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#metomi.rose.config.ConfigNode.STATE_NORMAL" title="Link to this definition"></a></dt>
 <dd><p>The default state of a ConfigNode.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.STATE_SYST_IGNORED">
-<span class="sig-name descname"><span class="pre">STATE_SYST_IGNORED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'!!'</span></em><a class="headerlink" href="#metomi.rose.config.ConfigNode.STATE_SYST_IGNORED" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">STATE_SYST_IGNORED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'!!'</span></em><a class="headerlink" href="#metomi.rose.config.ConfigNode.STATE_SYST_IGNORED" title="Link to this definition"></a></dt>
 <dd><p>ConfigNode state if a metadata opperation has logically ignored the
 config.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.STATE_USER_IGNORED">
-<span class="sig-name descname"><span class="pre">STATE_USER_IGNORED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'!'</span></em><a class="headerlink" href="#metomi.rose.config.ConfigNode.STATE_USER_IGNORED" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">STATE_USER_IGNORED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'!'</span></em><a class="headerlink" href="#metomi.rose.config.ConfigNode.STATE_USER_IGNORED" title="Link to this definition"></a></dt>
 <dd><p>ConfigNode state if it has been specifically ignored in the config.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.add">
-<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_diff</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.add" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_diff</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.add" title="Link to this definition"></a></dt>
 <dd><p>Apply a ConfigNodeDiff object to self.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -574,7 +574,7 @@ config.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.get" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.get" title="Link to this definition"></a></dt>
 <dd><p>Return a node at the position of keys, if any.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -623,7 +623,7 @@ None.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.get_filter">
-<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">no_ignore</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.get_filter" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">no_ignore</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.get_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.get_filter" title="Link to this definition"></a></dt>
 <dd><p>Return this ConfigNode unless no_ignore and node is ignored.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -657,7 +657,7 @@ ignored.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.get_value">
-<span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.get_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.get_value" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.get_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.get_value" title="Link to this definition"></a></dt>
 <dd><p>Return the value of a normal node at the position of keys, if any.</p>
 <p>If the node does not exist or is ignored, return None.</p>
 <dl class="field-list simple">
@@ -713,13 +713,13 @@ default if not set.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.is_ignored">
-<span class="sig-name descname"><span class="pre">is_ignored</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.is_ignored"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.is_ignored" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">is_ignored</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.is_ignored"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.is_ignored" title="Link to this definition"></a></dt>
 <dd><p>Return True if current node is in the “ignored” state.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.set">
-<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.set" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.set" title="Link to this definition"></a></dt>
 <dd><p>Set node properties at the position of keys, if any.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -773,7 +773,7 @@ If None, the node.comments property is unchanged.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.unset">
-<span class="sig-name descname"><span class="pre">unset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.unset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.unset" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">unset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.unset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.unset" title="Link to this definition"></a></dt>
 <dd><p>Remove a node at the position of keys, if any.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -816,7 +816,7 @@ If an entry in keys is the null string, it is skipped.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNode.walk">
-<span class="sig-name descname"><span class="pre">walk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.walk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.walk" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">walk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNode.walk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNode.walk" title="Link to this definition"></a></dt>
 <dd><p>Return all keylist - sub-node pairs below keys.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -874,7 +874,7 @@ keys.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigNodeDiff</span></span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigNodeDiff</span></span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff" title="Link to this definition"></a></dt>
 <dd><p>Represent differences between two ConfigNode instances.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a new ConfigNodeDiff.</span>
@@ -918,7 +918,7 @@ keys.</p></li>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.delete_removed">
-<span class="sig-name descname"><span class="pre">delete_removed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.delete_removed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.delete_removed" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete_removed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.delete_removed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.delete_removed" title="Link to this definition"></a></dt>
 <dd><p>Deletes all ‘removed’ keys from this ConfigNodeDiff.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config_node_diff</span> <span class="o">=</span> <span class="n">ConfigNodeDiff</span><span class="p">()</span>
@@ -933,7 +933,7 @@ keys.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.get_added">
-<span class="sig-name descname"><span class="pre">get_added</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_added"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_added" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_added</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_added"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_added" title="Link to this definition"></a></dt>
 <dd><p>Return a list of tuples of added keys with their data.</p>
 <p>The data is a tuple of value, state, comments, where value is
 set to None for sections.</p>
@@ -965,7 +965,7 @@ properties of the added setting.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.get_all_keys">
-<span class="sig-name descname"><span class="pre">get_all_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_all_keys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_all_keys" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_all_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_all_keys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_all_keys" title="Link to this definition"></a></dt>
 <dd><p>Return all keys affected by this ConfigNodeDiff.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -989,7 +989,7 @@ e.g. (‘foo’, ‘bar’).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.get_as_opt_config">
-<span class="sig-name descname"><span class="pre">get_as_opt_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_as_opt_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_as_opt_config" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_as_opt_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_as_opt_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_as_opt_config" title="Link to this definition"></a></dt>
 <dd><p>Return a ConfigNode such that main + new_node = main + diff.</p>
 <p>Add all the added settings, add all the modified settings,
 add all the removed settings as user-ignored.</p>
@@ -1017,7 +1017,7 @@ add all the removed settings as user-ignored.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.get_modified">
-<span class="sig-name descname"><span class="pre">get_modified</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_modified"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_modified" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_modified</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_modified"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_modified" title="Link to this definition"></a></dt>
 <dd><p>Return a dict of altered keys with before and after data.</p>
 <p>The data is a list of two tuples (before and after) of value,
 state, comments, where value is set to None for sections.</p>
@@ -1051,7 +1051,7 @@ properties of the setting after the modification.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.get_removed">
-<span class="sig-name descname"><span class="pre">get_removed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_removed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_removed" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_removed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_removed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_removed" title="Link to this definition"></a></dt>
 <dd><p>Return a dict of removed keys with their data.</p>
 <p>The data is a tuple of value, state, comments, where value is
 set to None for sections.</p>
@@ -1083,7 +1083,7 @@ properties of the removed setting.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.get_reversed">
-<span class="sig-name descname"><span class="pre">get_reversed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_reversed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_reversed" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_reversed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.get_reversed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.get_reversed" title="Link to this definition"></a></dt>
 <dd><p>Return an inverse (add-&gt;remove, etc) copy of this ConfigNodeDiff.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1113,7 +1113,7 @@ properties of the removed setting.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.set_added_setting">
-<span class="sig-name descname"><span class="pre">set_added_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.set_added_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.set_added_setting" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_added_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.set_added_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.set_added_setting" title="Link to this definition"></a></dt>
 <dd><p>Set a config setting to be “added” in this ConfigNodeDiff.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1148,7 +1148,7 @@ for the setting to add.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.set_from_configs">
-<span class="sig-name descname"><span class="pre">set_from_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_node_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_node_2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.set_from_configs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.set_from_configs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_from_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_node_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_node_2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.set_from_configs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.set_from_configs" title="Link to this definition"></a></dt>
 <dd><p>Create diff data from two ConfigNode instances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1181,7 +1181,7 @@ this diff will “apply”.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.set_modified_setting">
-<span class="sig-name descname"><span class="pre">set_modified_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.set_modified_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.set_modified_setting" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_modified_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.set_modified_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.set_modified_setting" title="Link to this definition"></a></dt>
 <dd><p>Set a config setting to be “modified” in this ConfigNodeDiff.</p>
 <p>If a property in both the old_data and data (new data) are both set to
 None then no change will be made to any pre-existing value.</p>
@@ -1219,7 +1219,7 @@ for “new” properties to change this setting to.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigNodeDiff.set_removed_setting">
-<span class="sig-name descname"><span class="pre">set_removed_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.set_removed_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.set_removed_setting" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_removed_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigNodeDiff.set_removed_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigNodeDiff.set_removed_setting" title="Link to this definition"></a></dt>
 <dd><p>Set a config setting to be “removed” in this ConfigNodeDiff.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1254,11 +1254,11 @@ properties for the setting to remove.</p></li>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigSyntaxError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigSyntaxError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigSyntaxError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">ConfigSyntaxError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#ConfigSyntaxError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError" title="Link to this definition"></a></dt>
 <dd><p>Exception raised for syntax error loading a configuration file.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigSyntaxError.exc.code">
-<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">code</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.code" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">code</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.code" title="Link to this definition"></a></dt>
 <dd><p>Error code. Can be one of:
 ConfigSyntaxError.BAD_CHAR (bad characters in a name)
 ConfigSyntaxError.BAD_SYNTAX (general syntax error)</p>
@@ -1266,25 +1266,25 @@ ConfigSyntaxError.BAD_SYNTAX (general syntax error)</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigSyntaxError.exc.file_name">
-<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">file_name</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.file_name" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">file_name</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.file_name" title="Link to this definition"></a></dt>
 <dd><p>The name of the file that triggers the error.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigSyntaxError.exc.line_num">
-<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">line_num</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.line_num" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">line_num</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.line_num" title="Link to this definition"></a></dt>
 <dd><p>The line number (from 1) in the file with the error.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigSyntaxError.exc.col_num">
-<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">col_num</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.col_num" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">col_num</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.col_num" title="Link to this definition"></a></dt>
 <dd><p>The column number (from 0) in the line with the error.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="metomi.rose.config.ConfigSyntaxError.exc.line">
-<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">line</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.line" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">exc.</span></span><span class="sig-name descname"><span class="pre">line</span></span><a class="headerlink" href="#metomi.rose.config.ConfigSyntaxError.exc.line" title="Link to this definition"></a></dt>
 <dd><p>The content of the line that contains the error.</p>
 </dd></dl>
 
@@ -1305,25 +1305,25 @@ ConfigSyntaxError.BAD_SYNTAX (general syntax error)</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="metomi.rose.config.dump">
-<span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_sections=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_option_items=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_escape_ok=False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#dump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.dump" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_sections=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_option_items=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_escape_ok=False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#dump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.dump" title="Link to this definition"></a></dt>
 <dd><p>Shorthand for <a class="reference internal" href="#metomi.rose.config.ConfigDumper.dump" title="metomi.rose.config.ConfigDumper.dump"><code class="xref py py-func docutils literal notranslate"><span class="pre">ConfigDumper.dump()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="metomi.rose.config.load">
-<span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.load" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.load" title="Link to this definition"></a></dt>
 <dd><p>Shorthand for <a class="reference internal" href="#metomi.rose.config.ConfigLoader.load" title="metomi.rose.config.ConfigLoader.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">ConfigLoader.load()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="metomi.rose.config.sort_element">
-<span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">sort_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#sort_element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.sort_element" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">sort_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem_2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#sort_element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.sort_element" title="Link to this definition"></a></dt>
 <dd><p>Sort pieces of text, numerically if possible.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="metomi.rose.config.sort_settings">
-<span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">sort_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setting_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setting_2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#sort_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.sort_settings" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">metomi.rose.config.</span></span><span class="sig-name descname"><span class="pre">sort_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">setting_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setting_2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metomi/rose/config.html#sort_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.config.sort_settings" title="Link to this definition"></a></dt>
 <dd><p>Sort sections and options, by numeric element if possible.</p>
 </dd></dl>
 

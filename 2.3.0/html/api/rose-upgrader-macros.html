@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Rose Upgrade Macro API &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../_static/js/spoiler.js?v=12631137"></script>
@@ -116,7 +116,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Rose Upgrade Macro API</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/api/rose-upgrader-macros.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/api/rose-upgrader-macros.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -125,7 +125,7 @@
            <div itemprop="articleBody">
              
   <section id="rose-upgrade-macro-api">
-<span id="rose-upgr-macros"></span><h1>Rose Upgrade Macro API<a class="headerlink" href="#rose-upgrade-macro-api" title="Permalink to this heading"></a></h1>
+<span id="rose-upgr-macros"></span><h1>Rose Upgrade Macro API<a class="headerlink" href="#rose-upgrade-macro-api" title="Link to this heading"></a></h1>
 <p>Rose upgrade macros are used to upgrade application configurations between
 metadata versions. They are classes, very similar to
 <a class="reference internal" href="rose-macro.html#api-rose-macro"><span class="std std-ref">transformer macros</span></a>, but with a few differences:</p>
@@ -178,11 +178,11 @@ They have all the functionality of the
 <a class="reference internal" href="rose-macro.html#api-rose-macro"><span class="std std-ref">transformer macros</span></a>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="metomi.rose.upgrade.MacroUpgrade">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.upgrade.</span></span><span class="sig-name descname"><span class="pre">MacroUpgrade</span></span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metomi.rose.upgrade.</span></span><span class="sig-name descname"><span class="pre">MacroUpgrade</span></span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade" title="Link to this definition"></a></dt>
 <dd><p>Class derived from MacroBase to aid upgrade functionality.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.upgrade.MacroUpgrade.act_from_files">
-<span class="sig-name descname"><span class="pre">act_from_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downgrade</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.act_from_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.act_from_files" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">act_from_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downgrade</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.act_from_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.act_from_files" title="Link to this definition"></a></dt>
 <dd><p>Parse a change configuration into actions.</p>
 <p>Searches for:</p>
 <ul class="simple">
@@ -210,7 +210,7 @@ configuration.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.upgrade.MacroUpgrade.add_setting">
-<span class="sig-name descname"><span class="pre">add_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forced</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.add_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.add_setting" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">add_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forced</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.add_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.add_setting" title="Link to this definition"></a></dt>
 <dd><p>Add a setting to the configuration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -241,7 +241,7 @@ describing the addition of the setting.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.upgrade.MacroUpgrade.change_setting_value">
-<span class="sig-name descname"><span class="pre">change_setting_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forced</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.change_setting_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.change_setting_value" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">change_setting_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forced</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.change_setting_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.change_setting_value" title="Link to this definition"></a></dt>
 <dd><p>Change a setting (option) value in the configuration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -267,7 +267,7 @@ describing the addition of the setting.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.upgrade.MacroUpgrade.enable_setting">
-<span class="sig-name descname"><span class="pre">enable_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.enable_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.enable_setting" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">enable_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.enable_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.enable_setting" title="Link to this definition"></a></dt>
 <dd><p>Enable a setting in the configuration.</p>
 <p>This will reset ignored and trigger ignored settings back to the
 default state.</p>
@@ -290,7 +290,7 @@ describing the addition of the setting.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.upgrade.MacroUpgrade.get_setting_value">
-<span class="sig-name descname"><span class="pre">get_setting_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.get_setting_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.get_setting_value" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_setting_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.get_setting_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.get_setting_value" title="Link to this definition"></a></dt>
 <dd><p>Return the value of a setting or <code class="docutils literal notranslate"><span class="pre">None</span></code> if not set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -311,7 +311,7 @@ setting is ignored (else return the value).</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.upgrade.MacroUpgrade.ignore_setting">
-<span class="sig-name descname"><span class="pre">ignore_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'!'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.ignore_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.ignore_setting" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ignore_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'!'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.ignore_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.ignore_setting" title="Link to this definition"></a></dt>
 <dd><p>User-ignore a setting in the configuration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -334,7 +334,7 @@ default.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.upgrade.MacroUpgrade.remove_setting">
-<span class="sig-name descname"><span class="pre">remove_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.remove_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.remove_setting" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">remove_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.remove_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.remove_setting" title="Link to this definition"></a></dt>
 <dd><p>Remove a setting from the configuration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -355,7 +355,7 @@ describing the addition of the setting.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metomi.rose.upgrade.MacroUpgrade.rename_setting">
-<span class="sig-name descname"><span class="pre">rename_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.rename_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.rename_setting" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">rename_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/metomi/rose/upgrade.html#MacroUpgrade.rename_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metomi.rose.upgrade.MacroUpgrade.rename_setting" title="Link to this definition"></a></dt>
 <dd><p>Rename a setting in the configuration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -9,7 +9,7 @@
   <title>Application Configuration &mdash; Rose Documentation 2.4.0.dev documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=f63d8bfa" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/diff_selector.css?v=9704a72b" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/grid_table.css?v=0285b42e" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/hieroglyph_theme_addons.css?v=814c2015" />
@@ -25,9 +25,9 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=a5d4db88"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
-        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../_static/documentation_options.js?v=72c03240"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/js/diff_selector.js?v=3109bfa4"></script>
         <script src="../../_static/js/minicylc.js?v=ddc882fd"></script>
         <script src="../../_static/js/spoiler.js?v=12631137"></script>
@@ -113,7 +113,7 @@
           <li class="breadcrumb-item"><a href="index.html">Rose Configuration</a></li>
       <li class="breadcrumb-item active">Application Configuration</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/api/configuration/application.rst.txt" rel="nofollow"> View page source</a>
+              <a href="https://github.com/metomi/rose/blob/master/sphinx/api/configuration/application.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -122,7 +122,7 @@
            <div itemprop="articleBody">
              
   <section id="application-configuration">
-<span id="rose-applications"></span><h1>Application Configuration<a class="headerlink" href="#application-configuration" title="Permalink to this heading"></a></h1>
+<span id="rose-applications"></span><h1>Application Configuration<a class="headerlink" href="#application-configuration" title="Link to this heading"></a></h1>
 <p>The configuration of an application is represented by a directory. It may
 contain the following:</p>
 <ul>
@@ -176,17 +176,17 @@ prepended to the <code class="docutils literal notranslate"><span class="pre">PA
 </div></blockquote>
 <dl class="rose file">
 <dt class="sig sig-object rose" id="rose:file:rose-app.conf">
-<em class="property"><span class="pre">Rose</span> <span class="pre">Configuration</span> </em><span class="sig-name descname"><span class="pre">rose-app.conf</span></span><a class="headerlink" href="#rose:file:rose-app.conf" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Rose</span> <span class="pre">Configuration</span> </em><span class="sig-name descname"><span class="pre">rose-app.conf</span></span><a class="headerlink" href="#rose:file:rose-app.conf" title="Link to this definition"></a></dt>
 <dd><dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf|file-install-root">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">file-install-root</span></span><a class="headerlink" href="#rose:conf:rose-app.conf|file-install-root" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">file-install-root</span></span><a class="headerlink" href="#rose:conf:rose-app.conf|file-install-root" title="Link to this definition"></a></dt>
 <dd><p>Root level setting. Specify the root directory to install file targets
 that are specified with a relative path.</p>
 </dd></dl>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf|meta">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">meta</span></span><a class="headerlink" href="#rose:conf:rose-app.conf|meta" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">meta</span></span><a class="headerlink" href="#rose:conf:rose-app.conf|meta" title="Link to this definition"></a></dt>
 <dd><p>Root level setting. Specify the configuration metadata for the
 application. This is ignored by the application runner, but may be used
 by other Rose utilities, such as <a class="reference internal" href="../command-reference.html#command-rose-config-edit"><span class="std std-ref">rose config-edit</span></a>.
@@ -195,7 +195,7 @@ It can be used to specify the application type.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf|mode">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#rose:conf:rose-app.conf|mode" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#rose:conf:rose-app.conf|mode" title="Link to this definition"></a></dt>
 <dd><p>Root level setting. Specify the name of a built-in application,
 instead of running a command specified in the <a class="reference internal" href="#rose:conf:rose-app.conf[command]" title="rose:conf:rose-app.conf[command]"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">[command]</span></code></a>
 section.</p>
@@ -204,7 +204,7 @@ section.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf|opts">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">opts</span></span><a class="headerlink" href="#rose:conf:rose-app.conf|opts" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">opts</span></span><a class="headerlink" href="#rose:conf:rose-app.conf|opts" title="Link to this definition"></a></dt>
 <dd><p>Hardcode an optional configuration to be used by the application. It is
 generally better to specify optional configurations using the
 <span class="target" id="index-0"></span><a class="reference internal" href="../environment-variables.html#envvar-ROSE_APP_OPT_CONF_KEYS"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">ROSE_APP_OPT_CONF_KEYS</span></code></a> environment variable or
@@ -214,11 +214,11 @@ generally better to specify optional configurations using the
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[command]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[command]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[command]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[command]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[command]" title="Link to this definition"></a></dt>
 <dd><p>Specify the command(s) to run.</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[command]default">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">default</span></span><em class="property"><span class="pre">=</span> <span class="pre">COMMAND</span></em><a class="headerlink" href="#rose:conf:rose-app.conf[command]default" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">default</span></span><em class="property"><span class="pre">=</span> <span class="pre">COMMAND</span></em><a class="headerlink" href="#rose:conf:rose-app.conf[command]default" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Compulsory<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True</p>
@@ -229,7 +229,7 @@ generally better to specify optional configurations using the
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[command]ALTERNATE">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">ALTERNATE</span></span><em class="property"><span class="pre">=</span> <span class="pre">COMMAND</span></em><a class="headerlink" href="#rose:conf:rose-app.conf[command]ALTERNATE" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">ALTERNATE</span></span><em class="property"><span class="pre">=</span> <span class="pre">COMMAND</span></em><a class="headerlink" href="#rose:conf:rose-app.conf[command]ALTERNATE" title="Link to this definition"></a></dt>
 <dd><p>Specify an alternate command referred to by the name <code class="docutils literal notranslate"><span class="pre">ALTERNATE</span></code>
 which can be selected at runtime.</p>
 <p>See the <a class="reference internal" href="../../tutorial/rose/furthertopics/command-keys.html#rose-tutorial-command-keys"><span class="std std-ref">Command Keys</span></a> tutorial.</p>
@@ -239,7 +239,7 @@ which can be selected at runtime.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[env]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[env]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[env]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[env]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[env]" title="Link to this definition"></a></dt>
 <dd><p>Specify environment variables to be provided to the
 <a class="reference internal" href="#rose:conf:rose-app.conf[command]" title="rose:conf:rose-app.conf[command]"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">[command]</span></code></a> at runtime.</p>
 <p>The usual <code class="docutils literal notranslate"><span class="pre">$NAME</span></code> or <code class="docutils literal notranslate"><span class="pre">${NAME}</span></code> syntax can be used in values to
@@ -253,13 +253,13 @@ with the home directory associated with the specified login name at run
 time.</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[env]KEY">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">KEY</span></span><em class="property"><span class="pre">=</span> <span class="pre">VALUE</span></em><a class="headerlink" href="#rose:conf:rose-app.conf[env]KEY" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">KEY</span></span><em class="property"><span class="pre">=</span> <span class="pre">VALUE</span></em><a class="headerlink" href="#rose:conf:rose-app.conf[env]KEY" title="Link to this definition"></a></dt>
 <dd><p>Define an environment variable <code class="docutils literal notranslate"><span class="pre">KEY</span></code> with the value <code class="docutils literal notranslate"><span class="pre">VALUE</span></code>.</p>
 </dd></dl>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[env]UNDEF">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">UNDEF</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[env]UNDEF" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">UNDEF</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[env]UNDEF" title="Link to this definition"></a></dt>
 <dd><p>A special variable that is always undefined at run time.</p>
 <p>Reference to it will cause a failure at run time. It can be used to
 indicate that a value must be overridden at run time.</p>
@@ -269,7 +269,7 @@ indicate that a value must be overridden at run time.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[etc]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[etc]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[etc]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[etc]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[etc]" title="Link to this definition"></a></dt>
 <dd><p>Specify misc. settings.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -280,7 +280,7 @@ thought to require this section.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[file:TARGET]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[file:TARGET]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[file:TARGET]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[file:TARGET]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[file:TARGET]" title="Link to this definition"></a></dt>
 <dd><p>Specify a file/directory to be installed. <code class="docutils literal notranslate"><span class="pre">TARGET</span></code> should be a path
 relative to the run time <code class="docutils literal notranslate"><span class="pre">$PWD</span></code> or <code class="docutils literal notranslate"><span class="pre">STDIN</span></code>.</p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">file:app/APP=source=LOCATION</span></code>.</p>
@@ -290,13 +290,13 @@ details.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[namelist:NAME]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[namelist:NAME]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[namelist:NAME]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[namelist:NAME]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[namelist:NAME]" title="Link to this definition"></a></dt>
 <dd><p>Specify a Fortran namelist with the group name called <code class="docutils literal notranslate"><span class="pre">NAME</span></code>, which
 can be referred to by a <a class="reference internal" href="file-creation.html#rose:conf:*[file:TARGET]source" title="rose:conf:*[file:TARGET]source"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">*[file:TARGET]source</span></code></a> setting of
 a file.</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[namelist:NAME]KEY">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">KEY</span></span><em class="property"><span class="pre">=</span> <span class="pre">VALUE</span></em><a class="headerlink" href="#rose:conf:rose-app.conf[namelist:NAME]KEY" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">KEY</span></span><em class="property"><span class="pre">=</span> <span class="pre">VALUE</span></em><a class="headerlink" href="#rose:conf:rose-app.conf[namelist:NAME]KEY" title="Link to this definition"></a></dt>
 <dd><p>Define a new namelist setting <code class="docutils literal notranslate"><span class="pre">KEY</span></code> set to <code class="docutils literal notranslate"><span class="pre">VALUE</span></code> exactly like a
 Fortran namelist, but without the trailing comma.</p>
 </dd></dl>
@@ -329,26 +329,26 @@ category <code class="docutils literal notranslate"><span class="pre">[namelist:
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[poll]">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[poll]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">[poll]</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]" title="Link to this definition"></a></dt>
 <dd><p>Specify prerequisites to poll for before running the actual application.
 Three types of tests can be performed:</p>
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[poll]all-files">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">all-files</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]all-files" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">all-files</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]all-files" title="Link to this definition"></a></dt>
 <dd><p>A list of space delimited list of file paths. This test
 passes only if all file paths in the list exist. Accepts globs.</p>
 </dd></dl>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[poll]any-files">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">any-files</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]any-files" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">any-files</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]any-files" title="Link to this definition"></a></dt>
 <dd><p>A list of space delimited list of file paths. This test
 passes if any file path in the list exists. Accepts globs.</p>
 </dd></dl>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[poll]test">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">test</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]test" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">test</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]test" title="Link to this definition"></a></dt>
 <dd><p>A shell command. This test passes if the command returns a 0
 (zero) return code.</p>
 <p>This test is run in addition to
@@ -358,7 +358,7 @@ tests for the existence of file paths.</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[poll]file-test">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">file-test</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]file-test" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">file-test</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]file-test" title="Link to this definition"></a></dt>
 <dd><p>A shell command run for each file path, where <code class="docutils literal notranslate"><span class="pre">{}</span></code> is substituted
 for the file path at runtime. This test passes if the command returns
 a 0 (zero) return code for all paths in <code class="docutils literal notranslate"><span class="pre">all-files</span></code>
@@ -384,7 +384,7 @@ example above would be equivalent to:</p>
 
 <dl class="rose conf">
 <dt class="sig sig-object rose" id="rose:conf:rose-app.conf[poll]delays">
-<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">delays</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]delays" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">Config</span> </em><span class="sig-name descname"><span class="pre">delays</span></span><a class="headerlink" href="#rose:conf:rose-app.conf[poll]delays" title="Link to this definition"></a></dt>
 <dd><p>The above tests will only be performed once when the application
 runner starts. If a list of <a class="reference internal" href="#rose:conf:rose-app.conf[poll]delays" title="rose:conf:rose-app.conf[poll]delays"><code class="xref rose rose-conf docutils literal notranslate"><span class="pre">delays</span></code></a> are added, the tests
 will be performed a number of times with delays between them. If the
