@@ -3,7 +3,7 @@
     UTC mode=True
     [[events]]
         stalled handler = cylc stop '%(suite)s'
-        timeout handler = cylc stop '%(suite)s' --now --now
+        timeout handler = cylc stop '%(suite)s'
         timeout = PT1M
 [scheduling]
     initial cycle point = 20100101

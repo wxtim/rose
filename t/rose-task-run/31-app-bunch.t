@@ -261,5 +261,6 @@ file_grep "$TEST_KEY_PREFIX-TOTAL-RAN" \
     "$INFO_PATTERN TOTAL: 8" \
     "$FILE"
 #-------------------------------------------------------------------------------
+sleep 10
 purge
 exit 0
