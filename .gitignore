@@ -10,8 +10,7 @@ dist
 node_modules
 
 # coverage
-.coverage
-.coverage.*
+.coverage_*
 coverage.xml
 htmlcov/
 
