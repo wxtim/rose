@@ -78,10 +78,6 @@ class PreRsyncCheckError(Exception):
         super().__init__(self.message)
 
 
-class PreRsyncCheck255Error(PreRsyncCheckError):
-    ...
-
-
 class RsyncLocHandler:
     """Handler of locations on remote hosts."""
 
