@@ -75,7 +75,6 @@ class PreRsyncCheckError(Exception):
                     prefix='    ',
                 )
             )
-        super().__init__(self.message)
 
 
 class RsyncLocHandler:
