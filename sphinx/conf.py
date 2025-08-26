@@ -225,6 +225,8 @@ linkcheck_ignore = [
     # linux.die.net doesn't like our request headers
     'https?://linux.die.net/man/1/rsync',
     'https?://stackoverflow.com.*',
+    'https?://www.gnu.org/software/bash/manual/html_node/'
+    'Pattern-Matching.html#Pattern-Matching',
 ]
 
 
