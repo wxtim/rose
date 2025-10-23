@@ -21,8 +21,12 @@ import errno
 import hashlib
 import inspect
 import os
+from pathlib import Path
 
 from metomi.rose.resource import ResourceLocator
+from metomi.rose.reporter import Reporter
+
+from typing import IO
 
 _DEFAULT_DEFAULT_KEY = "md5"
 _DEFAULT_KEY = None
@@ -71,7 +75,15 @@ def get_checksum(name, checksum_func=None):
                 filepath = os.path.join(path, filename)
                 source = os.path.join(name, filepath)
                 checksum = checksum_func(source, name)
-                mode = os.stat(os.path.realpath(source)).st_mode
+                if os.path.islink(source) and not os.path.exists(source):
+                    Reporter()(
+                        f'{source} is a broken symlink',
+                        level=Reporter.WARN,
+                        prefix=Reporter.PREFIX_WARN
+                    )
+                    mode = 'broken-link'
+                else:
+                    mode = os.stat(os.path.realpath(source)).st_mode
                 path_and_checksum_list.append((filepath, checksum, mode))
     return path_and_checksum_list
 
@@ -123,22 +135,29 @@ def guess_checksum_algorithm(checksum):
     return _HASH_LENGTHS.get(len(checksum))
 
 
-def _get_hexdigest(algorithm, source):
+def _get_hexdigest(algorithm: str, source: str | IO) -> str:
     """Load content of source into an hash object, and return its hexdigest.
 
     Args:
-        algorithm (str):
+        algorithm :
             Hash algorithm as namespaced in hashlib.
-        source (str, file):
+        source:
             The item to hexdigest, can be:
 
-            * Path to a file (``str``).
-            * Path to a directory (``str``).
-            * A file object ``readable`` in bytes mode.
+            * Path to a file.
+            * Path to a directory.
+            * Path to a symlink - returns a hash of the target.
+            * A file object readable in bytes mode.
 
     """
-    if hasattr(source, "read"):
+    # if isinstance(source, IO):
+    if hasattr(source, 'read'):
         handle = source
+    elif os.path.islink(source) and not os.path.exists(source):
+        # Handle the case where the file is a broken symlink:
+        hashobj = hashlib.new(algorithm)
+        hashobj.update(str(Path(source).readlink()).encode())
+        return hashobj.hexdigest()
     else:
         handle = open(source, 'rb')
 
