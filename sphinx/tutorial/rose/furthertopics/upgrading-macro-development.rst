@@ -234,17 +234,7 @@ Paste the following into your ``versions.py`` file:
 
 .. code-block:: python
 
-   """
-   Designed to be compatible with both
-   Python 2 and 3 so that the Rose 2 macro
-   command will work, and so will the Rose 2019 GUI.
-   """
-
-   try:
-      from metomi.rose.upgrade import MacroUpgrade
-   except ImportError:
-      from rose.upgrade import MacroUpgrade
-
+   from metomi.rose.upgrade import MacroUpgrade
 
    class MyFirstUpgradeMacro(MacroUpgrade):
 

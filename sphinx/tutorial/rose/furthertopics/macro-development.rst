@@ -90,21 +90,12 @@ Open ``planet.py`` in a text editor and paste in the following code:
 
 .. code-block:: python
 
-   """
-   Rose validator macro for "planet".
-
-   Designed to be compatible with both Python 2 and 3 so that the Rose 2 macro
-   command will work, and so will the Rose 1 GUI.
+   """Rose validator macro for "planet".
    """
    import re
    import subprocess
 
-   try:
-       from metomi.rose.macro import MacroBase
-       PY_3 = True
-   except ImportError:
-       from rose.macro import MacroBase
-       PY_3 = False
+   from metomi.rose.macro import MacroBase
 
 
    class PlanetChecker(MacroBase):
@@ -154,8 +145,7 @@ Now add the method ``_get_allowed_planets`` to the class:
                       "http://www.heavens-above.com/planetsummary.aspx"]
        p = subprocess.Popen(cmd_strings, stdout=subprocess.PIPE)
        text = p.communicate()[0]
-       if PY_3:
-           text = text.decode()
+       text = text.decode()
        planets = re.findall("(\w+)</td>",
                             re.sub('(?s)^.*(tablehead.*?ascension).*$',
                                    r"\1", text))
@@ -217,21 +207,12 @@ Your final macro should look like this:
 
 .. code-block:: python
 
-   """
-   Rose validator macro for "planet".
-
-   Designed to be compatible with both Python 2 and 3 so that the Rose 2 macro
-   command will work, and so will the 2019 GUI.
+   """Rose validator macro for "planet".
    """
    import re
    import subprocess
 
-   try:
-       from metomi.rose.macro import MacroBase
-       PY_3 = True
-   except ImportError:
-       from rose.macro import MacroBase
-       PY_3 = False
+   from metomi.rose.macro import MacroBase
 
 
    class PlanetChecker(MacroBase):
@@ -258,8 +239,7 @@ Your final macro should look like this:
                           "http://www.heavens-above.com/planetsummary.aspx"]
            p = subprocess.Popen(cmd_strings, stdout=subprocess.PIPE)
            text = p.communicate()[0]
-           if PY_3:
-               text = text.decode()
+           text = text.decode()
            planets = re.findall("(\w+)</td>",
                                 re.sub(r'(?s)^.*(<thead.*?ascension).*$',
                                        r"\1", text))
@@ -455,8 +435,7 @@ Open ``planet.py`` and paste in this text:
                           "http://www.heavens-above.com/planetsummary.aspx"]
            p = subprocess.Popen(cmd_strings, stdout=subprocess.PIPE)
            text = p.communicate()[0]
-           if PY_3:
-               text = text.decode()
+           text = text.decode()
            planets = re.findall("(\w+)</td>",
                                 re.sub(r'(?s)^.*(<thead.*?ascension).*$',
                                        r"\1", text))
